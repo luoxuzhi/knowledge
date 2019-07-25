@@ -1,15 +1,15 @@
 {
   "name": "knowledge",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+  "description": "luoxuzhi personal note",
+  "directories": {
+    "doc": "doc"
   },
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "sh build.sh"
+  },
   "devDependencies": {
     "vuepress": "^1.0.2"
   }
