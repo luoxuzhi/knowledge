@@ -16,7 +16,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-# 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:luoxuzhi/knowledge.git master:gh-pages
 
 cd -
