@@ -14,7 +14,7 @@ module.exports = {
     ],
     serviceWorker: false,
     themeConfig: {
-        repo: 'luoxuzhi/knowledge',
+        repo: 'luoxuzhi/know',
         editLinks: true,
         docsDir: 'docs',
         editLinkText: '在 GitHub 上编辑此页',
