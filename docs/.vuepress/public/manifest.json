@@ -1,6 +1,6 @@
 {
-  "name": "VueAnalysis",
-  "short_name": "VueAnalysis",
+  "name": "knowledge",
+  "short_name": "knowledge",
   "icons": [
     {
       "src": "/icons/android-chrome-192x192.png",
@@ -13,7 +13,6 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/vue-analysis/",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#3eaf7c"
