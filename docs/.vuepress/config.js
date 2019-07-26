@@ -1,5 +1,4 @@
 module.exports = {
-    base: '/',
     title: 'luoxuzhi personal blog',
     description: 'luoxuzhi personal blog',
     head: [
@@ -19,12 +18,35 @@ module.exports = {
         docsDir: 'docs',
         editLinkText: '在 GitHub 上编辑此页',
         lastUpdated: '上次更新',
+        sidebarDepth:0,
         nav: [
             {
                 text: '关于我',
                 link: ''
+            },
+            {
+                text:'掘金',
+                link:'https://juejin.im/user/58f6be4bac502e006c4790f7'
+            },
+            {
+                text:'类别',
+                items:[
+                  {text:'Vue',link:'/vue/'},
+                  {text:'React',link:'/react/'}
+                ]
             }
         ],
+        // sidebar:{
+        //   '/vue/':[
+        //     '',
+        //     'two'
+        //   ],
+        //   '/react/':[
+        //     '',
+        //     'two'
+        //   ],
+        //   // '/':['']
+        // }
         sidebar: [
             {
                 title: '准备工作',
