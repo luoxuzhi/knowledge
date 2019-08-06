@@ -23,9 +23,13 @@ interface Square {
 3.属性只读，属性前面加readonly
 
 ```ts
-interface Square {
-  readonly x:number
+interface Point {
+  readonly x: number
 }
+
+let a: Point = { x: 50 }
+
+a.x = 99 // 报错
 ```
 4. 函数类型接口：括号前面是参数，后面是返回值，参数名字可以不一致，但是数量必须一致
 
