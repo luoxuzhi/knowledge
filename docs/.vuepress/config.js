@@ -24,7 +24,8 @@ module.exports = {
                 text:'类别',
                 items:[
                   {text:'Vue',link:'/vue/'},
-                  {text:'React',link:'/react/'}
+                  {text:'React',link:'/react/'},
+                  {text:'typescript',link:'/typescript/'}
                 ]
             },
             {
@@ -41,6 +42,11 @@ module.exports = {
             '',
             'two'
           ],
+          '/typescript/':[
+            '',
+            'two'
+          ],
+
           // '/':['']
         }
         // sidebar: [

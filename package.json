@@ -11,6 +11,6 @@
     "deploy": "sh build.sh"
   },
   "devDependencies": {
-    "vuepress": "^1.0.2"
+    "vuepress": "^1.0.3"
   }
 }
