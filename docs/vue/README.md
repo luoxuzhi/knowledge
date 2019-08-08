@@ -30,8 +30,8 @@ new Vue({
 new Vue({
   el:'#app'
   router,
-  template:'<App/>',
-  component:{App}
+  template:'<App />',
+  component:{ App }
 })
 ```
 
@@ -53,6 +53,7 @@ new Vue({
 
    ```js
    new Vue({
+     el:'#example',
      data: {
        message: 'Hello'
      },

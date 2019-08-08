@@ -1,6 +1,9 @@
 ## 2. Class与Style绑定、条件渲染、列表渲染
 
 1. 绑定`class`的时候可以使用对象语法、数组语法，数组中可以包含对象，对象中不能包含数组。
+
+三元表达式只能用在`classArray`和`styleArray`中，不能用在`classObject`和`styleObject`中。
+
 2. 绑定`style`用对象语法
   ```js
   new Vue({
@@ -19,8 +22,10 @@
 
 另一个用于根据条件展示元素的选项是`v-show`指令，带有`v-show`的元素始终会被渲染并保留在 DOM 中，`v-show`是简单地切换元素的`CSS`属性 `display` 。
 
-注意:`v-show`不支持 `<template>`语法，也不支持`v-else`。
+:::warning 注意：
+`v-show`不支持 `<template>`语法，也不支持`v-else`。
 如果需要非常频繁地切换，则使用`v-show`较好；如果在运行时条件不太可能改变，则使用`v-if`。
+:::
 
 用`key`管理可复用的元素
 
@@ -44,6 +49,8 @@
 
 5. 数组更新检测（变异方法`mutation method`，顾名思义，会改变被这些方法调用的原始数组。）
 
+`push` 、`pop`、`shift`、`unshift`、`splice`、`sort`、`reverse`
+
 push()、reverse()
 
 pop() 删除最后一个
@@ -65,6 +72,3 @@ sort() sort方法对数组成员进行排序，默认是按照字典顺序排序
 当你修改数组的长度时，例如： `vm.items.length = newLength`
 
 为了解决第一类问题，可以用以下方式实现：`vm.items.splice(indexOfItem, 1, newValue)`
-
-
-7. 三元表达式只能用在`classArray`和`styleArray`中，不能用在`classObject`和`styleObject`中。

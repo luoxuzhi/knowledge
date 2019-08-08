@@ -37,7 +37,11 @@ module.exports = {
           '/vue/':[
             '',
             'two',
-            'three'
+            'three',
+            'four',
+            'five',
+            'six',
+            'seven'
           ],
           '/react/':[
             '',
