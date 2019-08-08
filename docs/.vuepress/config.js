@@ -36,7 +36,8 @@ module.exports = {
         sidebar:{
           '/vue/':[
             '',
-            'two'
+            'two',
+            'three'
           ],
           '/react/':[
             '',
