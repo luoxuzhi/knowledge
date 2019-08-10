@@ -54,5 +54,53 @@ vue 2.2.0 新增鼠标事件 .left .right .middle
 <div @click.ctrl="doSomething">clicl to do something</div> // Ctrl + click
 ```
 
-4.`this.$forceUpdate()`会迫使Vue实例重新渲染。
+4.非父子组件传值
+:::tip 高级技巧
+入口文件处添加`Vue.prototype.bue = new Vue()`
+:::
+```vue
+<script type="text/ecmascript-6">
+  export default{
+    props:['num'],
+    data(){ return {innerNum:this.num}},
+    mounted(){
+      this.bus.$on('number-change',val=>{
+        this.innerNum = val
+      })
+    },
+    methods:{
+      changeNum(){
+        this.innerNum = Math.random().toFixed(3)*1000
+        this.bus.$emit('number-change',this.innerNum)
+      }
+    }
+  }
+</script>
+```
 
+5.`$on`/`$once`/`$emit`
+
+`this.$on`只能监听当前组件内`$emit`出来的事件
+
+this.$once 只监听一次
+
+e.currentTarget // 事件绑定的元素
+
+e.target // 真正触发事件的元素
+```vue
+<template>
+  <div id="example" @click="handleClick">
+    <div class="real-click">real click on me</div>
+  </div>
+</template>
+<script type="text/ecmascript-6">
+  export default{
+    methods:{
+      handleClick(event){
+        console.log(event.target) // div.real-click
+        console.log(event.currentTarget) // div#example
+      }
+    }
+  }
+</script>
+```
