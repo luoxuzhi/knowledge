@@ -96,6 +96,10 @@ export const setBtwo = function({commit, dispatch},num) {
 
 7.带命名空间`namespaced:true`模块内部的`actions`、`getters`:
 
+`rootState`包含它上级所有的`state`（*包含*`local state`）
+
+`rootGetters`包含它上级所有的`getters`（*包含*`local getters`）
+
 ```js
 // action，参数是结构赋值
 export const actionA = ({commit,state,dispatch,rootGetters,rootState}) => {}

@@ -49,6 +49,8 @@ Vue.component('todo',{
 ```
 
 :::tip 高级技巧
+一般使用在组件库中，如`element-ui`
+
 `this.$parent.$emit('emit-by-parent')`、`this.$refs.xxx.$emit('custom-event')`
 :::
 

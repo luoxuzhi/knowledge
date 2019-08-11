@@ -41,7 +41,8 @@ module.exports = {
             'four',
             'five',
             'six',
-            'seven'
+            'seven',
+            'eight'
           ],
           '/react/':[
             '',

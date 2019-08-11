@@ -1,6 +1,7 @@
 ## 1. Vue 实例的属性
 
-1. `vm.$watch`和`watch`钩子的效果是一致的，区别是`$watch`不会随着组件销毁自动注销，要手动注销，而后者会自动注销。
+1. `watch`
+* `vm.$watch`和`watch`钩子的效果是一致的，区别是`$watch`不会随着组件销毁自动注销，要手动注销，而后者会自动注销。
 
 ```js
 const unwatch = this.$watch('xxx',(new,old)=>{xxxx})
@@ -10,6 +11,10 @@ watch：{
   'obj.a'(){}
 }
 ```
+
+* `watch` 对象或者数组
+
+当我们监听的数据为对象或数组时，`newValue`和`oldValue` 是相等的，因为对象和数组都为*引用类型*，这两个的形参指向的也是同一个内存地址。
 
 2. vue 实例的生命周期 `created`、`mounted`、 `updated` 、`destroyed`
 

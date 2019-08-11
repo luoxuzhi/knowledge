@@ -37,7 +37,13 @@ new Vue({
 
 .self  只当事件在该元素本身（而不是子元素）触发时触发回调
 
-.once 对原生的 DOM 事件起作用的修饰符，.once 修饰符还能被用到自定义的组件事件上
+.once 对原生的 DOM 事件起作用的修饰符，`.once` 修饰符还能被用到自定义的组件事件上
+
+.native 在组件标签上绑定事件，添加`.native`修饰符可不需要内部触发
+
+```html
+<player @click.native="clickOnPlayer"></player>
+```
 
 3.按键修饰符
 

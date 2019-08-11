@@ -44,8 +44,9 @@ export function initState (vm: Component) {
 
 6.`render`函数中使用`JSX`,v-if 在 render 中 用原生if/else，v-for 在 render 中用原生map，v-model 在 render 中value 、input 事件实现，类似v-model 的值直接保存到 vuex 中的实现方法。
 
-7.在render中引用其他组件，如果是`大写开头引入的可以不注册，所以推荐引入组件的时候都大写开头`，同时它也是一个类，更符合类的写法。
-在组件的option中设置`functional:true`(或者在template模板组件中写在`script`标签内部)，则render函数会提供第二个参数`context`以访问上下文
+7.在render中引用其他组件，如果是**大写开头引入的可以不注册，所以推荐引入组件的时候都大写开头**，同时它也是一个类，更符合类的写法。
+
+在组件的option中设置`functional:true`(或者在template模板组件中写在`script`标签内部)，使组件无状态 (无 data ) 和无实例 (无 this 上下文)。返回虚拟节点使他们更容易渲染，但是render函数会提供第二个参数`context`以访问上下文。
 
 ```js
 render(h){
@@ -55,5 +56,20 @@ renderError(h,err){
   return h('div',{},err.stack)
 }
 ```
+
+8.`beforeCreate/beforeDestroy` 在`element-ui`的`steps`步骤条中使用。
+
+9. 生命周期钩子执行顺序：
+
+`mixin`->`componentSelf`->`extend`
+
+`mehthod`覆盖原则：`extend`*覆盖*`componentSelf`*覆盖*`mixin`
+
+
+10.父组件监听子组件的生命周期 
+
+:::tip 高级技巧
+<child @hook:mounted></child>
+:::
 
 
