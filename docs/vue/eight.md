@@ -201,7 +201,7 @@ export default (Vue) => {
 
 25.`vue-router`通过`addRoutes`添加的路由刷新后报`404`解决方案：
 
-不能在默认路由里添加 `path:'/404'` 的路由，对于无权限页面，可以做以下配置
+不在默认路由里添加 `path:'/404'` 的路由，对于无权限页面，可以做以下配置，`addRoutes`菜单权限[参考这里](http://www.zhufengpeixun.cn/train/vue-info/auth.html)
 ```js
 {
   path:'*',
