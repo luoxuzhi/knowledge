@@ -198,3 +198,15 @@ export default (Vue) => {
 23.使用`keep-alive`标签的情况：`component /router-view`，改变里面的数据用`actived`、`deactived`这两个钩子
 
 24.`views`文件夹下面的文件推荐使用`kebab-case`命名，因为路由也是连字符
+
+25.`vue-router`通过`addRoutes`添加的路由刷新后报`404`解决方案：
+
+不能在默认路由里添加 `path:'/404'` 的路由，对于无权限页面，可以做以下配置
+```js
+{
+  path:'*',
+  component:{
+    render:h=>h('h1',{},'Not Found')
+  }
+}
+```
