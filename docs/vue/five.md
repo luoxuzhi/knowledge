@@ -112,4 +112,4 @@ Vue.component('once-component',{
 
 12.`name`选项的作用
 
-三个作用：递归使用自身、keep-alive标签匹配、vue devtools名字展示。
+三个作用：递归使用自身、`keep-alive`标签匹配、`vue devtools`名字展示。

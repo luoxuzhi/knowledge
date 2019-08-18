@@ -25,7 +25,17 @@ module.exports = {
                 items:[
                   {text:'Vue',link:'/vue/'},
                   {text:'React',link:'/react/'},
-                  {text:'typescript',link:'/typescript/'}
+                  {text:'typescript',link:'/typescript/'},
+                  {text:'mongodb',link:'/mongodb/'},
+                  {text:'小程序',link:'/miniprogram/'},
+                  {text:'node',link:'/node/'},
+                  // {text:'ES5',link:'/ES5/'},
+                  // {text:'ES6',link:'/ES6/'},
+                  // {text:'CSS3',link:'/CSS3/'},
+                  // {text:'JS',link:'/javascript/'},
+                  // {text:'html-css',link:'/html-css/'},
+                  // {text:'http协议原理',link:'/http/'},
+                  // {text:'慕课实战',link:'/imooc/'},
                 ]
             },
             {
@@ -52,8 +62,36 @@ module.exports = {
             '',
             'two'
           ],
+          '/mongodb/':[''],
+          '/http/':[
+            '',
+            'two',
+            'three',
+            'four',
+            'five',
+            'six',
+            'seven',
+            'eight'
+          ],
+          '/miniprogram/':[''],
+          '/node/':[''],
+          '/ES5/':[
+            '',
+            'two',
+            'three',
+            'four',
+            'five',
+            'six',
+            'seven',
+            'eight',
+            'night',
+            'ten',
+            'eleven',
+            'twelve',
+            'thirteen',
+            'fourteen'
+          ],
 
-          // '/':['']
         }
         // sidebar: [
         //     {
