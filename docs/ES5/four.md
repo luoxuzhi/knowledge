@@ -1,4 +1,4 @@
-## 4.Number对象、Math对象、String对象
+## 4.Number、Math、String
 
 1.Number对象的属性
 
