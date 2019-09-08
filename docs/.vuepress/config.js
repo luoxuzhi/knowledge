@@ -29,7 +29,7 @@ module.exports = {
                   {text:'mongodb',link:'/mongodb/'},
                   {text:'小程序',link:'/miniprogram/'},
                   {text:'node',link:'/node/'},
-                  // {text:'ES5',link:'/ES5/'},
+                  {text:'ES5',link:'/ES5/'},
                   // {text:'ES6',link:'/ES6/'},
                   // {text:'CSS3',link:'/CSS3/'},
                   // {text:'JS',link:'/javascript/'},
@@ -84,12 +84,6 @@ module.exports = {
             'six',
             'seven',
             'eight',
-            'night',
-            'ten',
-            'eleven',
-            'twelve',
-            'thirteen',
-            'fourteen'
           ],
 
         }
