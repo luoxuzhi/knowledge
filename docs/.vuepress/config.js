@@ -30,7 +30,7 @@ module.exports = {
                   {text:'小程序',link:'/miniprogram/'},
                   {text:'node',link:'/node/'},
                   {text:'ES5',link:'/ES5/'},
-                  // {text:'ES6',link:'/ES6/'},
+                  {text:'ES6',link:'/ES6/'},
                   // {text:'CSS3',link:'/CSS3/'},
                   // {text:'JS',link:'/javascript/'},
                   // {text:'html-css',link:'/html-css/'},
@@ -85,6 +85,29 @@ module.exports = {
             'seven',
             'eight',
           ],
+          '/ES6/':[
+            '',
+            'two',
+            'three',
+            'four',
+            'five',
+            'six',
+            'seven',
+            'eight',
+            'nine',
+            'ten',
+            'eleven',
+            'twelve',
+            'thirteen',
+            'fourteen',
+            'fifteen',
+            'sixteen',
+            'seventeen',
+            'eighteen',
+            'nineteen',
+            'twenty'
+          ]
+
 
         }
         // sidebar: [
