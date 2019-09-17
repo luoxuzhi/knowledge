@@ -1,78 +1,84 @@
-## 2.数组
+## 9.Symbol
 
-1.Array实例的方法
+1.ES6引入了一种新的原始数据类型Symbol，表示独一无二的值。它是JavaScript语言的第七种数据类型，前六种是：`Undefined`、`Null`、布尔值（`Boolean`）、字符串（`String`）、数值（`Number`）、对象（`Object`）。
 
-`valueOf()` 返回数组本身。
+2.作为属性名的Symbol
 
-`toString()` 返回数组的字符串形式。
+Symbol函数前不能使用new命令，否则会报错。Symbol函数可以接受一个字符串作为参数
+```js
+let sl = Symbol('foo')
+console.log(sl) // Symbol(foo)
+```
 
-`push()` 在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度。该方法会改变原数组。
-
-`pop()`   pop方法用于删除数组的最后一个元素,并返回该元素。注意，该方法会改变原数组。
-
-`join()`   以参数作为分隔符
-
-`concat()`  concat方法用于多个数组的合并  array.concat(arrayb,arrayc)
-
-`shift()`     shift方法用于删除数组的第一个元素，并返回该元素。注意，该方法会改变原数组。
-
-`unshift()`   unshift方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组。
-
-`reverse()`    reverse方法用于颠倒数组中元素的顺序,该方法会改变原数组，即原数组顺序颠倒
-
-`slice()`   slice方法用于提取原数组的一部分，返回一个新数组，原数组不变，参数为0开始算起的索引，新数组`包括开头不包括结尾`
-
-`splice()` splice方法用于删除原数组的一部分成员，并可以在被删除的位置添加入新的数组成员，返回值是被删除的元素。注意，该方法会改变原数组。`灵活运用：可以用这个方法直接替换数组中的某元素`
-
-`sort()`  sort方法对数组成员进行排序，默认是按照字典顺序排序。排序后，原数组将被改变。
-
-`filter()`  返回新数组，不改变原来的数组，会遍历整个数组并且可能返回多个值
-
-`map()`  map方法对数组的所有成员依次调用一个函数，根据函数结果返回一个新数组。map方法不仅可以用于数组，还可以用于字符串，用来遍历字符串的每个字符。但是，不能直接使用，而要通过函数的call方法间接使用，跳过数组的空位
-
-`forEach()`  forEach方法一般不返回值，只用来操作数据。如果需要有返回值，一般使用map方法，跳过数组的空位
-
-
-`find()`返回查找到的第一个元素后立即中断遍历，只返回一个值
-
-`some()`，`every()`   这两个方法类似“断言”（assert），用来判断数组成员是否符合某种条件。some方法是只要有一个数组成员的返回值是true，则整个some方法的返回值就是true，否则false。every方法则是所有数组成员的返回值都是true，才返回true，否则false。
+Symbol值不能与其他类型的值进行运算，会报错。但是，Symbol值可以显式转为字符串。
 
 ```js
-let arr = [2,3,4]
-arr.some(item=>item>5) // false
-arr.every(item=>item>1) // true
+let sl = Symbol('foo')
+console.log(sl.toString()) // Symbol(foo)
+```
+
+Symbol值也可以转为布尔值，但是不能转为数值。
+```js
+let sym = Symbol()
+console.log(Boolean(sym)) // true
+console.log(!sym) // false
+```
+
+Symbol值作为对象属性名时，不能用点运算符。在对象的内部，使用Symbol值定义属性时，Symbol值必须放在方括号之中。
+
+```js
+let s = Symbol()
+let obj = {
+  // 属性名要用方括号
+  [s]:(arg) => {...} 
+}
+obj[s](123) // 引用属性名要用方括号
+```
+**Symbol类型还可以用于定义一组常量，保证这组常量的值都不相等**。常量使用Symbol值最大的好处，就是其他任何值都不可能有相同的值了，因此可以保证上面的switch语句会按设计的方式工作。
+Symbol值作为属性名时，该属性还是公开属性，不是私有属性。
+
+3.消除魔术字符串
+
+4.属性名的遍历
+
+Symbol 作为属性名，该属性不会出现在`for...in`、`for...of`循环中，也不会被`Object.keys()`、`Object.getOwnPropertyNames()`、`JSON.stringify()`返回。用`Object.getOwnPropertySymbols`方法，可以获取指定对象的所有 `Symbol `属性名。
+
+**`Reflect.ownKeys`方法可以返回所有类型的键名，包括常规键名和 Symbol 键名**。
+```js
+let obj = {}
+let foo = Symbol('foo')
+Object.defineProperty(obj, foo, {value:'footer'})
+
+for (let i in obj) {
+  console.log(i) // 无输出
+}
+let one = Object.getOwnPropertyNames(obj)
+console.log(one) // []
+let two = Object.Object.getOwnPropertySymbols(obj)
+console.log(two) // [Symbol(foo)]
+let three = Reflect.ownkeys(obj)
+console.log(three) // [Symbol(foo)]
 ```
 
 
-`indexOf()`   indexOf方法返回给定元素在数组中第一次出现的位置，如果没有出现则返回-1。
+5.Symbol.for()，Symbol.keyFor()
 
-`lastIndexOf()` lastIndexOf方法返回给定元素在数组中最后一次出现的位置，如果没有出现则返回-1。
+Symbol.for()与Symbol()这两种写法，都会生成新的Symbol。区别是，前者会被登记在全局环境中供搜索，后者不会。Symbol.for()不会每次调用就返回一个新的 Symbol 类型的值，而是会先检查给定的key是否已经存在，如果不存在才会新建一个值。比如，调用Symbol.for("cat")30次，每次都会返回同一个 Symbol 值，调用Symbol("cat")30次，会返回30个不同的Symbol值。
 
-`reduce()，reduceRight() `reduce方法和reduceRight方法依次处理数组的每个成员，最终累计为一个值。reduce接收第二个参数，第二个参数为累计值的初始值，如
-```js
-let arr = [2,3,4]
-let result = arr.reduce((current,prev)=>{return current*prev},4)
-console.log(result) // 96 即4*2*3*4
-```
-
-2.链式使用数组的方法
+Symbol.keyFor方法返回一个已登记的 Symbol 类型值(即用Symbol.for()方法产生的值)的key。
 
 ```js
-let users = [
-  {name:'tom',email:'tom@example.com'},
-  {name:'perter',email:'perter@example.com'}
-]
+let four = Symbol.for('four')
+console.log(Symbol.keyFor('four')) // four
 
-users.map(user => {
-  return user.email
-}).filter(email => {
-  return /^t/.test(email)
-}).forEach(console.log)  // tom@example.com
+let five = Symbol('five')
+console.log(Symbol.keyFor('five')) // undefined
 ```
 
-3.变异方法
 
-`pop、push、shift、unshift、reverse、sort、splice`都是变异方法，会改变原数组
+6.内置的Symbol值
 
-`filter()、 concat()、 slice() 、map()`为非变异(non-mutating method)方法。这些不会改变原始数组，但总是返回一个新数组。当使用非变异方法时，可以用新数组替换旧数组
+除了自定义使用的Symbol值以外，ES6还提供了11个内置的Symbol值，指向语言内部使用的方法。
+
+`Symbol`对象的`Symbol.hasInstance`属性，指向一个内部方法。当其他对象使用`instanceof`运算符，判断是否为该对象的实例时，会调用这个方法。
 
