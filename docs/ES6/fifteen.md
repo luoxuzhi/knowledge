@@ -1,78 +1,89 @@
-## 2.数组
+## 15. async 函数
 
-1.Array实例的方法
+1.async函数
 
-`valueOf()` 返回数组本身。
-
-`toString()` 返回数组的字符串形式。
-
-`push()` 在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度。该方法会改变原数组。
-
-`pop()`   pop方法用于删除数组的最后一个元素,并返回该元素。注意，该方法会改变原数组。
-
-`join()`   以参数作为分隔符
-
-`concat()`  concat方法用于多个数组的合并  array.concat(arrayb,arrayc)
-
-`shift()`     shift方法用于删除数组的第一个元素，并返回该元素。注意，该方法会改变原数组。
-
-`unshift()`   unshift方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组。
-
-`reverse()`    reverse方法用于颠倒数组中元素的顺序,该方法会改变原数组，即原数组顺序颠倒
-
-`slice()`   slice方法用于提取原数组的一部分，返回一个新数组，原数组不变，参数为0开始算起的索引，新数组`包括开头不包括结尾`
-
-`splice()` splice方法用于删除原数组的一部分成员，并可以在被删除的位置添加入新的数组成员，返回值是被删除的元素。注意，该方法会改变原数组。`灵活运用：可以用这个方法直接替换数组中的某元素`
-
-`sort()`  sort方法对数组成员进行排序，默认是按照字典顺序排序。排序后，原数组将被改变。
-
-`filter()`  返回新数组，不改变原来的数组，会遍历整个数组并且可能返回多个值
-
-`map()`  map方法对数组的所有成员依次调用一个函数，根据函数结果返回一个新数组。map方法不仅可以用于数组，还可以用于字符串，用来遍历字符串的每个字符。但是，不能直接使用，而要通过函数的call方法间接使用，跳过数组的空位
-
-`forEach()`  forEach方法一般不返回值，只用来操作数据。如果需要有返回值，一般使用map方法，跳过数组的空位
-
-
-`find()`返回查找到的第一个元素后立即中断遍历，只返回一个值
-
-`some()`，`every()`   这两个方法类似“断言”（assert），用来判断数组成员是否符合某种条件。some方法是只要有一个数组成员的返回值是true，则整个some方法的返回值就是true，否则false。every方法则是所有数组成员的返回值都是true，才返回true，否则false。
-
+async函数就是将 Generator 函数的星号（*）替换成async，将yield替换成await。函数前面的async关键字，表明该函数内部有异步操作。调用该函数时，会立即返回一个Promise对象，返回promise对象之后就可以使用then函数了。当函数执行的时候，一旦遇到await就会先返回，等到异步操作完成，再接着执行函数体内后面的语句。
 ```js
-let arr = [2,3,4]
-arr.some(item=>item>5) // false
-arr.every(item=>item>1) // true
+async function asyncReadFile () {
+  const f1=await readFile('/etc/one')
+  const f2=await readFile('/etc/two')
+  console.log(f1)
+}
 ```
 
 
-`indexOf()`   indexOf方法返回给定元素在数组中第一次出现的位置，如果没有出现则返回-1。
+2.与Generator相比的优点与使用形式。
 
-`lastIndexOf()` lastIndexOf方法返回给定元素在数组中最后一次出现的位置，如果没有出现则返回-1。
+async函数对 Generator 函数的改进体现在四点：内置执行器、更好的语义、更广的适用性、返回值是 Promise。
 
-`reduce()，reduceRight() `reduce方法和reduceRight方法依次处理数组的每个成员，最终累计为一个值。reduce接收第二个参数，第二个参数为累计值的初始值，如
+使用形式：**函数声明、函数表达式、class、箭头函数、对象**
+
+3.语法
+
+a.async函数返回一个 Promise 
+对象。async函数内部return语句返回的值，会成为then方法回调函数的参数。
 ```js
-let arr = [2,3,4]
-let result = arr.reduce((current,prev)=>{return current*prev},4)
-console.log(result) // 96 即4*2*3*4
+async function asyncReadFile () {
+  return await Promise.resolve('555')
+}
+asyncReadFile().then(res=>...)
 ```
 
-2.链式使用数组的方法
 
+b.async函数返回的 Promise 对象，必须等到内部所有await命令后面的 Promise 对象执行完，才会发生状态改变，除非遇到return语句或者抛出错误。即只有async函数内部的异步操作执行完，才会执行then方法指定的回调函数。
+
+c.await命令
+
+正常情况下，await后面是一个 Promise 对象。如果不是则会被转成立即resolve的 Promise 对象。
+只要一个await语句后面的 Promise 变为reject，那么整个async函数都会中断执行。
+
+d.错误处理
+
+用try...catch，将可能出错的await function都放到try里面，这样即使某个动作出错了函数还是可以继续执行。可以将多个await语句放到try里面
+
+e.注意的情况
+
+* await命令后面的Promise对象，运行结果可能是rejected，所以最好把await命令放在try...catch代码块中,也可以采用连缀的写法在最后catch，如下，这种较为简洁。
 ```js
-let users = [
-  {name:'tom',email:'tom@example.com'},
-  {name:'perter',email:'perter@example.com'}
-]
-
-users.map(user => {
-  return user.email
-}).filter(email => {
-  return /^t/.test(email)
-}).forEach(console.log)  // tom@example.com
+async function asyncReadFile () {
+  await Promise.reject('err').catch(err=>console.log(err))
+  return await Promise.resolve('555')
+}
+asyncReadFile().then(res=>console.log(res))
 ```
 
-3.变异方法
+* 多个await命令后面的异步操作，如果不存在继发关系，最好让它们同时触发。
+```js
+let [one,two] = await Promise.all([getOne(),getTwo()])
+```
 
-`pop、push、shift、unshift、reverse、sort、splice`都是变异方法，会改变原数组
+* await命令只能用在async函数之中，如果用在普通函数，就会报错。如同yield只能放在generator函数中，放在普通函数中会报错。
+* 多个请求并发执行，可以使用Promise.all方法。
 
-`filter()、 concat()、 slice() 、map()`为非变异(non-mutating method)方法。这些不会改变原始数组，但总是返回一个新数组。当使用非变异方法时，可以用新数组替换旧数组
+
+4.按顺序完成异步操作
+
+map方法的参数是async函数，但它是并发执行的，因为只有async函数内部是继发执行，外部不受影响。
+
+```js
+async function loginOrderAsyncBingfa (urls) {
+  const textPromises = urls.map(async url => {
+    const response =await fetch(url)
+    return response.text()
+  })
+  for (let textPromise of textPromises) {
+    console.log(await textPromise)
+  }
+}
+```
+
+
+5.异步遍历器
+
+* 同步遍历器用的是next()方法，立刻返回{value，done}两个值。
+* 异步遍历器（asyncIterator）的最大的语法特点，就是调用遍历器的next方法，返回的是一个 Promise 对象。之后可以使用then方法指定 Promise 对象的状态变为resolve后的回调函数。
+* 异步遍历器的next方法，返回的是一个 Promise 对象。因此，可以把它放在await命令后面。
+* 异步遍历器的next方法是可以连续调用的，不必等到上一步产生的Promise对象resolve以后再调用。这种情况下，next方法会累积起来，自动按照每一步的顺序运行下去。所以可把所有的next方法放在Promise.all方法里面。
+* for await...of
+for...of循环用于遍历同步的 Iterator 接口。for await...of循环，则是用于遍历异步的 Iterator 接口。
 

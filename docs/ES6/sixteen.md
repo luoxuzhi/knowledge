@@ -1,78 +1,166 @@
-## 2.数组
+## 16.Class
 
-1.Array实例的方法
+1.Class的基本语法
 
-`valueOf()` 返回数组本身。
+a.es6通过定义class生成新的对象，定义“类”的方法的不需要加上function这个关键字，直接把函数定义放进去了就可以了。另外，**方法之间不需要逗号分隔**，否则会报错。
 
-`toString()` 返回数组的字符串形式。
-
-`push()` 在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度。该方法会改变原数组。
-
-`pop()`   pop方法用于删除数组的最后一个元素,并返回该元素。注意，该方法会改变原数组。
-
-`join()`   以参数作为分隔符
-
-`concat()`  concat方法用于多个数组的合并  array.concat(arrayb,arrayc)
-
-`shift()`     shift方法用于删除数组的第一个元素，并返回该元素。注意，该方法会改变原数组。
-
-`unshift()`   unshift方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组。
-
-`reverse()`    reverse方法用于颠倒数组中元素的顺序,该方法会改变原数组，即原数组顺序颠倒
-
-`slice()`   slice方法用于提取原数组的一部分，返回一个新数组，原数组不变，参数为0开始算起的索引，新数组`包括开头不包括结尾`
-
-`splice()` splice方法用于删除原数组的一部分成员，并可以在被删除的位置添加入新的数组成员，返回值是被删除的元素。注意，该方法会改变原数组。`灵活运用：可以用这个方法直接替换数组中的某元素`
-
-`sort()`  sort方法对数组成员进行排序，默认是按照字典顺序排序。排序后，原数组将被改变。
-
-`filter()`  返回新数组，不改变原来的数组，会遍历整个数组并且可能返回多个值
-
-`map()`  map方法对数组的所有成员依次调用一个函数，根据函数结果返回一个新数组。map方法不仅可以用于数组，还可以用于字符串，用来遍历字符串的每个字符。但是，不能直接使用，而要通过函数的call方法间接使用，跳过数组的空位
-
-`forEach()`  forEach方法一般不返回值，只用来操作数据。如果需要有返回值，一般使用map方法，跳过数组的空位
-
-
-`find()`返回查找到的第一个元素后立即中断遍历，只返回一个值
-
-`some()`，`every()`   这两个方法类似“断言”（assert），用来判断数组成员是否符合某种条件。some方法是只要有一个数组成员的返回值是true，则整个some方法的返回值就是true，否则false。every方法则是所有数组成员的返回值都是true，才返回true，否则false。
-
+b.构造函数的prototype属性，在ES6的“类”上面继续存在。类的所有方法都定义在类的`prototype`属性上面。（*每个函数都有一个 prototype属性，这个属性是一个指针，指向一个对象，
+而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法，这个对象称为原型对象*）
+`访问class里面的methods通过this或者prototype`，视作用域来情况而定
 ```js
-let arr = [2,3,4]
-arr.some(item=>item>5) // false
-arr.every(item=>item>1) // true
+class point  {
+  constructor(x,y) {
+    this.x = x
+    this.y = y
+  }
+  toString(){ return `(${this.x},${this.y})` }
+  toValue(){}
+}
+point.prototype ={
+  toString(),
+  toValue()
+}
 ```
 
-
-`indexOf()`   indexOf方法返回给定元素在数组中第一次出现的位置，如果没有出现则返回-1。
-
-`lastIndexOf()` lastIndexOf方法返回给定元素在数组中最后一次出现的位置，如果没有出现则返回-1。
-
-`reduce()，reduceRight() `reduce方法和reduceRight方法依次处理数组的每个成员，最终累计为一个值。reduce接收第二个参数，第二个参数为累计值的初始值，如
+c.可以通过Object.assign向类的prototype中添加多个方法。
 ```js
-let arr = [2,3,4]
-let result = arr.reduce((current,prev)=>{return current*prev},4)
-console.log(result) // 96 即4*2*3*4
+Object.assign(point.prototype,{
+  toValue(){},
+  toThirdMthod(){}
+})
 ```
 
-2.链式使用数组的方法
+d.prototype对象的constructor属性，直接指向“类”的本身，即`point.prototype.constructor=point`。constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法，**constructor里面有的属性属于实例自身属性，其它方法则不属于实例自有方法**
 
 ```js
-let users = [
-  {name:'tom',email:'tom@example.com'},
-  {name:'perter',email:'perter@example.com'}
-]
-
-users.map(user => {
-  return user.email
-}).filter(email => {
-  return /^t/.test(email)
-}).forEach(console.log)  // tom@example.com
+let p = new point()
+console.log(p.hasOwnProperty('toString')) // false
+console.log(p.__proto__.hasOwnProperty('toString')) // true
 ```
 
-3.变异方法
+e.Class表达式，与函数一样，类也可以使用表达式的形式定义。采用Class表达式，可以写出立即执行的Class。
+```js
+let person = new class {
+  constructor(name){ this.name= name }
+  sayName(){ console.log(this.name) }
+}('lxz')
+person.sayName()// lxz
+```
 
-`pop、push、shift、unshift、reverse、sort、splice`都是变异方法，会改变原数组
+f.私有方法：利用Symbol值的唯一性，将私有方法的名字命名为一个Symbol值。
 
-`filter()、 concat()、 slice() 、map()`为非变异(non-mutating method)方法。这些不会改变原始数组，但总是返回一个新数组。当使用非变异方法时，可以用新数组替换旧数组
+2.Class的继承 
 
+a.子类必须在constructor方法中调用super()，否则新建实例时会报错。这是因为**子类没有自己的this对象，而是继承父类的this对象，它在这里用来新建父类的this对象**。
+本点也解释了`React`新建组件为什么`super(props)`。[新手学习 react 迷惑的点](https://mp.weixin.qq.com/s/vDcFV3LiWBEbDBhf4XZ0uw)
+
+```js
+class point  {
+  constructor(x,y) {
+    this.x = x
+    this.y = y
+  }
+  toString(){ return `(${this.x},${this.y})` }
+  toValue(){}
+}
+
+class colorPoint extends point {
+  constructor(x,y,color) {
+    super(x,y) //子类没有自己的this对象，通过super新建父类的this对象并把x,y参数传递进去。
+    this.color = color
+  }
+  toString(){ return this.color +' '+ super.toString() }
+  toValue(){console.log('this method is overwrite by children')}
+}
+
+let colorInstance = new colorPoint(1,3,'red')
+colorInstance.toString() // "red (1,3)"
+```
+
+b.类的prototype属性和__proto__属性
+
+※子类的__proto__属性，表示构造函数的继承，总是指向父类（__proto__存在于实例或者类、构造函数的prototype属性中，即实例没有prototype属性，只有类或者构造函数有，实例只有__proto__属性）
+
+※子类prototype属性的__proto__属性，表示方法的继承，总是指向父类的prototype属性。(__proto__只是prototype对象的一个属性)
+
+```js
+console.log(colorPoint.__proto__ === point) // true
+console.log(colorPoint.prototype.__proto__ === point.prototype)  // true
+```
+（两截图中的父构造函数、父类均指js原生构造函数）
+<img :src="$withBase('/assets/extend-es5.png')">
+<img :src="$withBase('/assets/extend-es6.png')">
+
+
+
+
+
+c.super指向的是父类的prototype，即父类的方法，所以它子类继承的是父类的方法，但是不能继承父类实例的属性。如果属性定义在父类的原型对象上，super就可以取到。如
+```js
+class A{}
+A.prototype.x = xxx;
+```
+
+d.__proto__属性
+
+实例的__proto__属性指向它所属的类，如 `let p=new B();则p.__proto__=B{}`；
+
+3.原生构造函数的继承
+
+原生函数有：Boolean()/Number()/String()/Array()/Date()/Function()/RegExp()/Error()/Object()
+
+4.Class的取值函数（getter）和存值函数（setter）
+
+在Class内部可以使用`get`和`set`关键字，对某个属性设置存值函数和取值函数，拦截该属性的存取行为。
+
+5.class的静态方法
+
+如果class中某个方法前面加上static，则该方法不会被实例继承调用，只能通过类调用。
+父类的静态方法，可以被子类继承。
+
+
+6.另外的继承方式
+```js
+a. ClassA.call(this)
+b. ClassB.prototype = new ClassA
+```
+
+7.**在 JavaScript 中，class 的方法默认不会绑定this** [新手学习 react 迷惑的点](https://mp.weixin.qq.com/s/vDcFV3LiWBEbDBhf4XZ0uw)
+```js
+class Foo  {
+  sayThis(){console.log(this)}
+  exec(cb){ cb() }
+  render(){ this.exec(this.sayThis) }
+}
+let foo = new Foo('lxz')
+foo.render() // undefined
+
+// 方案1
+class Foo  {
+  sayThis(){console.log(this)}
+  exec(cb){ cb() }
+  render(){ this.exec(this.sayThis.bind(this)) }
+}
+let foo = new Foo('lxz')
+foo.render()
+
+// 方案2
+class Foo  {
+  sayThis = () => {console.log(this)}
+  exec(cb){ cb() }
+  render(){ this.exec(this.sayThis) }
+}
+let foo = new Foo('lxz')
+foo.render()
+
+// 方案3
+class Foo  {
+  constructor(){ this.sayThis = this.sayThis.bind(this) }
+  sayThis(){console.log(this)}
+  exec(cb){ cb() }
+  render(){ this.exec(this.sayThis) }
+}
+let foo = new Foo('lxz')
+foo.render()
+// 推荐使用第二种方案
+```

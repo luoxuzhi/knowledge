@@ -102,13 +102,8 @@ module.exports = {
             'fourteen',
             'fifteen',
             'sixteen',
-            'seventeen',
-            'eighteen',
-            'nineteen',
-            'twenty'
+            'seventeen'
           ]
-
-
         }
         // sidebar: [
         //     {
