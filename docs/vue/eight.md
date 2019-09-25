@@ -118,6 +118,26 @@ computed里面setter方法的*调用时机*：例如有computed属性`num`，在
 
 如需对外传递数据，则在括号里添加对象`this.$scopedSlots.header({msg:99})`，外部可通过`v-slot:header="{msg}" `访问
 
+组件只有一个默认插槽时，可直接在组件引用标签上使用`v-slot`获取组件对外提供的值，如果有多个插槽，默认插槽及具名插槽对外提供的值都必须通过`template`语法来获得，否则会报错`To avoid scope ambiguity, the default slot should also use <template> syntax when there are other named slots.`
+
+```vue
+// 错误用法，会报上面提到的错误
+<test v-slot="{x,y}">x,y---{{x}},{{y}}
+  <template v-slot:one>custom slot one content</template>
+</test>
+
+// 多个插槽的时候，正确用法
+<test>
+  <template v-slot="{x,y}">x,y---{{x}},{{y}}</template>
+  <template v-slot:one>custom slot one content</template>
+</test>
+
+// 单个默认插槽可写在组件标签上或者使用template语法
+<test v-slot="{x,y}">
+  x,y---{{x}},{{y}}
+</test>
+```
+
 12. `transition`
 
 * `transition`里面**只能包含一个根元素**，所以不能用v-show(还停留在dom结构里)，只能只v-if、v-else进行多个组件的切换。
