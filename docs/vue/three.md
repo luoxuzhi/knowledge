@@ -62,7 +62,7 @@ vue 2.2.0 新增鼠标事件 .left .right .middle
 
 4.非父子组件传值
 :::tip 高级技巧
-入口文件处添加`Vue.prototype.bue = new Vue()`
+入口文件处添加`Vue.prototype.$bus = new Vue()`
 :::
 ```vue
 <script type="text/ecmascript-6">
@@ -70,29 +70,32 @@ vue 2.2.0 新增鼠标事件 .left .right .middle
     props:['num'],
     data(){ return {innerNum:this.num}},
     mounted(){
-      this.bus.$on('number-change',val=>{
+      this.$bus.$on('number-change',val=>{
         this.innerNum = val
       })
     },
     methods:{
       changeNum(){
         this.innerNum = Math.random().toFixed(3)*1000
-        this.bus.$emit('number-change',this.innerNum)
+        this.$bus.$emit('number-change',this.innerNum)
       }
     }
   }
 </script>
 ```
-
+::: danger
+`$bus.$on`尽量写在`mounted`钩子里面，写在`beforeMount`可能产生未知`Bug`
+:::
 5.`$on`/`$once`/`$emit`
 
 `this.$on`只能监听当前组件内`$emit`出来的事件
 
-this.$once 只监听一次
+`this.$once` 只监听一次
 
-e.currentTarget // 事件绑定的元素
+`e.currentTarget` // 事件绑定的元素
 
-e.target // 真正触发事件的元素
+`e.target` // 真正触发事件的元素
+
 ```vue
 <template>
   <div id="example" @click="handleClick">

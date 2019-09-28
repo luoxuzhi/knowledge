@@ -1,6 +1,6 @@
 module.exports = {
-    title: 'luoxuzhi personal blog',
-    description: 'luoxuzhi personal blog',
+    title: 'Person Blog',
+    description: 'Person Blog',
     head: [
         ['link', {rel: 'manifest', href: '/manifest.json'}],
         ['meta', {name: 'theme-color', content: '#3eaf7c'}],
@@ -32,10 +32,11 @@ module.exports = {
                   {text:'ES5',link:'/ES5/'},
                   {text:'ES6',link:'/ES6/'},
                   {text:'http协议原理',link:'/http/'},
+                  {text:'慕课实战',link:'/imooc/'},
+                  {text:'experience',link:'/experience/'},
                   // {text:'CSS3',link:'/CSS3/'},
                   // {text:'JS',link:'/javascript/'},
                   // {text:'html-css',link:'/html-css/'},
-                  // {text:'慕课实战',link:'/imooc/'},
                 ]
             },
             {
@@ -73,7 +74,10 @@ module.exports = {
             'seven'
           ],
           '/miniprogram/':[''],
-          '/node/':[''],
+          '/node/':[
+            '',
+            'two'
+          ],
           '/ES5/':[
             '',
             'two',
@@ -103,6 +107,16 @@ module.exports = {
             'sixteen',
             'seventeen'
           ],
+          '/imooc/':[
+            ''
+          ],
+          '/experience/':[
+            '',
+            'two',
+            'three',
+            'four',
+            'five'
+          ]
         }
         // sidebar: [
         //     {
