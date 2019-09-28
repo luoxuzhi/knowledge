@@ -31,10 +31,10 @@ module.exports = {
                   {text:'node',link:'/node/'},
                   {text:'ES5',link:'/ES5/'},
                   {text:'ES6',link:'/ES6/'},
+                  {text:'http协议原理',link:'/http/'},
                   // {text:'CSS3',link:'/CSS3/'},
                   // {text:'JS',link:'/javascript/'},
                   // {text:'html-css',link:'/html-css/'},
-                  // {text:'http协议原理',link:'/http/'},
                   // {text:'慕课实战',link:'/imooc/'},
                 ]
             },
@@ -70,8 +70,7 @@ module.exports = {
             'four',
             'five',
             'six',
-            'seven',
-            'eight'
+            'seven'
           ],
           '/miniprogram/':[''],
           '/node/':[''],
@@ -103,7 +102,7 @@ module.exports = {
             'fifteen',
             'sixteen',
             'seventeen'
-          ]
+          ],
         }
         // sidebar: [
         //     {
