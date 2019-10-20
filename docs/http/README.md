@@ -2,6 +2,7 @@
 
 1.浏览器输入url后http请求返回完整过程。
 
+<img :src="$withBase('/assets/http-1.jpg')">
 
 2. 5层网络模型
 

@@ -37,7 +37,7 @@ stateMixin(Vue)
 
 eventsMixin(Vue)
 
-lifecycleMixin(Vue) ├──Vue.prototype._update // _update 的核心就是调用 vm.__patch__ 方法
+lifecycleMixin(Vue) ├──Vue.prototype._update // _update 的核心就是调用 vm.__patch__ 方法,把 VNode 转换成真正的 DOM 节点
                     ├──Vue.prototype.$forceUpdate
                     ├──Vue.prototype.$destroy
 
@@ -47,3 +47,9 @@ export default Vue
 ```
 
 3.`vm.$vnode` 表示 `Vue` 实例的父虚拟 `Node`，所以它为 `Null` 则表示当前是根 `Vue` 的实例，实际根节点(通过new产生)的$vnode为`undefined`。
+
+4.`render`的参数`createElement`实际调用`_createElement`,`_createElement`中有一个判断逻辑的调用`createComponent`创建自定义组件，该方法有三个作用：
+
+* 通过`Vue.extend`构造子类构造函数
+* 安装组件钩子函数
+* 实例化VNode
