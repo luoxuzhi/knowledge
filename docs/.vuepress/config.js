@@ -32,7 +32,6 @@ module.exports = {
                   {text:'ES5',link:'/ES5/'},
                   {text:'ES6',link:'/ES6/'},
                   {text:'http协议原理',link:'/http/'},
-                  // {text:'svg',link:'/svg/'},
                   {text:'慕课实战',link:'/imooc/'},
                   {text:'experience',link:'/experience/'}
                   // {text:'CSS3',link:'/CSS3/'},
@@ -118,19 +117,19 @@ module.exports = {
             'three',
             'four',
             'five'
-          ],
-          '/svg/':[
-            '',
-            'two',
-            'three',
-            'four',
-            'five',
-            'six',
-            'seven',
-            'eight',
-            'nine',
-            'ten'
           ]
+          // '/svg/':[
+          //   '',
+          //   'two',
+          //   'three',
+          //   'four',
+          //   'five',
+          //   'six',
+          //   'seven',
+          //   'eight',
+          //   'nine',
+          //   'ten'
+          // ]
 
         }
         // sidebar: [

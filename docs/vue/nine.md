@@ -42,7 +42,10 @@ lifecycleMixin(Vue) ├──Vue.prototype._update // _update 的核心就是调
                     ├──Vue.prototype.$destroy
 
 renderMixin(Vue)  ├──Vue.prototype.$nextTick
-                  ├──Vue.prototype._render // 实际调用compileToFunctions返回并赋值到options上的的render
+                  ├──Vue.prototype._render // 实际调用的是options.render,为用户手写render或者仅提供template时通过
+                                           // compileToFunctions返回并复制到options上，见entry-runtime-with-complier.js
+                                           //  if (!options.render) {...}
+                                           // 总结：render的优先级高于template
 export default Vue
 ```
 
@@ -53,3 +56,7 @@ export default Vue
 * 通过`Vue.extend`构造子类构造函数
 * 安装组件钩子函数
 * 实例化VNode
+
+5 `documenn.body` 指`body`，`document.documentElement`指`html`
+
+6.`insertedVnodeQueue` 的添加顺序是**先子后父**，所以对于同步渲染的子组件而言，`mounted` 钩子函数的执行顺序**也是先子后父**,`created`是**先父后子**。
