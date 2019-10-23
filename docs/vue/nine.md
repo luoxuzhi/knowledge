@@ -75,7 +75,7 @@ export default Vue
 * 销毁事件监听 `vm._watcher.teardown()`
 * 执行 `vm.__patch__(vm._vnode, null)` 触发它子组件的销毁钩子函数，一层层的递归调用，所以 `destroy `钩子函数执行顺序是**先子后父**，和 `mounted` 过程一样
 * `callHook(vm, 'destroyed')`
-* vm.$off() 移除事件监听
+* `vm.$off()` 移除事件监听
 
 7.组件注册
 
