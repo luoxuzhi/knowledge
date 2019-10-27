@@ -82,3 +82,17 @@ export default Vue
 * 全局注册 `Vue.component(id, definition)` 全局注册组件的时候，`id` 可以是连字符、驼峰或首字母大写的形式。
 
 * 全局注册是扩展到 `Vue.options` 下，所以在所有组件创建的过程中，都会从全局的 `Vue.options.components` 扩展到当前组件的 `vm.$options.components` 下，这就是全局注册的组件能被任意使用的原因。
+
+8.数据响应的过程
+
+ * `initState(vm) // props->methods->data->computed->watch`
+ * `initData` 包含两步，`proxy`：实现通过`vm.xx`访问`vm._data.xx`；`observe`：在`new Observer`的构造函数中调用`defineReactive`，`defineReactive`的`setter`中定义`dep.notify()`实现数据更新
+
+ 9. `nextTick`
+
+
+ 在浏览器环境中，常见的 `macro task` 有 `setTimeout、MessageChannel、postMessage、setImmediate`；常见的 `micro task` 有 `MutationObsever` 和 `Promise.then`、`process.nextTick`。
+
+ [JS执行机制看这里](https://juejin.im/post/59e85eebf265da430d571f89)
+
+ `setTimeout`这个函数，是经过指定时间后，把要执行的任务加入到`Event Queue`
