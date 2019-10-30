@@ -96,3 +96,78 @@ export default Vue
  [JS执行机制看这里](https://juejin.im/post/59e85eebf265da430d571f89)
 
  `setTimeout`这个函数，是经过指定时间后，把要执行的任务加入到`Event Queue`
+
+10. `watch`的写法：
+
+```js
+watch:{
+  num:['numChange','numChangeOne'],
+  num:'thirdMethod',
+  num(){},
+  num:{
+    deep:true,
+    handler(){ console.log('this is option handler') }
+  }
+}
+vm.$watch('num',_=>{})
+vm.$watch('num',{immediate:true,handler(){}})
+```
+
+11. 编译 `compileToFunctions`
+
+编译使用了柯里化函数，避免了重复传参数，核心为`src/compiler/create-compiler.js`中定义的`createCompilerCreator `方法，可大致简化如下：
+```js
+export function createCompilerCreator (baseCompile: Function): Function {
+  return function createCompiler (baseOptions: CompilerOptions) {
+    return function compileToFunctions (
+      template: string,
+      options?: CompilerOptions,
+      vm?: Component
+    ): CompiledFunctionResult {
+      // 最终使用外层传递的function处理内层的参数
+      return baseCompile(baseOptions,template,options?,vm?)
+    }
+  }
+}
+```
+* `baseCompile`、`baseOptions`都是可固化的参数
+* 其中`createCompilerCreator (baseCompile: Function)`返回一个传入`baseOptions`的函数，其调用见`src/compiler/create-compiler.js`，`const createCompiler`就是传入`baseOptions`的函数
+```js
+export const createCompiler = createCompilerCreator(function baseCompile (
+  template: string,
+  options: CompilerOptions
+): CompiledResult {...})
+```
+
+* `const createCompiler`的下一步调用在`src/platform/web/compiler/index.js`,返回一个传入`template、options、vm`的函数`compileToFunctions`
+```js
+const { compile, compileToFunctions } = createCompiler(baseOptions)
+```
+
+* 最后带编译器的Vue通过`compileToFunctions`传入`template、options、vm`返回`staticRenderFns`、`render`，`compileToFunctions`的调用见
+`src/platform/web/entry-runtime-with-compiler.js`
+```js
+const { render,staticRenderFns} = compileToFunctions(template, {
+  shouldDecodeNewlines,
+  shouldDecodeNewlinesForHref,
+  delimiters: options.delimiters,
+  comments: options.comments
+}, this)
+```
+
+以上，就是使用函数柯里化技巧，为加深理解，可写一个简单的函数:
+```js
+function curry (func) {
+  return function (b) {
+    return function (c,d) {
+      return func(b,c,d)
+    }
+  }
+}
+let result1 = curry((a,b,c)=>{
+  return ((a+1)*b)*c
+})
+let result2 = result1(3)
+let result3 = result2(4,5) //80
+```
+
