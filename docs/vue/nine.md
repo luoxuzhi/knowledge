@@ -164,9 +164,7 @@ function curry (func) {
     }
   }
 }
-let result1 = curry((a,b,c)=>{
-  return ((a+1)*b)*c
-})
+let result1 = curry((a,b,c)=>{ return ((a+1)*b)*c })
 let result2 = result1(3)
 let result3 = result2(4,5) //80
 ```
