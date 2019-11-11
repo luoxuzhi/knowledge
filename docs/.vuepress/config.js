@@ -88,6 +88,7 @@ module.exports = {
             'six',
             'seven',
             'eight',
+            'nine'
           ],
           '/ES6/':[
             '',
