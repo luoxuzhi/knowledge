@@ -34,3 +34,13 @@ handleInputChange = e => {
 6.当`state`或`props`发生变化时，自身的`render`函数都会重新执行，当父组件的`render`函数被执行时，它的子组件`render`都将被重新执行
 
 7.`JSX`通过`createElement`->`JS`对象(虚拟`DOM`)->真实的`DOM`
+
+8.如果数据更新后要通过`ref`获取更新后的`DOM`,需要把获取 D`DOM`的代码写在`setState`的第二个参数里面，因为`setState`是异步的，类似`Vue`在`nextTick`
+里面获取数据更新后的 DOM。`setState`的第二个参数是一个`function`
+
+```js
+this.setState(
+  () => ({ name: 'xiaoming' }),
+  () => {}
+)
+```
