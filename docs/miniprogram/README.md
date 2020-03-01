@@ -6,7 +6,7 @@
 
 3.`:host` 选择器指组件和`slot`中的内容
 
-4.小程序中插槽内容的顺序由父组件写的顺序决定，vue中的插槽内容由子组件内部决定
+4.小程序中插槽内容的顺序由父组件写的顺序决定，vue 中的插槽内容由子组件内部决定
 
 5.小程序的动态类
 
@@ -15,22 +15,26 @@ class=“test-{{test}}”
 ```
 
 6.`template`中用到是`wxss`需在主要的入口`wxss`文件中通过`@import`引入，要`wxss`后缀，
- 应用写好的`template`通过`imort`标签  `src`输入路径，不需要`wxml`后缀
+应用写好的`template`通过`imort`标签 `src`输入路径，不需要`wxml`后缀
 
 7.`bind`事件绑定不会阻止冒泡事件向上冒泡，`catch`事件绑定可以阻止冒泡事件向上冒泡。
 
 8.`pages`数组的第一项代表小程序的初始页面。小程序中新增/减少页面，都需要对 `pages` 数组进行修改。
 
 9.`url` 用的都是想对路径
+
 ```js
 // 走onUnload钩子 不走onHide钩子
- wx.redirectTo({
-    url: '../posts/posts'
-  }) 
+wx.redirectTo({
+  url: '../posts/posts'
+})
 // 当前页面不走onUnload钩子 走onHide钩子，跳转到的页面走onLoad钩子
- wx.navigateTo({
-    url: '../posts/posts'
-  }) 
+wx.navigateTo({
+  url: '../posts/posts'
+})
+wx.navigateTo({
+  url: `../posts/posts?type=${type}`
+})
 ```
 
 `switchTab`：跳转到 `tabBar` 页面，并关闭其他所有非 `tabBar` 页面。`switch`首次跳转的页面先走`onLoad`，其它切换走`onShow` `onHide`钩子。
