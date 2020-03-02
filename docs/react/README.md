@@ -35,8 +35,8 @@ handleInputChange = e => {
 
 7.`JSX`通过`createElement`->`JS`对象(虚拟`DOM`)->真实的`DOM`
 
-8.如果数据更新后要通过`ref`获取更新后的`DOM`,需要把获取 D`DOM`的代码写在`setState`的第二个参数里面，因为`setState`是异步的，类似`Vue`在`nextTick`
-里面获取数据更新后的 DOM。`setState`的第二个参数是一个`function`
+8.如果数据更新后要通过`ref`获取更新后的`DOM`,需要把获取 `DOM`的代码写在`setState`的第二个参数里面，因为`setState`是异步的，类似`Vue`在`nextTick`
+里面获取数据更新后的`DOM`。`setState`的第二个参数是一个`function`
 
 ```js
 this.setState(
@@ -44,3 +44,19 @@ this.setState(
   () => {}
 )
 ```
+
+9.生命周期
+
+<img :src="$withBase('/assets/react-lifecycle.png')">
+
+`componentWillReceiveProps`的执行时机：
+
+- 组件要从父组件接收参数
+- 组件第一次存在于父组件中，不会执行
+- 如果这个组件之前已经存在于父组件中，才会执行
+
+`componentWillMount->render->componentDidMount` 执行顺序类似`Vue`的`beforeMount->render->mounted`
+
+父子组件执行顺序同`Vue`，`fater will mount->child will mount->child did mount->fater did mount`
+
+`componentWillUpdate->render->componentDidUpdate` 执行顺序类似`Vue`的`beforeUpdate->render->updated`
