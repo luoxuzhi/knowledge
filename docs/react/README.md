@@ -60,3 +60,23 @@ this.setState(
 父子组件执行顺序同`Vue`，`fater will mount->child will mount->child did mount->fater did mount`
 
 `componentWillUpdate->render->componentDidUpdate` 执行顺序类似`Vue`的`beforeUpdate->render->updated`
+
+10.`react` 中性能优化
+
+- 方法在 `constructor` 中绑定 `this`
+- 多次 `setState` 合并成一次
+- `shouldComponentUpdate` 做是否更新判断
+
+11. `animation: forwards` 保留动画的最后一帧
+
+12. `transition`/`transition-group`使用注意点
+
+:::danger 注意： `transition`中`key`的使用问题
+`transition`标签上面的`key`不能使用`index`，否则可能会出现数据和页面展示不同步的情况
+
+[代码](https://github.com/luoxuzhi/brief-book/blob/master/src/TodoList.js)
+:::
+
+13. action / reducer / dispatch
+
+`aciton` 的定义在`dispatch`中使用 `action-type`可以在`reducer`中使用
