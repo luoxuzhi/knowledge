@@ -80,3 +80,13 @@ this.setState(
 13. action / reducer / dispatch
 
 `aciton` 的定义在`dispatch`中使用 `action-type`可以在`reducer`中使用
+
+14. 使用`redux-saga`
+
+`import { put, takeEvery } from 'redux-saga/effects'`
+
+`put` 接收的参数格式和 `store.dispatch` 的格式一致
+
+`typeEvery` 第一个参数接收的的 `action-type` 中定义的字符串参数
+
+15.`mapStateToProps`/`mapDispatchToProps`都是一个函数，返回一个对象
