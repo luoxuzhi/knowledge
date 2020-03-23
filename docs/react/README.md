@@ -136,3 +136,5 @@ if (newList.length) {
 ```
 
 19、`transfrom`的`rotate`只对块级元素有效，要是`iconfont`生效必须设置`display:block`
+
+20、子元素浮动，可在父元素上添加`overflow:hidden`使得父元素感受到子元素的高度
