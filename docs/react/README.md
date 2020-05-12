@@ -139,3 +139,9 @@ if (newList.length) {
 21、受控组件与非受控组件
 
 <img :src="$withBase('/assets/react-control-or-no-control.png')">
+
+22、react-router-dom
+
+<img :src="$withBase('/assets/react-route-params.png')">
+
+<img :src="$withBase('/assets/react-router-dom.png')">
