@@ -78,6 +78,8 @@ export default Vue
 
 在 `react` 中，父子组件的生命周期顺序和 `Vue` 类似:`parent will mount`->`parent render`->`child will mount`->`child render`->`child did mount`->`parent did mount`
 
+<img :src="$withBase('/assets/vue-lifecycle.png')">
+
 7.组件注册
 
 - 全局注册 `Vue.component(id, definition)` 全局注册组件的时候，`id` 可以是连字符、驼峰或首字母大写的形式。
@@ -158,7 +160,7 @@ const { render, staticRenderFns } = compileToFunctions(
     shouldDecodeNewlines,
     shouldDecodeNewlinesForHref,
     delimiters: options.delimiters,
-    comments: options.comments
+    comments: options.comments,
   },
   this
 )

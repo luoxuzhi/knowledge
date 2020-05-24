@@ -58,6 +58,8 @@ this.setState(() => ({ name: 'xiaoming' }), () => {})
 
 `componentWillUpdate->render->componentDidUpdate` 执行顺序类似`Vue`的`beforeUpdate->render->updated`
 
+[每个阶段所的事情见链接](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+
 10、`react` 中性能优化
 
 - 方法在 `constructor` 中绑定 `this`
@@ -145,3 +147,15 @@ if (newList.length) {
 <img :src="$withBase('/assets/react-route-params.png')">
 
 <img :src="$withBase('/assets/react-router-dom.png')">
+
+23、hooks 的优势
+
+- 函数组件无 this 问题
+- 自定义 hook 方便复用状态逻辑
+- 副作用关注点分离
+
+24、memo 与 useMemo 的区别
+
+<img :src="$withBase('/assets/memo.png')">
+
+25、useCallback 针对的是给组件传递函数导致组件重新渲染问题优化
