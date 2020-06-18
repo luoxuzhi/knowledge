@@ -2,16 +2,17 @@
 
 1. 此富文本框在`quill-editor`的基础上进行封装出来，都是上传到`koa2`服务器上
 
-* 文本编辑器的配置文件`quill-config.js`
+- 文本编辑器的配置文件`quill-config.js`
+
 ```js
 const handlers = {
-  video: (value) => {
+  video: value => {
     if (value) {
       document.querySelector('.rich-text-video input').click()
     } else {
       this.quill.format('video', false)
     }
-  }
+  },
 }
 
 const toolbarOptions = [
@@ -27,7 +28,7 @@ const toolbarOptions = [
   // [{ font: [] }], // 字体种类
   [{ align: [] }], // 对齐方式
   ['clean'], // 清除文本格式
-  ['link', 'image', 'video'] // 链接、图片、视频
+  ['link', 'image', 'video'], // 链接、图片、视频
 ]
 
 export default {
@@ -36,7 +37,7 @@ export default {
     toolbar: {
       // container: toolbarOptions,
       container: '#toolbar',
-      handlers
+      handlers,
     },
     imageDrop: true,
     imageResize: {
@@ -44,14 +45,14 @@ export default {
       displayStyles: {
         backgroundColor: 'black',
         border: 'none',
-        color: 'white'
-      }
-    }
-  }
+        color: 'white',
+      },
+    },
+  },
 }
 ```
 
-* `MainEditor.vue`代码如下，此组件[参考这里](https://github.com/lihualong/quilleditor)
+- `MainEditor.vue`代码如下，此组件[参考这里](https://github.com/lihualong/quilleditor)
 
 ```vue
 <template>
@@ -291,77 +292,73 @@ export default {
     value: String,
     imageUrl: {
       type: String,
-      required: true
+      required: true,
     },
     videoUrl: {
       type: String,
-      required: true
+      required: true,
     },
     width: {
       type: Number,
-      default: 200
+      default: 200,
     },
     height: {
       type: Number,
-      default: 200
-    }
+      default: 200,
+    },
   },
-  data () {
+  data() {
     return {
       content: this.value,
       quillUpdateImg: false, // 是否显示loading动画
       editorOption: quillConfig,
-      showCrop: false
+      showCrop: false,
     }
   },
   components: { quillEditor, CropUpload },
-  mounted () {
+  mounted() {
     this.content = this.value
   },
   methods: {
-    onEditorBlur () {},
-    onEditorFocus () {},
+    onEditorBlur() {},
+    onEditorFocus() {},
     /* 裁切上传成功 res根据上传接口值获取 */
-    onUploadSuccess (res) {
+    onUploadSuccess(res) {
       this.editor.focus()
-      this.editor.insertEmbed(
-        this.editor.getSelection().index,
-        'image',
-        res.url
-      )
+      this.editor.insertEmbed(this.editor.getSelection().index, 'image', res.url)
     },
     /* 点击上传图片按钮 */
-    imgClick () {
+    imgClick() {
       document.querySelector('.rich-text-image input').click()
       // this.$refs.cropUpload.inputLabelClick()
     },
-    onEditorChange () {
+    onEditorChange() {
       this.$emit('input', this.content)
     },
 
-    beforeUpload () {
+    beforeUpload() {
       this.quillUpdateImg = true
     },
-    uploadImage (content) {
+    uploadImage(content) {
       return postFile(this.imageUrl, content.file)
     },
-    uploadImageSuccess (res, file) {
+    uploadImageSuccess(res, file) {
       // res为服务器返回的数据
       if (res.code === 200) {
         this.insertAfterUploadSuccess('image', res.url)
       }
       this.quillUpdateImg = false
     },
-    uploadVideo (content) {
+    uploadVideo(content) {
       return postFile(this.videoUrl, content.file)
     },
-    uploadVideoSuccess (res, file) {
+    uploadVideoSuccess(res, file) {
       if (res.code === 200) {
         this.insertAfterUploadSuccess('video', res.url)
       }
       this.quillUpdateImg = false
     },
-    insertAfterUploadSuccess (type, url) {
+    insertAfterUploadSuccess(type, url) {
       let quill = this.$refs.myQuillEditor.quill
       // 获取光标所在位置
       quill.focus()
@@ -375,15 +372,15 @@ export default {
       // 调整光标到最后
       quill.setSelection(length + 1)
     },
-    uploadImageError () {
+    uploadImageError() {
       this.quillUpdateImg = false
       this.message.error('图片插入失败')
     },
-    uploadVideoError () {
+    uploadVideoError() {
       this.quillUpdateImg = false
       this.message.error('视频插入失败')
-    }
-  }
+    },
+  },
 }
 </script>
 
