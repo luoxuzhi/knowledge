@@ -73,7 +73,7 @@ module.exports = {
         'seventeen',
       ],
       '/imooc/': [''],
-      '/experience/': ['', 'two', 'three', 'four', 'five', 'six', 'seven'],
+      '/experience/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
       // '/svg/':[
       //   '',
       //   'two',
