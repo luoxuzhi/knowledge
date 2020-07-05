@@ -183,10 +183,10 @@ let result2 = result1(3)
 let result3 = result2(4, 5) //80
 ```
 
-12、源码响应篇思维导图
+12、源码编译篇思维导图
 
 <img :src="$withBase('/assets/vue-source-code1.jpg')">
 
-13、源码编译篇思维导图
+13、源码响应篇思维导图
 
 <img :src="$withBase('/assets/vue-source-code2.png')">
