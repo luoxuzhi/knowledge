@@ -69,7 +69,7 @@ DN 网络由一个 DNS 服务器和几台缓存服务器组成：
 
 ### 10. Vue 的更新过程
 
-Vue 数据修改派发更新的过程也有了认识，实际上就是当数据发生变化的时候，触发 setter 逻辑，把在依赖过程中订阅的的所有观察者，也就是 watcher，都触发它们的 update 过程，这个过程又利用了队列做了进一步优化，在 nextTick 后执行所有 watcher 的 run，最后执行它们的回调函数。
+当数据发生变化的时候，触发 setter 逻辑，把在依赖过程中订阅的的所有观察者，也就是 watcher，都触发它们的 update 过程，这个过程又利用了队列做了进一步优化，在 nextTick 后执行所有 watcher 的 run，最后执行它们的回调函数。
 
 ### 11. 数值转换,一元运算符 +
 
@@ -150,13 +150,13 @@ let num = +text1 //  12 转换为 Number 类型
 
 ### 17. async await 在 generator 的基础上做的优化，区别
 
-a. async 内置执行器。Generator 函数的执行必须靠执行器，需要调用 next() 方法，或者用 co 模块；而 async 函数自带执行器。也就是说，async 函数的执行与普通函数一模一样，只要一行。
+a. async 内置执行器。Generator 函数的执行必须靠执行器，需要调用 next() 方法，或者用 co 模块；而 async 函数自带执行器。async 函数的执行与普通函数一模一样，只要一行。
 
 b. 更好的语义。async 和 await 比起星号和 yield，语义更清楚。
 
 c. 更广的适用性。co 模块约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面可以是 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。
 
-d. async 返回值是 Promise，可以用 then 方法指定下一步的操作。比 Generator 函数的返回值是 Iterator 对象方便多了
+d. async 返回值是 Promise，可以用 then 方法指定下一步的操作。比 Generator 函数的返回值是 Iterator 对象方便
 
 ### 18. es5 实现 promise
 
@@ -224,10 +224,34 @@ e. 之后服务器与客户端使用秘钥加密传输
 
 ### 25. 性能优化有哪些方向
 
-### 26. 长列表优化是怎么做的
+打包减少文件大小、网络传输、较少 dom 操作等
 
-### 27. Vue3 的新特性
+### 26. Vue3 的新特性
 
-### 28. jQuery 怎么解决地域回调
+a. setup() 函数是 vue3 中，专门为组件提供的新属性。它为我们使用 vue3 的 Composition API 新特性提供了统一的入口,setup 函数会在 beforeCreate 之后、created 之前执行!
 
-### 29. 脚手架改造加了哪些功能
+```js
+setup(props, context) {
+context.attrs
+context.slots
+context.parent
+context.root
+context.emit
+context.refs
+}
+
+```
+
+b.响应式由 Object.definePropety 改为 Proxy
+
+c.新的 API,`reactive、ref、isRef、toRefs、computed、watch`
+
+d.生命周期只能用在`setup`函数中
+
+e.新的标签`Fragments/Suspense`
+
+### 27. jQuery 怎么解决地域回调
+
+Jquery 有延迟对象`$.Deferred()`，类似`Promise`
+
+### 28. 脚手架改造加了哪些功能
