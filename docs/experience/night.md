@@ -49,15 +49,11 @@ DN 网络由一个 DNS 服务器和几台缓存服务器组成：
 
 用户向缓存服务器发起请求，缓存服务器响应用户请求，将用户所需内容传送到用户终端。如果这台缓存服务器上并没有用户想要的内容，而区域均衡设备依然将它分配给了用户，那么这台服务器就要向它的上一级缓存服务器请求内容，直至追溯到网站的源服务器将内容拉到本地。
 
-### 6. 打包优化
-
-用 Happypack 来加速代码构建，dll，uglify 优化
-
-### 7. Vue 的 nextTick 实现
+### 6. Vue 的 nextTick 实现
 
 对于 `macro task`的实现，优先检测是否支持原生 `setImmediate`，这是一个高版本 `IE` 和 `Edge` 才支持的特性，不支持的话再去检测是否支持原生的 `MessageChannel`，如果也不支持的话就会降级为 `setTimeout 0`；而对于`micro task` 的实现，则检测浏览器是否原生支持 `Promise`，不支持的话直接指向 `macro task` 的实现。
 
-### 8. 浏览器 `setTimeout` 怎么判断 5s，事件堆栈放在哪里
+### 7. 浏览器 `setTimeout` 怎么判断 5s，事件堆栈放在哪里
 
 在现有浏览器环境中，Javascript 执行引擎是单线程的，主线程的语句和方法，会阻塞定时任务的运行，在 Javascript 执行引擎之外，存在一个任务队列，
 
@@ -67,11 +63,11 @@ DN 网络由一个 DNS 服务器和几台缓存服务器组成：
 
 `基本类型的数据存储到栈内存（stack）中，引用数据类型存储到堆内存(heap)中；[对象、数组，函数]`
 
-### 10. Vue 的更新过程
+### 8. Vue 的更新过程
 
 当数据发生变化的时候，触发 setter 逻辑，把在依赖过程中订阅的的所有观察者，也就是 watcher，都触发它们的 update 过程，这个过程又利用了队列做了进一步优化，在 nextTick 后执行所有 watcher 的 run，最后执行它们的回调函数。
 
-### 11. 数值转换,一元运算符 +
+### 9. 数值转换,一元运算符 +
 
 ```js
 const age = +'22' // 22
@@ -81,7 +77,7 @@ let text4 = 1 + 2 + '3' // "33"
 let num = +text1 //  12 转换为 Number 类型
 ```
 
-### 12. Vue key 的作用
+### 10. Vue key 的作用
 
 1. 给出结论，key 的作用是用于优化 patch 性能
 2. key 的必要性
@@ -97,7 +93,7 @@ let num = +text1 //  12 转换为 Number 类型
 
 5. 带 key 和不带 key 会影响 diff 算法的具体操作，例如：A B C 要更新为 B A C，不带 key 的操作是：A 更新为 B，B 更新为 A，带 key 的操作则会直接移动 A B 节点，减少删除新增 DOM 的消耗。
 
-### 14. Vue 双向绑定以及它的实现原理吗？
+### 11. Vue 双向绑定以及它的实现原理吗？
 
 1. 给出双绑定义
 2. 双绑带来的好处
@@ -113,7 +109,7 @@ let num = +text1 //  12 转换为 Number 类型
 4. 原生的表单项可以直接使用 v-model，自定义组件上如果要使用它需要在组件内绑定 value 并处理输入事件
 5. 我做过测试，输出包含 v-model 模板的组件渲染函数，发现它会被转换为 value 属性的绑定以及一个事件监听，事件回调函数中会做相应变量更新操作，这说明神奇魔法实际上是 vue 的编译器完成的。
 
-### 15. Vue 中的 diff 算法
+### 12. Vue 中的 diff 算法
 
 1. 定义 diff
 2. 它的必要性
@@ -128,7 +124,7 @@ let num = +text1 //  12 转换为 Number 类型
 3. 组件中数据发生变化时，对应的 watcher 会通知更新并执行其更新函数，它会执行渲染函数获取全新虚拟 dom：newVnode，此时就会执行 patch 比对上次渲染结果 oldVnode 和新的渲染结果 newVnode。
 4. patch 过程遵循深度优先、同层比较的策略；两个节点之间比较时，如果它们拥有子节点，会先比较子节点；比较两组子节点时，会假设头尾节点可能相同先做尝试，没有找到相同节点后才按照通用方式遍历查找；查找结束再按情况处理剩下的节点；借助 key 通常可以非常精确找到相同节点，因此整个 patch 过程非常高效。
 
-### 16.Vuex 理解
+### 13.Vuex 理解
 
 1. 首先给 vuex 下一个定义
 2. vuex 解决了哪些问题，解读理念
@@ -148,7 +144,7 @@ let num = +text1 //  12 转换为 Number 类型
 4. 我在使用 vuex 过程中有如下理解：首先是对核心概念的理解和运用，将全局状态放入 state 对象中，它本身一棵状态树，组件中使用 store 实例的 state 访问这些状态；然后有配套的 mutation 方法修改这些状态，并且只能用 mutation 修改状态，在组件中调用 commit 方法提交 mutation；如果应用中有异步操作或者复杂逻辑组合，我们需要编写 action，执行结束如果有状态修改仍然需要提交 mutation，组件中调用这些 action 使用 dispatch 方法派发。最后是模块化，通过 modules 选项组织拆分出去的各个子模块，在访问状态时注意添加子模块的名称，如果子模块有设置 namespace，那么在提交 mutation 和派发 action 时还需要额外的命名空间前缀。
 5. vuex 在实现单项数据流时需要做到数据的响应式，通过源码的学习发现是借用了 vue 的数据响应化特性实现的，它会利用 Vue 将 state 作为 data 对其进行响应化处理，从而使得这些状态发生变化时，能够导致组件重新渲染。
 
-### 17. async await 在 generator 的基础上做的优化，区别
+### 14. async await 在 generator 的基础上做的优化，区别
 
 a. async 内置执行器。Generator 函数的执行必须靠执行器，需要调用 next() 方法，或者用 co 模块；而 async 函数自带执行器。async 函数的执行与普通函数一模一样，只要一行。
 
@@ -158,25 +154,25 @@ c. 更广的适用性。co 模块约定，yield 命令后面只能是 Thunk 函�
 
 d. async 返回值是 Promise，可以用 then 方法指定下一步的操作。比 Generator 函数的返回值是 Iterator 对象方便
 
-### 18. es5 实现 promise
+### 15. es5 实现 promise
 
-### 19. react componentDidMount 里面 settimeTout 写 setState 为什么是同步的
+### 16. react componentDidMount 里面 settimeTout 写 setState 为什么是同步的
 
 在 React 的 setState 函数实现中，会根据一个变量
 `isBatchingUpdate` 来判断是直接同步更新 this.state 还是放到队列中异步更新 。React 使用了事务的机制，React 的每个生命周期和合成事件都处在一个大的事务当中。在事务的前置钩子中调用`batchedUpdates`方法修改`isBatchingUpdates`变量为 true，在后置钩子中将变量置为 false。`原生绑定事件和setTimeout异步`的函数没有进入到 React 的事务当中，或者当他们执行时，刚刚的事务已近结束了，后置钩子触发了，所以此时的 setState 会直接进入非批量更新模式，表现在我们看来成为了同步`SetState`。
 [原链接](https://muyiy.cn/question/frame/19.html)
 
-### 20. template、jsx 写法的优劣比较
+### 17. template、jsx 写法的优劣比较
 
-### 21. 比较酷炫的 css 特性
+### 18. 比较酷炫的 css 特性
 
-### 22. html meta 用法
+### 19. html meta 用法
 
-### 23. 事件循环
+### 20. 事件循环
 
 览器的 task（宏任务）执行顺序在 html#event-loops 里面有讲就不翻译了 常见的 task（宏任务） 比如：setTimeout、setInterval、script（整体代码）、 I/O 操作、UI 渲染等。 常见的 micro-task 比如: new Promise().then(回调)、MutationObserver(html5 新特性) 等。
 
-### 24. http1.0、http1.1、http2、https
+### 21. http1.0、http1.1、http2、https
 
 #### http1.0
 
@@ -222,11 +218,11 @@ d. 客户端利用公钥将会话秘钥加密, 并传送给服务端, 服务端�
 
 e. 之后服务器与客户端使用秘钥加密传输
 
-### 25. 性能优化有哪些方向
+### 22. 性能优化有哪些方向
 
-打包减少文件大小、网络传输、较少 dom 操作等
+打包减少文件大小(用 Happypack 来加速代码构建，dll，uglify 优化)、网络传输、较少 dom 操作等
 
-### 26. Vue3 的新特性
+### 23. Vue3 的新特性
 
 a. setup() 函数是 vue3 中，专门为组件提供的新属性。它为我们使用 vue3 的 Composition API 新特性提供了统一的入口,setup 函数会在 beforeCreate 之后、created 之前执行!
 
@@ -250,8 +246,107 @@ d.生命周期只能用在`setup`函数中
 
 e.新的标签`Fragments/Suspense`
 
-### 27. jQuery 怎么解决地域回调
+### 24. jQuery 怎么解决地域回调
 
 Jquery 有延迟对象`$.Deferred()`，类似`Promise`
 
-### 28. 脚手架改造加了哪些功能
+### 25. 脚手架改造加了哪些功能
+
+### 26. 栈内存、堆内存理解
+
+```js
+var a = { n: 1 }
+var b = a
+a.x = a = { n: 2 }
+
+a.x // --> undefined
+b.x // --> {n: 2}
+```
+
+1. 优先级。.的优先级高于=，所以先执行 a.x，堆内存中的{n: 1}就会变成{n: 1, x: undefined}，改变之后相应的 b.x 也变化了，因为指向的是同一个对象。
+2. 赋值操作是从右到左，所以先执行 a = {n: 2}，a 的引用就被改变了，然后这个返回值又赋值给了 a.x，需要注意的是这时候 a.x 是第一步中的{n: 1, x: undefined}那个对象，其实就是 b.x，相当于 b.x = {n: 2}
+
+### 27. 浏览器垃圾回收算法
+
+引用计数（现代浏览器不再使用）
+
+标记清除（常用）,算法由以下几步组成：
+
+1、垃圾回收器创建了一个“roots”列表。roots 通常是代码中全局变量的引用。JavaScript 中，“window” 对象是一个全局变量，被当作 root 。window 对象总是存在，因此垃圾回收器可以检查它和它的所有子对象是否存在（即不是垃圾）；
+
+2、所有的 roots 被检查和标记为激活（即不是垃圾）。所有的子对象也被递归地检查。从 root 开始的所有对象如果是可达的，它就不被当作垃圾。
+
+3、所有未被标记的内存会被当做垃圾，收集器现在可以释放内存，归还给操作系统了。
+
+#### 内存泄漏识别方法
+
+打开开发者工具，选择 Memory
+
+在右侧的 Select profiling type 字段里面勾选 timeline
+
+点击左上角的录制按钮。
+
+在页面上进行各种操作，模拟用户的使用情况。
+
+一段时间后，点击左上角的 stop 按钮，面板上就会显示这段时间的内存占用情况。
+
+#### 四种常见的 JS 内存泄漏
+
+1、意外的全局变量,未定义的变量会在全局对象创建一个新变量。在 JavaScript 文件头部加上 'use strict'，使用严格模式避免意外的全局变量，此时上例中的 this 指向 undefined。如果必须使用全局变量存储大量数据时，确保用完以后把它设置为 null 或者重新定义。
+
+2、被遗忘的计时器或回调函数。代的浏览器（包括 IE 和 Microsoft Edge）使用了更先进的垃圾回收算法（标记清除），已经可以正确检测和处理循环引用了。即回收节点内存时，不必非要调用 removeEventListener 了。
+
+3、脱离 DOM 的引用。如果把 DOM 存成字典（JSON 键值对）或者数组，此时，同样的 DOM 元素存在两个引用：一个在 DOM 树中，另一个在字典中。那么将来需要把两个引用都清除。
+
+4、闭包。闭包的关键是匿名函数可以访问父级作用域的变量。
+
+#### 从内存来看 null 和 undefined 本质的区别是什么？
+
+给一个全局变量赋值为 null，相当于将这个变量的指针对象以及值清空，如果是给对象的属性 赋值为 null，或者局部变量赋值为 null,相当于给这个属性分配了一块空的内存，然后值为 null， JS 会回收全局变量为 null 的对象。
+
+给一个全局变量赋值为 undefined，相当于将这个对象的值清空，但是这个对象依旧存在,如果是给对象的属性赋值 为 undefined，说明这个值为空值
+
+### 28. 手写实现 new
+
+```js
+function create() {
+  // 创建一个空的对象
+  var obj = new Object(),
+    // 获得构造函数，arguments中去除第一个参数
+    Con = [].shift.call(arguments)
+  // 链接到原型，obj 可以访问到构造函数原型中的属性
+  obj.__proto__ = Con.prototype
+  // 绑定 this 实现继承，obj 可以访问到构造函数中的属性
+  var ret = Con.apply(obj, arguments)
+  // 优先返回构造函数返回的对象
+  return ret instanceof Object ? ret : obj
+}
+```
+
+### 29. 简单的深拷贝实现
+
+深拷贝可以拆分成 2 步，浅拷贝+递归，浅拷贝时判断属性值是否是对象，如果是对象就进行递归操作，两个一结合就实现了深拷贝。
+
+```js
+function cloneDeep1(source) {
+  var target = {}
+  for (var key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      if (typeof source[key] === 'object') {
+        target[key] = cloneDeep1(source[key]) // 注意这里
+      } else {
+        target[key] = source[key]
+      }
+    }
+  }
+  return target
+}
+```
+
+一个简单的深拷贝就完成了，但是这个实现还存在很多问题。
+
+1、没有对传入参数进行校验，传入 null 时应该返回 null 而不是 {}
+
+2、对于对象的判断逻辑不严谨，因为 typeof null === 'object'
+
+3、没有考虑数组的兼容
