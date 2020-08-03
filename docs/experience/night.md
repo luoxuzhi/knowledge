@@ -1,4 +1,4 @@
-## 9. 总结
+## 9. 查漏补缺 1
 
 ### 1. koa 框架 await 实现原理
 
@@ -164,13 +164,19 @@ d. async 返回值是 Promise，可以用 then 方法指定下一步的操作。
 
 ### 17. template、jsx 写法的优劣比较
 
-### 18. 比较酷炫的 css 特性
+### 18. 酷炫的 css 特性
+
+box-reflect、多列布局 column-count: 5;-webkit-box-reflect
 
 ### 19. html meta 用法
 
-### 20. 事件循环
+chartset name(title、description、keywords) http-equiv
+
+### 20. 事件循环 event loop（事件轮询）
 
 览器的 task（宏任务）执行顺序在 html#event-loops 里面有讲就不翻译了 常见的 task（宏任务） 比如：setTimeout、setInterval、script（整体代码）、 I/O 操作、UI 渲染等。 常见的 micro-task 比如: new Promise().then(回调)、MutationObserver(html5 新特性) 等。
+
+拓展：js 单线程，单线程就是只能同时只做一件事，两段 js 不能同时执行，避免 DOM 渲染冲突
 
 ### 21. http1.0、http1.1、http2、https
 
@@ -248,7 +254,7 @@ e.新的标签`Fragments/Suspense`
 
 ### 24. jQuery 怎么解决地域回调
 
-Jquery 有延迟对象`$.Deferred()`，类似`Promise`
+Jquery 有延迟对象`$.Deferred()`，简单封装`Defered`使得用法类似`promise`，类似`Promise`
 
 ### 25. 脚手架改造加了哪些功能
 
