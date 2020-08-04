@@ -119,10 +119,11 @@ let num = +text1 //  12 转换为 Number 类型
 
 详细：
 
-1. diff 算法是虚拟 DOM 技术的产物，vue 里面实际叫做 patch，它的核心实现来自于 snabbdom；通过新旧虚拟 DOM 作对比（即 patch），将变化的地方转换为 DOM 操作
+1. diff 算法是虚拟 DOM 技术的产物，vue 里面实际叫做 patch，它的核心实现来自于 snabbdom（核心 API:`h、patch`）；通过新旧虚拟 DOM 作对比（即 patch），将变化的地方转换为 DOM 操作
 2. 在 vue 1 中是没有 patch 的，因为界面中每个依赖都有专门的 watcher 负责更新，这样项目规模变大就会成为性能瓶颈，vue 2 中为了降低 watcher 粒度，每个组件只有一个 watcher，但是当需要更新的时候，怎样才能精确找到发生变化的地方？这就需要引入 patch 才行。
 3. 组件中数据发生变化时，对应的 watcher 会通知更新并执行其更新函数，它会执行渲染函数获取全新虚拟 dom：newVnode，此时就会执行 patch 比对上次渲染结果 oldVnode 和新的渲染结果 newVnode。
 4. patch 过程遵循深度优先、同层比较的策略；两个节点之间比较时，如果它们拥有子节点，会先比较子节点；比较两组子节点时，会假设头尾节点可能相同先做尝试，没有找到相同节点后才按照通用方式遍历查找；查找结束再按情况处理剩下的节点；借助 key 通常可以非常精确找到相同节点，因此整个 patch 过程非常高效。
+5. 核心逻辑 `createElement`和`updateChildren`
 
 ### 13.Vuex 理解
 
@@ -377,3 +378,33 @@ const，也不会预分配内存空间，在栈内存分配变量时也会做同
 三.变量提升 let const 和 var 三者其实会存在变量提升
 
 let 只是创建过程提升，初始化过程并没有提升，所以会产生暂时性死区。 var 的创建和初始化过程都提升了，所以在赋值前访问会得到 undefined function 的创建、初始化、赋值都被提升了
+
+31. ### vdom
+
+a. 用 JS 模拟 DOM 结构，提高重绘性能
+
+b. DOM 操作非常昂贵，DOM 操作放在 js，提高效率
+
+c.vdom 的核心 API 是`h、patch`
+
+32. ### Vue 监听 data 每个属性的变化？
+
+Object.defineProperty、将 data 代理到 vm 上
+
+33. ### Vue 的模板如何解析，指令如何处理？
+
+模板本质是字符串，嵌入逻辑和变量，必须转换为 JS（有逻辑、变量、html），render 函数返回 vnode，最后 updateComponent
+
+34. ### Vue 的模板如何被渲染成 html 及渲染过程
+
+a.解析模板变成 render 函数
+
+b.响应式监听
+
+c.首次渲染，显示页面且绑定依赖
+
+d.data 属性变化，触发 rerender
+
+35. ### 为什么要监听 get，直接监听 set 为什么不行？
+
+因为 data 中有很多属性，有的被用到，有的没有被用到，监听 get 是避免 set 的时候判断是否需要重新渲染 dom，优化性能
