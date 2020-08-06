@@ -117,3 +117,7 @@ if (window.self != window.top) {
     top.location.href = self.location.href
 }
 ```
+
+## 五、防爬虫手段？
+
+font-face 拼接、背景图、css 伪元素、元素定位覆盖式（去哪儿加个通过标签偏移实现视觉价格正确）、字符集替换
