@@ -17,7 +17,7 @@ module.exports = {
     editLinks: true,
     docsDir: 'docs',
     editLinkText: 'Edit in GitHub',
-    lastUpdated: 'Last Updated',
+    // lastUpdated: 'Last Updated',
     sidebarDepth: 0,
     nav: [
       {
