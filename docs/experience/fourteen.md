@@ -76,3 +76,15 @@ chartset name(title、description、keywords) http-equiv
 ### 11. nginx 配置某台机器访问特定的文件夹
 
 gzip、location、proxy_pass、proxy_set_header、allow、deny
+
+### 12. React 和 Vue 区别
+
+共同点：
+组件化、都是数据驱动视图
+
+本质区别：
+Vue--本质是 MVVM 框架，由 MVC 发展而来
+
+React--本质是前端组件化框架，由后端组件化发展而来
+
+Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，React 本身是组件化。
