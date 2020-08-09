@@ -88,6 +88,7 @@ module.exports = {
         'twelve',
         'thirteen',
         'fourteen',
+        'fifteen',
       ],
       // '/svg/':[
       //   '',
