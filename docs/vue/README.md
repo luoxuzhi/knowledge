@@ -1,7 +1,8 @@
 ## 1. Vue 实例的属性
 
 1. `watch`
-* `vm.$watch`和`watch`钩子的效果是一致的，区别是`$watch`不会随着组件销毁自动注销，要手动注销，而后者会自动注销。
+
+- `vm.$watch`和`watch`钩子的效果是一致的，区别是`$watch`不会随着组件销毁自动注销，要手动注销，而后者会自动注销。
 
 ```js
 const unwatch = this.$watch('xxx',(new,old)=>{xxxx})
@@ -12,9 +13,27 @@ watch：{
 }
 ```
 
-* `watch` 对象或者数组
+- `watch` 对象或者数组
 
 当我们监听的数据为对象或数组时，`newValue`和`oldValue` 是相等的，因为对象和数组都为*引用类型*，这两个的形参指向的也是同一个内存地址。
+
+- `watch` 的 6 种写法
+
+```js
+watch:{
+    num:['numChange','numChangeOne'],
+    num(){},
+    num:'thirdMethod',
+    num:{
+      deep:true,
+      handler:()=>{
+        console.log('this is option handler')
+      }
+    }
+  }
+  vm.$watch('num',_=>{})
+  vm.$watch('num',{immediate:true,handler:()=>{}})
+```
 
 2. vue 实例的生命周期 `created`、`mounted`、 `updated` 、`destroyed`
 
@@ -58,47 +77,55 @@ new Vue({
 
    ```js
    new Vue({
-     el:'#example',
+     el: '#example',
      data: {
-       message: 'Hello'
+       message: 'Hello',
      },
      computed: {
        computedMessage() {
-         return this.message.split('').reverse().join('')
-       }
+         return this.message
+           .split('')
+           .reverse()
+           .join('')
+       },
      },
      methods: {
        methodMessage() {
-         return this.message.split('').reverse().join('')
-       }
-     }
+         return this.message
+           .split('')
+           .reverse()
+           .join('')
+       },
+     },
    })
    ```
-4.`computed` 默认只有 `getter` ，不过在需要时你也可以提供一个 `setter` ，如果`setter`不改变`getter`中的依赖，则`computed`出来的值不会改变。
+
+   4.`computed` 默认只有 `getter` ，不过在需要时你也可以提供一个 `setter` ，如果`setter`不改变`getter`中的依赖，则`computed`出来的值不会改变。
 
 ```html
 <div id="demo">{{fullName}}</div>
 ```
+
 ```js
- new Vue({
-   el:'#demo',
-   data:{
-     firstName:'luo',
-     lastName:'xuzhi'
-   },
-   computed:{
-     fullName:{
-       get(){
-         return this.firstName + this.lastName
-       },
-       set(val){
-         let names = val.split(' ')
-         this.firstName = names[0]
-         this.lastName = names[1]
-       }
-     }
-   }
- })
+new Vue({
+  el: '#demo',
+  data: {
+    firstName: 'luo',
+    lastName: 'xuzhi',
+  },
+  computed: {
+    fullName: {
+      get() {
+        return this.firstName + this.lastName
+      },
+      set(val) {
+        let names = val.split(' ')
+        this.firstName = names[0]
+        this.lastName = names[1]
+      },
+    },
+  },
+})
 ```
 
 5. `v-pre`该指令跳过这个元素和它子元素的编译过程。
