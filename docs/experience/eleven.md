@@ -34,3 +34,13 @@ compose() {
 
 node.js 的异步机制是基于事件的，所有的 I/O、网络通信、数据库查询都以非阻塞的方式执行，返回结果由事件循环来处理。node.js 在同一时刻只会处理一个事件，完成后立即进入事件循环检查后面事件。这样 CPU 和内存在同一时间集中处理一件事，同时尽量让耗时的 I/O 等操作并行执行。
 [链接](https://blog.csdn.net/fengqiaojiangshui/article/details/55819930)
+
+### 3. node的Buffer、Stream
+
+a. Buffer 就是在内存中开辟一段空间，用来装数据的
+
+b.数据都是二进制的，记住电信号（010101）
+
+c. Stream 的三大原则：有源头、有终点、源头流向终点。
+
+d.Stream 就像司机，它的作用就是将装着数据的 Buffer 开向终点

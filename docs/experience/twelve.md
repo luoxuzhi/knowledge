@@ -66,3 +66,5 @@ a.x = a = { n: 2 }
 a.x // --> undefined
 b.x // --> {n: 2}
 ```
+
+### 5.跨域解决方案/jsonp原理解析 [链接](https://segmentfault.com/a/1190000011145364)
