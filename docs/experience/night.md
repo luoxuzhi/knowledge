@@ -115,35 +115,3 @@ d.data 属性变化，触发 rerender
 3. vuex 并非必须的，它帮我们管理共享状态，但却带来更多的概念和框架。如果我们不打算开发大型单页应用或者我们的应用并没有大量全局的状态需要维护，完全没有使用 vuex 的必要。一个简单的[store 模式](https://cn.vuejs.org/v2/guide/state-management.html#简单状态管理起步使用)就足够了。反之，Vuex 将会成为自然而然的选择。引用 Redux 的作者 Dan Abramov 的话说就是：Flux 架构就像眼镜：您自会知道什么时候需要它。
 4. 我在使用 vuex 过程中有如下理解：首先是对核心概念的理解和运用，将全局状态放入 state 对象中，它本身一棵状态树，组件中使用 store 实例的 state 访问这些状态；然后有配套的 mutation 方法修改这些状态，并且只能用 mutation 修改状态，在组件中调用 commit 方法提交 mutation；如果应用中有异步操作或者复杂逻辑组合，我们需要编写 action，执行结束如果有状态修改仍然需要提交 mutation，组件中调用这些 action 使用 dispatch 方法派发。最后是模块化，通过 modules 选项组织拆分出去的各个子模块，在访问状态时注意添加子模块的名称，如果子模块有设置 namespace，那么在提交 mutation 和派发 action 时还需要额外的命名空间前缀。
 5. vuex 在实现单项数据流时需要做到数据的响应式，通过源码的学习发现是借用了 vue 的数据响应化特性实现的，它会利用 Vue 将 state 作为 data 对其进行响应化处理，从而使得这些状态发生变化时，能够导致组件重新渲染。
-
-### 12. Vue3 的新特性
-
-a. setup() 函数是 vue3 中，专门为组件提供的新属性。它为我们使用 vue3 的 Composition API 新特性提供了统一的入口,setup 函数会在 beforeCreate 之后、created 之前执行!
-
-```js
-setup(props, context) {
-context.attrs
-context.slots
-context.parent
-context.root
-context.emit
-context.refs
-}
-
-```
-
-b.响应式由 Object.definePropety 改为 Proxy
-
-c.新的 API,`reactive、ref、isRef、toRefs、computed、watch`
-
-d.生命周期只能用在`setup`函数中
-
-e.新的标签`Fragment/Suspense/Teleport`
-
-### 13. Vue3 中 ref reactive toRefs 的区别及作用。 [具体见 composition-api](https://composition-api.vuejs.org/api.html#customref)
-
-Vue3 的`computed`返回为为`ref`，是为了防止基本类型的数据丢失响应式。
-
-JavaScript 中区别声明基础类型变量与对象变量时一样区别使用 `ref` 和 `reactive`，使用 `reactive` 的问题是，使用组合函数时必须始终保持对这个所返回对象的引用以保持响应性，这个对象不能被解构或展开。`toRefs` API 用来提供解决此约束的办法，它将响应式对象的每个 `property` 都转成了相应的 `ref`。
-
-[vue-next-template-explorer](https://vue-next-template-explorer.netlify.app/#%7B%22src%22%3A%22%3Cdiv%3EHello%20World!%3C%2Fdiv%3E%22%2C%22options%22%3A%7B%22mode%22%3A%22module%22%2C%22prefixIdentifiers%22%3Afalse%2C%22optimizeImports%22%3Afalse%2C%22hoistStatic%22%3Afalse%2C%22cacheHandlers%22%3Afalse%2C%22scopeId%22%3Anull%2C%22ssrCssVars%22%3A%22%7B%20color%20%7D%22%2C%22bindingMetadata%22%3A%7B%22TestComponent%22%3A%22setup%22%2C%22foo%22%3A%22setup%22%2C%22bar%22%3A%22props%22%7D%2C%22optimizeBindings%22%3Afalse%7D%7D)
