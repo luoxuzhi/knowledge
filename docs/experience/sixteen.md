@@ -37,3 +37,14 @@ JavaScript 中区别声明基础类型变量与对象变量时一样区别使用
 [更多资料](https://www.yuque.com/woniuppp/vue3)
 
 <img :src="$withBase('/assets/vue3-init.jpg')">
+
+```js
+createApp(App).mount(rootNode)
+```
+
+`Vue3`初始化的过程从调用 mount 方法开始，
+
+1. 调用 `mount` 方法后，基于根组件、根节点创建 `vnode`，`vnode` 创建完成后开始 `render` 渲染，`render` 实际调用的是 `patch` 方法
+2. 在 `patch` 方法中，根据 `shapeFlag` 来判断是初始化 `component` 还是 `element`
+3. 先是初始化 `component`，初始化 `component` 分为三步，一是通过 `createComponentInstance` 创建组件实例，二是调用 `setupComponent` 来配置组件，这里主要实现 `initProps/initSlots/配置 setup/配置 render 方法`，三是 `setupRenderEffect`，这里调用上一步的 `render` 方法来生成子组件的 `vnode`，触发自身的 `beforeMount`，递归调用 `patch` 方法来初始化子元素，最后触发 `mounted`
+4. 初始化 `component` 最后一步的 `setupRenderEffect` 中递归调用 `patch`处理子元素，`patch` 的子元素有 `component`和 `element` 类型。如果是 `component` 类型，会重复上面第三步进行初始化，这也是生命周期`父 beforeMount->子 beforeMount->子 mounted->父 mounted` 的原因。如果子元素是 `element` 类型，会进行以下处理：调用 `createElement` 方法来创建真实 element，处理 `children` 节点，调用 `hostPatchProp` 处理标签上的属性，触发 `beforeMount` 钩子，调用 `insert` 插入父节点，最后触发 `mounted`。
