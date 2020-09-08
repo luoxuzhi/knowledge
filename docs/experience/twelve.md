@@ -67,4 +67,14 @@ a.x // --> undefined
 b.x // --> {n: 2}
 ```
 
-### 5.跨域解决方案/jsonp原理解析 [链接](https://segmentfault.com/a/1190000011145364)
+### 5.跨域解决方案/jsonp 原理解析 [链接](https://segmentfault.com/a/1190000011145364)
+
+- 通过 jsonp 跨域
+- document.domain + iframe 跨域
+- location.hash + iframe
+- window.name + iframe 跨域
+- postMessage 跨域
+- 跨域资源共享（CORS）普通跨域请求：只服务端设置 Access-Control-Allow-Origin 即可，前端无须设置，若要带 cookie 请求：前后端都需要设置。
+- nginx 代理跨域
+- nodejs 中间件代理跨域
+- WebSocket 协议跨域
