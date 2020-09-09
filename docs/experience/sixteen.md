@@ -48,3 +48,21 @@ createApp(App).mount(rootNode)
 2. 在 `patch` 方法中，根据 `shapeFlag` 来判断是初始化 `component` 还是 `element`
 3. 先是初始化 `component`，初始化 `component` 分为三步，一是通过 `createComponentInstance` 创建组件实例，二是调用 `setupComponent` 来配置组件，这里主要实现 `initProps/initSlots/配置 setup/配置 render 方法`，三是 `setupRenderEffect`，这里调用上一步的 `render` 方法来生成子组件的 `vnode`，触发自身的 `beforeMount`，递归调用 `patch` 方法来初始化子元素，最后触发 `mounted`
 4. 初始化 `component` 最后一步的 `setupRenderEffect` 中递归调用 `patch`处理子元素，`patch` 的子元素有 `component`和 `element` 类型。如果是 `component` 类型，会重复上面第三步进行初始化，这也是生命周期`父 beforeMount->子 beforeMount->子 mounted->父 mounted` 的原因。如果子元素是 `element` 类型，会进行以下处理：调用 `createElement` 方法来创建真实 element，处理 `children` 节点，调用 `hostPatchProp` 处理标签上的属性，触发 `beforeMount` 钩子，调用 `insert` 插入父节点，最后触发 `mounted`。
+
+### 4. Vue2 的 Object.defineProperty 和 Vue3 的 Proxy 对比
+
+`Object.defineProperty`的缺点：
+
+- 无法检测到对象属性的新增或删除
+
+  由于 js 的动态性，可以为对象追加新的属性或者删除其中某个属性，这点对经过`Object.defineProperty` 方法建立的响应式对象来说，只能追踪对象已有数据是否被修改，无法追踪新增属性和删除属性，这就需要额外的代码处理。
+
+- 数组变化监听：vue2.x 是通过代理数组原型，包装了一层数组的变异方法：`'pop','shift','unshift','sort','reverse','splice', 'push'`
+- get set 拦截器不能直接操作 target 对象
+
+Vue3 的 Proxy 代理是针对整个对象，不是针对对象属性做拦截，替换了原先遍历对象使用`Object.defineProperty`方法给属性添加 set,get 访问器的笨拙做法，优化性能
+
+劣势：
+
+- 性能比 promise 还差
+- 兼容性不太乐观 ,无法完全 polyfill
