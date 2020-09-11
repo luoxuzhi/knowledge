@@ -24,11 +24,21 @@ parse-optimize-generate
 
 对于 `macro task`的实现，优先检测是否支持原生 `setImmediate`，这是一个高版本 `IE` 和 `Edge` 才支持的特性，不支持的话再去检测是否支持原生的 `MessageChannel`，如果也不支持的话就会降级为 `setTimeout 0`；而对于`micro task` 的实现，则检测浏览器是否原生支持 `Promise`，不支持的话直接指向 `macro task` 的实现。
 
-### 4. Vue 的更新过程
+### 4. Vue 的模板如何被渲染成 html 及渲染过程
+
+a.解析模板变成 render 函数
+
+b.响应式监听
+
+c.执行 render 函数生成 vnode，首次渲染，显示页面且绑定依赖
+
+d.data 属性变化，触发 rerender
+
+### 5. Vue 的更新过程
 
 当数据发生变化的时候，触发 setter 逻辑，把在依赖过程中订阅的的所有观察者，也就是 watcher，都触发它们的 update 过程，这个过程又利用了队列做了进一步优化，在 nextTick 后执行所有 watcher 的 run，最后执行它们的回调函数。
 
-### 5. Vue key 的作用
+### 6. Vue key 的作用
 
 1. 给出结论，key 的作用是用于优化 patch 性能
 2. key 的必要性
@@ -44,7 +54,7 @@ parse-optimize-generate
 
 5. 带 key 和不带 key 会影响 diff 算法的具体操作，例如：A B C 要更新为 B A C，不带 key 的操作是：A 更新为 B，B 更新为 A，带 key 的操作则会直接移动 A B 节点，减少删除新增 DOM 的消耗。
 
-### 6. Vue 双向绑定以及它的实现原理？
+### 7. Vue 双向绑定以及它的实现原理？
 
 1. 给出双绑定义
 2. 双绑带来的好处
@@ -60,7 +70,7 @@ parse-optimize-generate
 4. 原生的表单项可以直接使用 v-model，自定义组件上如果要使用它需要在组件内绑定 value 并处理输入事件
 5. 我做过测试，输出包含 v-model 模板的组件渲染函数，发现它会被转换为 value 属性的绑定以及一个事件监听，事件回调函数中会做相应变量更新操作，这说明神奇魔法实际上是 vue 的编译器完成的。
 
-### 7. Vue 中的 diff 算法
+### 8. Vue 中的 diff 算法
 
 1. 定义 diff
 2. 它的必要性
@@ -76,27 +86,27 @@ parse-optimize-generate
 4. patch 过程遵循深度优先、同层比较的策略；两个节点之间比较时，如果它们拥有子节点，会先比较子节点；比较两组子节点时，会假设头尾节点可能相同先做尝试，没有找到相同节点后才按照通用方式遍历查找；查找结束再按情况处理剩下的节点；借助 key 通常可以非常精确找到相同节点，因此整个 patch 过程非常高效。
 5. 核心逻辑 `createElement`和`updateChildren`
 
-### 8. Vue 监听 data 每个属性的变化？为什么要监听 get，直接监听 set 为什么不行？
+### 9. Vue 监听 data 每个属性的变化？为什么要监听 get，直接监听 set 为什么不行？
 
 1. Object.defineProperty、将 data 代理到 vm 上
 
 2. 因为 data 中有很多属性，有的被用到，有的没有被用到，监听 get 是避免 set 的时候判断是否需要重新渲染 dom，优化性能
 
-### 9. Vue 的模板如何解析，指令如何处理？
+### 10. Vue 的模板如何解析，指令如何处理？
 
 模板本质是字符串，嵌入逻辑和变量，必须转换为 JS（有逻辑、变量、html），render 函数返回 vnode，最后 updateComponent
 
-### 10. Vue 的模板如何被渲染成 html 及渲染过程
+### 11. Vue 常见的性能优化方式
 
-a.解析模板变成 render 函数
+1. 合理使用 v-show 和 v-if
+2. 合理使用 computed
+3. v-for 加 key，避免和 v-if 同时使用
+4. 自定义事件、DOM 事件及时销毁
+5. 合理使用 keep-alive
+6. 合理使用异步组件
+7. data 层级不要嵌套过深
 
-b.响应式监听
-
-c.首次渲染，显示页面且绑定依赖
-
-d.data 属性变化，触发 rerender
-
-### 11. Vuex 理解
+### 12. Vuex 理解
 
 1. 首先给 vuex 下一个定义
 2. vuex 解决了哪些问题，解读理念
