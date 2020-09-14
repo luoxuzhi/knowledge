@@ -55,7 +55,7 @@ let 只是创建过程提升，初始化过程并没有提升，所以会产生�
 
 ### 6. 性能优化有哪些方向
 
-打包减少文件大小(用 Happypack 来加速代码构建，dll，uglify 优化)、EventLoop 异步更新、浏览器缓存原理及最佳设置、避免重绘和回流、cdn 网络传输、较少 dom 操作、节流防抖等
+打包减少文件大小(用 Happypack 来加速代码构建，dll，uglify 优化)、EventLoop 异步更新、浏览器缓存原理及最佳设置、避免重绘和回流、cdn 网络传输、较少 dom 操作、节流防抖等,webpack(小图片 base64 编码、提取公共代码、bundle 加 hash、使用 cdn、懒加载、ignorePlugin)
 
 ### 7. 脚手架改造加了哪些功能
 
@@ -88,3 +88,18 @@ Vue--本质是 MVVM 框架，由 MVC 发展而来
 React--本质是前端组件化框架，由后端组件化发展而来
 
 Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，React 本身是组件化。
+
+### 13. Webpack 打包构建的好处
+
+- 体积更小，加载更快
+- 编译更高级语法
+- 兼容性和错误检查
+- 统一、高效的开发环境
+- 统一的构建好产出流程
+- 集成公司构建规范
+
+### 13. Webpack 中 module、chunk、bundle 的区别
+
+- module---各个源码文件，webpack 中一切皆模块
+- chunk---多模块合成的，如 entry、import、splitChunk
+- bundle ---最终输出的文件
