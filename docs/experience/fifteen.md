@@ -95,10 +95,10 @@ Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，R
 - 编译更高级语法
 - 兼容性和错误检查
 - 统一、高效的开发环境
-- 统一的构建好产出流程
+- 统一的构建和产出流程
 - 集成公司构建规范
 
-### 13. Webpack 中 module、chunk、bundle 的区别
+### 14. Webpack 中 module、chunk、bundle 的区别
 
 - module---各个源码文件，webpack 中一切皆模块
 - chunk---多模块合成的，如 entry、import、splitChunk
