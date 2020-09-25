@@ -29,7 +29,7 @@ b.x // --> {n: 2}
 ### 4. 手写实现 new
 
 ```js
-function create() {
+function create(Con) {
   // 创建一个空的对象
   var obj = new Object(),
     // 获得构造函数，arguments中去除第一个参数
@@ -70,3 +70,52 @@ function cloneDeep1(source) {
 2、对于对象的判断逻辑不严谨，因为 typeof null === 'object'
 
 3、没有考虑数组的兼容
+
+### 6. js 中大数相加
+
+JS 在存放整数的时候是有一个安全范围的，一旦数字超过这个范围便会损失精度。不能拿精度损失的数字进行运行，因为运算结果一样是会损失精度的。所以，我们要用字符串来表示数据！（不会丢失精度）
+
+`JS 中整数的最大安全范围可以查到是：9007199254740991`
+
+假如我们要进行 9007199254740991 + 1234567899999999999
+
+```js
+function addString(str1, str2) {
+  // 此处加1是防止位置相同，第一位相加后需要向前进位
+  let len = Math.max(str1.length, str2.length) + 1
+  let newStr1 = str1.padStart(len, 0)
+  let newStr2 = str2.padStart(len, 0)
+
+  let newStr1Arr = newStr1
+    .split('')
+    .reverse()
+    .map(i => Number(i))
+  let newStr2Arr = newStr2
+    .split('')
+    .reverse()
+    .map(i => Number(i))
+  let resultArr = []
+  let addFlag = 0
+  let pushNum = null
+
+  newStr1Arr.forEach((element, idx) => {
+    let sumFirst = element + newStr2Arr[idx] + addFlag
+    if (sumFirst >= 10) {
+      pushNum = sumFirst % 10
+      addFlag = 1
+    } else {
+      pushNum = sumFirst
+      addFlag = 0
+    }
+    resultArr.push(pushNum)
+  })
+  let resultString = resultArr.reverse().join('')
+  // 字符串首位为0截取去掉
+  if (resultString[0] == 0) {
+    return resultString.substring(1)
+  } else {
+    return resultString
+  }
+}
+addString('9007199254740991', '1234567899999999999') // 11233575099254740990
+```
