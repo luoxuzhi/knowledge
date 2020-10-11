@@ -11,6 +11,7 @@ module.exports = {
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
     ['link', { rel: 'shortcut icon', type: 'image/x-icon', href: `/icons/favicon.ico` }],
   ],
+  port: 8081,
   serviceWorker: false,
   themeConfig: {
     repo: 'luoxuzhi/know',
@@ -90,6 +91,7 @@ module.exports = {
         'fourteen',
         'fifteen',
         'sixteen',
+        'seventeen',
       ],
       // '/svg/':[
       //   '',
