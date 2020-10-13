@@ -24,20 +24,22 @@ hls 解析过程
 
 <img :src="$withBase('/assets/http-flv.png')">
 
-5.video 标签
+5.video 属性
 <img :src="$withBase('/assets/video-prop.png')">
+
+6.video 事件
 
 可流畅播放的事件：canplaythrough
 自定义进度条用 timeupdate 事件
 
-### loadstart durationchange loadedmetadata
+#### loadstart durationchange loadedmetadata
 
-### progress canplay play pause
+#### progress canplay play pause
 
-### seeking seeked waiting ended
+#### seeking seeked waiting ended
 
 <img :src="$withBase('/assets/video-event.png')">
 
-6.制作流
+7.制作流
 
 [可以用在线流](https://blog.csdn.net/xbfengyu/article/details/100094747)
