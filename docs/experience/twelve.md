@@ -12,7 +12,7 @@
 
 ### 2. 事件循环 event loop（事件轮询）
 
-览器的 task（宏任务）执行顺序在 html#event-loops 里面有讲就不翻译了 常见的 task（宏任务） 比如：setTimeout、setInterval、script（整体代码）、 I/O 操作、UI 渲染等。 常见的 micro-task 比如: new Promise().then(回调)、MutationObserver(html5 新特性) 等。
+览器的 task（宏任务）执行顺序在 html#event-loops 里面有讲就不翻译了 常见的 task（宏任务） 比如：setTimeout、setInterval、script（整体代码）、 I/O 操作、UI 渲染等。 常见的 micro-task 比如: new Promise().then(回调)、Object.observe、MutationObserver(html5 新特性) 等。
 
 拓展：js 单线程，单线程就是只能同时只做一件事，两段 js 不能同时执行，避免 DOM 渲染冲突
 

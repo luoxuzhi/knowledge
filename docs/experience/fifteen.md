@@ -51,11 +51,21 @@ const，也不会预分配内存空间，在栈内存分配变量时也会做同
 
 三.变量提升 let const 和 var 三者其实会存在变量提升
 
-let 只是创建过程提升，初始化过程并没有提升，所以会产生暂时性死区。 var 的创建和初始化过程都提升了，所以在赋值前访问会得到 undefined function 的创建、初始化、赋值都被提升了
+let 只是声明过程提升，初始化过程并没有提升，即没有复制为 undefined，所以会产生暂时性死区。
+
+var 的声明和初始化过程都提升了，提升之后赋值为 undefined，所以在赋值前访问会得到 undefined
+
+function 的创建、初始化、赋值都被提升了
 
 ### 6. 性能优化有哪些方向
 
-打包减少文件大小(用 Happypack 来加速代码构建，dll，uglify 优化)、EventLoop 异步更新、浏览器缓存原理及最佳设置、避免重绘和回流、cdn 网络传输、较少 dom 操作、节流防抖等,webpack(小图片 base64 编码、提取公共代码、bundle 加 hash、使用 cdn、懒加载、ignorePlugin)
+打包减少文件大小(用 Happypack 来加速代码构建，dll，uglify 优化)、
+
+webpack(小图片 base64 编码、提取公共代码、bundle 加 hash、使用 cdn、懒加载、ignorePlugin)
+
+网络：浏览器缓存原理及最佳设置、cdn 网络传输
+
+减少 dom 操作避免重绘和回流、节流防抖、js 懒执行（defer）
 
 ### 7. 脚手架改造加了哪些功能
 
@@ -103,3 +113,11 @@ Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，R
 - module---各个源码文件，webpack 中一切皆模块
 - chunk---多模块合成的，如 entry、import、splitChunk
 - bundle ---最终输出的文件
+
+### 15. 为什么使用 gif 做埋点
+
+- 没有跨域问题；
+
+- 不用插入 DOM，只要在 js 中 new 出 Image 对象就能发起请求，不会阻塞页面加载，影响用户体验；
+
+- 在所有图片中体积最小，相较 BMP/PNG，可以节约 41%/35%的网络资源。
