@@ -4,7 +4,7 @@
 
 2、[新手学习 react 迷惑的点](https://mp.weixin.qq.com/s/vDcFV3LiWBEbDBhf4XZ0uw)
 
-3、`this.prop.children` 指的是组件标签内的内容
+3、`this.props.children` 指的是组件标签内的内容
 
 4、`dangerouslySetInnerHTML`,`style`要是要双花括号
 
