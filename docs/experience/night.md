@@ -84,7 +84,7 @@ d.data 属性变化，触发 rerender
 2. 在 vue 1 中是没有 patch 的，因为界面中每个依赖都有专门的 watcher 负责更新，这样项目规模变大就会成为性能瓶颈，vue 2 中为了降低 watcher 粒度，每个组件只有一个 watcher，但是当需要更新的时候，怎样才能精确找到发生变化的地方？这就需要引入 patch 才行。
 3. 组件中数据发生变化时，对应的 watcher 会通知更新并执行其更新函数，它会执行渲染函数获取全新虚拟 dom：newVnode，此时就会执行 patch 比对上次渲染结果 oldVnode 和新的渲染结果 newVnode。
 4. patch 过程遵循深度优先、同层比较的策略；两个节点之间比较时，如果它们拥有子节点，会先比较子节点；比较两组子节点时，会假设头尾节点可能相同先做尝试，没有找到相同节点后才按照通用方式遍历查找；查找结束再按情况处理剩下的节点；借助 key 通常可以非常精确找到相同节点，因此整个 patch 过程非常高效。
-5. 核心逻辑 `createElement`和`updateChildren`
+5. 核心逻辑 `createElement`和[`updateChildren`](https://blog.csdn.net/zemprogram/article/details/101694601)
 
 ### 9. Vue 监听 data 每个属性的变化？为什么要监听 get，直接监听 set 为什么不行？
 
