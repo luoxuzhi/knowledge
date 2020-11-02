@@ -4,5 +4,5 @@ export default () => { console.log('function default') }
 export const one = () => { console.log('function one')}
 export const two = () => { console.log('function two')}
 // index.js
-import('./moduleA.js').then(ret => { ret.default() })
-import('./moduleB.js').then((one,tow) => { one();two() })
+import('./moduleA.js.js').then(ret => { ret.default() })
+import('./moduleB.js.js').then((one,two) => { one();two() })
