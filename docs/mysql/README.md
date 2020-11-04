@@ -17,7 +17,7 @@ Or, if you don't want/need a background service you can just run:
 
 ## 1. mysql 使用
 
-- 连接 mysql -uroot -p
+- 连接 mysql -uroot
 - 查看所有数据库 show databases
 - 选择要操作的数据库 use `<database>`
 
