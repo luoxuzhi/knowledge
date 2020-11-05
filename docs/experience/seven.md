@@ -1,3 +1,3 @@
-## 7.linux 常用命令
+## 7.linux
 
 <img :src="$withBase('/assets/Linux.jpg')">

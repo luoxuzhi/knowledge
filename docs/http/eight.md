@@ -1,4 +1,4 @@
-## 8. http 的各个版本
+## 14. http 的各个版本
 
 ### 1. cdn 快的原理
 
@@ -62,9 +62,9 @@ DN 网络由一个 DNS 服务器和几台缓存服务器组成：
 - http1.0 到 http1.1 的主要区别，就是从无连接到长连接
 - http2.0 对比 1.X 版本主要区别就是多路复用
 
-#### https,https 主要的思想是在 http 基础上增加了 ssl 安全层：
+#### https,https 主要的思想是在 http 基础上增加了 tls 安全层：
 
-a. 客户端使用 https 的 url 访问 web 服务器,要求与服务器建立 ssl 连接
+a. 客户端使用 https 的 url 访问 web 服务器,要求与服务器建立 tls 连接
 
 b. web 服务器收到客户端请求后, 会将网站的证书(包含公钥)传送一份给客户端
 
@@ -73,3 +73,7 @@ c. 客户端收到网站证书后会检查证书的颁发机构以及过期时�
 d. 客户端利用公钥将会话秘钥加密, 并传送给服务端, 服务端利用自己的私钥解密出会话秘钥
 
 e. 之后服务器与客户端使用秘钥加密传输
+
+tls 握手过程 [详细见链接](https://imququ.com/post/optimize-tls-handshake.html)
+
+<img :src="$withBase('/assets/https-handshake.png')">

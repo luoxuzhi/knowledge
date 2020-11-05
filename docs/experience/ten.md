@@ -1,4 +1,4 @@
-## 10. React 相关
+## 10. React
 
 ### 1. react componentDidMount 里面 settimeTout 写 setState 为什么是同步的
 

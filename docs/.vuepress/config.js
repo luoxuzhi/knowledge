@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Person Blog',
-  description: 'Person Blog',
+  title: 'Person Record',
+  description: 'Person Record',
   head: [
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
@@ -94,7 +94,6 @@ module.exports = {
         'eleven',
         'twelve',
         'thirteen',
-        'fourteen',
         'fifteen',
         'sixteen',
         'seventeen',

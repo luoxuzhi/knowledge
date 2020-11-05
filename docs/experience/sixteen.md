@@ -2,7 +2,7 @@
 
 ### 1. Vue3 的新特性
 
-a. setup() 函数是 vue3 中，专门为组件提供的新属性。它为我们使用 vue3 的 Composition API 新特性提供了统一的入口,setup 函数会在 beforeCreate 之后、created 之前执行!
+a. setup() 函数是 vue3 中，专门为组件提供的新属性。它为我们使用 vue3 的 Composition API 新特性提供了统一的入口,setup 函数会在 `beforeCreate` 之前执行。
 
 ```js
 setup(props, context) {

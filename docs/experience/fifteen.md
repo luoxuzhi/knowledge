@@ -1,6 +1,6 @@
 ## 15. 杂记
 
-### 1. Class 和普通构造函数有何区别？
+### Q1. Class 和普通构造函数有何区别？
 
 a. typeof Class // function
 
@@ -12,17 +12,17 @@ d. 更易于写 java 等后端语言的使用
 
 e.本质还是语法糖，使用 prototype
 
-### 2. es6 其他常用功能
+### Q2. es6 其他常用功能
 
 let/const、多行字符串/模板变量、解构赋值、函数默认参数、箭头函数、块级作用域
 
-### 3. 原型的实际应用例子
+### Q3. 原型的实际应用例子
 
 jquery 如何使用原型，$.css $.html css,html 都是原型上面的方法
 
 原型的扩展性：jquery 插件的扩展性、Vue 的扩展性
 
-### 4. async await 在 generator 的基础上做的优化，区别
+### Q4. async await 在 generator 的基础上做的优化，区别
 
 a. async 内置执行器。Generator 函数的执行必须靠执行器，需要调用 next() 方法，或者用 co 模块；而 async 函数自带执行器。async 函数的执行与普通函数一模一样，只要一行。
 
@@ -32,7 +32,7 @@ c. 更广的适用性。co 模块约定，yield 命令后面只能是 Thunk 函�
 
 d. async 返回值是 Promise，可以用 then 方法指定下一步的操作。比 Generator 函数的返回值是 Iterator 对象方便
 
-### 5. var、let 和 const 区别的实现原理是什么（声明过程，内存分配，和变量提升）
+### Q5. var、let 和 const 区别的实现原理是什么（声明过程，内存分配，和变量提升）
 
 一.声明过程
 var：遇到有 var 的作用域，在任何语句执行前都已经完成了声明和初始化，也就是变量提升而且拿到 undefined 的原因由来。
@@ -57,7 +57,7 @@ var 的声明和初始化过程都提升了，提升之后赋值为 undefined，
 
 function 的创建、初始化、赋值都被提升了
 
-### 6. 性能优化有哪些方向
+### Q6. 性能优化有哪些方向
 
 打包减少文件大小(用 Happypack 来加速代码构建，dll，uglify 优化)、
 
@@ -67,27 +67,27 @@ webpack(小图片 base64 编码、提取公共代码、bundle 加 hash、使用 
 
 减少 dom 操作避免重绘和回流、节流防抖、js 懒执行（defer）
 
-### 7. 脚手架改造加了哪些功能
+### Q7. 脚手架改造加了哪些功能
 
 `CopyWebpackPlugin`/`GenerateAssetPlugin`/`HappyPack`开启多线程打包
 
-### 8. jQuery 怎么解决地域回调
+### Q8. jQuery 怎么解决地域回调
 
 Jquery 有延迟对象`$.Deferred()`，简单封装`Defered`使得用法类似`promise`，类似`Promise`
 
-### 9. 酷炫的 css 特性
+### Q9. 酷炫的 css 特性
 
 box-reflect、多列布局 column-count: 5;-webkit-box-reflect
 
-### 10. html meta 用法
+### Q10. html meta 用法
 
 chartset name(title、description、keywords) http-equiv
 
-### 11. nginx 配置某台机器访问特定的文件夹
+### Q11. nginx 配置某台机器访问特定的文件夹
 
 gzip、location、proxy_pass、proxy_set_header、allow、deny
 
-### 12. React 和 Vue 区别
+### Q12. React 和 Vue 区别
 
 共同点：
 组件化、都是数据驱动视图
@@ -99,7 +99,7 @@ React--本质是前端组件化框架，由后端组件化发展而来
 
 Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，React 本身是组件化。
 
-### 13. Webpack 打包构建的好处
+### Q13. Webpack 打包构建的好处
 
 - 体积更小，加载更快
 - 编译更高级语法
@@ -108,13 +108,13 @@ Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，R
 - 统一的构建和产出流程
 - 集成公司构建规范
 
-### 14. Webpack 中 module、chunk、bundle 的区别
+### Q14. Webpack 中 module、chunk、bundle 的区别
 
 - module---各个源码文件，webpack 中一切皆模块
 - chunk---多模块合成的，如 entry、import、splitChunk
 - bundle ---最终输出的文件
 
-### 15. 为什么使用 gif 做埋点
+### Q15. 为什么使用 gif 做埋点
 
 - 没有跨域问题；
 
