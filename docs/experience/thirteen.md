@@ -43,7 +43,7 @@ function create(Con) {
 }
 ```
 
-### 5. 简单的深拷贝实现
+### 5. 深拷贝实现
 
 深拷贝可以拆分成 2 步，浅拷贝+递归，浅拷贝时判断属性值是否是对象，如果是对象就进行递归操作，两个一结合就实现了深拷贝。
 
@@ -70,6 +70,61 @@ function cloneDeep1(source) {
 2、对于对象的判断逻辑不严谨，因为 typeof null === 'object'
 
 3、没有考虑数组的兼容
+
+4、没有考虑循环引用，循环引用指的是 a.a = a (`循环引用延伸到 commonjs、esmodule 的循环引用`)
+
+下面代码是一个改良版的，但仍存在一些问题，比如正则、symbol、date 类型的拷贝可能会出现问题，
+所以日常开发中用 lodash 的深拷贝，知道深拷贝的过程中存在哪些问题就好了！
+
+```js
+function isObj(source) {
+  return typeof source === 'object' && source !== null
+}
+
+function findSoure(arr, source) {
+  // 因为保存source在push进arr的时候，保存的是指针地址，所以下面用===能找到
+  return arr.find(item => item.source === source)
+}
+
+function deepClone(source, saveList = []) {
+  if (!isObj(source)) return source
+
+  let result = Array.isArray(source) ? [] : {}
+
+  let isExitReult = findSoure(saveList, source)
+  if (isExitReult) return isExitReult.result
+
+  saveList.push({ source, result })
+
+  for (const key in source) {
+    // 只处理source的自身属性，不处理prototype的属性
+    if (source.hasOwnProperty(key)) {
+      const element = source[key]
+      if (isObj(element)) {
+        result[key] = deepClone(element, saveList)
+      } else {
+        result[key] = element
+      }
+    }
+  }
+  return result
+}
+
+let AA = {
+  a: 3,
+  b: {
+    text: '8',
+  },
+  c: [1, 2, 3, 4],
+}
+
+AA.d = AA
+let BB = deepClone(AA)
+BB.c = [2, 3, 4, 5]
+console.log(AA, BB)
+```
+
+<img :src="$withBase('/assets/deep-clone.png')">
 
 ### 6. js 中大数相加
 

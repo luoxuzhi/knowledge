@@ -94,6 +94,7 @@ module.exports = {
         'eleven',
         'twelve',
         'thirteen',
+        'fourteen',
         'fifteen',
         'sixteen',
         'seventeen',

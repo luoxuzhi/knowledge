@@ -1,45 +1,34 @@
-## 17. 直播
+## 17. 经典编程题
 
-1.直播协议：
-HLS 协议、RTMP 协议、HTTP-FLV 协议
+1.
 
-2.hls 好用但有延时，对延时要求不高可使用
-<img :src="$withBase('/assets/hls.png')">
+注意第一个例子，具名的立即执行函数不能被重新赋值，所以 b=20 无效
 
-动态列表直播（live playlist）、全量列表点播（vod playlist）
-
-hls 解析过程
-
-第一个 ts 文件会查找 PAT 文件，PAT 文件会查找 PMT 文件，PAT、PMT（音频视频帧）和 ts 组合成 PES 文件
-
-<img :src="$withBase('/assets/hls-1.png')">
-
-3.rtmp 用于传统的视频，使用客户端采集源收集到服务器可以使用 tcp 协议传输，如果用 web 进行源采集则是基于 webRtc
-，使用相对复杂，实时性好，减少延时可使用该方式，格式是 flv
-
-<img :src="$withBase('/assets/rtmp.png')">
-
-4.http-flv 是 rtmp 的升级版，它兼具 hls 和 rtmp 的优点， 可减少延时，视频格式是 flv，是 flv 长连接，不利于并发。
-与 rtmp 的区别是 rtmp 和用户之间是用 tcp 通信，而 http-flv 和播放客户端是基于 http 协议的，但是它们的格式都是 flv。
-
-<img :src="$withBase('/assets/http-flv.png')">
-
-5.video 属性
-<img :src="$withBase('/assets/video-prop.png')">
-
-6.video 事件
-
-可流畅播放的事件：canplaythrough
-自定义进度条用 timeupdate 事件
-
-#### loadstart durationchange loadedmetadata
-
-#### progress canplay play pause
-
-#### seeking seeked waiting ended
-
-<img :src="$withBase('/assets/video-event.png')">
-
-7.制作流
-
-[可以用在线流](https://blog.csdn.net/xbfengyu/article/details/100094747)
+```js
+var b = 10
+;(function b() {
+  // 内部作用域，会先去查找是有已有变量b的声明，有就直接赋值20，确实有了。发现了具名函数 function b(){}，拿此b做赋值；
+  // IIFE的函数无法进行赋值（内部机制，类似const定义的常量），所以无效。
+  // （这里说的“内部机制”，想搞清楚，需要去查阅一些资料，弄明白IIFE在JS引擎的工作方式，堆栈存储IIFE的方式等）
+  b = 20
+  console.log(b) // [Function b]
+  console.log(window.b) // 10，不是20
+})()
+-------------------------------------------------------------------------------------
+var b = 10
+;(function() {
+  // 内部作用域，会先去查找是有已有变量b的声明，有就直接赋值20，此时的b是全局的b，拿此b做赋值；
+  // IIFE的函数无法进行赋值（内部机制，类似const定义的常量），所以无效。
+  // （这里说的“内部机制”，想搞清楚，需要去查阅一些资料，弄明白IIFE在JS引擎的工作方式，堆栈存储IIFE的方式等）
+  b = 20
+  console.log(b) // 20
+  console.log(window.b) // 20
+})()
+-------------------------------------------------------------------------------------
+var b = 10
+;(function b() {
+  var b = 20
+  console.log(b) // 20
+  console.log(window.b) // 10，不是20
+})()
+```
