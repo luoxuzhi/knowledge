@@ -217,6 +217,68 @@ Q9. 跨域怎么做，怎么允许 cookie 跨域
 后端 'Access-Control-Allow-Origin'要设置具体域名，'Access-Control-Allow-Credentials'要设置 true，
 前端请求头要带上'withCredentials:true'
 
+### 5.腾讯视频 1 面
+
+```js
+编程题一：
+function Page() {
+  return this.hosts
+}
+Page.hosts = ['h1']
+Page.prototype.hosts = ['h2']
+
+const p1 = new Page()
+const p2 = Page()
+
+console.log(p1.hosts) // undefined
+// p1通过new 创建，因此可以获取到原型链上的hosts返回p1= ['h2'],p1没有hosts属性所以返回undefined
+
+console.log(p2.hosts) // Cannot read property 'hosts' of undefined
+// p2 为函数直接执行结果，此时this指向window，返回p2为undefined
+
+题目二：
+
+var value = 20
+(function () {
+  console.log(name) // undefined
+
+  console.log(value) // Cannot access 'value' before initialization
+  var name = 'local value'
+  let value = 21
+})();
+
+题目三：
+1、腾讯行政MM请求程序员小哥哥帮忙：提前一天能收到某间会议室预定的全部开始和结束时间，
+要求根据时间列表编排会议室日程，为了使得会议室资源最大化利用，希望能尽量多的安排当天会议场次。
+
+要求实现一个方法，输入场次列表，输出最多能安排的会议，例如输入数组：
+
+[{start:'9:00',end:'10:00'},{start:'10:00',end:'11:00'},{start:'9:30',end:'12:00'},
+{start:'9:00',end:'11:30'},{start:'11:00',end:'11:30'},{start:'14:30',end:'16:00'},
+{start:'17:00',end:'18:00'},{start:'19:30',end:'21:00'},{start:'19:00',end:'20:00'},
+{start:'11:00',end:'12:00'}]
+
+输出：
+[{start:'9:00',end:'10:00'},{start:'10:00',end:'11:00'},
+{start:'11:00',end:'12:00'},{start:'14:30',end:'16:00'},
+{start:'17:00',end:'18:00'}，{start:'19:00',end:'20:00'}]
+
+题目四：请实现函数log()，将一个对象扁平化的输出到控制台。如：
+log({
+  foo : 'test',
+  bar : {
+      id : 123,
+      name : 'tx'
+  }
+})
+输出：
+foo=test
+bar.id=123
+bar.name=tx
+
+
+```
+
 ### 6.头条 1 面
 
 Q1. Vue 自定义指令 insert 和 bind 的区别？
@@ -242,3 +304,155 @@ Q6. import 文件是什么时候执行？ commonjs 和 es 模块的区别？
 Q7. window.requestAnimationFrame 什么时候执行？
 
 Q8. webpack 打包过程中主要的执行流、构建流程是怎么样的？做了哪些事情
+
+编程题：
+
+```js
+// 第一题,两个打印的结果
+var a = function() {
+  this.b = 3
+}
+var c = new a()
+a.prototype.b = 9
+var b = 7
+a()
+console.log(b) // 3
+console.log(c.b) // 3
+
+// 第二题，实现add(1,2)(5)、add(1)(2)(5)、add(1)(2,5) 等于8
+function sum(a, ...args) {
+  let sum = [a, ...args].reduce((a, b) => a + b)
+  function s(b, ...args1) {
+    let sum1 = [b, ...args1].reduce((c, d) => c + d)
+    sum += sum1
+    return s
+  }
+  s.toString = () => sum
+  return s
+}
+
+// 第三题：实现中文一二三四五六七八九十代表的亿以下的数转化为阿拉伯数字，
+// 如五百七十万零二十，输出5700020
+let chnNumChar = {
+  零: 0,
+  一: 1,
+  二: 2,
+  三: 3,
+  四: 4,
+  五: 5,
+  六: 6,
+  七: 7,
+  八: 8,
+  九: 9,
+}
+let chnNameValue = {
+  十: { value: 10, secUnit: false },
+  百: { value: 100, secUnit: false },
+  千: { value: 1000, secUnit: false },
+  万: { value: 10000, secUnit: true },
+  亿: { value: 100000000, secUnit: true },
+}
+function transChineseToNumer(chineseStr) {
+  let rtn = 0
+  let section = 0
+  let number = 0
+  let secUnit = false
+  let str = chineseStr.split('')
+  for (let i = 0; i < str.length; i++) {
+    let num = chnNumChar[str[i]]
+    if (typeof num !== 'undefined') {
+      number = num
+      if (i === str.length - 1) {
+        section += number
+      }
+    } else {
+      let unit = chnNameValue[str[i]].value
+      secUnit = chnNameValue[str[i]].secUnit
+      if (secUnit) {
+        section = (section + number) * unit
+        rtn += section
+        section = 0
+      } else {
+        section += number * unit
+      }
+      number = 0
+    }
+  }
+  return rtn + section
+}
+```
+
+### 头条 2 面
+
+编程题:
+
+```js
+// 第一题：写出以下代码的打印顺序
+async function async1() {
+  console.log('async1 start') // 2
+  await async2()
+
+  console.log('async1 end') // 6
+}
+
+async function async2() {
+  console.log('async2') // 3
+}
+
+console.log('script start') //1
+setTimeout(function() {
+  console.log('setTimeout') // 9
+}, 0)
+
+requestAnimationFrame(function() {
+  console.log('requestAnimationFrame') // 8
+})
+
+async1()
+new Promise(function(resolve) {
+  console.log('promise1') // 4
+  resolve()
+}).then(function() {
+  console.log('promise2') // 7
+})
+
+console.log('script end') // 5
+
+// script start
+// async1 start
+// async2
+// promise1
+// script end
+// async1 end
+// promise2
+// requestAnimationFrame
+// setTimeout
+```
+
+```js
+// 第二题：给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格，
+// 可以在第i天买进，它后面的天数卖出。设计一个算法来计算你所能获取的最大利润。
+// 注意: 你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+// 如 [5, 3, 3, 5, 6, 9, 8] 最大的利润为9-3 = 6 [5, 4, 3, 2, 1]
+// 输出为0，[5, 8, 8, 5, 6, 10, 13, 9, 11, 9] 输出13
+
+// 思路，画波形图，低点买入高点卖出
+function getMaxProfile(arr) {
+  let len = arr.length
+  let result = []
+
+  let j, k
+  for (let i = 0; i < len; i++) {
+    j = k = i
+    while (arr[i] < arr[i + 1]) {
+      k = ++i
+    }
+    if (arr[j] !== arr[k]) {
+      result.push(arr[k] - arr[j])
+    }
+  }
+  return result.length ? result.reduce((a, b) => a + b) : 0
+}
+
+console.log(getMaxProfile([5, 8, 8, 5, 6, 10, 13, 9, 11, 9]))
+```
