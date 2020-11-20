@@ -84,3 +84,55 @@ static associate(models) {
 ```
 
 ## 6. sequelize 框架实现在服务端代码中对 mysql 代码增删改查
+
+a. 安装依赖
+
+```js
+npm install sequelize mysql2 -S
+```
+
+b. 创建 model，model 与数据库中的表对应，截图中左边为在服务端代码中定义 model，右边为通过`sequelize-cli`自动创建 model 代码。
+<img :src="$withBase('/assets/define-model-diff.png')">
+
+c.往数据库中新增记录，先创建 model 实例再进行保存,分别是 `build`和`save`方法。
+
+```js
+router.get('/addTodo', async function(ctx, next) {
+  const { text } = ctx.query
+  let newTask = TodoModel.build({ text })
+  await newTask.save()
+  ctx.body = {
+    code: 0,
+    message: '任务新增成功',
+  }
+})
+```
+
+d. 修改数据库记录，查询出来后使用`update`,代码如下
+
+```js
+router.get('/updateStatus', async function(ctx, next) {
+  let { id, isFinish } = ctx.query
+  let status = isFinish == 0 ? 1 : 0
+  let todo = await TodoModel.findAll({ where: { id } })
+  await todo[0].update({ isFinish: status })
+  ctx.body = {
+    code: 0,
+    message: '任务状态更改成功',
+  }
+})
+```
+
+d. 删除数据库记录，查询出来后使用`destroy`,代码如下：
+
+```js
+router.get('/deleteTask', async function(ctx, next) {
+  let { id } = ctx.query
+  let todo = await TodoModel.findAll({ where: { id } })
+  await todo[0].destroy()
+  ctx.body = {
+    code: 0,
+    message: '任务删除成功',
+  }
+})
+```
