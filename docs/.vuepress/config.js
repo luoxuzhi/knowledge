@@ -27,7 +27,7 @@ module.exports = {
           { text: '1.es5', link: '/es5/' },
           { text: '2.es6', link: '/es6/' },
           { text: '3.typescript', link: '/typescript/' },
-          { text: '4.Vue2', link: '/vue/' },
+          { text: '4.Vue2', link: '/vue2/' },
           { text: '5.Vue3', link: '/vue3/' },
           { text: '6.react', link: '/react/' },
           { text: '7.react-native', link: '/react-native/' },
@@ -52,13 +52,6 @@ module.exports = {
       },
     ],
     sidebar: {
-      '/vue/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'],
-      '/react/': ['', 'two'],
-      '/typescript/': ['', 'two'],
-      '/mongodb/': [''],
-      '/http/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
-      '/miniprogram/': [''],
-      '/node/': ['', 'two'],
       '/es5/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'],
       '/es6/': [
         '',
@@ -79,6 +72,22 @@ module.exports = {
         'sixteen',
         'seventeen',
       ],
+      '/typescript/': ['', 'two'],
+      '/vue2/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'],
+      '/vue3/': [''],
+      '/react/': ['', 'two'],
+      '/react-native/': [''],
+      '/flutter/': [''],
+      '/uni-app/': [''],
+      '/miniprogram/': [''],
+      '/publiccount/': [''],
+      '/node/': ['', 'two'],
+      '/mysql/': [''],
+      '/mongodb/': [''],
+      '/nginx/': [''],
+      '/docker/': [''],
+      '/data-constructure/': [''],
+      '/http/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
       '/imooc/': [''],
       '/experience/': [
         '',
@@ -100,28 +109,6 @@ module.exports = {
         'seventeen',
         'eightteen',
       ],
-      // '/svg/':[
-      //   '',
-      //   'two',
-      //   'three',
-      //   'four',
-      //   'five',
-      //   'six',
-      //   'seven',
-      //   'eight',
-      //   'nine',
-      //   'ten'
-      // ]
     },
-    // sidebar: [
-    //     {
-    //         title: '准备工作',
-    //         collapsable: false,
-    //         children: [
-    //             'prepare/',
-    //             'prepare/flow',
-    //         ]
-    //     }
-    // ]
   },
 }
