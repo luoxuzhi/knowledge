@@ -81,7 +81,7 @@ module.exports = {
       '/uni-app/': [''],
       '/miniprogram/': [''],
       '/publiccount/': [''],
-      '/node/': ['', 'two'],
+      '/nodejs/': ['', 'two'],
       '/mysql/': [''],
       '/mongodb/': [''],
       '/nginx/': [''],
