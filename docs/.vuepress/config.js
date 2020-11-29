@@ -88,7 +88,7 @@ module.exports = {
       '/docker/': [''],
       '/data-constructure/': [''],
       '/http/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
-      '/imooc/': [''],
+      '/imooc/': ['', 'two', 'three', 'four', 'five', 'six'],
       '/experience/': [
         '',
         'two',
