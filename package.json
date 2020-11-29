@@ -8,7 +8,9 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "deploy": "sh build.sh"
+    "deploy": "sh build.sh",
+    "push": "git push origin master",
+    "publish": "npm run push && npm run deploy"
   },
   "devDependencies": {
     "vuepress": "^1.0.3"
