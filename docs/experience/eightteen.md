@@ -179,6 +179,9 @@ Q9. 判断数据类型的方法？
 
 - Object.prototype.toString.call() //这个方法是最好了，可以明确的区分各种类型
 - typeof //这个区分不出来数组和对象和 null。
+
+typeof 类型 `number undefined string boolean object function` [js 中的值类型和引用类型的区别](https://www.cnblogs.com/leiting/p/8081413.html)
+
 - Array.isArray() //这个用来区分数组
 - instanceof //无法区分 null 和 undefined
 

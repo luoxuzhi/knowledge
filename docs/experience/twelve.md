@@ -90,3 +90,16 @@ b.x // --> {n: 2}
 渲染树的每个元素包含的内容都是计算过的，它被称之为布局 layout。浏览器使用一种流式处理的方法，只需要一次 pass 绘制操作就可以布局所有的元素。
 
 将渲染树的各个节点绘制到屏幕上，这一步被称为绘制 painting.
+
+### 7. onload 和 DOMContentLoaded 的区别，推荐使用 `DOMContentLoaded`
+
+window.onload 加载完所有资源包括 dom 图片 css 视频 只执行一次,多个 onload 后面的覆盖前面的
+
+jq 的 ready 文档等 dom 结构加载完执行，执行多次，从上到下执行，相当于 DOMContentLoaded，DOMContentLoaded DOM 渲染完即可，此时图片、视频可能还没有加载完
+
+ie8 点击动作 js 的执行顺序为由下而上
+
+```js
+window.addEventListener('load',()=>{}) window.onload=function(){}
+window.addEventListener('DOMContentLoaded',()=>{})
+```
