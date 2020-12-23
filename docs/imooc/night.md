@@ -5,3 +5,7 @@
 ```js
 import 'echarts/extension/bmap/bmap'
 ```
+
+2.SVG 学习`viewBox`帮助网站
+
+[SVG viewport、viewBox、preserveAspectRatio](https://blog.csdn.net/chy555chy/article/details/53538394)
