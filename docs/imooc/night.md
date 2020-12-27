@@ -27,4 +27,10 @@ exports.b = 2
 
 - [rollup 配置打包.vue 文件过程碰到问题的解决方案](https://blog.csdn.net/kalrase/article/details/110186870)
 
-3. SVG 学习`viewBox`帮助网站 [SVG viewport、viewBox、preserveAspectRatio](https://blog.csdn.net/chy555chy/article/details/53538394)
+3. SVG 知识点
+
+- SVG 基础知道了解 [SVG viewport、viewBox、preserveAspectRatio](https://blog.csdn.net/chy555chy/article/details/53538394)
+
+* [SVG 动画相关例子](http://www.youbaobao.xyz/datav-docs/guide/libs/svgAnimation.html#svg-%E5%8A%A8%E7%94%BB%EF%BC%88smil%EF%BC%89)，常用的有`animate/set/animateTransform/animateMotion`
+
+* symbol 相比 g 的有点是内部可以有独立的`viewBox`，外面使用的时候不需要设置`viewBox`属性
