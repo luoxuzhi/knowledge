@@ -51,3 +51,5 @@ exports.b = 2
   <use href="#fly-box-path" :stroke="starColor" stroke-width="3" mask="url(#fly-box-mask)"></use>
 </svg>
 ```
+
+- rollup 打包支持`async await`语法需安装`@babel/plugin-transform-runtime`
