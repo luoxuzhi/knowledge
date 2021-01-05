@@ -27,6 +27,8 @@ exports.b = 2
 
 - [rollup 配置打包.vue 文件过程碰到问题的解决方案](https://blog.csdn.net/kalrase/article/details/110186870)
 
+- rollup 打包支持`async await`语法需安装`@babel/plugin-transform-runtime`
+
 3. SVG 知识点
 
 - SVG 基础知道了解 [SVG viewport、viewBox、preserveAspectRatio](https://blog.csdn.net/chy555chy/article/details/53538394)
@@ -52,4 +54,18 @@ exports.b = 2
 </svg>
 ```
 
-- rollup 打包支持`async await`语法需安装`@babel/plugin-transform-runtime`
+4. MutationObserver
+
+实际使用，[相关的 API 看 MDN 介绍](https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver/MutationObserver)
+
+```js
+const initMutationObserver = () => {
+  observer = new window.MutationObserver(onReize)
+  observer.observe(containerEle, {
+    attributes: true,
+    attributeOldValue: true,
+    // attributeFilter: ['style'],
+    // subtree: true,
+  })
+}
+```
