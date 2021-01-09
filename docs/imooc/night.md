@@ -69,3 +69,12 @@ const initMutationObserver = () => {
   })
 }
 ```
+
+5. 开发 Vue3 组件库并在项目中使用`npm link` 进行热更新使用时，为防止报类似以下的类型错误，需要通过`export default defineComponent({})`的写法写业务组件。[问题记录](https://blog.csdn.net/aa760774653/article/details/112414623)
+
+```js
+[Vue warn]: Invalid VNode type: true (boolean)
+ at <Home onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< undefined > >
+ at <RouterView>
+ at <App>
+```
