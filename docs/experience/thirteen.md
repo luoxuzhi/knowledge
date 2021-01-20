@@ -77,14 +77,10 @@ function cloneDeep1(source) {
 所以日常开发中用 lodash 的深拷贝，知道深拷贝的过程中存在哪些问题就好了！
 
 ```js
-function isObj(source) {
-  return typeof source === 'object' && source !== null
-}
+const isObj = target => target !== null && typeof target === 'object'
 
-function findSoure(arr, source) {
-  // 因为保存source在push进arr的时候，保存的是指针地址，所以下面用===能找到
-  return arr.find(item => item.source === source)
-}
+// 因为保存source在push进arr的时候，保存的是指针地址，所以下面用===能找到
+const findSoure = (arr, source) => arr.find(item => item.source === source)
 
 function deepClone(source, saveList = []) {
   if (!isObj(source)) return source
@@ -93,12 +89,11 @@ function deepClone(source, saveList = []) {
 
   let isExitReult = findSoure(saveList, source)
   if (isExitReult) return isExitReult.result
-
+  // 须在递归调用之前deepClone之前保存
   saveList.push({ source, result })
-
   for (const key in source) {
     // 只处理source的自身属性，不处理prototype的属性
-    if (source.hasOwnProperty(key)) {
+    if (Object.hasOwnProperty.call(source, key)) {
       const element = source[key]
       if (isObj(element)) {
         result[key] = deepClone(element, saveList)
