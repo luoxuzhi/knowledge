@@ -2,7 +2,7 @@
 
 ### 1. koa 框架 await 实现原理
 
-use 的时候把中间推到一个中间件数组，核心方法是 compose(this.middleware) 返回一个 promise，处理完毕后再执行 handleResponse，compose 的核心方法是返回一个函数，函数的核心是返回 dispatch 函数
+use 的时候把中间推到一个中间件数组，核心方法是 compose(this.middleware) 返回一个 promise，处理完毕后再执行 handleResponse，compose 的核心方法是返回一个函数，函数的核心是返回 dispatch 函数 [更多关于组合函数看这里](https://www.jianshu.com/p/eb268cb0f913)
 
 ```js
 compose() {
