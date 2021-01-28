@@ -26,14 +26,14 @@ class=“test-{{test}}”
 ```js
 // 走onUnload钩子 不走onHide钩子
 wx.redirectTo({
-  url: '../posts/posts'
+  url: '../posts/posts',
 })
 // 当前页面不走onUnload钩子 走onHide钩子，跳转到的页面走onLoad钩子
 wx.navigateTo({
-  url: '../posts/posts'
+  url: '../posts/posts',
 })
 wx.navigateTo({
-  url: `../posts/posts?type=${type}`
+  url: `../posts/posts?type=${type}`,
 })
 ```
 
@@ -68,3 +68,13 @@ wx.navigateTo({
 22.组件里面的跳转路径都从根路径开始写可以保证每个页面跳转都正确（建议不用相对路径）
 
 23.`ctrl+alt+q` 快速新建页面的所有钩子
+
+24. 限定行数溢出隐藏的关键 css 代码
+
+```css
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+text-overflow: ellipsis;
+```
