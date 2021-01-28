@@ -1,4 +1,4 @@
-## 1. hungry-vue-component
+## 1.vue-component
 
 1.`button`组件
 
