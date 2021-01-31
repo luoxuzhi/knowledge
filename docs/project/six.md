@@ -1,4 +1,4 @@
-## 6. Vue H5 qunar
+## 6. vue qunar
 
 1. css 中使用文件夹路径别名，别名前面要加~
 

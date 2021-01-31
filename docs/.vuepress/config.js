@@ -42,7 +42,7 @@ module.exports = {
           { text: '15.docker', link: '/docker/' },
           { text: '16.data-constructure', link: '/data-constructure/' },
           { text: '17.http', link: '/http/' },
-          { text: '18.course', link: '/course/' },
+          { text: '18.project', link: '/project/' },
           { text: '19.experience', link: '/experience/' },
         ],
       },
@@ -88,7 +88,7 @@ module.exports = {
       '/docker/': [''],
       '/data-constructure/': [''],
       '/http/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
-      '/course/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'night', 'ten'],
+      '/project/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'night', 'ten'],
       '/experience/': [
         '',
         'two',

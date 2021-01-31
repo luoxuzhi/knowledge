@@ -1,4 +1,4 @@
-## 3. Vue+Node+MongoDB 高级全栈开发
+## 3. vue+node+mongodb 全栈商城
 
 1. [项目链接](https://mall.ncuxz.fun/#/goods)
 

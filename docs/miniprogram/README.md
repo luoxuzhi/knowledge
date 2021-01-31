@@ -86,3 +86,13 @@ text-overflow: ellipsis;
   </swiper-item>
 </block>
 ```
+
+25. 小程序云函数的参数 evnet 里默认包含 userInfo,包含内容如下：
+
+```js
+const {
+  userInfo: { appId, openId },
+} = event
+```
+
+26. 小程序中所有的自定义属性都是`data-`开头

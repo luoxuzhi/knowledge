@@ -1,4 +1,4 @@
-## 2. Vue 全家桶+SSR+Koa2 全栈开发美团网
+## 2. vue+nuxt+koa2 美团
 
 1. nuxt.js 和 koa 开发模板初始化
 

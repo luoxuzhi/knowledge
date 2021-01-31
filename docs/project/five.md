@@ -1,4 +1,4 @@
-## 5. Vue H5 music
+## 5. vue music
 
 1. [项目链接](http://music.ncuxz.fun/#/recommend)
 
