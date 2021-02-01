@@ -137,3 +137,35 @@ getMovableDistance() {
 ```
 
 29. 小程序中不同的组件间传值通过`app.js`中定义全局属性
+
+30. 小程序定义在 components 文件夹中的组件自带样式隔离，类似 Vue 中的 scoped，使用外部样式的 3 种方式
+
+- 可配置`externalClasses`选项传入外部定义的样式类名
+
+```js
+properties: {},
+externalClasses: ['iconfont', 'icon-sousuo'],
+```
+
+- 配置 options
+
+```jsproperties: {},
+options: {
+    styleIsolation: 'apply-shared',
+  },
+```
+
+- 组件内定义同样的样式文件通过`@import`引入
+
+31. dom 显示隐藏由`hidden/wx:if`控制，结果同 Vue 中的`v-show/v-if`
+
+32. 使用多个`slot`需要配置 `multipleSlots`,如下,渲染 dom 的顺序由组件内定义的`slot`顺序决定
+
+```js
+options: {
+    styleIsolation: 'apply-shared',
+    multipleSlots: true,
+  }
+```
+
+33. 小程序可以修改 `properties`中定义的值
