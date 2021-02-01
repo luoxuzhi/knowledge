@@ -71,7 +71,18 @@ overflow: hidden;
 text-overflow: ellipsis;
 ```
 
-21. 触发事件 `this.triggerEvent`
+21. 触发事件 `this.triggerEvent`，监听事件`bind`，自定义组件可以绑定自定义事件和原生事件
+
+```js
+backgroundAudioManager.onEnded(() => {
+  this.triggerEvent('musicEnd')
+})
+```
+
+```html
+<x-progress bind:musicEnd="onNext"></x-progress>
+<x-lyric isLyricShow="{{isLyricShow}}" bind:tap="toggleLyricShow"></x-lyric>
+```
 
 22. 组件里面的跳转路径都从根路径开始写可以保证每个页面跳转都正确（建议不用相对路径）
 
@@ -96,3 +107,33 @@ const {
 ```
 
 26. 小程序中所有的自定义属性都是`data-`开头
+
+27. 小程序中类似 Vue 利用 ref 选中组件用 `selectComponent`，`selectComponent`为小程序自带方法，可以获取 dom 元素，示例代码如下
+
+```html
+<x-progress bind:musicEnd="onNext" bind:timeUpdate="timeUpdate"></x-progress>
+```
+
+```js
+// update 为另外一个组件中定义好的方法
+timeUpdate(event) {
+  this.selectComponent('.xlyric').update(event.detail.currentTime)
+},
+```
+
+28. 小程序自带方法还有`createSelectorQuery`
+
+```js
+getMovableDistance() {
+  const query = this.createSelectorQuery()
+  query.select('.movable-area').boundingClientRect()
+  query.select('.movable-view').boundingClientRect()
+
+  query.exec(rect => {
+    movableAreaWidth = rect[0].width
+    movableViewWidth = rect[1].width
+  })
+}
+```
+
+29. 小程序中不同的组件间传值通过`app.js`中定义全局属性
