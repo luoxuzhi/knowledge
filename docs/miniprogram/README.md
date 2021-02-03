@@ -187,3 +187,5 @@ prev.onPullDownRefresh()
 ```html
 <button open-type="share"></button>
 ```
+
+38. 小程序背景图片不能使用本地图片，只能使用网络图片或者本地图片转成 base64
