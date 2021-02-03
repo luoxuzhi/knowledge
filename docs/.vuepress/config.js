@@ -14,7 +14,7 @@ module.exports = {
   port: 8081,
   serviceWorker: false,
   themeConfig: {
-    repo: 'luoxuzhi/know',
+    // repo: 'luoxuzhi/know',
     editLinks: true,
     docsDir: 'docs',
     editLinkText: 'Edit in GitHub',
@@ -79,7 +79,7 @@ module.exports = {
       '/react-native/': [''],
       '/flutter/': [''],
       '/uni-app/': [''],
-      '/miniprogram/': [''],
+      '/miniprogram/': ['', 'two'],
       '/publiccount/': [''],
       '/nodejs/': ['', 'two'],
       '/mysql/': [''],

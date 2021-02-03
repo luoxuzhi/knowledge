@@ -1,4 +1,4 @@
-## 小程序
+## 1. 遗忘点
 
 1. 捕获先于冒泡执行
 
@@ -169,3 +169,21 @@ options: {
 ```
 
 33. 小程序可以修改 `properties`中定义的值
+
+34. 小程序原生组件绑定事件 bind 后面不需要冒号，否则绑定不上，如`textarea`
+
+35. 小程序绑定事件 catch/bind 的区别，·`catch`不冒泡，`bind`冒泡
+
+36. 获取页面栈用`getCurrentPages`，如下
+
+```js
+const curPages = getCurrentPages()
+const prev = curPages[curPages.length - 2]
+prev.onPullDownRefresh()
+```
+
+37. 小程序实现分享功能必须用`button`按钮
+
+```html
+<button open-type="share"></button>
+```
