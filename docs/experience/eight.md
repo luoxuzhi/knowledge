@@ -50,7 +50,7 @@ X-XSS-Protection:1;report=<reporting-uri> // report=<reporting-uri> ： 进行�
 
 ① 过滤
 
-对用户的输入进行过滤，移除用户输入的 Style 节点、Script 节点、Iframe 节点
+对用户的输入进行过滤，移除用户输入的 style、script、iframe、img、a
 
 ② 编码
 
