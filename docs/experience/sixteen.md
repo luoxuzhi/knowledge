@@ -35,6 +35,8 @@ var b = 10
 
 2.
 
+b 在`window`上
+
 ```js
 let i
 for (i = 0; i < 3; i++) {
