@@ -33,7 +33,7 @@ var b = 10
 })()
 ```
 
-2.
+2.  事件循环、作用域
 
 b 在`window`上
 
@@ -66,7 +66,8 @@ console.log(typeof b) // number
 // 0 1 2
 ```
 
-3.
+3.  new Boolean()
+
 `if` 括号里面包裹的内容如果非`boolean`类型都会调用 `new Boolean()` 后通过 `valueOf()`取值，所以下面`if`括号实际执行的是 `(new Boolean(c)).valueOf()`,`new Boolean()`返回的值（通过`valueOf()`取）为`false` 的情况：`null/NaN/undefined/0/-0/''/false`，[链接 1](https://blog.csdn.net/weixin_33770878/article/details/93558751)，[链接 2](https://bbs.csdn.net/topics/392285331)
 
 ```js
@@ -79,7 +80,7 @@ if (c) {
 } // 55
 ```
 
-4.
+4. 原型链
 
 分析：`test` 为 `string` 时候的 `constructor` 为 `String`，`String` 的 `constructor` 的 `Function`，`Function` 的 `constructor` 的本身，所以后面多少`[test]`返回的都是同一个方法
 
@@ -93,7 +94,7 @@ console.log(test[test][test](`console.log(test)`))
 test[test][test][test](`console.log(test)`)() // constructor
 ```
 
-5.
+5. js 比较
 
 包含`boolean`类型的比较规则：[详细见链接](https://www.cnblogs.com/zhaoyl9/p/11313714.html)
 
