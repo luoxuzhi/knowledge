@@ -121,3 +121,11 @@ Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，R
 - 不用插入 DOM，只要在 js 中 new 出 Image 对象就能发起请求，不会阻塞页面加载，影响用户体验；
 
 - 在所有图片中体积最小，相较 BMP/PNG，可以节约 41%/35%的网络资源。
+
+### Q16. Object 和 es6 map 的区别
+
+[链接](https://www.cnblogs.com/mengfangui/p/9934849.html)
+
+- object 的键的类型是 字符串；map 的键的类型是 可以是任意类型；
+
+- object 获取键值使用 Object.keys（返回数组）；Map 获取键值使用 map 变量.keys() (返回迭代器)。
