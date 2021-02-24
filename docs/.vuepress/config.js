@@ -106,7 +106,6 @@ module.exports = {
         'fourteen',
         'fifteen',
         'sixteen',
-        'seventeen',
       ],
     },
   },
