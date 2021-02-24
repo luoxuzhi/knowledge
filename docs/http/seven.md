@@ -1,9 +1,13 @@
-## 7.使用Nginx部署HTTPS服务
+## 7.使用 Nginx 部署 HTTPS 服务
+
+配置`https`需要安装两个模块：`--with-http_ssl_module --with-http_v2_module`,通过`nginx -V`可以看到安装了什么模块：
+
+<img :src="$withBase('/assets/https-ssl.png')">
 
 ```conf
 # HTTPS server
 server {
-    listen 443 ssl;
+    listen 443 ssl http2;
     server_name mall.ncuxz.fun;
 
     ssl_certificate      cert/mall.ncuxz.fun.crt;
