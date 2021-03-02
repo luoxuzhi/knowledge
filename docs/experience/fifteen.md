@@ -92,6 +92,8 @@ console.log(test[test][test](`console.log(test)`))
 // console.log(test)
 // }
 test[test][test][test](`console.log(test)`)() // constructor
+
+Function.prototype.__proto__ === Object.prototype // true
 ```
 
 5. js 比较
