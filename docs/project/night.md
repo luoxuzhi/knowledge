@@ -35,7 +35,7 @@ exports.b = 2
 
 * [SVG 动画相关例子](http://www.youbaobao.xyz/datav-docs/guide/libs/svgAnimation.html#svg-%E5%8A%A8%E7%94%BB%EF%BC%88smil%EF%BC%89)，常用的有`animate/set/animateTransform/animateMotion`
 
-* symbol 相比 g 的有点是内部可以有独立的`viewBox`，外面使用的时候不需要设置`viewBox`属性
+* symbol 相比 g 的优点是内部可以有独立的`viewBox`，外面使用的时候不需要设置`viewBox`属性
 
 * 可以在`svg`标签中通过`defs`标签定义一些类似 js 中变量的图形，通过`use`标签配置`href`属性使用
 
