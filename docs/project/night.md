@@ -14,7 +14,7 @@ import 'echarts/extension/bmap/bmap'
 npm init -y
 ```
 
-- es、commonjs 模块都可以实现 `tree-shaking`效果
+- es、commonjs 模块都可以实现 `tree-shaking`效果 [分析](https://www.cnblogs.com/sexintercourse/p/11901425.html)
 
 ```js
 // es 实现方式
