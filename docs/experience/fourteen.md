@@ -1,131 +1,506 @@
-## 14. 杂记
+## 14. interview
 
-### Q1. Class 和普通构造函数有何区别？
+### 1.有赞
 
-a. typeof Class // function
+Q1. css 盒模型的理解
 
-b.继承的写法不一样，class 使用 extend，es5 使用原型 `A.prototype=new B()`，Class 实现继承更加易读，易理解
+Q2. 怎么理解 js 中的原型？原型有什么作用？js 怎么实现继承
 
-c. Class 在语法上更加贴合面向对象的写法
+每个函数都是一个对象。每个函数都有一个 `prototype` 属性，这个属性是一个指针，指向一个对象，
+而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法，即原型对象。通过子类原型指向父类实例实现继承
 
-d. 更易于写 java 等后端语言的使用
+Q3. 了解 js 的作用域吗？var、let、const 区别？
 
-e.本质还是语法糖，使用 prototype
+Q4. 了解浏览器的同源策略吗？跨域的解决方式？
 
-### Q2. es6 其他常用功能
+Q5. http 和 https 协议的区别？http2 多路复用的作用？https 加密过程？对称加密和非对称加密？缓存机制？
 
-let/const、多行字符串/模板变量、解构赋值、函数默认参数、箭头函数、块级作用域
+Q6. 有用过 nodejs 吗
 
-### Q3. 原型的实际应用例子
+Q7. 有了解过 Vue3 吗？Vue3 响应式和 Vue2 的区别？Proxy 实现有什么好处？Proxy 性能提升体现在什么地方？除了响应式其他的新特性？
 
-jquery 如何使用原型，$.css $.html css,html 都是原型上面的方法
+Q8. 前端安全了解吗？csrf 的原理和处理方式？
 
-原型的扩展性：jquery 插件的扩展性、Vue 的扩展性
+Q9. 对前端工程化 webpack 的了解？
 
-### Q4. async await 在 generator 的基础上做的优化，区别
+### 2.bigo 一面
 
-a. async 内置执行器。Generator 函数的执行必须靠执行器，需要调用 next() 方法，或者用 co 模块；而 async 函数自带执行器。async 函数的执行与普通函数一模一样，只要一行。
+Q1. tcp3 次握手和 4 次挥手
 
-b. 更好的语义。async 和 await 比起星号和 yield，语义更清楚。
+Q2. https 原理、为什么是安全的？非对称和对称加密区别
 
-c. 更广的适用性。co 模块约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面可以是 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。
+Q3. http1.1 和和 http2 区别，http2 除了字节传输、多路复用还有什么其他特性？有多路复用了多张图片还需要拼接吗？
 
-d. async 返回值是 Promise，可以用 then 方法指定下一步的操作。比 Generator 函数的返回值是 Iterator 对象方便
+Q4. xss、csrf 危害、防止手段
 
-### Q5. var、let 和 const 区别的实现原理是什么（声明过程，内存分配，和变量提升）
+Q5. Vue2 双向绑定原理、和 Vue3 响应式原理区别、Vue3 的 Proxy 优势
 
-一.声明过程
-var：遇到有 var 的作用域，在任何语句执行前都已经完成了声明和初始化，也就是变量提升而且拿到 undefined 的原因由来。
+Q6. Vue2 的 diff 算法原理
 
-function： 声明、初始化、赋值一开始就全部完成，所以函数的变量提升优先级更高
+Q7. 怎么理解 vnode
 
-let：解析器进入一个块级作用域，发现 let 关键字，变量只是先完成声明，并没有到初始化那一步。此时如果在此作用域提前访问，则报错 xx is not defined，这就是暂时性死区的由来。等到解析到有 let 那一行的时候，才会进入初始化阶段。如果 let 的那一行是赋值操作，则初始化和赋值同时进行，const、class 都是同 let 一样的道理。
+编程题：
 
-对比于 var，let、const 只是解耦了声明和初始化的过程，var 是在任何语句执行前都已经完成了声明和初始化，let、const 仅仅是在任何语句执行前只完成了声明。
+打印出一个 String 串中所有字母的所有可能的排列，假定字母不重复
+例如 “han” → "han" "hna" "nah" "nha" "ahn" “anh"
+function allOrderOfString(str) { }
 
-二.内存分配 var，会直接在栈内存里预分配内存空间，然后等到实际语句执行的时候，再存储对应的变量，如果传的是引用类型，那么会在堆内存里开辟一个内存空间存储实际内容，栈内存会存储一个指向堆内存的指针
+```js
+// 关键：不停的调换相邻元素的位置
+function swap(arr, i, j) {
+  if (i != j) {
+    var temp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = temp
+  }
+}
 
-let，是不会在栈内存里预分配内存空间，而且在栈内存分配变量时，做一个检查，如果已经有相同变量名存在就会报错
+function perm(str) {
+  let res = []
+  let arr = str.split('')
+  function fn(n) {
+    //为第n个位置选择元素
+    for (var i = n; i < arr.length; i++) {
+      swap(arr, i, n)
+      //判断数组中剩余的待全排列的元素是否大于1个
+      if (n + 1 < arr.length - 1) {
+        //从第n+1个下标进行全排列
+        fn(n + 1)
+      } else {
+        res.push(arr.join(''))
+      }
+      swap(arr, i, n)
+    }
+  }
+  fn(0)
+  return res
+}
 
-const，也不会预分配内存空间，在栈内存分配变量时也会做同样的检查。不过 const 存储的变量是不可修改的，对于基本类型来说你无法修改定义的值，对于引用类型来说你无法修改栈内存里分配的指针，但是你可以修改指针指向的对象里面的属性
+console.log(perm('abc')) //  ["abc", "acb", "bac", "bca", "cba", "cab"]
 
-三.变量提升 let const 和 var 三者其实会存在变量提升
+// 解法二
+function getMaxCompose(arr, num) {
+  let _arr = []
 
-let 只是声明过程提升，初始化过程并没有提升，即没有赋值为 undefined，所以会产生暂时性死区。
+  function getRet(target, num, result) {
+    let len = target.length
+    if (num === 1) {
+      for (let i = 0; i < len; i++) {
+        let temp = result.slice()
+        temp.push(target[i])
+        _arr.push(temp)
+      }
+    } else {
+      num--
+      for (let j = 0; j < len; j++) {
+        let temp = result.slice()
+        let newTarget = target.slice()
+        temp.push(target[j])
+        newTarget.splice(j, 1)
+        getRet(newTarget, num, temp)
+      }
+    }
+  }
+  getRet(arr, num, [])
+  return _arr
+}
+```
 
-var 的声明和初始化过程都提升了，提升之后赋值为 undefined，所以在赋值前访问会得到 undefined
+#### bigo 二面
 
-function 的创建、初始化、赋值都被提升了
+Q1. 自我介绍
 
-### Q6. 性能优化有哪些方向
+Q2. webpack 有哪些配置项，怎么配置多入口
 
-打包减少文件大小(用 Happypack 来加速代码构建，dll，uglify 优化)、
+Q3. Vue 比较高级的用法
 
-webpack(小图片 base64 编码、提取公共代码、bundle 加 hash、使用 cdn、懒加载、ignorePlugin)
+Q4. Vue 写页面的性能优化方式有没有总结
 
-网络：浏览器缓存原理及最佳设置、cdn 网络传输
+Q5. 移动端适配和兼容有没有总结
 
-减少 dom 操作避免重绘和回流、节流防抖、js 懒执行（defer）
+Q6. 前后端配比
 
-### Q7. 脚手架改造加了哪些功能
+Q7. 写项目怎么测试的？是否写测试用例
 
-`CopyWebpackPlugin`/`GenerateAssetPlugin`/`HappyPack`开启多线程打包
+Q8. 职业规划
 
-### Q8. jQuery 怎么解决地域回调
+Q9. 最有成就感的两个项目
 
-Jquery 有延迟对象`$.Deferred()`，简单封装`Defered`使得用法类似`promise`，类似`Promise`
+编程题一：
 
-### Q9. 酷炫的 css 特性
+```js
+// 给定一个只包含 '(' 和 ')' 的字符串，找出最长的包含有效括号的子串的长度。
+function longestValidParentheses(s) {}
+console.log(longestValidParentheses('(()')) // 2
+console.log(longestValidParentheses(')()())')) // 4
+```
 
-box-reflect、多列布局 column-count: 5;-webkit-box-reflect
+编程题二：
 
-### Q10. html meta 用法
+大数相加腾讯云+bigo 出现
 
-chartset name(title、description、keywords) http-equiv
+```js
+//实现字符串大数相加
+function add(a, b) {
+  //取两个数字的最大长度
+  let maxLength = Math.max(a.length, b.length)
+  //用0去补齐长度
+  a = a.padStart(maxLength, 0) //"0009007199254740991"
+  b = b.padStart(maxLength, 0) //"1234567899999999999"
+  //定义加法过程中需要用到的变量
+  let t = 0
+  let f = 0 //"进位"
+  let sum = ''
+  for (let i = maxLength - 1; i >= 0; i--) {
+    t = parseInt(a[i]) + parseInt(b[i]) + f
+    f = Math.floor(t / 10)
+    sum = (t % 10) + sum
+  }
+  if (f == 1) {
+    sum = '1' + sum
+  }
+  return sum
+}
+```
 
-### Q11. nginx 配置某台机器访问特定的文件夹
+#### bigo 三面编程题
 
-gzip、location、proxy_pass、proxy_set_header、allow、deny
+```js
+// 遍历一次找出数组中最小的三个元素
+// 思路为先取三个元素放到一个新数组中，后面剩余的依次放进去，四个四个比较
+```
 
-### Q12. React 和 Vue 区别
+### 3.顺丰保险经纪公司
 
-共同点：
-组件化、都是数据驱动视图
+Q1. event bus 缺点
 
-本质区别：
-Vue--本质是 MVVM 框架，由 MVC 发展而来
+Q2. Vue 多层级数据传输方式
 
-React--本质是前端组件化框架，由后端组件化发展而来
+Q3. 事件委托捕获
 
-Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，React 本身是组件化。
+Q4. for in 和 ObjecQt. keys 区别
 
-### Q13. Webpack 打包构建的好处
+for in 会遍历出原型链上的属性
 
-- 体积更小，加载更快
-- 编译更高级语法
-- 兼容性和错误检查
-- 统一、高效的开发环境
-- 统一的构建和产出流程
-- 集成公司构建规范
+Q5. es6 遍历对象的方式
 
-### Q14. Webpack 中 module、chunk、bundle 的区别
+Q6. for 输出 012345 的原因
 
-- module---各个源码文件，webpack 中一切皆模块
-- chunk---多模块合成的，如 entry、import、splitChunk
-- bundle ---最终输出的文件
+Q7. 创建对象的方式？为什么要有 ObjecQt. create
 
-### Q15. 为什么使用 gif 做埋点
+Object.create 创建的通过原型链访问，Vue2 底层重写数组方法有利用这个 api
 
-- 没有跨域问题；
+Q8.数组排序的方法
 
-- 不用插入 DOM，只要在 js 中 new 出 Image 对象就能发起请求，不会阻塞页面加载，影响用户体验；
+冒泡排序、快速排序、选择排序、计数排序等
 
-- 在所有图片中体积最小，相较 BMP/PNG，可以节约 41%/35%的网络资源。
+Q9. 判断数据类型的方法？
 
-### Q16. Object 和 es6 map 的区别
+- Object.prototype.toString.call() //这个方法是最好了，可以明确的区分各种类型
+- typeof //这个区分不出来数组和对象和 null。
 
-[链接](https://www.cnblogs.com/mengfangui/p/9934849.html)
+typeof 类型 `number undefined string boolean object function` [js 中的值类型和引用类型的区别](https://www.cnblogs.com/leiting/p/8081413.html)
 
-- object 的键的类型是 字符串；map 的键的类型是 可以是任意类型；
+- Array.isArray() //这个用来区分数组
+- instanceof //无法区分 null 和 undefined
 
-- object 获取键值使用 Object.keys（返回数组）；Map 获取键值使用 map 变量.keys() (返回迭代器)。
+### 4.腾讯看点
+
+Q1. 二分法查找数据 [-1,0,5,7,9,21]
+
+Q2. node 事件循环机制
+
+浏览器环境下，microtask 的任务队列是每个 macrotask 执行完之后执行。
+而在 Node.js 中，microtask 会在事件循环的各个阶段之间（timer、I/O、check quene、close quene）执行，也就是一个阶段执行完毕,会去执行 NextTick Quene，最后去执行 microtask 队列的任务。[参考](https://www.imooc.com/article/79674)
+
+Q3. node 程序内存监控
+
+Q4. https 原理,加密过程，为什么是安全的？ https 调试
+
+Q5. 浏览器内存释放 标记清除
+
+Q6. 通过原型链实现继承
+
+一句话总结，让子类的原型等于父类的实例。详细来说，其实利用了原型的性质，即在 JavaScript 中所有被实例化对象具有相同的原型属性和方法，每一个被实例化对象的原型指针均指向同一个地址，通过改变原型指针指向的位置来实现继承。
+
+Q7. 多个包含 async 的 script 标签的加载过程 [链接](https://www.cnblogs.com/chiangyibo/p/7052617.html)
+
+- 由于浏览器会先解析完不使用 defer 属性的`<script>`元素中的代码，然后再解析后面的内容，所以一般应该把`<script>`
+  元素放在页面最后，即主要内容后面， `</body>` 标签前面。
+- 使用 defer 属性可以让脚本在文档完全呈现之后再执行,延迟脚本总是按照指定它们的顺序执行。
+- 使用 async 属性可以表示当前脚本不必等待其他脚本，也不必阻塞文档呈现。不能保证异步脚本按照它们在页面中出现的顺序执行
+
+<img :src="$withBase('/assets/diff-async-defer.png')">
+
+Q8. html 加载过程触发的事件
+
+readstatechange、DOMContentLoaded（DOM 树渲染完成）、load（DOM/CSS/JS 加载完成）
+
+Q9. 跨域怎么做，怎么允许 cookie 跨域
+
+后端 'Access-Control-Allow-Origin'要设置具体域名，'Access-Control-Allow-Credentials'要设置 true，
+前端请求头要带上'withCredentials:true'
+
+### 5.腾讯视频 1 面
+
+```js
+编程题一：
+function Page() {
+  return this.hosts
+}
+Page.hosts = ['h1']
+Page.prototype.hosts = ['h2']
+
+const p1 = new Page()
+const p2 = Page()
+
+console.log(p1.hosts) // undefined
+// p1通过new 创建，因此可以获取到原型链上的hosts返回p1= ['h2'],p1没有hosts属性所以返回undefined
+
+console.log(p2.hosts) // Cannot read property 'hosts' of undefined
+// p2 为函数直接执行结果，此时this指向window，返回p2为undefined
+
+题目二：
+
+var value = 20
+(function () {
+  console.log(name) // undefined
+
+  console.log(value) // Cannot access 'value' before initialization
+  var name = 'local value'
+  let value = 21
+})();
+
+题目三：
+1、腾讯行政MM请求程序员小哥哥帮忙：提前一天能收到某间会议室预定的全部开始和结束时间，
+要求根据时间列表编排会议室日程，为了使得会议室资源最大化利用，希望能尽量多的安排当天会议场次。
+
+要求实现一个方法，输入场次列表，输出最多能安排的会议，例如输入数组：
+
+[{start:'9:00',end:'10:00'},{start:'10:00',end:'11:00'},{start:'9:30',end:'12:00'},
+{start:'9:00',end:'11:30'},{start:'11:00',end:'11:30'},{start:'14:30',end:'16:00'},
+{start:'17:00',end:'18:00'},{start:'19:30',end:'21:00'},{start:'19:00',end:'20:00'},
+{start:'11:00',end:'12:00'}]
+
+输出：
+[{start:'9:00',end:'10:00'},{start:'10:00',end:'11:00'},
+{start:'11:00',end:'12:00'},{start:'14:30',end:'16:00'},
+{start:'17:00',end:'18:00'}，{start:'19:00',end:'20:00'}]
+
+题目四：请实现函数log()，将一个对象扁平化的输出到控制台。如：
+log({
+  foo : 'test',
+  bar : {
+      id : 123,
+      name : 'tx'
+  }
+})
+输出：
+foo=test
+bar.id=123
+bar.name=tx
+
+
+```
+
+### 6.头条 1 面
+
+Q1. Vue 自定义指令 insert 和 bind 的区别？
+
+insert 是插入到父节点的时候执行，bind 是第一次绑定到节点的时候执行
+
+Q2. less sass 跳过 scoped 样式穿透
+
+less sass 的/deep/穿透，使用 stylus 的时候>>>穿透
+
+Q3. css 选择器权重
+
+important>行内>id>类、伪类、属性选择器>标签、伪元素
+
+Q4. 浏览器渲染元素过程中那些元素会被提升到合成层？[请看链接](http://www.360doc.com/content/20/0506/03/36367108_910463065.shtml)
+
+Q5.Vue3 的 setup 在什么阶段执行
+
+在组件的 beforeCreate 之前执行
+
+Q6. import 文件是什么时候执行？ commonjs 和 es 模块的区别？
+
+Q7. window.requestAnimationFrame 什么时候执行？
+
+Q8. webpack 打包过程中主要的执行流、构建流程是怎么样的？做了哪些事情
+
+编程题：
+
+```js
+// 第一题,两个打印的结果
+var a = function() {
+  this.b = 3
+}
+var c = new a()
+a.prototype.b = 9
+var b = 7
+a()
+console.log(b) // 3
+console.log(c.b) // 3
+
+// 第二题，实现add(1,2)(5)、add(1)(2)(5)、add(1)(2,5) 等于8
+function sum(a, ...args) {
+  let sum = [a, ...args].reduce((a, b) => a + b)
+  function s(b, ...args1) {
+    let sum1 = [b, ...args1].reduce((c, d) => c + d)
+    sum += sum1
+    return s
+  }
+  s.toString = () => sum
+  return s
+}
+
+// 第三题：实现中文一二三四五六七八九十代表的亿以下的数转化为阿拉伯数字，
+// 如五百七十万零二十，输出5700020
+let chnNumChar = {
+  零: 0,
+  一: 1,
+  二: 2,
+  三: 3,
+  四: 4,
+  五: 5,
+  六: 6,
+  七: 7,
+  八: 8,
+  九: 9,
+}
+let chnNameValue = {
+  十: { value: 10, secUnit: false },
+  百: { value: 100, secUnit: false },
+  千: { value: 1000, secUnit: false },
+  万: { value: 10000, secUnit: true },
+  亿: { value: 100000000, secUnit: true },
+}
+function transChineseToNumer(chineseStr) {
+  let rtn = 0
+  let section = 0
+  let number = 0
+  let secUnit = false
+  let str = chineseStr.split('')
+  for (let i = 0; i < str.length; i++) {
+    let num = chnNumChar[str[i]]
+    if (typeof num !== 'undefined') {
+      number = num
+      if (i === str.length - 1) {
+        section += number
+      }
+    } else {
+      let unit = chnNameValue[str[i]].value
+      secUnit = chnNameValue[str[i]].secUnit
+      if (secUnit) {
+        section = (section + number) * unit
+        rtn += section
+        section = 0
+      } else {
+        section += number * unit
+      }
+      number = 0
+    }
+  }
+  return rtn + section
+}
+```
+
+### 头条 2 面
+
+编程题:
+
+```js
+// 第一题：写出以下代码的打印顺序
+async function async1() {
+  console.log('async1 start') // 2
+  await async2()
+
+  console.log('async1 end') // 6
+}
+
+async function async2() {
+  console.log('async2') // 3
+}
+
+console.log('script start') //1
+setTimeout(function() {
+  console.log('setTimeout') // 9
+}, 0)
+
+requestAnimationFrame(function() {
+  console.log('requestAnimationFrame') // 8
+})
+
+async1()
+new Promise(function(resolve) {
+  console.log('promise1') // 4
+  resolve()
+}).then(function() {
+  console.log('promise2') // 7
+})
+
+console.log('script end') // 5
+
+// script start
+// async1 start
+// async2
+// promise1
+// script end
+// async1 end
+// promise2
+// requestAnimationFrame
+// setTimeout
+```
+
+```js
+// 第二题：给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格，
+// 可以在第i天买进，它后面的天数卖出。设计一个算法来计算你所能获取的最大利润。
+// 注意: 你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+// 如 [5, 3, 3, 5, 6, 9, 8] 最大的利润为9-3 = 6 [5, 4, 3, 2, 1]
+// 输出为0，[5, 8, 8, 5, 6, 10, 13, 9, 11, 9] 输出13
+
+// 思路，画波形图，低点买入高点卖出
+function getMaxProfile(arr) {
+  let len = arr.length
+  let result = []
+
+  let j, k
+  for (let i = 0; i < len; i++) {
+    j = k = i
+    while (arr[i] < arr[i + 1]) {
+      k = ++i
+    }
+    if (arr[j] !== arr[k]) {
+      result.push(arr[k] - arr[j])
+    }
+  }
+  return result.length ? result.reduce((a, b) => a + b) : 0
+}
+
+console.log(getMaxProfile([5, 8, 8, 5, 6, 10, 13, 9, 11, 9]))
+```
+
+### 7.腾讯 CSIG-企业安全方向
+
+Q1. 常见的 web 漏洞？怎么防范
+
+xss、csrf
+
+Q2. nodejs 在什么场景下使用？是阻塞还是非阻塞的？
+
+非阻塞的，采用事件机制。NodeJS 适合运用在高并发、I/O 密集、少量业务逻辑的场景。
+
+Q3. canvas 和 svg 什么区别？echarts 和 g6 不能满足需求的情况下怎么处理？
+
+1. svg 绘制出来的每一个图形的元素 zhi 都是独立的 DOM 节点，能够方便的绑定事件或用来回修改。canvas 输出的是一整幅答画布。
+
+2. svg 输出的图形是矢量图形，后期可以修改参数来自由放大缩小，不会失真和锯齿。
+
+canvas 输出标量画布，就像一张图片一样，放大会失真或者锯齿。
+
+3. canvas 适用场景：canvas 提供的功能更原始，适合像素处理，动态渲染和大数据量绘制。
+
+   svg 适用场景：svg 功能更完善，适合静态图片展示，高保真文档查看和打印的应用场景。
+
+Q4. Vue 中父子、非父子组件的通信方式？

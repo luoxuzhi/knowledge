@@ -1,105 +1,131 @@
-## 12. 浏览器
+## 12. 杂记
 
-### 1. 浏览器 `setTimeout` 怎么判断 5s，事件堆栈放在哪里
+### Q1. Class 和普通构造函数有何区别？
 
-在现有浏览器环境中，Javascript 执行引擎是单线程的，主线程的语句和方法，会阻塞定时任务的运行，在 Javascript 执行引擎之外，存在一个任务队列，
+a. typeof Class // function
 
-当在代码中调用 `setTimeout()`方法时，`注册的延时方法会挂到浏览器内核其他模块处理，当延时方法到达触发条件，即到达设置的延时时间时，该模块再将要执行的方法添加至该模块的任务队列中`。
+b.继承的写法不一样，class 使用 extend，es5 使用原型 `A.prototype=new B()`，Class 实现继承更加易读，易理解
 
-这一过程与执行引擎主线程独立，执行引擎在主线程方法执行完毕，到达空闲状态时，才会从该模块的任务队列中顺序提取任务来执行，这期间的时间，可能大于注册任务时设置的延时时间；浏览器在空闲状态下，会不断的尝试从模块的任务队列中提取任务，这称为`事件循环模型`。
+c. Class 在语法上更加贴合面向对象的写法
 
-`基本类型的数据存储到栈内存（stack）中，引用数据类型存储到堆内存(heap)中；[对象、数组，函数]`
+d. 更易于写 java 等后端语言的使用
 
-### 2. 事件循环 event loop（事件轮询）
+e.本质还是语法糖，使用 prototype
 
-浏览器的 task（宏任务）执行顺序在 html#event-loops 里面有讲就不翻译了 常见的 task（宏任务） 比如：setTimeout、setInterval、script（整体代码）、 I/O 操作、UI 渲染等。 常见的 micro-task 比如: new Promise().then(回调)、Object.observe、MutationObserver(html5 新特性) 等。
+### Q2. es6 其他常用功能
 
-拓展：js 单线程，单线程就是只能同时只做一件事，两段 js 不能同时执行，避免 DOM 渲染冲突
+let/const、多行字符串/模板变量、解构赋值、函数默认参数、箭头函数、块级作用域
 
-### 3. 浏览器垃圾回收算法
+### Q3. 原型的实际应用例子
 
-引用计数（现代浏览器不再使用）
+jquery 如何使用原型，$.css $.html css,html 都是原型上面的方法
 
-标记清除（常用）,算法由以下几步组成：
+原型的扩展性：jquery 插件的扩展性、Vue 的扩展性
 
-1、垃圾回收器创建了一个“roots”列表。roots 通常是代码中全局变量的引用。JavaScript 中，“window” 对象是一个全局变量，被当作 root 。window 对象总是存在，因此垃圾回收器可以检查它和它的所有子对象是否存在（即不是垃圾）；
+### Q4. async await 在 generator 的基础上做的优化，区别
 
-2、所有的 roots 被检查和标记为激活（即不是垃圾）。所有的子对象也被递归地检查。从 root 开始的所有对象如果是可达的，它就不被当作垃圾。
+a. async 内置执行器。Generator 函数的执行必须靠执行器，需要调用 next() 方法，或者用 co 模块；而 async 函数自带执行器。async 函数的执行与普通函数一模一样，只要一行。
 
-3、所有未被标记的内存会被当做垃圾，收集器现在可以释放内存，归还给操作系统了。
+b. 更好的语义。async 和 await 比起星号和 yield，语义更清楚。
 
-#### 内存泄漏识别方法
+c. 更广的适用性。co 模块约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面可以是 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。
 
-打开开发者工具，选择 Memory
+d. async 返回值是 Promise，可以用 then 方法指定下一步的操作。比 Generator 函数的返回值是 Iterator 对象方便
 
-在右侧的 Select profiling type 字段里面勾选 timeline
+### Q5. var、let 和 const 区别的实现原理是什么（声明过程，内存分配，和变量提升）
 
-点击左上角的录制按钮。
+一.声明过程
+var：遇到有 var 的作用域，在任何语句执行前都已经完成了声明和初始化，也就是变量提升而且拿到 undefined 的原因由来。
 
-在页面上进行各种操作，模拟用户的使用情况。
+function： 声明、初始化、赋值一开始就全部完成，所以函数的变量提升优先级更高
 
-一段时间后，点击左上角的 stop 按钮，面板上就会显示这段时间的内存占用情况。
+let：解析器进入一个块级作用域，发现 let 关键字，变量只是先完成声明，并没有到初始化那一步。此时如果在此作用域提前访问，则报错 xx is not defined，这就是暂时性死区的由来。等到解析到有 let 那一行的时候，才会进入初始化阶段。如果 let 的那一行是赋值操作，则初始化和赋值同时进行，const、class 都是同 let 一样的道理。
 
-#### 四种常见的 JS 内存泄漏
+对比于 var，let、const 只是解耦了声明和初始化的过程，var 是在任何语句执行前都已经完成了声明和初始化，let、const 仅仅是在任何语句执行前只完成了声明。
 
-1、意外的全局变量,未定义的变量会在全局对象创建一个新变量。在 JavaScript 文件头部加上 'use strict'，使用严格模式避免意外的全局变量，此时上例中的 this 指向 undefined。如果必须使用全局变量存储大量数据时，确保用完以后把它设置为 null 或者重新定义。
+二.内存分配 var，会直接在栈内存里预分配内存空间，然后等到实际语句执行的时候，再存储对应的变量，如果传的是引用类型，那么会在堆内存里开辟一个内存空间存储实际内容，栈内存会存储一个指向堆内存的指针
 
-2、被遗忘的计时器或回调函数。代的浏览器（包括 IE 和 Microsoft Edge）使用了更先进的垃圾回收算法（标记清除），已经可以正确检测和处理循环引用了。即回收节点内存时，不必非要调用 removeEventListener 了。
+let，是不会在栈内存里预分配内存空间，而且在栈内存分配变量时，做一个检查，如果已经有相同变量名存在就会报错
 
-3、脱离 DOM 的引用。如果把 DOM 存成字典（JSON 键值对）或者数组，此时，同样的 DOM 元素存在两个引用：一个在 DOM 树中，另一个在字典中。那么将来需要把两个引用都清除。
+const，也不会预分配内存空间，在栈内存分配变量时也会做同样的检查。不过 const 存储的变量是不可修改的，对于基本类型来说你无法修改定义的值，对于引用类型来说你无法修改栈内存里分配的指针，但是你可以修改指针指向的对象里面的属性
 
-4、闭包。闭包的关键是匿名函数可以访问父级作用域的变量。
+三.变量提升 let const 和 var 三者其实会存在变量提升
 
-#### 从内存来看 null 和 undefined 本质的区别是什么？
+let 只是声明过程提升，初始化过程并没有提升，即没有赋值为 undefined，所以会产生暂时性死区。
 
-给一个全局变量赋值为 null，相当于将这个变量的指针对象以及值清空，如果是给对象的属性 赋值为 null，或者局部变量赋值为 null,相当于给这个属性分配了一块空的内存，然后值为 null， JS 会回收全局变量为 null 的对象。
+var 的声明和初始化过程都提升了，提升之后赋值为 undefined，所以在赋值前访问会得到 undefined
 
-给一个全局变量赋值为 undefined，相当于将这个对象的值清空，但是这个对象依旧存在,如果是给对象的属性赋值 为 undefined，说明这个值为空值
+function 的创建、初始化、赋值都被提升了
 
-### 4. 栈内存、堆内存理解
+### Q6. 性能优化有哪些方向
 
-```js
-var a = { n: 1 }
-var b = a
-a.x = a = { n: 2 }
+打包减少文件大小(用 Happypack 来加速代码构建，dll，uglify 优化)、
 
-a.x // --> undefined
-b.x // --> {n: 2}
-```
+webpack(小图片 base64 编码、提取公共代码、bundle 加 hash、使用 cdn、懒加载、ignorePlugin)
 
-### 5.跨域解决方案/jsonp 原理解析 [链接](https://segmentfault.com/a/1190000011145364)
+网络：浏览器缓存原理及最佳设置、cdn 网络传输
 
-- 通过 jsonp 跨域
-- document.domain + iframe 跨域
-- location.hash + iframe
-- window.name + iframe 跨域
-- postMessage 跨域
-- 跨域资源共享（CORS）普通跨域请求：只服务端设置 Access-Control-Allow-Origin 即可，前端无须设置，若要带 cookie 请求：前后端都需要设置。
-- nginx 代理跨域
-- nodejs 中间件代理跨域
-- WebSocket 协议跨域
+减少 dom 操作避免重绘和回流、节流防抖、js 懒执行（defer）
 
-### 6.浏览器渲染过程
+### Q7. 脚手架改造加了哪些功能
 
-浏览器将获取的 HTML 文档并解析成 DOM 树。
+`CopyWebpackPlugin`/`GenerateAssetPlugin`/`HappyPack`开启多线程打包
 
-处理 CSS 标记，构成层叠样式表模型 CSSOM(CSS Object Model)。
+### Q8. jQuery 怎么解决地域回调
 
-将 DOM 和 CSSOM 合并为渲染树(rendering tree)将会被创建，代表一系列将被渲染的对象。
+Jquery 有延迟对象`$.Deferred()`，简单封装`Defered`使得用法类似`promise`，类似`Promise`
 
-渲染树的每个元素包含的内容都是计算过的，它被称之为布局 layout。浏览器使用一种流式处理的方法，只需要一次 pass 绘制操作就可以布局所有的元素。
+### Q9. 酷炫的 css 特性
 
-将渲染树的各个节点绘制到屏幕上，这一步被称为绘制 painting.
+box-reflect、多列布局 column-count: 5;-webkit-box-reflect
 
-### 7. onload 和 DOMContentLoaded 的区别，推荐使用 `DOMContentLoaded`
+### Q10. html meta 用法
 
-window.onload 加载完所有资源包括 dom 图片 css 视频 只执行一次,多个 onload 后面的覆盖前面的
+chartset name(title、description、keywords) http-equiv
 
-jq 的 ready 文档等 dom 结构加载完执行，执行多次，从上到下执行，相当于 DOMContentLoaded，DOMContentLoaded DOM 渲染完即可，此时图片、视频可能还没有加载完
+### Q11. nginx 配置某台机器访问特定的文件夹
 
-ie8 点击动作 js 的执行顺序为由下而上
+gzip、location、proxy_pass、proxy_set_header、allow、deny
 
-```js
-window.addEventListener('load',()=>{}) window.onload=function(){}
-window.addEventListener('DOMContentLoaded',()=>{})
-```
+### Q12. React 和 Vue 区别
+
+共同点：
+组件化、都是数据驱动视图
+
+本质区别：
+Vue--本质是 MVVM 框架，由 MVC 发展而来
+
+React--本质是前端组件化框架，由后端组件化发展而来
+
+Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，React 本身是组件化。
+
+### Q13. Webpack 打包构建的好处
+
+- 体积更小，加载更快
+- 编译更高级语法
+- 兼容性和错误检查
+- 统一、高效的开发环境
+- 统一的构建和产出流程
+- 集成公司构建规范
+
+### Q14. Webpack 中 module、chunk、bundle 的区别
+
+- module---各个源码文件，webpack 中一切皆模块
+- chunk---多模块合成的，如 entry、import、splitChunk
+- bundle ---最终输出的文件
+
+### Q15. 为什么使用 gif 做埋点
+
+- 没有跨域问题；
+
+- 不用插入 DOM，只要在 js 中 new 出 Image 对象就能发起请求，不会阻塞页面加载，影响用户体验；
+
+- 在所有图片中体积最小，相较 BMP/PNG，可以节约 41%/35%的网络资源。
+
+### Q16. Object 和 es6 map 的区别
+
+[链接](https://www.cnblogs.com/mengfangui/p/9934849.html)
+
+- object 的键的类型是 字符串；map 的键的类型是 可以是任意类型；
+
+- object 获取键值使用 Object.keys（返回数组）；Map 获取键值使用 map 变量.keys() (返回迭代器)。

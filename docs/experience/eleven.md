@@ -1,50 +1,193 @@
-## 11. Node
+## 11. 手写篇
 
-### 1. koa 框架 await 实现原理
-
-use 的时候把中间推到一个中间件数组，核心方法是 compose(this.middleware) 返回一个 promise，处理完毕后再执行 handleResponse，compose 的核心方法是返回一个函数，函数的核心是返回 dispatch 函数 [更多关于组合函数看这里](https://www.jianshu.com/p/eb268cb0f913)
+### 1. 数值转换,一元运算符 +
 
 ```js
-compose() {
-    return async ctx => {
-    // createNext函数的作用就是将上一个中间件的next当做参数传给下一个中间件,并且
-    // 将上下文ctx绑定当前中间件，当中间件执行完，调用next()的时候，其实就是去执行下一个中间件
-        function createNext(middleware, oldNext) {
-            return async () => {
-                await middleware(ctx, oldNext);
-            }
-        }
-        let len = this.middlewares.length;
-        let next = async () => {
-            return Promise.resolve();
-        };
-        // 链式反向递归模型的实现，i是从最大数开始循环的，将中间件从最后一个开始封
-        // 装，每一次都是将自己的执行函数封装成next当做上一个中间件的next参数，这样
-        // 当循环到第一个中间件的时候，只需要执行一次next()，就能链式的递归调用所有中间件
-        for (let i = len - 1; i >= 0; i--) {
-            let currentMiddleware = this.middlewares[i];
-            next = createNext(currentMiddleware, next);
-        }
-        await next();
-    };
+const age = +'22' // 22
+let text2 = '1' + 2 // "12"
+let text3 = 1 + '2' // "12"
+let text4 = 1 + 2 + '3' // "33"
+let num = +text1 //  12 转换为 Number 类型
+```
+
+### 2. es5 实现 promise
+
+### 3. 栈内存、堆内存理解
+
+```js
+var a = { n: 1 }
+var b = a
+a.x = a = { n: 2 }
+
+a.x // --> undefined
+b.x // --> {n: 2}
+```
+
+1. 优先级。.的优先级高于=，所以先执行 a.x，堆内存中的{n: 1}就会变成{n: 1, x: undefined}，改变之后相应的 b.x 也变化了，因为指向的是同一个对象。
+2. 赋值操作是从右到左，所以先执行 a = {n: 2}，a 的引用就被改变了，然后这个返回值又赋值给了 a.x，需要注意的是这时候 a.x 是第一步中的{n: 1, x: undefined}那个对象，其实就是 b.x，相当于 b.x = {n: 2}
+
+### 4. 手写实现 new
+
+```js
+function create(Con) {
+  // 创建一个空的对象
+  var obj = new Object(),
+    // 获得构造函数，arguments中去除第一个参数
+    Con = [].shift.call(arguments)
+  // 链接到原型，obj 可以访问到构造函数原型中的属性
+  obj.__proto__ = Con.prototype
+  // 绑定 this 实现继承，obj 可以访问到构造函数中的属性
+  var ret = Con.apply(obj, arguments)
+  // 优先返回构造函数返回的对象
+  return ret instanceof Object ? ret : obj
 }
 ```
 
-### 2. node 异步任务怎么执行
+### 5. 深拷贝实现
 
-node.js 的异步机制是基于事件的，所有的 I/O、网络通信、数据库查询都以非阻塞的方式执行，返回结果由事件循环来处理。node.js 在同一时刻只会处理一个事件，完成后立即进入事件循环检查后面事件。这样 CPU 和内存在同一时间集中处理一件事，同时尽量让耗时的 I/O 等操作并行执行。
-[链接](https://blog.csdn.net/fengqiaojiangshui/article/details/55819930)
+深拷贝可以拆分成 2 步，浅拷贝+递归，浅拷贝时判断属性值是否是对象，如果是对象就进行递归操作，两个一结合就实现了深拷贝。
 
-### 3. node 的 Buffer、Stream
+```js
+function cloneDeep1(source) {
+  var target = {}
+  for (var key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      if (typeof source[key] === 'object') {
+        target[key] = cloneDeep1(source[key]) // 注意这里
+      } else {
+        target[key] = source[key]
+      }
+    }
+  }
+  return target
+}
+```
 
-a. Buffer 就是在内存中开辟一段空间，用来装数据的
+一个简单的深拷贝就完成了，但是这个实现还存在很多问题。
 
-b.数据都是二进制的，记住电信号（010101）
+1、没有对传入参数进行校验，传入 null 时应该返回 null 而不是 {}
 
-c. Stream 的三大原则：有源头、有终点、源头流向终点。
+2、对于对象的判断逻辑不严谨，因为 typeof null === 'object'
 
-d.Stream 就像司机，它的作用就是将装着数据的 Buffer 开向终点
+3、没有考虑数组的兼容
 
-### 4. nodejs 在什么场景下使用？是阻塞还是非阻塞的？（腾讯 csig）
+4、没有考虑循环引用，循环引用指的是 a.a = a (`循环引用延伸到 commonjs、esmodule 的循环引用`)
 
-非阻塞的，采用事件机制。NodeJS 适合运用在高并发、I/O 密集、少量业务逻辑的场景。
+下面代码是一个改良版的，但仍存在一些问题，比如正则、symbol、date 类型的拷贝可能会出现问题，
+所以日常开发中用 lodash 的深拷贝，知道深拷贝的过程中存在哪些问题就好了！
+
+```js
+const isObj = target => target !== null && typeof target === 'object'
+
+// 因为保存source在push进arr的时候，保存的是指针地址，所以下面用===能找到
+const findSoure = (arr, source) => arr.find(item => item.source === source)
+
+function deepClone(source, saveList = []) {
+  if (!isObj(source)) return source
+
+  let result = Array.isArray(source) ? [] : {}
+
+  let isExitReult = findSoure(saveList, source)
+  if (isExitReult) return isExitReult.result
+  // 须在递归调用之前deepClone之前保存
+  saveList.push({ source, result })
+  for (const key in source) {
+    // 只处理source的自身属性，不处理prototype的属性
+    if (Object.hasOwnProperty.call(source, key)) {
+      const element = source[key]
+      if (isObj(element)) {
+        result[key] = deepClone(element, saveList)
+      } else {
+        result[key] = element
+      }
+    }
+  }
+  return result
+}
+
+let AA = {
+  a: 3,
+  b: {
+    text: '8',
+  },
+  c: [1, 2, 3, 4],
+}
+
+AA.d = AA
+let BB = deepClone(AA)
+BB.c = [2, 3, 4, 5]
+console.log(AA, BB)
+```
+
+<img :src="$withBase('/assets/deep-clone.png')">
+
+### 6. js 中大数相加
+
+JS 在存放整数的时候是有一个安全范围的，一旦数字超过这个范围便会损失精度。不能拿精度损失的数字进行运行，因为运算结果一样是会损失精度的。所以，我们要用字符串来表示数据！（不会丢失精度）
+
+`JS 中整数的最大安全范围可以查到是：9007199254740991`
+
+假如我们要进行 9007199254740991 + 1234567899999999999
+
+```js
+function addString(str1, str2) {
+  // 此处加1是防止位置相同，第一位相加后需要向前进位
+  let len = Math.max(str1.length, str2.length) + 1
+  let newStr1 = str1.padStart(len, 0)
+  let newStr2 = str2.padStart(len, 0)
+
+  let newStr1Arr = newStr1
+    .split('')
+    .reverse()
+    .map(i => Number(i))
+  let newStr2Arr = newStr2
+    .split('')
+    .reverse()
+    .map(i => Number(i))
+  let resultArr = []
+  let addFlag = 0
+  let pushNum = null
+
+  newStr1Arr.forEach((element, idx) => {
+    let sumFirst = element + newStr2Arr[idx] + addFlag
+    if (sumFirst >= 10) {
+      pushNum = sumFirst % 10
+      addFlag = 1
+    } else {
+      pushNum = sumFirst
+      addFlag = 0
+    }
+    resultArr.push(pushNum)
+  })
+  let resultString = resultArr.reverse().join('')
+  // 字符串首位为0截取去掉
+  if (resultString[0] == 0) {
+    return resultString.substring(1)
+  } else {
+    return resultString
+  }
+}
+addString('9007199254740991', '1234567899999999999') // 11233575099254740990
+
+//实现字符串大数相加
+function add(a, b) {
+  //取两个数字的最大长度
+  let maxLength = Math.max(a.length, b.length)
+  //用0去补齐长度
+  a = a.padStart(maxLength, 0) //"0009007199254740991"
+  b = b.padStart(maxLength, 0) //"1234567899999999999"
+  //定义加法过程中需要用到的变量
+  let t = 0
+  let f = 0 //"进位"
+  let sum = ''
+  for (let i = maxLength - 1; i >= 0; i--) {
+    t = parseInt(a[i]) + parseInt(b[i]) + f
+    f = Math.floor(t / 10)
+    sum = (t % 10) + sum
+  }
+  if (f == 1) {
+    sum = '1' + sum
+  }
+  return sum
+}
+```
