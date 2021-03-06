@@ -7,6 +7,8 @@
    bind 绑定的 this 不能通过 call、apply 改变
 
    箭头函数的 this 不能通过 call、apply、bind 改变
+
+   显示绑定 this 的优先级比隐式优先级高，显示绑定的优先级是：new>bind>apply/call
    :::
 
 ```js
@@ -34,6 +36,16 @@ let q = { a: 100 }
 
 test.b.bind(pp).call(q) //99,bind绑定的this不能通过call、apply改变
 test.c.bind(pp).call(q) //undefined,箭头函数的this不能通过call、apply、bind改变
+
+function foo(a) {
+  this.a = a
+}
+const obj1 = {}
+var bar = foo.bind(obj1)
+bar(2)
+console.log(obj1.a) //2
+var baz = new bar(3)
+console.log(baz.a) //3  // new 的优先级比bind高
 ```
 
 2.`this`的指向问题
