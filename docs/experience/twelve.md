@@ -57,6 +57,19 @@ var 的声明和初始化过程都提升了，提升之后赋值为 undefined，
 
 function 的创建、初始化、赋值都被提升了
 
+:::danger
+注意：let/const 定义在全局的变量并不会挂在 window 上
+:::
+
+在 ES5 中，顶层对象的属性和全局变量是等价的，var 命令和 function 命令声明的全局变量，自然也是顶层对象。
+但 ES6 规定，var 命令和 function 命令声明的全局变量，依旧是顶层对象的属性，但 let 命令、const 命令、class 命令声明的全局变量，不属于顶层对象的属性。
+
+```js
+let a = 8
+const b = 9
+console.log(window.a, window.b) // undefined,undefined
+```
+
 ### Q6. 性能优化有哪些方向
 
 打包减少文件大小(用 Happypack 来加速代码构建，dll，uglify 优化)、
@@ -129,3 +142,7 @@ Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，R
 - object 的键的类型是 字符串；map 的键的类型是 可以是任意类型；
 
 - object 获取键值使用 Object.keys（返回数组）；Map 获取键值使用 map 变量.keys() (返回迭代器)。
+
+```
+
+```
