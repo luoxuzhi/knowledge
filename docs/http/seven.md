@@ -5,7 +5,6 @@
 <img :src="$withBase('/assets/https-ssl.png')">
 
 ```conf
-# HTTPS server
 server {
     listen 443 ssl http2;
     server_name mall.ncuxz.fun;
