@@ -8,7 +8,10 @@
 
    箭头函数的 this 不能通过 call、apply、bind 改变
 
+   对象的 key 如果是箭头函数，只要没被`function`包裹，无论层级多深，this 都是指向 window
+
    显示绑定 this 的优先级比隐式优先级高，显示绑定的优先级是：new>bind>apply/call
+
    :::
 
 ```js
