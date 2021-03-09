@@ -80,7 +80,7 @@ if (c) {
 } // 55
 ```
 
-4. 原型链
+4. 原型链，[具体分析](https://blog.csdn.net/cc18868876837/article/details/81211729)
 
 分析：`test` 为 `string` 时候的 `constructor` 为 `String`，`String` 的 `constructor` 的 `Function`，`Function` 的 `constructor` 的本身，所以后面多少`[test]`返回的都是同一个方法
 
