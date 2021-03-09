@@ -52,7 +52,7 @@ module.exports = {
       },
     ],
     sidebar: {
-      '/es5/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'],
+      '/es5/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'],
       '/es6/': [
         '',
         'two',
