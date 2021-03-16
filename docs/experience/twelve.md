@@ -156,3 +156,47 @@ Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，R
 - 性能： displaynone : 修改元素会造成文档回流,读屏器不会读取 display: none 元素内容，性能消耗较大 visibility:hidden: 修改元素只会造成本元素的重绘,性能消耗较少读屏器读取 visibility: hidden 元素内容 opacity: 0 ： 修改元素会造成重绘，性能消耗较少
 
 - 联系：它们都能让元素不可见
+
+
+### Q18. Map/Set/WeakMap/weakSet 的区别？
+
+### Q19. html 本身加载一张图片，script标签里通过js加载一张图片，DOMContentLoaded/load事件和js里图片加载的执行顺序？？
+
+要看js里面的代码怎么写
+
+```js
+ window.addEventListener('DOMContentLoaded', () => {
+    console.log('dom contented loaded')
+  })
+
+  window.addEventListener('load', () => {
+    console.log('dom load')
+  })
+
+  setTimeout(() => {
+    let img = document.createElement('img')
+    img.src = 'http://know.ncuxz.fun/assets/vue-source-code1.jpg'
+    document.body.appendChild(img)
+    console.log('finish')
+  }, 0)
+
+// finish->dom contented loaded->dom load
+```
+```js
+ window.addEventListener('DOMContentLoaded', () => {
+    console.log('dom contented loaded')
+  })
+
+  window.addEventListener('load', () => {
+    console.log('dom load')
+  })
+
+  setTimeout(() => {
+    let img = document.createElement('img')
+    img.src = 'http://know.ncuxz.fun/assets/vue-source-code1.jpg'
+    document.body.appendChild(img)
+    console.log('finish')
+  }, 200)
+
+// dom contented loaded->dom load->finish
+```
