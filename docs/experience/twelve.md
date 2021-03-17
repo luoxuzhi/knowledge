@@ -200,3 +200,8 @@ Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，R
 
 // dom contented loaded->dom load->finish
 ```
+
+### Q20. 利用service worker做缓存优化的时候用什么策略？
+
+[浅谈Service Worker 缓存策略](https://zacharykwan.com/2018/12/06/%E5%85%B3%E4%BA%8Eworkbox%E7%9A%84%E7%A7%8D%E7%A7%8D/)
+
