@@ -39,6 +39,11 @@ window.webProvideFunction = function(args) {
 
 * 返回值不同：面向 Android 可以直接接收返回值，面向 IOS 没有办法直接获取返回值，因此只能通过回调再调用 web 绑定在 window 下 提供的方法。
 
+```js
+// android 返回值
+let result = window.AndroidJSBridge.androidTestFunction1(string)
+```
+
 #### 3. 判断是 Android 还是 IOS 端
 
 ```js
