@@ -28,7 +28,7 @@ DN 网络由一个 DNS 服务器和几台缓存服务器组成：
 
 两种缓存的共同点：都从客户端缓存中读取资源；区别是强缓存不会向服务器发请求，协商缓存会发请求
 
-### 3. http1.0、http1.1、http2、https
+### 3. http1.0、http1.1、http2、http3、https
 
 #### http1.0
 
@@ -56,11 +56,29 @@ DN 网络由一个 DNS 服务器和几台缓存服务器组成：
 - 多路复用： 在共享 TCP 链接的基础上同时发送请求和响应，基于二进制分帧，在同一域名下所有访问都是从同一个 tcp 连接中走，http 消息被分解为独立的帧，乱序发送，服务端根据标识符和首部将消息重新组装起来
 - 头部压缩
 - 服务器推送：服务器可以额外的向客户端推送资源，而无需客户端明确的请求
+* 丢包会影响同一个同一个tcp连接中的其它请求，因为在tcp中有[“丢包重传”](https://blog.csdn.net/weixin_39843414/article/details/105213009)机制
+
+#### http3.0 特性
+
+基于 UDP 协议的 QUIC 协议，并且使用在了 HTTP/3 
+
+* 0-RTT 建立连接，实现了快速握手功能
+
+* 实现了类似TCP的流量控制、传输可靠性的功能。
+
+* 集成了TLS加密功能，目前QUIC使用的是TLS1.3。
+
+* 多路复用，彻底解决TCP中队头阻塞的问题（阻塞是因为在tcp协议中）
+
+* 某个请求丢包不会影响到其他请求，因为QUIC(Quick UDP Internet Connection)有一个["向前纠错"](https://baijiahao.baidu.com/s?id=1627163778419611487&wfr=spider&for=pc)机制
+
 
 #### 区别
 
 - http1.0 到 http1.1 的主要区别，就是从无连接到长连接
-- http2.0 对比 1.X 版本主要区别就是多路复用
+
+- http2.0 对比 1.X 版本主要区别就是多路复用、头部压缩
+* h2到h3升级在于传输层由tcp传输改到udp传输，彻底解决头部阻塞问题，并且做到消耗0RTT(round-trip time)建立连接，一个请求丢包不会影响到其他连接
 
 #### https,https 主要的思想是在 http 基础上增加了 tls 安全层：
 
@@ -77,3 +95,9 @@ e. 之后服务器与客户端使用秘钥加密传输
 tls 握手过程 [详细见链接](https://imququ.com/post/optimize-tls-handshake.html)
 
 <img :src="$withBase('/assets/https-handshake.png')">
+
+### 4. h2丢包影响其它请求原因？h3某个请求丢包不会影响其它请求原因？
+
+前者因为TCP有[“丢包重传”](https://blog.csdn.net/weixin_39843414/article/details/105213009)机制，
+后者因为QUIC有["向前纠错"](https://baijiahao.baidu.com/s?id=1627163778419611487&wfr=spider&for=pc)机制
+
