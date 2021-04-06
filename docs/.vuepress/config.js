@@ -41,7 +41,7 @@ module.exports = {
           { text: '15.data-constructure', link: '/data-constructure/' },
           { text: '16.http', link: '/http/' },
           { text: '17.experience', link: '/experience/' },
-          { text: '18.project', link: '/project/' },
+          // { text: '18.project', link: '/project/' },
         ],
       },
       {
