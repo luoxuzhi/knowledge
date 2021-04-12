@@ -159,3 +159,32 @@ if (newList.length) {
 <img :src="$withBase('/assets/memo.png')">
 
 25、useCallback 针对的是给组件传递函数导致组件重新渲染问题优化
+
+
+26 、类型校验的写法
+
+```js
+
+class TodoItem{}
+
+TodoItem.propTypes = {
+  content: PropTypes.string
+}
+
+TodoItem.defaultProps = {
+  test: 'hhhh'
+}
+
+class TodoItem{
+  static defaultProps = {
+    test:'hhhh'
+  }
+  
+  static propTypes = {
+    test:PropTypes.string
+  }
+}
+
+```
+
+27. forwardRef用来访问子组件内部的DOM
