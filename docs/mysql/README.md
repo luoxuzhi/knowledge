@@ -18,10 +18,18 @@ Or, if you don't want/need a background service you can just run:
 ## 2. mysql 终端连接
 
 - 连接 mysql -uroot -p
-- 查看所有数据库 show databases
+
 - 选择要操作的数据库 use `<database>`
+- 查看所有数据库 show databases
 
 * 创建新的数据库 create database `<database>`
+* 删除数据库 drop database `<database>`
+
+* 查看表 show tables;
+
+* 查看表结构 desc tablename;
+
+* 删除表 delete table name;
 
 ## 3. 使用 nodejs 连接 mysql
 
