@@ -4,7 +4,7 @@
 
 #### 2. cookie 与 session
 
-<img :src="$withBase('/assets/diff-cookie.png')">
+<img :src="$withBase('/assets/egg-diff-cookie.png')">
 
 #### 3. 浏览器刷新
 
@@ -22,7 +22,10 @@ application 拓展方法中的 this 指向项目根目录中的一些信息，�
 
 application 扩展属性要在属性前面添加`get`
 
+<img :src="$withBase('/assets/egg-extend.png')">
+
 #### 5. egg 添加插件步骤
+<img :src="$withBase('/assets/egg-plugin.png')">
 
 - 在项目根目录（与 app 同级）建 lib 文件夹,目录层级如下
 
