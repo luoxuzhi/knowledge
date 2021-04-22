@@ -189,3 +189,5 @@ prev.onPullDownRefresh()
 ```
 
 38. 小程序背景图片不能使用本地图片，只能使用网络图片或者本地图片转成 base64
+
+39. `createSelectorQuery`或者`DOM`元素，`selectComponent`获取自定义组件实例
