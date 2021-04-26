@@ -25,6 +25,7 @@ application 扩展属性要在属性前面添加`get`
 <img :src="$withBase('/assets/egg-extend.png')">
 
 #### 5. egg 添加插件步骤
+
 <img :src="$withBase('/assets/egg-plugin.png')">
 
 - 在项目根目录（与 app 同级）建 lib 文件夹,目录层级如下
@@ -92,3 +93,5 @@ class getInfo extends Subscription {
 
 module.exports = getInfo
 ```
+
+#### 7.egg 中使用 sequelize，定义 model 方式为在 app 目录下新建 model 文件夹

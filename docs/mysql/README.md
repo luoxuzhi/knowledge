@@ -129,7 +129,7 @@ router.get('/updateStatus', async function(ctx, next) {
 })
 ```
 
-d. 删除数据库记录，直接使用`destroy`,传递删除条件进去,代码如下：
+d. 删除数据库记录，直接使用`destroy`,传递删除条件进去,或者通过 id 查找到记录本身，记录本身调用`destroy` 方法
 
 ```js
 router.get('/deleteTask', async function(ctx, next) {

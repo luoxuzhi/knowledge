@@ -78,7 +78,7 @@ module.exports = {
       '/miniprogram/': ['', 'two', 'taro', 'uni-app'],
       '/publiccount/': [''],
       '/nodejs/': ['', 'two', 'three', 'egg'],
-      '/mysql/': [''],
+      '/mysql/': ['', 'sequelizetype', 'tablerelation', 'operatesql'],
       '/mongodb/': [''],
       '/nginx/': [''],
       '/docker/': [''],
