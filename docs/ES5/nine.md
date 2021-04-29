@@ -76,7 +76,8 @@ var obj = {
   },
 }
 
-console.log(new Factory().c.b()) // a+,此时this指向{
+console.log(new Factory().c.b()) // a+,此时this指向
+// {
 //   a: 'a+',
 //   b: function() {
 //     return this.a
