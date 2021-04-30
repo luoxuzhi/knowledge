@@ -50,7 +50,7 @@ module.exports = {
       },
     ],
     sidebar: {
-      '/es5/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten','this'],
+      '/es5/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'this'],
       '/es6/': [
         '',
         'two',
