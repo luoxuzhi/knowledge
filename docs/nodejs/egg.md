@@ -24,6 +24,17 @@ application 扩展属性要在属性前面添加`get`
 
 <img :src="$withBase('/assets/egg-extend.png')">
 
+helper 上面自带的`escape`可以帮助过滤输入的 html 标签，防止 xss 攻击
+
+```js
+const result = await ctx.service.user.editUser({
+  ...params,
+  updateTime: ctx.helper.time(),
+  // 防xss攻击
+  sign: ctx.helper.escape(params.sign),
+})
+```
+
 #### 5. egg 添加插件步骤
 
 <img :src="$withBase('/assets/egg-plugin.png')">
@@ -31,13 +42,15 @@ application 扩展属性要在属性前面添加`get`
 - 在项目根目录（与 app 同级）建 lib 文件夹,目录层级如下
 
 ```
+
 lib/
 └── plugin
-    └── egg-auth
-        └── app
-            ├── middleware
-            │   └── auth.js
-            └── package.json
+└── egg-auth
+└── app
+├── middleware
+│   └── auth.js
+└── package.json
+
 ```
 
 - config 文件夹下`config.js`添加对应插件
