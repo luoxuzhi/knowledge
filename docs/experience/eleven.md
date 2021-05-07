@@ -1,193 +1,206 @@
-## 11. 手写篇
+## 11. 杂记
 
-### 1. 数值转换,一元运算符 +
+### Q1. Class 和普通构造函数有何区别？
 
-```js
-const age = +'22' // 22
-let text2 = '1' + 2 // "12"
-let text3 = 1 + '2' // "12"
-let text4 = 1 + 2 + '3' // "33"
-let num = +text1 //  12 转换为 Number 类型
-```
+a. typeof Class // function
 
-### 2. es5 实现 promise
+b.继承的写法不一样，class 使用 extend，es5 使用原型 `A.prototype=new B()`，Class 实现继承更加易读，易理解
 
-### 3. 栈内存、堆内存理解
+c. Class 在语法上更加贴合面向对象的写法
 
-```js
-var a = { n: 1 }
-var b = a
-a.x = a = { n: 2 }
+d. 更易于写 java 等后端语言的使用
 
-a.x // --> undefined
-b.x // --> {n: 2}
-```
+e.本质还是语法糖，使用 prototype
 
-1. 优先级。.的优先级高于=，所以先执行 a.x，堆内存中的{n: 1}就会变成{n: 1, x: undefined}，改变之后相应的 b.x 也变化了，因为指向的是同一个对象。
-2. 赋值操作是从右到左，所以先执行 a = {n: 2}，a 的引用就被改变了，然后这个返回值又赋值给了 a.x，需要注意的是这时候 a.x 是第一步中的{n: 1, x: undefined}那个对象，其实就是 b.x，相当于 b.x = {n: 2}
+### Q2. es6 其他常用功能
 
-### 4. 手写实现 new
+let/const、多行字符串/模板变量、解构赋值、函数默认参数、箭头函数、块级作用域
 
-```js
-function create(Con) {
-  // 创建一个空的对象
-  var obj = new Object(),
-    // 获得构造函数，arguments中去除第一个参数
-    Con = [].shift.call(arguments)
-  // 链接到原型，obj 可以访问到构造函数原型中的属性
-  obj.__proto__ = Con.prototype
-  // 绑定 this 实现继承，obj 可以访问到构造函数中的属性
-  var ret = Con.apply(obj, arguments)
-  // 优先返回构造函数返回的对象
-  return ret instanceof Object ? ret : obj
-}
-```
+### Q3. 原型的实际应用例子
 
-### 5. 深拷贝实现
+jquery 如何使用原型，$.css $.html css,html 都是原型上面的方法
 
-深拷贝可以拆分成 2 步，浅拷贝+递归，浅拷贝时判断属性值是否是对象，如果是对象就进行递归操作，两个一结合就实现了深拷贝。
+原型的扩展性：jquery 插件的扩展性、Vue 的扩展性
 
-```js
-function cloneDeep1(source) {
-  var target = {}
-  for (var key in source) {
-    if (Object.prototype.hasOwnProperty.call(source, key)) {
-      if (typeof source[key] === 'object') {
-        target[key] = cloneDeep1(source[key]) // 注意这里
-      } else {
-        target[key] = source[key]
-      }
-    }
-  }
-  return target
-}
-```
+### Q4. async await 在 generator 的基础上做的优化，区别
 
-一个简单的深拷贝就完成了，但是这个实现还存在很多问题。
+a. async 内置执行器。Generator 函数的执行必须靠执行器，需要调用 next() 方法，或者用 co 模块；而 async 函数自带执行器。async 函数的执行与普通函数一模一样，只要一行。
 
-1、没有对传入参数进行校验，传入 null 时应该返回 null 而不是 {}
+b. 更好的语义。async 和 await 比起星号和 yield，语义更清楚。
 
-2、对于对象的判断逻辑不严谨，因为 typeof null === 'object'
+c. 更广的适用性。co 模块约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面可以是 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。
 
-3、没有考虑数组的兼容
+d. async 返回值是 Promise，可以用 then 方法指定下一步的操作。比 Generator 函数的返回值是 Iterator 对象方便
 
-4、没有考虑循环引用，循环引用指的是 a.a = a (`循环引用延伸到 commonjs、esmodule 的循环引用`)
+### Q5. var、let 和 const 区别的实现原理是什么（声明过程，内存分配，和变量提升）
 
-下面代码是一个改良版的，但仍存在一些问题，比如正则、symbol、date 类型的拷贝可能会出现问题，
-所以日常开发中用 lodash 的深拷贝，知道深拷贝的过程中存在哪些问题就好了！
+一.声明过程
+var：遇到有 var 的作用域，在任何语句执行前都已经完成了声明和初始化，也就是变量提升而且拿到 undefined 的原因由来。
+
+function： 声明、初始化、赋值一开始就全部完成，所以函数的变量提升优先级更高
+
+let：解析器进入一个块级作用域，发现 let 关键字，变量只是先完成声明，并没有到初始化那一步。此时如果在此作用域提前访问，则报错 xx is not defined，这就是暂时性死区的由来。等到解析到有 let 那一行的时候，才会进入初始化阶段。如果 let 的那一行是赋值操作，则初始化和赋值同时进行，const、class 都是同 let 一样的道理。
+
+对比于 var，let、const 只是解耦了声明和初始化的过程，var 是在任何语句执行前都已经完成了声明和初始化，let、const 仅仅是在任何语句执行前只完成了声明。
+
+二.内存分配 var，会直接在栈内存里预分配内存空间，然后等到实际语句执行的时候，再存储对应的变量，如果传的是引用类型，那么会在堆内存里开辟一个内存空间存储实际内容，栈内存会存储一个指向堆内存的指针
+
+let，是不会在栈内存里预分配内存空间，而且在栈内存分配变量时，做一个检查，如果已经有相同变量名存在就会报错
+
+const，也不会预分配内存空间，在栈内存分配变量时也会做同样的检查。不过 const 存储的变量是不可修改的，对于基本类型来说你无法修改定义的值，对于引用类型来说你无法修改栈内存里分配的指针，但是你可以修改指针指向的对象里面的属性
+
+三.变量提升 let const 和 var 三者其实会存在变量提升
+
+let 只是声明过程提升，初始化过程并没有提升，即没有赋值为 undefined，所以会产生暂时性死区。
+
+var 的声明和初始化过程都提升了，提升之后赋值为 undefined，所以在赋值前访问会得到 undefined
+
+function 的创建、初始化、赋值都被提升了
+
+:::danger
+注意：let/const 定义在全局的变量并不会挂在 window 上
+:::
+
+在 ES5 中，顶层对象的属性和全局变量是等价的，var 命令和 function 命令声明的全局变量，自然也是顶层对象。
+但 ES6 规定，var 命令和 function 命令声明的全局变量，依旧是顶层对象的属性，但 let 命令、const 命令、class 命令声明的全局变量，不属于顶层对象的属性。
 
 ```js
-const isObj = target => target !== null && typeof target === 'object'
-
-// 因为保存source在push进arr的时候，保存的是指针地址，所以下面用===能找到
-const findSoure = (arr, source) => arr.find(item => item.source === source)
-
-function deepClone(source, saveList = []) {
-  if (!isObj(source)) return source
-
-  let result = Array.isArray(source) ? [] : {}
-
-  let isExitReult = findSoure(saveList, source)
-  if (isExitReult) return isExitReult.result
-  // 须在递归调用之前deepClone之前保存
-  saveList.push({ source, result })
-  for (const key in source) {
-    // 只处理source的自身属性，不处理prototype的属性
-    if (Object.hasOwnProperty.call(source, key)) {
-      const element = source[key]
-      if (isObj(element)) {
-        result[key] = deepClone(element, saveList)
-      } else {
-        result[key] = element
-      }
-    }
-  }
-  return result
-}
-
-let AA = {
-  a: 3,
-  b: {
-    text: '8',
-  },
-  c: [1, 2, 3, 4],
-}
-
-AA.d = AA
-let BB = deepClone(AA)
-BB.c = [2, 3, 4, 5]
-console.log(AA, BB)
+let a = 8
+const b = 9
+console.log(window.a, window.b) // undefined,undefined
 ```
 
-<img :src="$withBase('/assets/deep-clone.png')">
+### Q6. 性能优化有哪些方向
 
-### 6. js 中大数相加
+打包减少文件大小(用 Happypack 来加速代码构建，dll，uglify 优化)、
 
-JS 在存放整数的时候是有一个安全范围的，一旦数字超过这个范围便会损失精度。不能拿精度损失的数字进行运行，因为运算结果一样是会损失精度的。所以，我们要用字符串来表示数据！（不会丢失精度）
+webpack(小图片 base64 编码、提取公共代码、bundle 加 hash、使用 cdn、懒加载、ignorePlugin)
 
-`JS 中整数的最大安全范围可以查到是：9007199254740991`
+网络：浏览器缓存原理及最佳设置、cdn 网络传输
 
-假如我们要进行 9007199254740991 + 1234567899999999999
+减少 dom 操作避免重绘和回流、节流防抖、js 懒执行（defer）
+
+### Q7. 脚手架改造加了哪些功能
+
+`CopyWebpackPlugin`/`GenerateAssetPlugin`/`HappyPack`开启多线程打包
+
+### Q8. jQuery 怎么解决地域回调
+
+Jquery 有延迟对象`$.Deferred()`，简单封装`Defered`使得用法类似`promise`，类似`Promise`
+
+### Q9. 酷炫的 css 特性
+
+box-reflect、多列布局 column-count: 5;-webkit-box-reflect
+
+### Q10. html meta 用法
+
+chartset name(title、description、keywords) http-equiv
+
+### Q11. nginx 配置某台机器访问特定的文件夹
+
+gzip、location、proxy_pass、proxy_set_header、allow、deny
+
+### Q12. React 和 Vue 区别
+
+共同点：
+组件化、都是数据驱动视图
+
+本质区别：
+Vue--本质是 MVVM 框架，由 MVC 发展而来
+
+React--本质是前端组件化框架，由后端组件化发展而来
+
+Vue 逻辑和 html 模板分离、React 中 JavaScript 和模板混在一起，React 本身是组件化。
+
+### Q13. Webpack 打包构建的好处
+
+- 体积更小，加载更快
+- 编译更高级语法
+- 兼容性和错误检查
+- 统一、高效的开发环境
+- 统一的构建和产出流程
+- 集成公司构建规范
+
+### Q14. Webpack 中 module、chunk、bundle 的区别
+
+- module---各个源码文件，webpack 中一切皆模块
+- chunk---多模块合成的，如 entry、import、splitChunk
+- bundle ---最终输出的文件
+
+### Q15. 为什么使用 gif 做埋点
+
+- 没有跨域问题；
+
+- 不用插入 DOM，只要在 js 中 new 出 Image 对象就能发起请求，不会阻塞页面加载，影响用户体验；
+
+- 在所有图片中体积最小，相较 BMP/PNG，可以节约 41%/35%的网络资源。
+
+### Q16. Object 和 es6 map 的区别
+
+[链接](https://www.cnblogs.com/mengfangui/p/9934849.html)
+
+- object 的键的类型是 字符串；map 的键的类型是 可以是任意类型；
+
+- object 获取键值使用 Object.keys（返回数组）；Map 获取键值使用 map 变量.keys() (返回迭代器)。
+
+```
+
+```
+
+### Q17. opacity: 0、visibility: hidden、display: none 的区别
+
+- 结构： display:none: 会让元素完全从渲染树中消失，渲染的时候不占据任何空间, 不能点击， visibility: hidden:不会让元素从渲染树消失，渲染元素继续占据空间，只是内容不可见，不能点击 opacity: 0: 不会让元素从渲染树消失，渲染元素继续占据空间，只是内容不可见，可以点击
+
+- 继承： display: none 和 opacity: 0：是非继承属性，子孙节点消失由于元素从渲染树消失造成，通过修改子孙节点属性无法显示。 visibility: hidden：是继承属性，子孙节点消失由于继承了 hidden，通过设置 visibility: visible;可以让子孙节点显式。
+
+- 性能： displaynone : 修改元素会造成文档回流,读屏器不会读取 display: none 元素内容，性能消耗较大 visibility:hidden: 修改元素只会造成本元素的重绘,性能消耗较少读屏器读取 visibility: hidden 元素内容 opacity: 0 ： 修改元素会造成重绘，性能消耗较少
+
+- 联系：它们都能让元素不可见
+
+### Q18. Map/Set/WeakMap/weakSet 的区别？
+
+### Q19. html 本身加载一张图片，script 标签里通过 js 加载一张图片，DOMContentLoaded/load 事件和 js 里图片加载的执行顺序？？
+
+要看 js 里面的代码怎么写
 
 ```js
-function addString(str1, str2) {
-  // 此处加1是防止位置相同，第一位相加后需要向前进位
-  let len = Math.max(str1.length, str2.length) + 1
-  let newStr1 = str1.padStart(len, 0)
-  let newStr2 = str2.padStart(len, 0)
+window.addEventListener('DOMContentLoaded', () => {
+  console.log('dom contented loaded')
+})
 
-  let newStr1Arr = newStr1
-    .split('')
-    .reverse()
-    .map(i => Number(i))
-  let newStr2Arr = newStr2
-    .split('')
-    .reverse()
-    .map(i => Number(i))
-  let resultArr = []
-  let addFlag = 0
-  let pushNum = null
+window.addEventListener('load', () => {
+  console.log('dom load')
+})
 
-  newStr1Arr.forEach((element, idx) => {
-    let sumFirst = element + newStr2Arr[idx] + addFlag
-    if (sumFirst >= 10) {
-      pushNum = sumFirst % 10
-      addFlag = 1
-    } else {
-      pushNum = sumFirst
-      addFlag = 0
-    }
-    resultArr.push(pushNum)
-  })
-  let resultString = resultArr.reverse().join('')
-  // 字符串首位为0截取去掉
-  if (resultString[0] == 0) {
-    return resultString.substring(1)
-  } else {
-    return resultString
-  }
-}
-addString('9007199254740991', '1234567899999999999') // 11233575099254740990
+setTimeout(() => {
+  let img = document.createElement('img')
+  img.src = 'http://know.ncuxz.fun/assets/vue-source-code1.jpg'
+  document.body.appendChild(img)
+  console.log('finish')
+}, 0)
 
-//实现字符串大数相加
-function add(a, b) {
-  //取两个数字的最大长度
-  let maxLength = Math.max(a.length, b.length)
-  //用0去补齐长度
-  a = a.padStart(maxLength, 0) //"0009007199254740991"
-  b = b.padStart(maxLength, 0) //"1234567899999999999"
-  //定义加法过程中需要用到的变量
-  let t = 0
-  let f = 0 //"进位"
-  let sum = ''
-  for (let i = maxLength - 1; i >= 0; i--) {
-    t = parseInt(a[i]) + parseInt(b[i]) + f
-    f = Math.floor(t / 10)
-    sum = (t % 10) + sum
-  }
-  if (f == 1) {
-    sum = '1' + sum
-  }
-  return sum
-}
+// finish->dom contented loaded->dom load
 ```
+
+```js
+window.addEventListener('DOMContentLoaded', () => {
+  console.log('dom contented loaded')
+})
+
+window.addEventListener('load', () => {
+  console.log('dom load')
+})
+
+setTimeout(() => {
+  let img = document.createElement('img')
+  img.src = 'http://know.ncuxz.fun/assets/vue-source-code1.jpg'
+  document.body.appendChild(img)
+  console.log('finish')
+}, 200)
+
+// dom contented loaded->dom load->finish
+```
+
+### Q20. 利用 service worker 做缓存优化的时候用什么策略？
+
+[浅谈 Service Worker 缓存策略](https://zacharykwan.com/2018/12/06/%E5%85%B3%E4%BA%8Eworkbox%E7%9A%84%E7%A7%8D%E7%A7%8D/)

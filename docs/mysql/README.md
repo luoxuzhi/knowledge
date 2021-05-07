@@ -1,4 +1,4 @@
-## 1.mysql 启动
+### 1.mysql 启动
 
 ```js
 We've installed your MySQL database without a root password. To secure it run:
@@ -36,9 +36,7 @@ Or, if you don't want/need a background service you can just run:
 - 工具`npm install mysql2`
 - 使用 `const mysql = require(mysql2/promise)`
 
-## 4.连接阿里云服务器 `ssh root@39.108.164.98`
-
-## 5. sequelize-cli 管理数据库及表结构
+## 4. sequelize-cli 管理数据库及表结构
 
 - 所有命令都是`npx sequelize`开头，使用`npx sequelize`查看使用帮助
 - 创建表及增删列
@@ -91,7 +89,7 @@ static associate(models) {
 }
 ```
 
-## 6. sequelize 框架实现在服务端代码中对 mysql 代码增删改查
+## 5. sequelize 框架实现在服务端代码中对 mysql 代码增删改查
 
 a. 安装依赖
 

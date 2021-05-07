@@ -1,6 +1,6 @@
-## 3.sequelize 表关系定义
+### 3.sequelize 表关系定义
 
-#### 1.操作数据库之前要手动或者使用`sequelize-cli`创建表
+#### 1.操作数据库之前要手动（通过 `mysql workbench` 执行 sql）或者使用`sequelize-cli`创建表
 
 ```sql
 // user 与 userDetail 一对一
