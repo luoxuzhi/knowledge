@@ -85,7 +85,7 @@ module.exports = {
       '/nginx/': [''],
       '/linux/': [''],
       '/redis/': [''],
-      '/docker/': ['', 'container'],
+      '/docker/': ['', 'container', 'deploy'],
       '/data-constructure/': [''],
       '/http/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
       '/project/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'night', 'ten'],
