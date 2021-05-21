@@ -27,11 +27,11 @@ Or, if you don't want/need a background service you can just run:
 - 创建新的数据库 create database `<database>`
 - 删除数据库 drop database `<database>`
 
-- 查看表 show tables;
+* 查看表 show tables;
 
-- 查看表结构 desc tablename;
+* 查看表结构 desc tablename;
 
-- 删除表 delete table name;
+* 删除表 delete table name;
 
 ## 3. 使用 nodejs 连接 mysql
 
