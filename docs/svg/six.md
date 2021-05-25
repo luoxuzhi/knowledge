@@ -1,10 +1,10 @@
-## Anime.js
+## 6. Anime.js
 
-[A](https://github.com/juliangarnier/anime)[nime.js](https://github.com/juliangarnier/anime) 是一个强大的用来制作动画的 javascript 库，虽然功能没有 GASP（greensock）这种大型平台的功能丰富，但胜在它足够轻便，gzip 压缩完只有6kb 左右，麻雀虽小，却五脏俱全。 相比较其它动画平台，Anime.js 具有一下一些优点：
+[A](https://github.com/juliangarnier/anime)[nime.js](https://github.com/juliangarnier/anime) 是一个强大的用来制作动画的 javascript 库，虽然功能没有 GASP（greensock）这种大型平台的功能丰富，但胜在它足够轻便，gzip 压缩完只有 6kb 左右，麻雀虽小，却五脏俱全。 相比较其它动画平台，Anime.js 具有一下一些优点：
 
-*   体积小，gzip 压缩完只有6kb 左右。
-*   支持大部分的 CSS 属性动画。
-*   功能强大，支持 SVG 常见的动效开发以及强大的时间轴功能。
+- 体积小，gzip 压缩完只有 6kb 左右。
+- 支持大部分的 CSS 属性动画。
+- 功能强大，支持 SVG 常见的动效开发以及强大的时间轴功能。
 
 其中有一个特别重要的特性是，它对 SVG 的支持非常友好，用它来开发 SVG 动画会变得非常高效。
 
@@ -86,16 +86,16 @@ anime({
 
 ```
 
-*   targets：表示需要运动的元素，可以是 CSS 类和 ID 来指定。
-*   translateX：指定需要运动的属性，我们这里指定的是元素的 transform 这个位移属性，除此之外，我们还可以指定元素的其它 CSS 属性，比如宽和高等。
-*   动画相关属性，比如动画的执行时间（duration）、延迟执行时间（delay）、动画的运动曲线（easing）和动画是否循环执行（loop）等。
-*   loop 默认值是 false，当为 true 的时候，表示动画不断的循环执行。
+- targets：表示需要运动的元素，可以是 CSS 类和 ID 来指定。
+- translateX：指定需要运动的属性，我们这里指定的是元素的 transform 这个位移属性，除此之外，我们还可以指定元素的其它 CSS 属性，比如宽和高等。
+- 动画相关属性，比如动画的执行时间（duration）、延迟执行时间（delay）、动画的运动曲线（easing）和动画是否循环执行（loop）等。
+- loop 默认值是 false，当为 true 的时候，表示动画不断的循环执行。
 
 在上面代码中 target 我们使用 CSS 中的类选择器，除此之外，我们还可以使用下面这几种方法来选择元素：
 
-*   DOM 选择方法 document.querySelector('.box') 或者是 document.querySelectorAll('.box') 方法;
-*   js 数组的方法 \['box'\]；
-*   js 对象的方式 {elementNmae:'box'}
+- DOM 选择方法 document.querySelector('.box') 或者是 document.querySelectorAll('.box') 方法;
+- js 数组的方法 \['box'\]；
+- js 对象的方式 {elementNmae:'box'}
 
 如果需要操作多个元素，还可以这样做：
 
@@ -154,10 +154,10 @@ anime({
 
 代码是非常的简单明了，对代码做个简单的说明：
 
-*   我们需要运动的元素全部是类名为 box 的元素。
-*   使用了 transform 中的 translateX 属性来移动元素。
-*   其中 translateX 的值使用一个方法来计算，每个元素的值都依赖它们的索引值。
-*   上面的代码中还用到来 direction 这个属性，它的值又 **normal** 和 **reverse**，当值为 reverse 的时候，表示动画回来回的执行，就像我们上面的这个效果一样，direction 的值为 **reverse**。所以元素在移动到目标位置的时候，会往回运动到元素的初始位置，如此不断的反复。
+- 我们需要运动的元素全部是类名为 box 的元素。
+- 使用了 transform 中的 translateX 属性来移动元素。
+- 其中 translateX 的值使用一个方法来计算，每个元素的值都依赖它们的索引值。
+- 上面的代码中还用到来 direction 这个属性，它的值又 **normal** 和 **reverse**，当值为 reverse 的时候，表示动画回来回的执行，就像我们上面的这个效果一样，direction 的值为 **reverse**。所以元素在移动到目标位置的时候，会往回运动到元素的初始位置，如此不断的反复。
 
 除了多个元素的控制，也可以同时针对一个元素的某一个属性，来进行多个值的控制，比如上面动画中我们可以不停的改变元素的背景颜色：
 
@@ -232,7 +232,7 @@ restartBtn.addEventListener('click', function(e) {
 
 ```
 
-在上面代码中我们定义来3个按钮，分别表示动画的播放、暂停和重新开始，给3个按钮绑定 Anime 提供的 **pause、play** 和 **restart** 方法来控制动画，如下图所示：
+在上面代码中我们定义来 3 个按钮，分别表示动画的播放、暂停和重新开始，给 3 个按钮绑定 Anime 提供的 **pause、play** 和 **restart** 方法来控制动画，如下图所示：
 
 ![图片](https://user-gold-cdn.xitu.io/2018/12/8/1678c9ffa4ed9419?w=455&h=206&f=gif&s=234231)
 
@@ -254,7 +254,7 @@ restartBtn.addEventListener('click', function(e) {
 
 ![图片](https://user-gold-cdn.xitu.io/2018/12/8/1678c9ff65c69014?w=455&h=206&f=gif&s=143961)
 
-那如果我们想要这3个元素按顺序来执行动画，该怎么办呢？这个时候就可以借助 Anime 强大的时间轴功能来实现这个按顺序执行的动画效果。
+那如果我们想要这 3 个元素按顺序来执行动画，该怎么办呢？这个时候就可以借助 Anime 强大的时间轴功能来实现这个按顺序执行的动画效果。
 
 在 Anime 中，定义一个时间轴也非常简单：
 

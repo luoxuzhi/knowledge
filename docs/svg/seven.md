@@ -1,4 +1,4 @@
-## Anime SVG 描边动画
+## 7. Anime SVG 描边动画
 
 ### 描边动画效果
 
@@ -209,7 +209,7 @@ update: function(anim) {
       document.querySelector(".letter-x").setAttribute("fill", "#fff");
     }
   },
-  
+
 
 ```
 
@@ -226,6 +226,6 @@ document.querySelector(".play-drawing").onclick = lineDrawing.restart;
 
 [代码演示地址](https://codepen.io/janily/pen/PXxOZV)
 
-一个简单描边填充动画就完成了。通过这个实例可以看到使用 Anime 实现文字描边填充动画效果，高效简洁，相比使用CSS，其开发效率一目了然。
+一个简单描边填充动画就完成了。通过这个实例可以看到使用 Anime 实现文字描边填充动画效果，高效简洁，相比使用 CSS，其开发效率一目了然。
 
 下一章节我们来学习下使用 Anime 来实现 SVG 的路径动画。

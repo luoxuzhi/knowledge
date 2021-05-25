@@ -1,4 +1,4 @@
-## SVG 描边动画
+## 3. SVG 描边动画
 
 由于 SVG 是一种 XML 格式的文档，和 HTML 中的 DOM 类似。所以，SVG 也能通过 CSS 执行动画效果。
 
@@ -61,7 +61,7 @@ fill="green"
 
 开始之前，我们先来了解下在 SVG 中描边动画原理，在后面的章节中，我们还会跟它经常打交道。
 
-通过第一章节，我们了解到在 SVG 中，很多的形状都是由 **path** 元素构成的，这里就不再多介绍了，这里主要介绍下跟 SVG 描边动画密切相关的3个属性，分别为 **stroke，stroke-dasharray** 和 **stroke-dashoffset。**
+通过第一章节，我们了解到在 SVG 中，很多的形状都是由 **path** 元素构成的，这里就不再多介绍了，这里主要介绍下跟 SVG 描边动画密切相关的 3 个属性，分别为 **stroke，stroke-dasharray** 和 **stroke-dashoffset。**
 
 stroke：是用来定义边框的颜色。
 
@@ -73,14 +73,13 @@ stroke-dashoffset：用来设置 dasharray 定义 dash 线条开始的位置。�
 
 介绍完关于 path 的所有 stroke 属性之后，下面就来解释下 SVG 线条描边动画的原理。简单来说，就是通过 stroke-dashoffset 和 stroke-dasharray 来做。主要是以下两个步骤：
 
-1.  通过 dasharray 将实线部分增加至全长。比如：一条 path 的长度为300，如果把 SVG 中 path 的 stroke-dasharray 的值设置为300,300，即表示这条 path 将会按照实线为 300，间隔为 300 的排布重复下去。所以默认的情况下，我们只会看到一条300长度的实线，间隔300的线段由于已经在画布外，所以是不可见的。
-    
+1.  通过 dasharray 将实线部分增加至全长。比如：一条 path 的长度为 300，如果把 SVG 中 path 的 stroke-dasharray 的值设置为 300,300，即表示这条 path 将会按照实线为 300，间隔为 300 的排布重复下去。所以默认的情况下，我们只会看到一条 300 长度的实线，间隔 300 的线段由于已经在画布外，所以是不可见的。
+
 2.  同时，通过 stroke-dashoffset 来移动新增的实线部分，造成线段移动的效果。比如由: stroke-dashoffset:500 变为 stroke-dashoffset:0。
-    
 
 这样讲解有点抽象，我们来通过一个简单的实例来演示下，更直观些。
 
-首先是一条长度为300的直线：
+首先是一条长度为 300 的直线：
 
 ```
 <svg x="0px" y="0px" width="300px" height="100px" viewBox="0 0 300 100" class="svg1">
@@ -99,7 +98,7 @@ stroke-dashoffset：用来设置 dasharray 定义 dash 线条开始的位置。�
 
 ```
 
-因为 stroke-dasharray 和 stroke-dashoffset 的值都是300，所以这条线段在网页初始化的时候，是看不见的。当我们把 stroke-dashoffset 的值设置为0的时候，它就可以显示出来，如下动图所示：
+因为 stroke-dasharray 和 stroke-dashoffset 的值都是 300，所以这条线段在网页初始化的时候，是看不见的。当我们把 stroke-dashoffset 的值设置为 0 的时候，它就可以显示出来，如下动图所示：
 
 ![](https://user-gold-cdn.xitu.io/2018/12/2/1676df7f0bf89f9f?w=1296&h=696&f=gif&s=1662138)
 
@@ -116,7 +115,7 @@ stroke-dashoffset：用来设置 dasharray 定义 dash 线条开始的位置。�
 
 ```
 
-这样当我们把 stroke-dashoffset 的值设置为0的时候，一个描边动画效果就完成来，来看下动图理解下：
+这样当我们把 stroke-dashoffset 的值设置为 0 的时候，一个描边动画效果就完成来，来看下动图理解下：
 
 ![](https://user-gold-cdn.xitu.io/2018/12/2/1676e08a84364e84?w=1314&h=486&f=gif&s=506302)
 
@@ -159,7 +158,7 @@ stroke-dashoffset：用来设置 dasharray 定义 dash 线条开始的位置。�
   stroke-width: 2;
   stroke: #fff;
   margin: 10% auto;
-  box-shadow: inset 0px 0px 0px #7ac142; 
+  box-shadow: inset 0px 0px 0px #7ac142;
 }
 .checkmark__check {
   transform-origin: 50% 50%;
@@ -178,7 +177,7 @@ var length = path.getTotalLength();
 
 ```
 
-首先是圆圈和钩的线条描边动画，只需要使用关键帧把 stroke-dashoffset 设置为0就可以了。
+首先是圆圈和钩的线条描边动画，只需要使用关键帧把 stroke-dashoffset 设置为 0 就可以了。
 
 ```
 @keyframes stroke {

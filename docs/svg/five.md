@@ -1,12 +1,12 @@
-## SMIL动画简介
+## 5. SMIL 动画简介
 
-所谓SMIL动画指在 SVG 集成了 Synchronized Multimedia Integration Language (SMIL) 这种动画标准，该语言被 SVG 原生支持，主要是使用标签来描述动画。
+所谓 SMIL 动画指在 SVG 集成了 Synchronized Multimedia Integration Language (SMIL) 这种动画标准，该语言被 SVG 原生支持，主要是使用标签来描述动画。
 
 SMIL 允许你：
 
 1、变动一个元素的数字属性（x、y……）
 
-2、改变元素的变形属性（translation或rotation）
+2、改变元素的变形属性（translation 或 rotation）
 
 3、改变元素的颜色属性
 
@@ -18,10 +18,10 @@ SMIL 允许你：
 
 ### SMIL 动画使用方法
 
-先定义一个SVG：
+先定义一个 SVG：
 
 ```
-<svg width="500px" height="500px" viewBox="0 0 500 500">  
+<svg width="500px" height="500px" viewBox="0 0 500 500">
 </svg>
 
 ```
@@ -29,8 +29,8 @@ SMIL 允许你：
 然后在里面定义一个矩形，并且定义好填充颜色等属性：
 
 ```
-<svg width="500px" height="500px" viewBox="0 0 500 500"> 
-    <rect x="0" y="0" width="100" height="100" fill="#feac5e"> 
+<svg width="500px" height="500px" viewBox="0 0 500 500">
+    <rect x="0" y="0" width="100" height="100" fill="#feac5e">
     </rect>
 </svg>
 
@@ -38,28 +38,28 @@ SMIL 允许你：
 
 如果要使这个矩形动起来，我们需要在矩形这个元素里使用 <animate /> 这个元素来使它动起来。
 
-在 <animate />，我们需要添加一些属性，首先使用 **attributeName** 来定义我们需要元素发生变化的属性，在这个实例中，我们需要它左右移动，即横坐标X，就可以把用 **attributeName** 设置为 **x**。这样就可以使元素在X轴上运动。
+在 <animate />，我们需要添加一些属性，首先使用 **attributeName** 来定义我们需要元素发生变化的属性，在这个实例中，我们需要它左右移动，即横坐标 X，就可以把用 **attributeName** 设置为 **x**。这样就可以使元素在 X 轴上运动。
 
 然后定义 **from** 的值和 **to** 的值，指定元素要运动的距离；使用 **dur** 来定义运动的时长；使用 **repeatCount** 去定义动画运行的次数，**repeatCount** 值为 **indefinite** 表示无限循环这个动画。
 
 ```
-<svg width="500px" height="500px" viewBox="0 0 500 500"> 
+<svg width="500px" height="500px" viewBox="0 0 500 500">
 
-    <rect x="0" y="0" width="100" height="100" fill="#feac5e"> 
-        <animate attributeName="x" from="0" to="500" dur="2s" repeatCount="indefinite" /> 
-    </rect> 
+    <rect x="0" y="0" width="100" height="100" fill="#feac5e">
+        <animate attributeName="x" from="0" to="500" dur="2s" repeatCount="indefinite" />
+    </rect>
 
 </svg>
 
 ```
 
-一个简单SVG SMIL动画就完成了。
+一个简单 SVG SMIL 动画就完成了。
 
 ![图片](https://user-gold-cdn.xitu.io/2018/12/2/1676eed7f7648ede?w=1024&h=328&f=gif&s=109612)
 
 [代码演示地址](https://codepen.io/janily/pen/zmrQKE)
 
-当然，我们可以在改变它位置的时候，同时改变其它的属性。比如，我们多定义2个 <animate /> 来改变它的宽度和颜色：
+当然，我们可以在改变它位置的时候，同时改变其它的属性。比如，我们多定义 2 个 <animate /> 来改变它的宽度和颜色：
 
 ```
 <animate attributeName="x" from="0" to="500" dur="2s" repeatCount="indefinite" />
@@ -74,7 +74,7 @@ SMIL 允许你：
 
 [代码演示地址](https://codepen.io/janily/pen/vVLwXv)
 
-我们还可以使用 <animateTransform /> 来代替 <animate /&，可以操作元素 **transform** 相关的属性，使用type来指定要操作 **transform** 的属性，还可以使用begin来指定动画从哪开始。比如，下面这个实例我们要使元素旋转起来，那我们就要把 **type** 的值指定为 **rotate**，**rotate** 属性的值包含三个坐标的值，分别为角度，横坐标的值即 x 和和纵坐标的值即 y。代码如下所示：
+我们还可以使用 <animateTransform /> 来代替 <animate /&，可以操作元素 **transform** 相关的属性，使用 type 来指定要操作 **transform** 的属性，还可以使用 begin 来指定动画从哪开始。比如，下面这个实例我们要使元素旋转起来，那我们就要把 **type** 的值指定为 **rotate**，**rotate** 属性的值包含三个坐标的值，分别为角度，横坐标的值即 x 和和纵坐标的值即 y。代码如下所示：
 
 ```
 <svg width="500px" height="500px" viewBox="0 0 500 500">
@@ -85,13 +85,13 @@ SMIL 允许你：
 
 ```
 
-在上面的代码中我们可以看到 **from** 的值为 **0 200 200**，to的值为 **360 400 400**，即表示元素在横坐标和纵坐标分别为200的位置旋转360度到横坐标和纵坐标分别为400的位置。
+在上面的代码中我们可以看到 **from** 的值为 **0 200 200**，to 的值为 **360 400 400**，即表示元素在横坐标和纵坐标分别为 200 的位置旋转 360 度到横坐标和纵坐标分别为 400 的位置。
 
 ![图片](https://user-gold-cdn.xitu.io/2018/12/2/1676eed7f94e8115?w=964&h=424&f=gif&s=239842)
 
 [代码演示地址](https://codepen.io/janily/pen/XxNejW)
 
-通过上面一个简单的动画效果，我们对SMIL动画也有了一个初步的认识，下面再通过一个稍微复杂点效果，来进一步加深对 SMIL 动画的认识。
+通过上面一个简单的动画效果，我们对 SMIL 动画也有了一个初步的认识，下面再通过一个稍微复杂点效果，来进一步加深对 SMIL 动画的认识。
 
 ## SMIL 动画实战
 
@@ -101,9 +101,9 @@ SMIL 允许你：
 
 开始之前先来分析下这个动画效果的构成。
 
-*   首先是旋转动画，这个可以用 transform 中的 rotate 属性来实现。
-*   然后是这个圆圈边框的颜色变化，这个可以通过改变 stroke 的颜色的值来实现。
-*   最后，是边框的长短变化，这个可以通过改变 stroke 的 stoke-dashoffset 来实现。
+- 首先是旋转动画，这个可以用 transform 中的 rotate 属性来实现。
+- 然后是这个圆圈边框的颜色变化，这个可以通过改变 stroke 的颜色的值来实现。
+- 最后，是边框的长短变化，这个可以通过改变 stroke 的 stoke-dashoffset 来实现。
 
 先来准备基本的 HTML 结构：
 
@@ -120,8 +120,8 @@ SMIL 允许你：
 
 ```
 <svg width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-  <g>   
-    <animateTransform attributeName="transform" type="rotate" values="0 33 33;270 33 33" begin="0s" dur="1.4s" fill="freeze" repeatCount="indefinite"/> 
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="0 33 33;270 33 33" begin="0s" dur="1.4s" fill="freeze" repeatCount="indefinite"/>
     <circle fill="none" stroke-width="6" stroke-linecap="round" stroke="#000" cx="33" cy="33" r="30" >    </circle>
    </g>
 </svg>
@@ -133,22 +133,22 @@ SMIL 允许你：
 
 ### values 属性
 
-那 values 属性是干什么的呢？在实际开发动画的时候，不可能就是单纯的从 a 位置到 b 位置。有时候，需要去 c 位置过渡下。此时，实际上有3个动画关键点。而 from, to/by 只能驾驭两个，此时就是 values 大显身手的时候了，它可以设置多个值。
+那 values 属性是干什么的呢？在实际开发动画的时候，不可能就是单纯的从 a 位置到 b 位置。有时候，需要去 c 位置过渡下。此时，实际上有 3 个动画关键点。而 from, to/by 只能驾驭两个，此时就是 values 大显身手的时候了，它可以设置多个值。
 
 比如我们可以把文章最开始的动画修改一下：
 
 ```
-<svg width="500px" height="500px" viewBox="0 0 500 500"> 
+<svg width="500px" height="500px" viewBox="0 0 500 500">
 
-    <rect x="0" y="0" width="100" height="100" fill="#feac5e"> 
+    <rect x="0" y="0" width="100" height="100" fill="#feac5e">
         <animate attributeName="x" values="160;40;160
-" dur="2s" repeatCount="indefinite" /> 
-    </rect> 
+" dur="2s" repeatCount="indefinite" />
+    </rect>
 </svg>
 
 ```
 
-在上面代码中，values 设置了3个值，这样当矩形运行到160的时候，会返回到40的位置，然后再运动到160的位置，这样就形成来一个来回运动的动画效果。
+在上面代码中，values 设置了 3 个值，这样当矩形运行到 160 的时候，会返回到 40 的位置，然后再运动到 160 的位置，这样就形成来一个来回运动的动画效果。
 
 ![图片](https://user-gold-cdn.xitu.io/2018/12/2/1676eed7f9327757?w=748&h=370&f=gif&s=87286)
 
@@ -156,9 +156,9 @@ SMIL 允许你：
 
 ### 加载动画实现
 
-具体到这个旋转动画中，我们使用 animateTransform 标签来实现旋转动画，values 的值为 values="0 33 33;270 33 33" 表示元素在横坐标和纵坐标分别为33的这个位置保持不动，从0到270这个角度不停的旋转，因为 **repeatCount** 的值为 **indefinite**。
+具体到这个旋转动画中，我们使用 animateTransform 标签来实现旋转动画，values 的值为 values="0 33 33;270 33 33" 表示元素在横坐标和纵坐标分别为 33 的这个位置保持不动，从 0 到 270 这个角度不停的旋转，因为 **repeatCount** 的值为 **indefinite**。
 
-OK，圆圈旋转动画完成后，接下来是边框颜色的变化，这个圆圈在旋转的过程中，有5中颜色的变化，这个时候 values 就派上用场了：
+OK，圆圈旋转动画完成后，接下来是边框颜色的变化，这个圆圈在旋转的过程中，有 5 中颜色的变化，这个时候 values 就派上用场了：
 
 ```
 <svg width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +172,7 @@ OK，圆圈旋转动画完成后，接下来是边框颜色的变化，这个圆
 
 ```
 
-颜色的变化我们使用 **attributeName** 的值指定为 **stroke**，然后使用 **values** 指定5个颜色的值，这样元素的 stroke 也就是边框的颜色会在这5中颜色来回不停的变化。
+颜色的变化我们使用 **attributeName** 的值指定为 **stroke**，然后使用 **values** 指定 5 个颜色的值，这样元素的 stroke 也就是边框的颜色会在这 5 中颜色来回不停的变化。
 
 在上面的代码中，还设置了圆圈的 **stroke-dasharray** 和 **stroke-dashoffset** 两个属性的值，在后面的用来实现边框长短变化动画用的。
 
@@ -202,6 +202,6 @@ OK，圆圈旋转动画完成后，接下来是边框颜色的变化，这个圆
 
 到这里，SVG 基础的动画实现方式就讲完了，那如果要制作更加强大的动画效果，要更加灵活的控制 SVG，就不得不借助于 JavaScript 了。
 
-下一章节我们就开始来讲解使用 JavaScript 来高效的开发SVG动画。
+下一章节我们就开始来讲解使用 JavaScript 来高效的开发 SVG 动画。
 
 关于 SMIL 详细的介绍可以去这个[文档](https://developer.mozilla.org/en-US/docs/Web/SVG/SVG_animation_with_SMIL)看看。
