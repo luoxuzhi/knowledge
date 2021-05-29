@@ -75,7 +75,7 @@ module.exports = {
       ],
       '/typescript/': [''],
       '/vue2/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'],
-      '/vue3/': [''],
+      '/vue3/': ['', 'experience'],
       '/react/': ['', 'two'],
       '/native/': ['', 'flutter'],
       '/miniprogram/': ['', 'two', 'taro', 'uni-app'],
