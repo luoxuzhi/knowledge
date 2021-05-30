@@ -46,3 +46,15 @@ data() { return { loadingText: '正在载入...', } },
 - 获取`style`,`getComputedStyle`浏览器原生支持，`const style = getComputedStyle(el)`
 
 - 判断包含类，`el.classList.contains(className)`，更多见 element 组件库
+
+5. 组件可以添加`emits:['xxx']`选项来展示对外派发的事件
+
+6.通过`ref`包装的变量，在`watch` 中可以自动展开，`computed` 中不能自动展开
+
+```js
+const scrollY = ref(0)
+watch(scrollY,newY => {....})
+const fixedTitle = computed(()=>{
+  if(scrollY.value < 0 ) return ''
+})
+```
