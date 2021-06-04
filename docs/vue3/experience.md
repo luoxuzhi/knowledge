@@ -58,3 +58,9 @@ const fixedTitle = computed(()=>{
   if(scrollY.value < 0 ) return ''
 })
 ```
+
+7. `setup`返回对象中的`key`会和组件`props`属性里面的值处于同级
+
+如图，`click/probeType`为`props`,`rootRef/scroll`为`setup`对象中返回的值
+
+<img :src="$withBase('/assets/v3-setup.png')">
