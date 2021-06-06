@@ -64,3 +64,22 @@ const fixedTitle = computed(()=>{
 如图，`click/probeType`为`props`,`rootRef/scroll`为`setup`对象中返回的值
 
 <img :src="$withBase('/assets/v3-setup.png')">
+
+8.`transition`动画用法发生变化
+
+```html
+<!-- vue3 -->
+<router-view v-slot="{ Component }">
+  <!-- appear为在当前路由时刷新时出现动画 -->
+  <transition appear name="slide">
+    <component :is="Component" :singer="selectedSinger" />
+  </transition>
+</router-view>
+
+<!-- vue2 -->
+<transition appear name="slide">
+  <router-view></router-view>
+</transition>
+```
+
+9. `computed`中通过`this.xx`访问其他属性时，会做一次赖收集，所以如果`computed`中同一个属性多次访问的话做缓存有利于性能优化
