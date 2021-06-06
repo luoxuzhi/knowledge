@@ -78,7 +78,7 @@ const fixedTitle = computed(()=>{
 
 <!-- vue2 -->
 <transition appear name="slide">
-  <router-view></router-view>
+  <router-view :singer="selectedSinger"></router-view>
 </transition>
 ```
 
