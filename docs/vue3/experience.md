@@ -16,6 +16,22 @@ setup() {
   },
 ```
 
+- 获取元素 el 位置、本身样式,transform 合并用 concat
+
+```js
+const rect = el.getBoundingClientRect()
+const style = getComputedStyle(el)
+
+function syncTransform(wrapper, inner) {
+  const wrapperTransform = getComputedStyle(wrapper).transform
+  const innerTransform = getComputedStyle(inner).transform
+  console.log('wrapperTransform :', wrapperTransform)
+  wrapper.style.transform =
+    // tansform合并用concat,最开始为'none'
+    wrapperTransform === 'none' ? innerTransform : wrapperTransform.concat('', innerTransform)
+}
+```
+
 ### 2. better-scroll 使用要点
 
 `better-scroll`初始化包括的节点只能有一个，因为`better-scroll`只对第一个子节点有效果
@@ -83,3 +99,5 @@ const fixedTitle = computed(()=>{
 ```
 
 9. `computed`中通过`this.xx`访问其他属性时，会做一次赖收集，所以如果`computed`中同一个属性多次访问的话做缓存有利于性能优化
+
+10. 通过钩子返回的访问`DOM`元素的同一个`ref`在不同组件中使用得到的对应的`DOM`元素
