@@ -104,6 +104,7 @@ module.exports = {
         'ten',
         'eleven',
         'twelve',
+        'mock',
         'thirteen',
         // 'fourteen',
       ],
