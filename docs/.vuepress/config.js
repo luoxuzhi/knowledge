@@ -24,8 +24,8 @@ module.exports = {
       {
         text: '类别',
         items: [
-          { text: '1.es5', link: '/es5/' },
-          { text: '2.es6', link: '/es6/' },
+          { text: '1.es5', link: '/ES5/' },
+          { text: '2.es6', link: '/ES6/' },
           { text: '3.typescript', link: '/typescript/' },
           { text: '4.Vue2', link: '/vue2/' },
           { text: '5.Vue3', link: '/vue3/' },
@@ -53,8 +53,8 @@ module.exports = {
       },
     ],
     sidebar: {
-      '/es5/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'this'],
-      '/es6/': [
+      '/ES5/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'this'],
+      '/ES6/': [
         '',
         'two',
         'three',
