@@ -73,7 +73,7 @@ module.exports = {
         'sixteen',
         'seventeen',
       ],
-      '/typescript/': [''],
+      '/typescript/': ['', 'two'],
       '/vue2/': ['', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'],
       '/vue3/': ['', 'experience'],
       '/react/': ['', 'two'],
