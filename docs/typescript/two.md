@@ -95,6 +95,6 @@ console.log('abc:', abc)
   
   infer  
   
-  extends 型不想过于灵活或者说想继承某些类等，可以通过 extends 关键字添加泛型约束。
+  extends 不想过于灵活或者说想继承某些类等，可以通过 extends 关键字添加泛型约束。
   
   `Partial<T>` 的作用就是将某个类型里的属性全部变为可选项 `?` 。
