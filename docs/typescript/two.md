@@ -1,5 +1,11 @@
 ## 2. 重学 ts
 
+> 辅助工具
+
+- [在线练习](https://www.typescriptlang.org/play/)
+- 2.json to ts 插件
+- 3.[TypeScript AST Viewer](https://ts-ast-viewer.com/)
+
 ### 1. 断言
 
 - 类型断言的两种写法：尖括号、as
@@ -88,13 +94,15 @@ console.log('abc:', abc)
 - 泛型工具类型：
 
   typeof 用来获取一个变量声明或对象的类型。
-  
+
   keyof 该操作符可以用于获取某种类型的所有键，其返回类型是联合类型。
-  
+
   in 用来遍历枚举类型。
-  
-  infer  
-  
+
+  infer
+
   extends 不想过于灵活或者说想继承某些类等，可以通过 extends 关键字添加泛型约束。
-  
+
   `Partial<T>` 的作用就是将某个类型里的属性全部变为可选项 `?` 。
+
+page 54
