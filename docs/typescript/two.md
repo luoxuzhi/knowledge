@@ -105,4 +105,4 @@ console.log('abc:', abc)
 
   `Partial<T>` 的作用就是将某个类型里的属性全部变为可选项 `?` 。
 
-page 54
+page 59
