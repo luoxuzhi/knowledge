@@ -83,12 +83,16 @@ const fixedTitle = computed(()=>{
 
 8.`transition`动画用法发生变化
 
+由 v2 transition -> router-view 变成 router-view->transition->keep-alive
+
 ```html
 <!-- vue3 -->
 <router-view v-slot="{ Component }">
   <!-- appear为在当前路由时刷新时出现动画 -->
   <transition appear name="slide">
-    <component :is="Component" :singer="selectedSinger" />
+    <keep-alive>
+      <component :is="Component" :singer="selectedSinger" />
+    </keep-alive>
   </transition>
 </router-view>
 
@@ -134,11 +138,9 @@ export default {
     modelValue(newModelValue){...}
   }
 }
-```
 
-```js
+// vue3
 export default {
-  // vue3
   props:{
     modelValue:String
   }
@@ -147,3 +149,14 @@ export default {
   }
 }
 ```
+
+15. watch/watchEffect 的区别
+
+- watch 需要指定监听值，能够获取新老值，不会立即执行，除非配置`immediate:true`
+- watchEffect 不需要指定监听值，不能获取老值，会立即执行并且自动进行依赖收集，立即执行类似 watch 配置`immediate:true`的效果
+
+16. watch 用法
+
+- watch 通过 ref、reactive、computed 包裹的值都可以直接 watch，即 watch 第一个参数无需使用函数返回方式
+- 基本类型使用 ref 包裹进行 watch，配置项无需传入`deep:true`即可观察
+- 引用类型可用 ref、reactive 包裹，如果观察的是对象整体，使用 ref 包裹时需传入`deep:true`,reactive 无需传
