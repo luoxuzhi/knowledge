@@ -84,7 +84,7 @@ module.exports = {
       '/mysql/': ['', 'sequelizetype', 'tablerelation', 'operatesql', 'connecterror', 'sql'],
       '/mongodb/': [''],
       '/nginx/': [''],
-      '/linux/': [''],
+      '/linux/': ['', 'ssr'],
       '/redis/': [''],
       '/docker/': ['', 'container', 'deploy'],
       '/data-constructure/': [''],
