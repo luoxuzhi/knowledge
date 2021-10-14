@@ -153,7 +153,7 @@ export default {
 15. watch/watchEffect 的区别
 
 - watch 需要指定监听值，能够获取新老值，不会立即执行，除非配置`immediate:true`
-- watchEffect 不需要指定监听值，不能获取老值，会立即执行并且自动进行依赖收集，立即执行类似 watch 配置`immediate:true`的效果
+- watchEffect 不需要指定监听值，不能获取老值，会立即执行并且自动进行依赖收集，立即执行类似 watch 配置`immediate:true`的效果，如果需要等页面更新完成之后再执行，可以添加配置`flush:'post'`
 
 16. watch 用法
 
