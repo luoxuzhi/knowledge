@@ -45,6 +45,7 @@ module.exports = {
           { text: '19.experience', link: '/experience/' },
           { text: '20.svg', link: '/svg/' },
           { text: '21.project', link: '/project/' },
+          { text: '22.flutter', link: '/flutter/' },
         ],
       },
       {
