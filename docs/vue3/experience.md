@@ -160,3 +160,13 @@ export default {
 - watch 通过 ref、reactive、computed 包裹的值都可以直接 watch，即 watch 第一个参数无需使用函数返回方式
 - 基本类型使用 ref 包裹进行 watch，配置项无需传入`deep:true`即可观察
 - 引用类型可用 ref、reactive 包裹，如果观察的是对象整体，使用 ref 包裹时需传入`deep:true`,reactive 无需传
+
+17 reactive 可以使用 ref 包裹的值，获得它的响应式
+
+```js
+const num = ref(1)
+const requestParam = reactive({
+  page_size: 50,
+  page: num,
+})
+```
