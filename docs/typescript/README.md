@@ -70,3 +70,52 @@ const fun: (value: any) => void = value => {}
 
 const fun = (value: any): void => {}
 ```
+7.元祖
+
+元祖就是固定长度固定类型的数组
+
+8.泛型和class
+
+```ts
+interface IPoint {
+    X:number;
+    Y:number;
+    getDistances?:(P:IPoint)=>number;
+    drawerPoint?:()=>void
+}
+
+class Point implements IPoint {
+    // x:number;
+    // y:number;
+    constructor(private _x:number,private _y:number){
+        this._x=_x;
+        this._y=_y;
+    }
+
+    getDistances = (p:IPoint)=>{
+        return Math.pow(p.X-this._x,2)+Math.pow(p.Y-this._y,2)
+    }
+    
+    get X(){
+        return this._x
+    }
+
+    get Y(){
+        return this._y
+    }
+
+    set X(val:number){
+        this._x=val
+    }
+
+    drawerPoint=()=>{}
+    
+}
+
+const p44=new Point(5,6)
+console.log(p44.getDistances({X:1,Y:2});
+
+let makeTulple = <T,Y=number>(x:T,y:Y)=>[x,y]
+
+const r1=makeTulple<string>('1',2)
+```
