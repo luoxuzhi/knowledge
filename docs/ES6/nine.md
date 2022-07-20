@@ -54,9 +54,9 @@ for (let i in obj) {
 }
 let one = Object.getOwnPropertyNames(obj)
 console.log(one) // []
-let two = Object.Object.getOwnPropertySymbols(obj)
+let two = Object.getOwnPropertySymbols(obj)
 console.log(two) // [Symbol(foo)]
-let three = Reflect.ownkeys(obj)
+let three = Reflect.ownKeys(obj)
 console.log(three) // [Symbol(foo)]
 ```
 
@@ -69,10 +69,10 @@ Symbol.keyFor方法返回一个已登记的 Symbol 类型值(即用Symbol.for()�
 
 ```js
 let four = Symbol.for('four')
-console.log(Symbol.keyFor('four')) // four
+console.log(Symbol.keyFor(four)) // four
 
 let five = Symbol('five')
-console.log(Symbol.keyFor('five')) // undefined
+console.log(Symbol.keyFor(five)) // undefined
 ```
 
 
