@@ -111,7 +111,7 @@ const o2 = {
 console.log(o2.fn()) // o2
 ```
 
-#### 3. bind/call/apply 改变 this 指向
+#### 4. bind/call/apply 改变 this 指向
 
 都是用来改变相关函数 this 指向的，但是 call/apply 是直接进行相关函数调用；bind 不会执行相关函数，而是返回一个新的函数，这个新的函数已经自动绑定了新的 this 指向，开发者需要手动调用即可。
 
@@ -128,7 +128,7 @@ const bar = {
 console.log(foo.logName.call(bar)) //mike
 ```
 
-#### 4. 构造函数和 this
+#### 5. 构造函数和 this
 
 new 操作符调用构造函数，具体做了什么？ ：
 
@@ -156,7 +156,7 @@ const instance = new Foo()
 console.log(instance.user) // Lucas
 ```
 
-#### 5.箭头函数中的 this 指向
+#### 6.箭头函数中的 this 指向
 
 箭头函数使用 this 不适用以上标准规则，而是根据外层（函数或者全局）上下文来决定。
 
@@ -181,7 +181,7 @@ const foo = {
 console.log(foo.fn()) // {fn: ƒ}
 ```
 
-#### 6. this 的优先级相关
+#### 7. this 的优先级相关
 
 ```js
 function foo(a) {
