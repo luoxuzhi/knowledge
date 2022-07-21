@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "deploy": "sh build.sh",
+    "deploy": "set NODE_OPTIONS=--openssl-legacy-provider & sh build.sh",
     "commit": "git commit -a -m 'add new knowledge'",
     "push": "git push origin master",
     "publish": "npm run commit && npm run push && npm run deploy"
