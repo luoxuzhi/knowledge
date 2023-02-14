@@ -355,6 +355,8 @@ function sum(a, ...args) {
   return s
 }
 
+console.log(sum(1)(2)(5).toString()) // 8
+
 // 第三题：实现中文一二三四五六七八九十代表的亿以下的数转化为阿拉伯数字，
 // 如五百七十万零二十，输出5700020
 let chnNumChar = {
