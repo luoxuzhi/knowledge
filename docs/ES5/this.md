@@ -249,3 +249,5 @@ console.log(bar.call(obj2)) // undefined
 // 使用 const/let 声明的变量不会挂载到 window 全局对象当中。
 // 因此 this 指向 window 时找不到 a 变量。
 ```
+
+综上所述，call/apply 显式子绑定优先级高，new 优先级比 bind 优先级高，箭头函数的 this 为定义时所在的 this，不能通过 call/apply/bind 去进行修改
