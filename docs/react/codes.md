@@ -123,11 +123,11 @@ test() // 0
 
 7. useMemo
 
-使用 useMemo 可以处理无限更新问题，返回一个 memoized 值。
+使用 useMemo 可以处理无限更新问题，返回一个 memorized 值。
 
 8. useCallback
 
-返回一个 memoized 回调函数。
+返回一个 memorized 回调函数。
 
 ```js
 useCallback(fn, deps) 相当于 useMemo(() => fn, deps)
