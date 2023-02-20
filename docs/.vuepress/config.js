@@ -109,7 +109,7 @@ module.exports = {
         'new-clonedeep',
         'questions',
         'coding',
-        'interview',
+        // 'interview',
       ],
     },
   },
