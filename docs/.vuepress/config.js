@@ -107,7 +107,7 @@ module.exports = {
         'vite',
         'performance',
         'new-clonedeep',
-        'questions',
+        // 'questions',
         'coding',
         // 'interview',
       ],
