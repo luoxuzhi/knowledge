@@ -95,6 +95,12 @@ export default Vue
 
 在浏览器环境中，常见的 `macro task` 有 `setTimeout、MessageChannel、postMessage、setImmediate`；常见的 `micro task` 有 `MutationObsever` 和 `Promise.then`、`process.nextTick`。
 
+- 在同一事件循环中，当所有的同步数据更新执行完毕后，才会调用 nextTick
+- 在同步执行环境中的数据完全更新完毕后，DOM 才会开始渲染。
+- 在同一个事件循环中，若存在多个 nextTick，将会按最初的执行顺序进行调用。
+- 每个异步的回调函数执行后都会存在一个独立的事件循环中，对应自己独立的 nextTick
+- vue DOM 的视图更新实现，，使用到了 ES6 的 Promise 及 HTML5 的 MutationObserver，当环境不支持时，使用 setTimeout(fn, 0)替代。上述的三种方法，均为异步 API。其中 MutationObserver 类似事件，又有所区别；事件是同步触发，其为异步触发，即 DOM 发生变化之后，不会立刻触发，等当前所有的 DOM 操作都结束后触发。
+
 [JS 执行机制看这里](https://juejin.im/post/59e85eebf265da430d571f89)
 
 `setTimeout`这个函数，是经过指定时间后，把要执行的任务加入到`Event Queue`
