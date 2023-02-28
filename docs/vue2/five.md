@@ -13,15 +13,15 @@
 </div>
 ```
 
-通过Vue构造器传入的各种选项大多数都可以在组件里用。 `data`是一个例外，它必须是函数，并且这个函数返回的是一个对象。
+通过 Vue 构造器传入的各种选项大多数都可以在组件里用。 `data`是一个例外，它必须是函数，并且这个函数返回的是一个对象。
 
 3.构成组件
 
 组件实例的作用域是孤立的。要让子组件使用父组件的数据，需要通过子组件的`props`选项。
 字面`prop`，它的值是字符串 `"1"` 而不是`number`。如果想传递一个实际的`number`，需要使用`v-bind`，从而让它的值被当作 JavaScript 表达式计算
+
 ```html
-<comp some-prop="1"></comp>
-<comp v-bind:some-prop="1"></comp>
+<comp some-prop="1"></comp> <comp v-bind:some-prop="1"></comp>
 ```
 
 4.使用`v-on`绑定自定义事件
@@ -30,14 +30,14 @@
 使用 $emit(eventName) 触发事件，触发事件直接写在模板中，事件名必须加斜杠转义，如下
 
 ```js
-Vue.component('todo',{
-  props:['title'],
-  template:'<li>{{title}}<button @click="$emit(\'remove\')">X</button></li>'
+Vue.component('todo', {
+  props: ['title'],
+  template: '<li>{{title}}<button @click="$emit(\'remove\')">X</button></li>',
 })
 ```
 
 :::danger
-不能用$on侦听子组件抛出的事件，而必须在模板里直接用v-on绑定
+不能用\$on 侦听子组件抛出的事件，而必须在模板里直接用 v-on 绑定
 :::
 
 ```html
@@ -55,11 +55,12 @@ Vue.component('todo',{
 :::
 
 :::tip 高级技巧
-子组件内部任何值得改变都可以用`$emit('input',val)`对外传递，然后父组件用`v-model`来接收传递出来的值，如果有多个值传递，把这些值都封装在一个`{}`里面
+子组件内部任何值的改变都可以用`$emit('input',val)`对外传递，然后父组件用`v-model`来接收传递出来的值，如果有多个值传递，把这些值都封装在一个`{}`里面
 :::
+
 5. 父子组件
 
-父组件：写在html里的内容，子组件：被嵌套的标签
+父组件：写在 html 里的内容，子组件：被嵌套的标签
 
 父组件模板的内容在父组件作用域内编译，子组件模板的内容在子组件作用域内编译。父组件通过`props`向下传递数据给子组件，子组件通过`events`给父组件发送消息。子组件要显式地用 props 选项声明它期待获得的数据,`props`可以是`[]`或`{}`，父组件引用多个子组件则用`{}`来注册，如果方法里面要用到`props`的某一个，直接用`this.xxx`调用即可
 
@@ -74,6 +75,7 @@ Vue.component('todo',{
 ```html
 <component :is="currentView"></componnet>
 ```
+
 <img :src="$withBase('/assets/component.png')">
 
 8.keep-alive
@@ -94,19 +96,17 @@ Vue.component('todo',{
 
 推荐用连字符，如果组件未经`slot`元素传递内容，你甚至可以在组件名后使用`/`使其自闭合（只在字符串模版中有效，字符串模板即是用反引号包含的模板``）
 
-
 10. 递归组件
 
 组件在它的模板内可以递归地调用自己，不过，只有当它有`name`选项时才可以
 
-
 11. `v-once`
 
-对低开销的静态组件使用`v-once`，即渲染一次后再actived从内存中取该组件。
+对低开销的静态组件使用`v-once`，即渲染一次后再 actived 从内存中取该组件。
 
 ```js
-Vue.component('once-component',{
-  tempate:`<div v-once>...a lot of static content...</div>`
+Vue.component('once-component', {
+  tempate: `<div v-once>...a lot of static content...</div>`,
 })
 ```
 

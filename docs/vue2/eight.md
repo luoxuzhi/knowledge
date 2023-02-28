@@ -13,10 +13,10 @@ new Vue({
     const data = {}
     Object.defineProperty(data, 'value', {
       get: () => this.inputName, // 'xiaoming'
-      enumberable: true
+      enumberable: true,
     })
     return { name: this.inputName, data }
-  }
+  },
 })
 
 // 子组件inject
@@ -24,7 +24,7 @@ Vue.component('model-comp', {
   inject: ['name', 'data'],
   mounted() {
     console.log(this.data)
-  }
+  },
 })
 ```
 
@@ -51,9 +51,9 @@ children: [
     path: ':username',
     components: {
       default: Dynamic,
-      'dynamic-one': DynamicOne
-    }
-  }
+      'dynamic-one': DynamicOne,
+    },
+  },
 ]
 ```
 
@@ -94,11 +94,11 @@ mode:'history'
 ```js
 const instance = new NotificationConstructor({
   propsData: {
-    ...rest
+    ...rest,
   },
   data: {
-    autoClose: autoClose === undefined ? true : autoClose
-  }
+    autoClose: autoClose === undefined ? true : autoClose,
+  },
 }).$mount()
 ```
 
@@ -184,7 +184,7 @@ props:{
 16.`Vue.use(plugin)`的暴露方式
 <img :src="$withBase('/assets/plugin.png')">
 
-具体例子见[这里](https://github.com/luoxuzhi/vuedemo/blob/master/src/components/notification/index.js)
+具体例子见[这里](https://github.com/luoxuzhi/v2/blob/master/src/components/notification/index.js)
 
 ```js
 import Notification from './notification'
