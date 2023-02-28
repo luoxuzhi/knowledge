@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>8.console对象 | Person Record</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <link rel="shortcut icon" type="image/x-icon" href="/icons/favicon.ico">
+    <meta name="description" content="Person Record">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.a748b10c.css" as="style"><link rel="preload" href="/assets/js/app.6b6308bc.js" as="script"><link rel="preload" href="/assets/js/2.d1734fb7.js" as="script"><link rel="preload" href="/assets/js/9.47f762e6.js" as="script"><link rel="prefetch" href="/assets/js/10.eef6ec1c.js"><link rel="prefetch" href="/assets/js/100.005910a8.js"><link rel="prefetch" href="/assets/js/101.a6c6b988.js"><link rel="prefetch" href="/assets/js/102.56935dd3.js"><link rel="prefetch" href="/assets/js/103.a68d6bbb.js"><link rel="prefetch" href="/assets/js/104.48bfb7bd.js"><link rel="prefetch" href="/assets/js/105.12501195.js"><link rel="prefetch" href="/assets/js/106.43937ce2.js"><link rel="prefetch" href="/assets/js/107.e7ddfdbc.js"><link rel="prefetch" href="/assets/js/108.b181ca49.js"><link rel="prefetch" href="/assets/js/109.77e17fef.js"><link rel="prefetch" href="/assets/js/11.f0c9e05e.js"><link rel="prefetch" href="/assets/js/110.814cad38.js"><link rel="prefetch" href="/assets/js/111.a5904051.js"><link rel="prefetch" href="/assets/js/112.34715589.js"><link rel="prefetch" href="/assets/js/113.ebed35a2.js"><link rel="prefetch" href="/assets/js/114.c69c71e0.js"><link rel="prefetch" href="/assets/js/115.222845a6.js"><link rel="prefetch" href="/assets/js/116.7749d4c9.js"><link rel="prefetch" href="/assets/js/117.b0fc03d7.js"><link rel="prefetch" href="/assets/js/118.a49561fe.js"><link rel="prefetch" href="/assets/js/119.6187c66f.js"><link rel="prefetch" href="/assets/js/12.5d306e3c.js"><link rel="prefetch" href="/assets/js/120.366014bd.js"><link rel="prefetch" href="/assets/js/121.e191facc.js"><link rel="prefetch" href="/assets/js/122.3503ce9f.js"><link rel="prefetch" href="/assets/js/123.fc63e2ca.js"><link rel="prefetch" href="/assets/js/124.cb9144f3.js"><link rel="prefetch" href="/assets/js/125.55583957.js"><link rel="prefetch" href="/assets/js/126.f439de3f.js"><link rel="prefetch" href="/assets/js/127.72f7d632.js"><link rel="prefetch" href="/assets/js/128.40c00b88.js"><link rel="prefetch" href="/assets/js/129.98c68a2f.js"><link rel="prefetch" href="/assets/js/13.8fd722bc.js"><link rel="prefetch" href="/assets/js/130.1e26ec47.js"><link rel="prefetch" href="/assets/js/131.8e72accb.js"><link rel="prefetch" href="/assets/js/132.5763024b.js"><link rel="prefetch" href="/assets/js/133.5ec9faa6.js"><link rel="prefetch" href="/assets/js/134.53ebe017.js"><link rel="prefetch" href="/assets/js/135.c08f4547.js"><link rel="prefetch" href="/assets/js/136.0f396e68.js"><link rel="prefetch" href="/assets/js/137.2b137c6b.js"><link rel="prefetch" href="/assets/js/138.49bca688.js"><link rel="prefetch" href="/assets/js/14.e68a1466.js"><link rel="prefetch" href="/assets/js/15.5ec58a1b.js"><link rel="prefetch" href="/assets/js/16.4f5200b2.js"><link rel="prefetch" href="/assets/js/17.49580f41.js"><link rel="prefetch" href="/assets/js/18.511fc3c9.js"><link rel="prefetch" href="/assets/js/19.f49c4623.js"><link rel="prefetch" href="/assets/js/20.e09a4e17.js"><link rel="prefetch" href="/assets/js/21.739c04b0.js"><link rel="prefetch" href="/assets/js/22.990a434e.js"><link rel="prefetch" href="/assets/js/23.01ac887b.js"><link rel="prefetch" href="/assets/js/24.75a45f10.js"><link rel="prefetch" href="/assets/js/25.65b8b001.js"><link rel="prefetch" href="/assets/js/26.dd521adf.js"><link rel="prefetch" href="/assets/js/27.12f7fc95.js"><link rel="prefetch" href="/assets/js/28.1a59bbee.js"><link rel="prefetch" href="/assets/js/29.21e22349.js"><link rel="prefetch" href="/assets/js/3.4f3cfe49.js"><link rel="prefetch" href="/assets/js/30.9fd54c52.js"><link rel="prefetch" href="/assets/js/31.8ddee72e.js"><link rel="prefetch" href="/assets/js/32.42332107.js"><link rel="prefetch" href="/assets/js/33.57521496.js"><link rel="prefetch" href="/assets/js/34.e434371b.js"><link rel="prefetch" href="/assets/js/35.b5033675.js"><link rel="prefetch" href="/assets/js/36.ee55ce20.js"><link rel="prefetch" href="/assets/js/37.b0ffd569.js"><link rel="prefetch" href="/assets/js/38.c43dcbcf.js"><link rel="prefetch" href="/assets/js/39.89562609.js"><link rel="prefetch" href="/assets/js/4.3d5a0d6b.js"><link rel="prefetch" href="/assets/js/40.d10a422e.js"><link rel="prefetch" href="/assets/js/41.784ac103.js"><link rel="prefetch" href="/assets/js/42.5ec70531.js"><link rel="prefetch" href="/assets/js/43.d80a7a4b.js"><link rel="prefetch" href="/assets/js/44.b26b76be.js"><link rel="prefetch" href="/assets/js/45.aa376663.js"><link rel="prefetch" href="/assets/js/46.c01d5be8.js"><link rel="prefetch" href="/assets/js/47.50d170c8.js"><link rel="prefetch" href="/assets/js/48.81166878.js"><link rel="prefetch" href="/assets/js/49.92879629.js"><link rel="prefetch" href="/assets/js/5.95ed8dcc.js"><link rel="prefetch" href="/assets/js/50.b61b0142.js"><link rel="prefetch" href="/assets/js/51.ecd3c4e2.js"><link rel="prefetch" href="/assets/js/52.a4ea8efd.js"><link rel="prefetch" href="/assets/js/53.8406844e.js"><link rel="prefetch" href="/assets/js/54.e34b649e.js"><link rel="prefetch" href="/assets/js/55.84416b18.js"><link rel="prefetch" href="/assets/js/56.3f09f7fc.js"><link rel="prefetch" href="/assets/js/57.280ceda6.js"><link rel="prefetch" href="/assets/js/58.0eea32bc.js"><link rel="prefetch" href="/assets/js/59.03a450ab.js"><link rel="prefetch" href="/assets/js/6.9d4ebb90.js"><link rel="prefetch" href="/assets/js/60.d59042ca.js"><link rel="prefetch" href="/assets/js/61.c4454333.js"><link rel="prefetch" href="/assets/js/62.c8c95de9.js"><link rel="prefetch" href="/assets/js/63.eadd5645.js"><link rel="prefetch" href="/assets/js/64.dc32312e.js"><link rel="prefetch" href="/assets/js/65.b40023e3.js"><link rel="prefetch" href="/assets/js/66.f9842ec2.js"><link rel="prefetch" href="/assets/js/67.2344930b.js"><link rel="prefetch" href="/assets/js/68.ae59101a.js"><link rel="prefetch" href="/assets/js/69.2a61d7db.js"><link rel="prefetch" href="/assets/js/7.dd10326b.js"><link rel="prefetch" href="/assets/js/70.abe1cfc7.js"><link rel="prefetch" href="/assets/js/71.aafaf7af.js"><link rel="prefetch" href="/assets/js/72.f556f0b7.js"><link rel="prefetch" href="/assets/js/73.5dc88942.js"><link rel="prefetch" href="/assets/js/74.3c91fe94.js"><link rel="prefetch" href="/assets/js/75.29355eb1.js"><link rel="prefetch" href="/assets/js/76.1583e288.js"><link rel="prefetch" href="/assets/js/77.20e8124d.js"><link rel="prefetch" href="/assets/js/78.cea559ab.js"><link rel="prefetch" href="/assets/js/79.294c9110.js"><link rel="prefetch" href="/assets/js/8.90ef5b37.js"><link rel="prefetch" href="/assets/js/80.39ab5b7a.js"><link rel="prefetch" href="/assets/js/81.10b2b01a.js"><link rel="prefetch" href="/assets/js/82.8fbe2f0a.js"><link rel="prefetch" href="/assets/js/83.46331904.js"><link rel="prefetch" href="/assets/js/84.05c9974f.js"><link rel="prefetch" href="/assets/js/85.c18af534.js"><link rel="prefetch" href="/assets/js/86.db93b30d.js"><link rel="prefetch" href="/assets/js/87.0db43e81.js"><link rel="prefetch" href="/assets/js/88.5329f112.js"><link rel="prefetch" href="/assets/js/89.cf14c7f1.js"><link rel="prefetch" href="/assets/js/90.d5c52929.js"><link rel="prefetch" href="/assets/js/91.107e21a9.js"><link rel="prefetch" href="/assets/js/92.b6832569.js"><link rel="prefetch" href="/assets/js/93.e3ee3e81.js"><link rel="prefetch" href="/assets/js/94.700f1b97.js"><link rel="prefetch" href="/assets/js/95.54d1e30e.js"><link rel="prefetch" href="/assets/js/96.7d55904a.js"><link rel="prefetch" href="/assets/js/97.9b283fe0.js"><link rel="prefetch" href="/assets/js/98.ca01dff4.js"><link rel="prefetch" href="/assets/js/99.314b6fe7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a748b10c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Person Record</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link router-link-active">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link router-link-active">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/ES5/" aria-current="page" class="sidebar-link">1.数值、字符串、对象、数组、函数、运算符的语法</a></li><li><a href="/ES5/two.html" class="sidebar-link">2.数组</a></li><li><a href="/ES5/three.html" class="sidebar-link">3.对象</a></li><li><a href="/ES5/four.html" class="sidebar-link">4.Number、Math、String</a></li><li><a href="/ES5/five.html" class="sidebar-link">5.RegExp对象</a></li><li><a href="/ES5/six.html" class="sidebar-link">6.Date 对象</a></li><li><a href="/ES5/seven.html" class="sidebar-link">7.JSON对象</a></li><li><a href="/ES5/eight.html" aria-current="page" class="active sidebar-link">8.console对象</a></li><li><a href="/ES5/nine.html" class="sidebar-link">9. function 对象</a></li><li><a href="/ES5/ten.html" class="sidebar-link">10. prototype、constructor、__proto__</a></li><li><a href="/ES5/this.html" class="sidebar-link">11. this 汇总</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_8-console对象"><a href="#_8-console对象" class="header-anchor">#</a> 8.console对象</h2> <p>1.console对象的方法</p> <p>console对象提供的各种方法，用来与控制台窗口互动。<code>log()，info()，debug()</code></p> <p><code>count()</code>count方法用于计数，输出它被调用了多少次。</p> <p><code>assert()</code></p> <p>assert方法接受两个参数，第一个参数是表达式，第二个参数是字符串。只有当第一个参数为false，才会输出第二个参数，否则不会有任何结果。</p> <p><code>time()</code></p> <p>timeEnd()这两个方法用于计时，可以算出一个操作所花费的准确时间。操作方法被这两个方法包裹</p> <p><code>profile()、profileEnd()</code></p> <p>console.profile方法用来新建一个性能测试器（profile），它的参数是性能测试器的名字。</p> <p>2.console.log方法支持以下占位符，不同格式的数据必须使用对应格式的占位符。占位符写在第一个参数里面。</p> <p><code>%s</code> 字符串</p> <p><code>%d</code> 整数</p> <p><code>%i</code> 整数</p> <p><code>%f</code> 浮点数</p> <p><code>%o</code> 对象的链接</p> <p><code>%c</code> CSS格式字符串</p> <p>3.debugger语句</p> <p>debugger语句主要用于除错，作用是设置断点。如果有正在运行的除错工具，程序运行到debugger语句时会自动停下。如果没有除错工具，debugger语句不会产生任何结果，JavaScript引擎自动跳过这一句。</p> <p>4.属性描述对象</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token number">123</span><span class="token punctuation">,</span>
+  writable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  enumerable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  configurable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  get<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+  set<span class="token operator">:</span> <span class="token keyword">undefined</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>enumerable</code>默认为<code>true</code>，如果设为<code>false</code>，会使某些操作（<code>for...in</code>循环、<code>Object.keys()</code>）跳过该属性</p> <p><code>Object.defineProperty</code>方法和<code>Object.defineProperties</code>方法，都有性能损耗，会拖慢执行速度，不宜大量使用。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/ES5/seven.html" class="prev">
+        7.JSON对象
+      </a></span> <span class="next"><a href="/ES5/nine.html">
+        9. function 对象
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6b6308bc.js" defer></script><script src="/assets/js/2.d1734fb7.js" defer></script><script src="/assets/js/9.47f762e6.js" defer></script>
+  </body>
+</html>

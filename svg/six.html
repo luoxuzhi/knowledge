@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>6. Anime.js | Person Record</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <link rel="shortcut icon" type="image/x-icon" href="/icons/favicon.ico">
+    <meta name="description" content="Person Record">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.a748b10c.css" as="style"><link rel="preload" href="/assets/js/app.6b6308bc.js" as="script"><link rel="preload" href="/assets/js/2.d1734fb7.js" as="script"><link rel="preload" href="/assets/js/119.6187c66f.js" as="script"><link rel="prefetch" href="/assets/js/10.eef6ec1c.js"><link rel="prefetch" href="/assets/js/100.005910a8.js"><link rel="prefetch" href="/assets/js/101.a6c6b988.js"><link rel="prefetch" href="/assets/js/102.56935dd3.js"><link rel="prefetch" href="/assets/js/103.a68d6bbb.js"><link rel="prefetch" href="/assets/js/104.48bfb7bd.js"><link rel="prefetch" href="/assets/js/105.12501195.js"><link rel="prefetch" href="/assets/js/106.43937ce2.js"><link rel="prefetch" href="/assets/js/107.e7ddfdbc.js"><link rel="prefetch" href="/assets/js/108.b181ca49.js"><link rel="prefetch" href="/assets/js/109.77e17fef.js"><link rel="prefetch" href="/assets/js/11.f0c9e05e.js"><link rel="prefetch" href="/assets/js/110.814cad38.js"><link rel="prefetch" href="/assets/js/111.a5904051.js"><link rel="prefetch" href="/assets/js/112.34715589.js"><link rel="prefetch" href="/assets/js/113.ebed35a2.js"><link rel="prefetch" href="/assets/js/114.c69c71e0.js"><link rel="prefetch" href="/assets/js/115.222845a6.js"><link rel="prefetch" href="/assets/js/116.7749d4c9.js"><link rel="prefetch" href="/assets/js/117.b0fc03d7.js"><link rel="prefetch" href="/assets/js/118.a49561fe.js"><link rel="prefetch" href="/assets/js/12.5d306e3c.js"><link rel="prefetch" href="/assets/js/120.366014bd.js"><link rel="prefetch" href="/assets/js/121.e191facc.js"><link rel="prefetch" href="/assets/js/122.3503ce9f.js"><link rel="prefetch" href="/assets/js/123.fc63e2ca.js"><link rel="prefetch" href="/assets/js/124.cb9144f3.js"><link rel="prefetch" href="/assets/js/125.55583957.js"><link rel="prefetch" href="/assets/js/126.f439de3f.js"><link rel="prefetch" href="/assets/js/127.72f7d632.js"><link rel="prefetch" href="/assets/js/128.40c00b88.js"><link rel="prefetch" href="/assets/js/129.98c68a2f.js"><link rel="prefetch" href="/assets/js/13.8fd722bc.js"><link rel="prefetch" href="/assets/js/130.1e26ec47.js"><link rel="prefetch" href="/assets/js/131.8e72accb.js"><link rel="prefetch" href="/assets/js/132.5763024b.js"><link rel="prefetch" href="/assets/js/133.5ec9faa6.js"><link rel="prefetch" href="/assets/js/134.53ebe017.js"><link rel="prefetch" href="/assets/js/135.c08f4547.js"><link rel="prefetch" href="/assets/js/136.0f396e68.js"><link rel="prefetch" href="/assets/js/137.2b137c6b.js"><link rel="prefetch" href="/assets/js/138.49bca688.js"><link rel="prefetch" href="/assets/js/14.e68a1466.js"><link rel="prefetch" href="/assets/js/15.5ec58a1b.js"><link rel="prefetch" href="/assets/js/16.4f5200b2.js"><link rel="prefetch" href="/assets/js/17.49580f41.js"><link rel="prefetch" href="/assets/js/18.511fc3c9.js"><link rel="prefetch" href="/assets/js/19.f49c4623.js"><link rel="prefetch" href="/assets/js/20.e09a4e17.js"><link rel="prefetch" href="/assets/js/21.739c04b0.js"><link rel="prefetch" href="/assets/js/22.990a434e.js"><link rel="prefetch" href="/assets/js/23.01ac887b.js"><link rel="prefetch" href="/assets/js/24.75a45f10.js"><link rel="prefetch" href="/assets/js/25.65b8b001.js"><link rel="prefetch" href="/assets/js/26.dd521adf.js"><link rel="prefetch" href="/assets/js/27.12f7fc95.js"><link rel="prefetch" href="/assets/js/28.1a59bbee.js"><link rel="prefetch" href="/assets/js/29.21e22349.js"><link rel="prefetch" href="/assets/js/3.4f3cfe49.js"><link rel="prefetch" href="/assets/js/30.9fd54c52.js"><link rel="prefetch" href="/assets/js/31.8ddee72e.js"><link rel="prefetch" href="/assets/js/32.42332107.js"><link rel="prefetch" href="/assets/js/33.57521496.js"><link rel="prefetch" href="/assets/js/34.e434371b.js"><link rel="prefetch" href="/assets/js/35.b5033675.js"><link rel="prefetch" href="/assets/js/36.ee55ce20.js"><link rel="prefetch" href="/assets/js/37.b0ffd569.js"><link rel="prefetch" href="/assets/js/38.c43dcbcf.js"><link rel="prefetch" href="/assets/js/39.89562609.js"><link rel="prefetch" href="/assets/js/4.3d5a0d6b.js"><link rel="prefetch" href="/assets/js/40.d10a422e.js"><link rel="prefetch" href="/assets/js/41.784ac103.js"><link rel="prefetch" href="/assets/js/42.5ec70531.js"><link rel="prefetch" href="/assets/js/43.d80a7a4b.js"><link rel="prefetch" href="/assets/js/44.b26b76be.js"><link rel="prefetch" href="/assets/js/45.aa376663.js"><link rel="prefetch" href="/assets/js/46.c01d5be8.js"><link rel="prefetch" href="/assets/js/47.50d170c8.js"><link rel="prefetch" href="/assets/js/48.81166878.js"><link rel="prefetch" href="/assets/js/49.92879629.js"><link rel="prefetch" href="/assets/js/5.95ed8dcc.js"><link rel="prefetch" href="/assets/js/50.b61b0142.js"><link rel="prefetch" href="/assets/js/51.ecd3c4e2.js"><link rel="prefetch" href="/assets/js/52.a4ea8efd.js"><link rel="prefetch" href="/assets/js/53.8406844e.js"><link rel="prefetch" href="/assets/js/54.e34b649e.js"><link rel="prefetch" href="/assets/js/55.84416b18.js"><link rel="prefetch" href="/assets/js/56.3f09f7fc.js"><link rel="prefetch" href="/assets/js/57.280ceda6.js"><link rel="prefetch" href="/assets/js/58.0eea32bc.js"><link rel="prefetch" href="/assets/js/59.03a450ab.js"><link rel="prefetch" href="/assets/js/6.9d4ebb90.js"><link rel="prefetch" href="/assets/js/60.d59042ca.js"><link rel="prefetch" href="/assets/js/61.c4454333.js"><link rel="prefetch" href="/assets/js/62.c8c95de9.js"><link rel="prefetch" href="/assets/js/63.eadd5645.js"><link rel="prefetch" href="/assets/js/64.dc32312e.js"><link rel="prefetch" href="/assets/js/65.b40023e3.js"><link rel="prefetch" href="/assets/js/66.f9842ec2.js"><link rel="prefetch" href="/assets/js/67.2344930b.js"><link rel="prefetch" href="/assets/js/68.ae59101a.js"><link rel="prefetch" href="/assets/js/69.2a61d7db.js"><link rel="prefetch" href="/assets/js/7.dd10326b.js"><link rel="prefetch" href="/assets/js/70.abe1cfc7.js"><link rel="prefetch" href="/assets/js/71.aafaf7af.js"><link rel="prefetch" href="/assets/js/72.f556f0b7.js"><link rel="prefetch" href="/assets/js/73.5dc88942.js"><link rel="prefetch" href="/assets/js/74.3c91fe94.js"><link rel="prefetch" href="/assets/js/75.29355eb1.js"><link rel="prefetch" href="/assets/js/76.1583e288.js"><link rel="prefetch" href="/assets/js/77.20e8124d.js"><link rel="prefetch" href="/assets/js/78.cea559ab.js"><link rel="prefetch" href="/assets/js/79.294c9110.js"><link rel="prefetch" href="/assets/js/8.90ef5b37.js"><link rel="prefetch" href="/assets/js/80.39ab5b7a.js"><link rel="prefetch" href="/assets/js/81.10b2b01a.js"><link rel="prefetch" href="/assets/js/82.8fbe2f0a.js"><link rel="prefetch" href="/assets/js/83.46331904.js"><link rel="prefetch" href="/assets/js/84.05c9974f.js"><link rel="prefetch" href="/assets/js/85.c18af534.js"><link rel="prefetch" href="/assets/js/86.db93b30d.js"><link rel="prefetch" href="/assets/js/87.0db43e81.js"><link rel="prefetch" href="/assets/js/88.5329f112.js"><link rel="prefetch" href="/assets/js/89.cf14c7f1.js"><link rel="prefetch" href="/assets/js/9.47f762e6.js"><link rel="prefetch" href="/assets/js/90.d5c52929.js"><link rel="prefetch" href="/assets/js/91.107e21a9.js"><link rel="prefetch" href="/assets/js/92.b6832569.js"><link rel="prefetch" href="/assets/js/93.e3ee3e81.js"><link rel="prefetch" href="/assets/js/94.700f1b97.js"><link rel="prefetch" href="/assets/js/95.54d1e30e.js"><link rel="prefetch" href="/assets/js/96.7d55904a.js"><link rel="prefetch" href="/assets/js/97.9b283fe0.js"><link rel="prefetch" href="/assets/js/98.ca01dff4.js"><link rel="prefetch" href="/assets/js/99.314b6fe7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a748b10c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Person Record</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link router-link-active">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link router-link-active">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/svg/" aria-current="page" class="sidebar-link">1. SVG 概述</a></li><li><a href="/svg/two.html" class="sidebar-link">2. SVG 文件导出与优化</a></li><li><a href="/svg/three.html" class="sidebar-link">3. SVG 描边动画</a></li><li><a href="/svg/four.html" class="sidebar-link">4. SVG 蒙版动画</a></li><li><a href="/svg/five.html" class="sidebar-link">5. SMIL 动画简介</a></li><li><a href="/svg/six.html" aria-current="page" class="active sidebar-link">6. Anime.js</a></li><li><a href="/svg/seven.html" class="sidebar-link">7. Anime SVG 描边动画</a></li><li><a href="/svg/eight.html" class="sidebar-link">8. Anime SVG 路径跟随动画</a></li><li><a href="/svg/night.html" class="sidebar-link">9. Anime.js 蒙版动画</a></li><li><a href="/svg/ten.html" class="sidebar-link">10. Anime SVG Morphing 动画</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_6-anime-js"><a href="#_6-anime-js" class="header-anchor">#</a> 6. Anime.js</h2> <p><a href="https://github.com/juliangarnier/anime" target="_blank" rel="noopener noreferrer">A<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a><a href="https://github.com/juliangarnier/anime" target="_blank" rel="noopener noreferrer">nime.js<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 是一个强大的用来制作动画的 javascript 库，虽然功能没有 GASP（greensock）这种大型平台的功能丰富，但胜在它足够轻便，gzip 压缩完只有 6kb 左右，麻雀虽小，却五脏俱全。 相比较其它动画平台，Anime.js 具有一下一些优点：</p> <ul><li>体积小，gzip 压缩完只有 6kb 左右。</li> <li>支持大部分的 CSS 属性动画。</li> <li>功能强大，支持 SVG 常见的动效开发以及强大的时间轴功能。</li></ul> <p>其中有一个特别重要的特性是，它对 SVG 的支持非常友好，用它来开发 SVG 动画会变得非常高效。</p> <p>这篇教程我们就先来学习下 Anime.js 的一些基础知识，以及如何使用它来编写动画效果。 首先在 <a href="https://github.com/juliangarnier/anime" target="_blank" rel="noopener noreferrer">github<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 下载好 Anime.js，然后在页面引入它。 下面，就来开始我们的 Anime.js 之旅。</p> <h2 id="anime-js-基础知识"><a href="#anime-js-基础知识" class="header-anchor">#</a> Anime.js 基础知识</h2> <p>为了行文方便，下面以 Anime 来指代 Anime.js。 Anime 提供的 API 非常的简单，用起来非常的方便。只需要声明一个 Anime 的对象，然后在对象传入你需要运动的对象和相关的属性就可以使元素动起来。</p> <div class="language- extra-class"><pre class="language-text"><code>const animeObject = anime({
+  /* 需要运动的相关属性 */
+});
+
+</code></pre></div><p>下面我们使用一个简单的实例来讲解下 Anime 的语法知识：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/8/1678c9ff177ecc76?w=512&amp;h=276&amp;f=gif&amp;s=62626" alt="图片"></p> <p>先准备基本的 HTML 和 CSS： HTML：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+
+</code></pre></div><p>CSS：</p> <div class="language- extra-class"><pre class="language-text"><code>.box {
+  width:100px;
+  height: 100px;
+  margin-top: 100px;
+  background-color: rgb(251, 21, 90);
+}
+
+</code></pre></div><p>然后是使用 Anime 来实现这个移动动画效果，代码非常简单：</p> <div class="language- extra-class"><pre class="language-text"><code>anime({
+  targets: '.box',
+  translateX: 300,
+  duration: 800,
+  delay: 600,
+  easing: 'easeInOutSine',
+  loop: true
+});
+
+</code></pre></div><p><a href="https://codepen.io/janily/pen/aPojEm" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>简单的几行代码就可以实现这个元素移动的动画效果，下面我们就用上面的这个代码来学习下 Anime 的基本语法知识，在 Anime 的对象中，我们可以操作和定义元素动画相关的属性：</p> <div class="language- extra-class"><pre class="language-text"><code>{
+  /* 需要运动的元素，它可以是 div 或者是 CSS 类名 ID名 .box #box，也可以是SVG元素 */
+  /* 操作指定元素的相关属性，比如宽、高、透明度、颜色，位置等属性 */
+  /* 定义动画的时间，延迟时间以及运动曲线等 */
+  /* 指定元素的动画是否循环播放或者自动播放等属性 */
+}
+
+</code></pre></div><p>具体到我们上面的这个实例：</p> <div class="language- extra-class"><pre class="language-text"><code>anime({
+  targets: '.box',
+  translateX: 300,
+  duration: 800,
+  delay: 600,
+  easing: 'easeInOutSine',
+  loop: true
+});
+
+</code></pre></div><ul><li>targets：表示需要运动的元素，可以是 CSS 类和 ID 来指定。</li> <li>translateX：指定需要运动的属性，我们这里指定的是元素的 transform 这个位移属性，除此之外，我们还可以指定元素的其它 CSS 属性，比如宽和高等。</li> <li>动画相关属性，比如动画的执行时间（duration）、延迟执行时间（delay）、动画的运动曲线（easing）和动画是否循环执行（loop）等。</li> <li>loop 默认值是 false，当为 true 的时候，表示动画不断的循环执行。</li></ul> <p>在上面代码中 target 我们使用 CSS 中的类选择器，除此之外，我们还可以使用下面这几种方法来选择元素：</p> <ul><li>DOM 选择方法 document.querySelector('.box') 或者是 document.querySelectorAll('.box') 方法;</li> <li>js 数组的方法 ['box']；</li> <li>js 对象的方式 {elementNmae:'box'}</li></ul> <p>如果需要操作多个元素，还可以这样做：</p> <div class="language- extra-class"><pre class="language-text"><code>var animeaBox = anime({
+  targets: ['.box', '.circle'],
+});
+
+</code></pre></div><p>在上面代码中，第二个属性是 translateY，也就是要操作元素做出变化的属性，和 CSS 中操作元素的方法非常相似。作为一个经常和动画打交道的前端开发人员，对于使用 transform 属性来提高动画的性能想必是非常清楚的，同样在使用 animejs 来编写动画效果的时候，特别涉及操作元素位置的时候也建议使用 transform 等属性来操作来提高动画性能。</p> <p>当然，对于任何属性的值，也可以使用特定的函数来随机分配它们的值，比如像下面这样的：</p> <div class="language- extra-class"><pre class="language-text"><code>translateX: (elm, index, t) =&gt; index * 2
+
+</code></pre></div><p>在多个元素运动的时候就特别管用。</p> <div class="language- extra-class"><pre class="language-text"><code>easing: 'easeInOutSine'
+
+</code></pre></div><p>easing，它是用来定义动画运行速度曲线的，与 CSS3 中的动画曲线一样。</p> <p>我们可以使用下面的方法来查看 Anime 中有哪些运动曲线：</p> <div class="language- extra-class"><pre class="language-text"><code>console.log(anime.easings);
+
+</code></pre></div><h2 id="运动多个元素"><a href="#运动多个元素" class="header-anchor">#</a> 运动多个元素</h2> <p>我们来实现下面这个多个元素的移动动画效果：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/8/1678c9ff6c89c875?w=455&amp;h=206&amp;f=gif&amp;s=122085" alt="图片"></p> <p>先来看下代码：</p> <div class="language- extra-class"><pre class="language-text"><code>anime({
+  targets: '.box',
+  translateX: (elm, index, t) =&gt; index * 150,
+  duration: 1200,
+  delay: (elm, index, t) =&gt; index * 20,
+  easing: 'easeInOutSine',
+  loop: true,
+  direction: 'alternate',
+});
+
+</code></pre></div><p>代码是非常的简单明了，对代码做个简单的说明：</p> <ul><li>我们需要运动的元素全部是类名为 box 的元素。</li> <li>使用了 transform 中的 translateX 属性来移动元素。</li> <li>其中 translateX 的值使用一个方法来计算，每个元素的值都依赖它们的索引值。</li> <li>上面的代码中还用到来 direction 这个属性，它的值又 <strong>normal</strong> 和 <strong>reverse</strong>，当值为 reverse 的时候，表示动画回来回的执行，就像我们上面的这个效果一样，direction 的值为 <strong>reverse</strong>。所以元素在移动到目标位置的时候，会往回运动到元素的初始位置，如此不断的反复。</li></ul> <p>除了多个元素的控制，也可以同时针对一个元素的某一个属性，来进行多个值的控制，比如上面动画中我们可以不停的改变元素的背景颜色：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/8/1678c9ff39b2601e?w=455&amp;h=206&amp;f=gif&amp;s=112913" alt="图片"></p> <p>代码也非常的简单：</p> <div class="language- extra-class"><pre class="language-text"><code>anime({
+  targets: '.box',
+  translateX: (elm, index, t) =&gt; index * 150,
+  backgroundColor: [
+    {value: '#000'}, // Or #FFFFFF
+    {value: 'rgb(255, 0, 0)'},
+    {value: 'hsl(100, 60%, 60%)'}
+  ],
+  duration: 1200,
+  delay: (elm, index, t) =&gt; index * 20,
+  easing: 'easeInOutSine',
+  loop: true,
+  direction: 'alternate',
+});
+
+</code></pre></div><p>在上面的代码中，我们通过 <strong>backgroundColor</strong> 这个属性来改变元素的背景颜色，不同的是这里我们通过一个数组赋予它一组颜色的值，Anime 会自动的在这几个值中来回的填充元素的背景颜色。</p> <p><a href="https://codepen.io/janily/pen/JwPaaa" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="动画控制"><a href="#动画控制" class="header-anchor">#</a> 动画控制</h2> <p>Anime 还提供来注入 <strong>play、pause</strong> 和 <strong>restart</strong> 方法来控制动画的执行、暂停和重新开始运行动画。也可以使用 <strong>seek</strong> 方法来执行跳帧动画。</p> <p>下面仍然通过上面的动画效果来实际体验下动画的控制。</p> <p>我们先改造下代码：</p> <div class="language- extra-class"><pre class="language-text"><code>var movingBox = anime({
+  targets: '.box',
+  translateX: (elm, index, t) =&gt; index * 150,
+  backgroundColor: [
+    {value: '#000'}, // Or #FFFFFF
+    {value: 'rgb(255, 0, 0)'},
+    {value: 'hsl(100, 60%, 60%)'}
+  ],
+  duration: 1200,
+  delay: (elm, index, t) =&gt; index * 20,
+  easing: 'easeInOutSine',
+  loop: true,
+  direction: 'alternate',
+});
+
+var pauseBtn = document.getElementById(&quot;pause&quot;);
+var playBtn = document.getElementById(&quot;play&quot;);
+var restartBtn = document.getElementById(&quot;restart&quot;);
+
+pauseBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  movingBox.pause();
+});
+
+playBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  movingBox.play();
+});
+
+restartBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  movingBox.restart();
+});
+
+</code></pre></div><p>在上面代码中我们定义来 3 个按钮，分别表示动画的播放、暂停和重新开始，给 3 个按钮绑定 Anime 提供的 <strong>pause、play</strong> 和 <strong>restart</strong> 方法来控制动画，如下图所示：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/8/1678c9ffa4ed9419?w=455&amp;h=206&amp;f=gif&amp;s=234231" alt="图片"></p> <p>通过这几个方法，我们可以轻松的对动画的播放、暂停等进行控制。</p> <p><a href="https://codepen.io/janily/pen/pqzxod" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>这里有点需要注意的是：为了在页面加载完的时候，不运行动画，需要设置 autoplay 的值为 false。</p> <h2 id="时间轴"><a href="#时间轴" class="header-anchor">#</a> 时间轴</h2> <p>如果大家有接触过 GreenSock 这个动画库的话，相信你对它提供的时间轴的功能一定印象深刻。Anime 虽然很轻量，但它也提供来时间轴的功能。</p> <p>时间轴是用来控制动画执行的先后顺序的。一般我们做动画的时候，默认情况下，动画是同时执行的。如果要按顺序执行，则要设置动画延时来达到目的。</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/8/1678c9ff6c89c875?w=455&amp;h=206&amp;f=gif&amp;s=122085" alt="图片"></p> <p>比如我们上面实现的这个动画，如果，我们把它们运动的值设置为一样，那它们会同时执行动画效果，如下图所示：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/8/1678c9ff65c69014?w=455&amp;h=206&amp;f=gif&amp;s=143961" alt="图片"></p> <p>那如果我们想要这 3 个元素按顺序来执行动画，该怎么办呢？这个时候就可以借助 Anime 强大的时间轴功能来实现这个按顺序执行的动画效果。</p> <p>在 Anime 中，定义一个时间轴也非常简单：</p> <div class="language- extra-class"><pre class="language-text"><code>var basicTimeline = anime.timeline();
+
+</code></pre></div><p>一行代码足矣。</p> <p>下面使用上面定义的这个时间轴来实现按顺序执行的动画效果。</p> <div class="language- extra-class"><pre class="language-text"><code>var basicTimeline = anime.timeline({
+  duration: 1200,
+  easing: 'easeOutExpo',
+  loop: true
+});
+
+basicTimeline
+  .add({
+    targets: '.box1',
+    translateX: 750,
+  })
+  .add({
+    targets: '.box2',
+    translateX: 550,
+  })
+  .add({
+    targets: '.box3',
+    translateX: 350,
+  });
+
+</code></pre></div><p>在上面的代码中，我们首先使用 Anime 提供的 <strong>anime.timeline</strong> 方法定义了一个 <strong>basicTimeline</strong> 的时间轴，然后在时间轴定义了整个动画的一些公共属性，比如动画的执行时间，动画是否循环执行等。</p> <p>然后在时间轴使用 <strong>.add</strong> 的方式来添加动画效果，这样定义的动画它会按顺序来执行，第一个动画执行完，接着执行第二个动画效果，而不是同时执行。如下图所示：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/8/1678caab47203271?w=836&amp;h=206&amp;f=gif&amp;s=75855" alt=""></p> <p><a href="https://codepen.io/janily/pen/roBqmQ" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>Anime 的基本知识就介绍到这里，更多它的使用方法，可以去<a href="http://animejs.com/documentation/" target="_blank" rel="noopener noreferrer">官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>详细查看。从下一节开始，我们来学习使用 Anime 来高效的开发 SVG 动画。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/svg/five.html" class="prev">
+        5. SMIL 动画简介
+      </a></span> <span class="next"><a href="/svg/seven.html">
+        7. Anime SVG 描边动画
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6b6308bc.js" defer></script><script src="/assets/js/2.d1734fb7.js" defer></script><script src="/assets/js/119.6187c66f.js" defer></script>
+  </body>
+</html>

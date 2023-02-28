@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>2. 小程序云开发 | Person Record</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <link rel="shortcut icon" type="image/x-icon" href="/icons/favicon.ico">
+    <meta name="description" content="Person Record">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.a748b10c.css" as="style"><link rel="preload" href="/assets/js/app.6b6308bc.js" as="script"><link rel="preload" href="/assets/js/2.d1734fb7.js" as="script"><link rel="preload" href="/assets/js/80.39ab5b7a.js" as="script"><link rel="prefetch" href="/assets/js/10.eef6ec1c.js"><link rel="prefetch" href="/assets/js/100.005910a8.js"><link rel="prefetch" href="/assets/js/101.a6c6b988.js"><link rel="prefetch" href="/assets/js/102.56935dd3.js"><link rel="prefetch" href="/assets/js/103.a68d6bbb.js"><link rel="prefetch" href="/assets/js/104.48bfb7bd.js"><link rel="prefetch" href="/assets/js/105.12501195.js"><link rel="prefetch" href="/assets/js/106.43937ce2.js"><link rel="prefetch" href="/assets/js/107.e7ddfdbc.js"><link rel="prefetch" href="/assets/js/108.b181ca49.js"><link rel="prefetch" href="/assets/js/109.77e17fef.js"><link rel="prefetch" href="/assets/js/11.f0c9e05e.js"><link rel="prefetch" href="/assets/js/110.814cad38.js"><link rel="prefetch" href="/assets/js/111.a5904051.js"><link rel="prefetch" href="/assets/js/112.34715589.js"><link rel="prefetch" href="/assets/js/113.ebed35a2.js"><link rel="prefetch" href="/assets/js/114.c69c71e0.js"><link rel="prefetch" href="/assets/js/115.222845a6.js"><link rel="prefetch" href="/assets/js/116.7749d4c9.js"><link rel="prefetch" href="/assets/js/117.b0fc03d7.js"><link rel="prefetch" href="/assets/js/118.a49561fe.js"><link rel="prefetch" href="/assets/js/119.6187c66f.js"><link rel="prefetch" href="/assets/js/12.5d306e3c.js"><link rel="prefetch" href="/assets/js/120.366014bd.js"><link rel="prefetch" href="/assets/js/121.e191facc.js"><link rel="prefetch" href="/assets/js/122.3503ce9f.js"><link rel="prefetch" href="/assets/js/123.fc63e2ca.js"><link rel="prefetch" href="/assets/js/124.cb9144f3.js"><link rel="prefetch" href="/assets/js/125.55583957.js"><link rel="prefetch" href="/assets/js/126.f439de3f.js"><link rel="prefetch" href="/assets/js/127.72f7d632.js"><link rel="prefetch" href="/assets/js/128.40c00b88.js"><link rel="prefetch" href="/assets/js/129.98c68a2f.js"><link rel="prefetch" href="/assets/js/13.8fd722bc.js"><link rel="prefetch" href="/assets/js/130.1e26ec47.js"><link rel="prefetch" href="/assets/js/131.8e72accb.js"><link rel="prefetch" href="/assets/js/132.5763024b.js"><link rel="prefetch" href="/assets/js/133.5ec9faa6.js"><link rel="prefetch" href="/assets/js/134.53ebe017.js"><link rel="prefetch" href="/assets/js/135.c08f4547.js"><link rel="prefetch" href="/assets/js/136.0f396e68.js"><link rel="prefetch" href="/assets/js/137.2b137c6b.js"><link rel="prefetch" href="/assets/js/138.49bca688.js"><link rel="prefetch" href="/assets/js/14.e68a1466.js"><link rel="prefetch" href="/assets/js/15.5ec58a1b.js"><link rel="prefetch" href="/assets/js/16.4f5200b2.js"><link rel="prefetch" href="/assets/js/17.49580f41.js"><link rel="prefetch" href="/assets/js/18.511fc3c9.js"><link rel="prefetch" href="/assets/js/19.f49c4623.js"><link rel="prefetch" href="/assets/js/20.e09a4e17.js"><link rel="prefetch" href="/assets/js/21.739c04b0.js"><link rel="prefetch" href="/assets/js/22.990a434e.js"><link rel="prefetch" href="/assets/js/23.01ac887b.js"><link rel="prefetch" href="/assets/js/24.75a45f10.js"><link rel="prefetch" href="/assets/js/25.65b8b001.js"><link rel="prefetch" href="/assets/js/26.dd521adf.js"><link rel="prefetch" href="/assets/js/27.12f7fc95.js"><link rel="prefetch" href="/assets/js/28.1a59bbee.js"><link rel="prefetch" href="/assets/js/29.21e22349.js"><link rel="prefetch" href="/assets/js/3.4f3cfe49.js"><link rel="prefetch" href="/assets/js/30.9fd54c52.js"><link rel="prefetch" href="/assets/js/31.8ddee72e.js"><link rel="prefetch" href="/assets/js/32.42332107.js"><link rel="prefetch" href="/assets/js/33.57521496.js"><link rel="prefetch" href="/assets/js/34.e434371b.js"><link rel="prefetch" href="/assets/js/35.b5033675.js"><link rel="prefetch" href="/assets/js/36.ee55ce20.js"><link rel="prefetch" href="/assets/js/37.b0ffd569.js"><link rel="prefetch" href="/assets/js/38.c43dcbcf.js"><link rel="prefetch" href="/assets/js/39.89562609.js"><link rel="prefetch" href="/assets/js/4.3d5a0d6b.js"><link rel="prefetch" href="/assets/js/40.d10a422e.js"><link rel="prefetch" href="/assets/js/41.784ac103.js"><link rel="prefetch" href="/assets/js/42.5ec70531.js"><link rel="prefetch" href="/assets/js/43.d80a7a4b.js"><link rel="prefetch" href="/assets/js/44.b26b76be.js"><link rel="prefetch" href="/assets/js/45.aa376663.js"><link rel="prefetch" href="/assets/js/46.c01d5be8.js"><link rel="prefetch" href="/assets/js/47.50d170c8.js"><link rel="prefetch" href="/assets/js/48.81166878.js"><link rel="prefetch" href="/assets/js/49.92879629.js"><link rel="prefetch" href="/assets/js/5.95ed8dcc.js"><link rel="prefetch" href="/assets/js/50.b61b0142.js"><link rel="prefetch" href="/assets/js/51.ecd3c4e2.js"><link rel="prefetch" href="/assets/js/52.a4ea8efd.js"><link rel="prefetch" href="/assets/js/53.8406844e.js"><link rel="prefetch" href="/assets/js/54.e34b649e.js"><link rel="prefetch" href="/assets/js/55.84416b18.js"><link rel="prefetch" href="/assets/js/56.3f09f7fc.js"><link rel="prefetch" href="/assets/js/57.280ceda6.js"><link rel="prefetch" href="/assets/js/58.0eea32bc.js"><link rel="prefetch" href="/assets/js/59.03a450ab.js"><link rel="prefetch" href="/assets/js/6.9d4ebb90.js"><link rel="prefetch" href="/assets/js/60.d59042ca.js"><link rel="prefetch" href="/assets/js/61.c4454333.js"><link rel="prefetch" href="/assets/js/62.c8c95de9.js"><link rel="prefetch" href="/assets/js/63.eadd5645.js"><link rel="prefetch" href="/assets/js/64.dc32312e.js"><link rel="prefetch" href="/assets/js/65.b40023e3.js"><link rel="prefetch" href="/assets/js/66.f9842ec2.js"><link rel="prefetch" href="/assets/js/67.2344930b.js"><link rel="prefetch" href="/assets/js/68.ae59101a.js"><link rel="prefetch" href="/assets/js/69.2a61d7db.js"><link rel="prefetch" href="/assets/js/7.dd10326b.js"><link rel="prefetch" href="/assets/js/70.abe1cfc7.js"><link rel="prefetch" href="/assets/js/71.aafaf7af.js"><link rel="prefetch" href="/assets/js/72.f556f0b7.js"><link rel="prefetch" href="/assets/js/73.5dc88942.js"><link rel="prefetch" href="/assets/js/74.3c91fe94.js"><link rel="prefetch" href="/assets/js/75.29355eb1.js"><link rel="prefetch" href="/assets/js/76.1583e288.js"><link rel="prefetch" href="/assets/js/77.20e8124d.js"><link rel="prefetch" href="/assets/js/78.cea559ab.js"><link rel="prefetch" href="/assets/js/79.294c9110.js"><link rel="prefetch" href="/assets/js/8.90ef5b37.js"><link rel="prefetch" href="/assets/js/81.10b2b01a.js"><link rel="prefetch" href="/assets/js/82.8fbe2f0a.js"><link rel="prefetch" href="/assets/js/83.46331904.js"><link rel="prefetch" href="/assets/js/84.05c9974f.js"><link rel="prefetch" href="/assets/js/85.c18af534.js"><link rel="prefetch" href="/assets/js/86.db93b30d.js"><link rel="prefetch" href="/assets/js/87.0db43e81.js"><link rel="prefetch" href="/assets/js/88.5329f112.js"><link rel="prefetch" href="/assets/js/89.cf14c7f1.js"><link rel="prefetch" href="/assets/js/9.47f762e6.js"><link rel="prefetch" href="/assets/js/90.d5c52929.js"><link rel="prefetch" href="/assets/js/91.107e21a9.js"><link rel="prefetch" href="/assets/js/92.b6832569.js"><link rel="prefetch" href="/assets/js/93.e3ee3e81.js"><link rel="prefetch" href="/assets/js/94.700f1b97.js"><link rel="prefetch" href="/assets/js/95.54d1e30e.js"><link rel="prefetch" href="/assets/js/96.7d55904a.js"><link rel="prefetch" href="/assets/js/97.9b283fe0.js"><link rel="prefetch" href="/assets/js/98.ca01dff4.js"><link rel="prefetch" href="/assets/js/99.314b6fe7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a748b10c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Person Record</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link router-link-active">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link router-link-active">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/miniprogram/" aria-current="page" class="sidebar-link">1. 原生开发遗忘点</a></li><li><a href="/miniprogram/two.html" aria-current="page" class="active sidebar-link">2. 小程序云开发</a></li><li><a href="/miniprogram/taro.html" class="sidebar-link">3. taro</a></li><li><a href="/miniprogram/uni-app.html" class="sidebar-link">4. uni-app</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_2-小程序云开发"><a href="#_2-小程序云开发" class="header-anchor">#</a> 2. 小程序云开发</h2> <ol><li>云调用完成消息推送步骤</li></ol> <ul><li><p>在微信公众平台配置小程序消息推送模板，路径是功能-&gt;订阅消息</p></li> <li><p>在小程序端通过<code>wx.requestSubscribeMessage(Object object)</code>获取对应模板消息的推送授权，以下为示例代码，<a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/subscribe-message/wx.requestSubscribeMessage.html" target="_blank" rel="noopener noreferrer">api 使用见官网<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。这里需要注意的是，获取授权操作需要用户来触发，写在<code>onLaunch、onLoad、onShow</code>等生命周期中无效</p></li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">onCommentClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// id分别是评论完成、收到评论模板id</span>
+  wx<span class="token punctuation">.</span><span class="token function">requestSubscribeMessage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    tmplIds<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">'yaYz298H0JEtVhvs3FfYMn_5j4rnYbDxAsDC2GJmhG8'</span><span class="token punctuation">,</span>
+      <span class="token string">'_nCNnSeFb5vh6SHbVWJLGoJJXQZV1rmcWYS5QXrNoK0'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>获取授权后通过<code>wx.cloud.callFunction</code>调用云函数</li></ul> <ul><li>云函数配置，需要<code>confin.json</code>中声明好云函数需要调用的 api，如下，<a href="https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.send.html" target="_blank" rel="noopener noreferrer">更多见官网<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;permissions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;openapi&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;subscribeMessage.send&quot;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="2"><li>云函数读取数据库与小程序端读取数据库的区别</li></ol> <ul><li>云函数每次查询限制 100 条，小程序每次查询限制为 20 条</li></ul> <ol start="3"><li>获取用户信息的几种方式</li></ol> <ul><li>只能用于页面展示，只能获取自己的信息</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>open-data</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>userAvatarUrl<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>open-data</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>open-data</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>userNickName<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>open-data</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>open-data</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>userCotuntry<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>open-data</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>open-data</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>userCity<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>open-data</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>用户在已经授权的情况下通过<code>wx.getUserInfo</code>方式获取，用户未授权的情况下获取不到，昵称头像等信息一定需要用户授权过才能获取到，即无法通过 openid 来获取这些信息</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>wx<span class="token punctuation">.</span><span class="token function">getUserInfo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token parameter">res</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>通过<code>button</code>按钮</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>modal-content<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>modal-content<span class="token punctuation">&quot;</span></span> <span class="token attr-name">open-type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>getUserInfo<span class="token punctuation">&quot;</span></span> <span class="token attr-name">bindgetuserinfo</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>onGetUserInfo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  获取微信授权
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>后端获取或云函数获取 openid</li></ul> <img src="/assets/basic-login.png"> <img src="/assets/cloud-login.png"> <ol start="4"><li><p>小程序端读取云数据库里的数据时可通过数据权限配置很方便的实现用户是否只能查看自己的数据，省去<code>openid</code>传递鉴权
+<img src="/assets/priority.png"></p></li> <li><p>setData 原理，js 和 navtive 层交互完成后，native 层通知到 webview 层，所以不能频繁 setData，小程序优化方向：减少 setData 的次数、不在页面渲染的数据不定义到 data 里面</p></li></ol> <img src="/assets/set-data.png"> <ol start="6"><li><p>生成小程序码，通过扫码进入对应的页面的时候在<code>onLoad</code>钩子里通过<code>options.sense</code>获取到配置小程序生成的参数</p></li> <li><p>小程序性能与体验优化，从 wxml、wxss、js、网络等方面入手（通过 audit 分析或者详情页面配置自动运行体验评分）</p></li></ol> <ul><li><p>合理设置可点击元素响应区域的大小</p></li> <li><p>避免多大的 wxml 节点数目，一个页面少于 1000 个 wxml 节点，节点深度少于 30 层，子节点数不大于 60 个</p></li></ul> <ul><li><p>所有请求响应正常，并且耗时不久，避免短时间内发起多请求，对网络请求做必要的缓存以避免多余的请求，所有资源请求使用 https</p></li> <li><p>不要引入未被使用的 wxss 样式，滚动区域开启惯性滚动增强体验，ios 上： <code>-webkit-overflow-scrolling: touch;</code>，在 hybrid 页面上同样可以加上</p></li></ul> <ul><li>避免使用:active 伪类来实现点击态</li></ul> <ul><li><p>文字颜色与背景色搭配较好，适宜的颜色对比度更方便用户阅读</p></li> <li><p>废弃接口不使用</p></li></ul> <ul><li>避免将不能访问的页面打包在小程序包里</li></ul> <ul><li><p>避免渲染页面耗时过长，避免执行脚本耗时过长</p></li> <li><p>及时回收定时器</p></li></ul> <ul><li>避免出现任何 JavaScript 异常，避免 setData 的数据过大，减少 setData 的次数、不在页面渲染的数据不定义到 data 里，</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/miniprogram/" class="prev router-link-active">
+        1. 原生开发遗忘点
+      </a></span> <span class="next"><a href="/miniprogram/taro.html">
+        3. taro
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6b6308bc.js" defer></script><script src="/assets/js/2.d1734fb7.js" defer></script><script src="/assets/js/80.39ab5b7a.js" defer></script>
+  </body>
+</html>

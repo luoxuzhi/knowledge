@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>17.module 的语法 | Person Record</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <link rel="shortcut icon" type="image/x-icon" href="/icons/favicon.ico">
+    <meta name="description" content="Person Record">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.a748b10c.css" as="style"><link rel="preload" href="/assets/js/app.6b6308bc.js" as="script"><link rel="preload" href="/assets/js/2.d1734fb7.js" as="script"><link rel="preload" href="/assets/js/30.9fd54c52.js" as="script"><link rel="prefetch" href="/assets/js/10.eef6ec1c.js"><link rel="prefetch" href="/assets/js/100.005910a8.js"><link rel="prefetch" href="/assets/js/101.a6c6b988.js"><link rel="prefetch" href="/assets/js/102.56935dd3.js"><link rel="prefetch" href="/assets/js/103.a68d6bbb.js"><link rel="prefetch" href="/assets/js/104.48bfb7bd.js"><link rel="prefetch" href="/assets/js/105.12501195.js"><link rel="prefetch" href="/assets/js/106.43937ce2.js"><link rel="prefetch" href="/assets/js/107.e7ddfdbc.js"><link rel="prefetch" href="/assets/js/108.b181ca49.js"><link rel="prefetch" href="/assets/js/109.77e17fef.js"><link rel="prefetch" href="/assets/js/11.f0c9e05e.js"><link rel="prefetch" href="/assets/js/110.814cad38.js"><link rel="prefetch" href="/assets/js/111.a5904051.js"><link rel="prefetch" href="/assets/js/112.34715589.js"><link rel="prefetch" href="/assets/js/113.ebed35a2.js"><link rel="prefetch" href="/assets/js/114.c69c71e0.js"><link rel="prefetch" href="/assets/js/115.222845a6.js"><link rel="prefetch" href="/assets/js/116.7749d4c9.js"><link rel="prefetch" href="/assets/js/117.b0fc03d7.js"><link rel="prefetch" href="/assets/js/118.a49561fe.js"><link rel="prefetch" href="/assets/js/119.6187c66f.js"><link rel="prefetch" href="/assets/js/12.5d306e3c.js"><link rel="prefetch" href="/assets/js/120.366014bd.js"><link rel="prefetch" href="/assets/js/121.e191facc.js"><link rel="prefetch" href="/assets/js/122.3503ce9f.js"><link rel="prefetch" href="/assets/js/123.fc63e2ca.js"><link rel="prefetch" href="/assets/js/124.cb9144f3.js"><link rel="prefetch" href="/assets/js/125.55583957.js"><link rel="prefetch" href="/assets/js/126.f439de3f.js"><link rel="prefetch" href="/assets/js/127.72f7d632.js"><link rel="prefetch" href="/assets/js/128.40c00b88.js"><link rel="prefetch" href="/assets/js/129.98c68a2f.js"><link rel="prefetch" href="/assets/js/13.8fd722bc.js"><link rel="prefetch" href="/assets/js/130.1e26ec47.js"><link rel="prefetch" href="/assets/js/131.8e72accb.js"><link rel="prefetch" href="/assets/js/132.5763024b.js"><link rel="prefetch" href="/assets/js/133.5ec9faa6.js"><link rel="prefetch" href="/assets/js/134.53ebe017.js"><link rel="prefetch" href="/assets/js/135.c08f4547.js"><link rel="prefetch" href="/assets/js/136.0f396e68.js"><link rel="prefetch" href="/assets/js/137.2b137c6b.js"><link rel="prefetch" href="/assets/js/138.49bca688.js"><link rel="prefetch" href="/assets/js/14.e68a1466.js"><link rel="prefetch" href="/assets/js/15.5ec58a1b.js"><link rel="prefetch" href="/assets/js/16.4f5200b2.js"><link rel="prefetch" href="/assets/js/17.49580f41.js"><link rel="prefetch" href="/assets/js/18.511fc3c9.js"><link rel="prefetch" href="/assets/js/19.f49c4623.js"><link rel="prefetch" href="/assets/js/20.e09a4e17.js"><link rel="prefetch" href="/assets/js/21.739c04b0.js"><link rel="prefetch" href="/assets/js/22.990a434e.js"><link rel="prefetch" href="/assets/js/23.01ac887b.js"><link rel="prefetch" href="/assets/js/24.75a45f10.js"><link rel="prefetch" href="/assets/js/25.65b8b001.js"><link rel="prefetch" href="/assets/js/26.dd521adf.js"><link rel="prefetch" href="/assets/js/27.12f7fc95.js"><link rel="prefetch" href="/assets/js/28.1a59bbee.js"><link rel="prefetch" href="/assets/js/29.21e22349.js"><link rel="prefetch" href="/assets/js/3.4f3cfe49.js"><link rel="prefetch" href="/assets/js/31.8ddee72e.js"><link rel="prefetch" href="/assets/js/32.42332107.js"><link rel="prefetch" href="/assets/js/33.57521496.js"><link rel="prefetch" href="/assets/js/34.e434371b.js"><link rel="prefetch" href="/assets/js/35.b5033675.js"><link rel="prefetch" href="/assets/js/36.ee55ce20.js"><link rel="prefetch" href="/assets/js/37.b0ffd569.js"><link rel="prefetch" href="/assets/js/38.c43dcbcf.js"><link rel="prefetch" href="/assets/js/39.89562609.js"><link rel="prefetch" href="/assets/js/4.3d5a0d6b.js"><link rel="prefetch" href="/assets/js/40.d10a422e.js"><link rel="prefetch" href="/assets/js/41.784ac103.js"><link rel="prefetch" href="/assets/js/42.5ec70531.js"><link rel="prefetch" href="/assets/js/43.d80a7a4b.js"><link rel="prefetch" href="/assets/js/44.b26b76be.js"><link rel="prefetch" href="/assets/js/45.aa376663.js"><link rel="prefetch" href="/assets/js/46.c01d5be8.js"><link rel="prefetch" href="/assets/js/47.50d170c8.js"><link rel="prefetch" href="/assets/js/48.81166878.js"><link rel="prefetch" href="/assets/js/49.92879629.js"><link rel="prefetch" href="/assets/js/5.95ed8dcc.js"><link rel="prefetch" href="/assets/js/50.b61b0142.js"><link rel="prefetch" href="/assets/js/51.ecd3c4e2.js"><link rel="prefetch" href="/assets/js/52.a4ea8efd.js"><link rel="prefetch" href="/assets/js/53.8406844e.js"><link rel="prefetch" href="/assets/js/54.e34b649e.js"><link rel="prefetch" href="/assets/js/55.84416b18.js"><link rel="prefetch" href="/assets/js/56.3f09f7fc.js"><link rel="prefetch" href="/assets/js/57.280ceda6.js"><link rel="prefetch" href="/assets/js/58.0eea32bc.js"><link rel="prefetch" href="/assets/js/59.03a450ab.js"><link rel="prefetch" href="/assets/js/6.9d4ebb90.js"><link rel="prefetch" href="/assets/js/60.d59042ca.js"><link rel="prefetch" href="/assets/js/61.c4454333.js"><link rel="prefetch" href="/assets/js/62.c8c95de9.js"><link rel="prefetch" href="/assets/js/63.eadd5645.js"><link rel="prefetch" href="/assets/js/64.dc32312e.js"><link rel="prefetch" href="/assets/js/65.b40023e3.js"><link rel="prefetch" href="/assets/js/66.f9842ec2.js"><link rel="prefetch" href="/assets/js/67.2344930b.js"><link rel="prefetch" href="/assets/js/68.ae59101a.js"><link rel="prefetch" href="/assets/js/69.2a61d7db.js"><link rel="prefetch" href="/assets/js/7.dd10326b.js"><link rel="prefetch" href="/assets/js/70.abe1cfc7.js"><link rel="prefetch" href="/assets/js/71.aafaf7af.js"><link rel="prefetch" href="/assets/js/72.f556f0b7.js"><link rel="prefetch" href="/assets/js/73.5dc88942.js"><link rel="prefetch" href="/assets/js/74.3c91fe94.js"><link rel="prefetch" href="/assets/js/75.29355eb1.js"><link rel="prefetch" href="/assets/js/76.1583e288.js"><link rel="prefetch" href="/assets/js/77.20e8124d.js"><link rel="prefetch" href="/assets/js/78.cea559ab.js"><link rel="prefetch" href="/assets/js/79.294c9110.js"><link rel="prefetch" href="/assets/js/8.90ef5b37.js"><link rel="prefetch" href="/assets/js/80.39ab5b7a.js"><link rel="prefetch" href="/assets/js/81.10b2b01a.js"><link rel="prefetch" href="/assets/js/82.8fbe2f0a.js"><link rel="prefetch" href="/assets/js/83.46331904.js"><link rel="prefetch" href="/assets/js/84.05c9974f.js"><link rel="prefetch" href="/assets/js/85.c18af534.js"><link rel="prefetch" href="/assets/js/86.db93b30d.js"><link rel="prefetch" href="/assets/js/87.0db43e81.js"><link rel="prefetch" href="/assets/js/88.5329f112.js"><link rel="prefetch" href="/assets/js/89.cf14c7f1.js"><link rel="prefetch" href="/assets/js/9.47f762e6.js"><link rel="prefetch" href="/assets/js/90.d5c52929.js"><link rel="prefetch" href="/assets/js/91.107e21a9.js"><link rel="prefetch" href="/assets/js/92.b6832569.js"><link rel="prefetch" href="/assets/js/93.e3ee3e81.js"><link rel="prefetch" href="/assets/js/94.700f1b97.js"><link rel="prefetch" href="/assets/js/95.54d1e30e.js"><link rel="prefetch" href="/assets/js/96.7d55904a.js"><link rel="prefetch" href="/assets/js/97.9b283fe0.js"><link rel="prefetch" href="/assets/js/98.ca01dff4.js"><link rel="prefetch" href="/assets/js/99.314b6fe7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a748b10c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Person Record</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link router-link-active">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link router-link-active">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/ES6/" aria-current="page" class="sidebar-link">1. let / const</a></li><li><a href="/ES6/two.html" class="sidebar-link">2.解构赋值</a></li><li><a href="/ES6/three.html" class="sidebar-link">3.字符串扩展</a></li><li><a href="/ES6/four.html" class="sidebar-link">4.正则的扩展</a></li><li><a href="/ES6/five.html" class="sidebar-link">5.数值的扩展</a></li><li><a href="/ES6/six.html" class="sidebar-link">6.数组的扩展</a></li><li><a href="/ES6/seven.html" class="sidebar-link">7.函数的扩展</a></li><li><a href="/ES6/eight.html" class="sidebar-link">8.对象的扩展</a></li><li><a href="/ES6/nine.html" class="sidebar-link">9.Symbol</a></li><li><a href="/ES6/ten.html" class="sidebar-link">10.set和map数据结构</a></li><li><a href="/ES6/eleven.html" class="sidebar-link">11. Proxy应用</a></li><li><a href="/ES6/twelve.html" class="sidebar-link">12. Reflect</a></li><li><a href="/ES6/thirteen.html" class="sidebar-link">13.Promise对象</a></li><li><a href="/ES6/fourteen.html" class="sidebar-link">14.Iterator和for...of循环</a></li><li><a href="/ES6/fifteen.html" class="sidebar-link">15. async 函数</a></li><li><a href="/ES6/sixteen.html" class="sidebar-link">16.Class</a></li><li><a href="/ES6/seventeen.html" aria-current="page" class="active sidebar-link">17.module 的语法</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_17-module-的语法"><a href="#_17-module-的语法" class="header-anchor">#</a> 17.module 的语法</h2> <p>1.export 用来提供对外的接口</p> <p>export 命令可以出现在模块的任何位置，只要处于模块顶层就可以。如果处于块级作用域内，就会报错，import 命令也是如此。</p> <p>2.import</p> <p>模块整体加载到一个对象后，要调用导入的方法必须用对象前缀加方法名，如下:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> mod <span class="token keyword">from</span> <span class="token string">'lib/package'</span>
+mod<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>3.export dafault</p> <p>使用 export default 时，对应的 import 语句不需要使用大括号；不使用 export default 时，对应的 import 语句需要使用大括号。</p> <p>导入默认的方法可以用任意函数名，其它方法必须用对应的名称。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> customName<span class="token punctuation">,</span> <span class="token punctuation">{</span> foo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./module.js'</span>
+</code></pre></div><p>注意：<strong>整体加载的*号不包含默认方法，默认方法要另外单独导入且可以用任意方法名</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> mod <span class="token keyword">from</span> <span class="token string">'./module.js'</span>
+<span class="token keyword">import</span> exp <span class="token keyword">from</span> <span class="token string">'./module.js'</span>
+</code></pre></div><p>4.跨模块常量</p> <p>和接口一样导出的写法就可以。</p> <p>5.import()</p> <ul><li>require 是运行时加载模块，import 命令无法取代 require 的动态加载功能。</li> <li>import()类似于 Node 的 require 方法，区别主要是前者是异步加载，后者是同步加载。</li> <li>import()返回一个 Promise 对象，导入之后可以使用 then()</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./module.js'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">module</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>module<span class="token punctuation">.</span><span class="token function">loadPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token operator">=&gt;</span><span class="token operator">...</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>import()的适用场合：按需加载、条件加载、动态的模块路径。如果模块有 default 输出接口，可以用参数<code>default</code>直接获得。</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// moduleA.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'function default'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// moduleB.js</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">one</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'function one'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">two</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'function two'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// index.js</span>
+<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./moduleA.js'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">ret</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  ret<span class="token punctuation">.</span><span class="token function">default</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./moduleB.js'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">one<span class="token punctuation">,</span> tow</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">one</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token function">two</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>6.编程风格</p> <p>ES6 的模块自动采用严格模式，不管你有没有在模块头部加上&quot;use strict&quot;;。</p> <p>函数返回多个值，优先使用对象的解构赋值，而不是数组的解构赋值。这样便于以后添加返回值，以及更改返回值的顺序。</p> <p>模块只有一个输出值，就使用 export default，如果模块有多个输出值，就不使用 export default，不要 export default 与普通的 export 同时使用。</p> <p>函数名的首字母应该小写。对象名的首字母应该大写。</p> <p>7.js 模块循环引用解决方案及原理 <a href="https://www.jianshu.com/p/5006083cf3fe" target="_blank" rel="noopener noreferrer">链接<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><a href="https://www.cnblogs.com/surfer/p/10272756.html" target="_blank" rel="noopener noreferrer">nodejs 中相互引用（循环引用）的模块分析<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// a.js</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>test <span class="token operator">=</span> <span class="token string">'A'</span>
+<span class="token keyword">const</span> modB <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./b.js'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'modA:'</span><span class="token punctuation">,</span> modB<span class="token punctuation">.</span>test<span class="token punctuation">)</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>test <span class="token operator">=</span> <span class="token string">'AA'</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// b.js</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>test <span class="token operator">=</span> <span class="token string">'B'</span>
+<span class="token keyword">const</span> modA <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./a.js'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'modB:'</span><span class="token punctuation">,</span> modA<span class="token punctuation">.</span>test<span class="token punctuation">)</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>test <span class="token operator">=</span> <span class="token string">'BB'</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>node a<span class="token punctuation">.</span>js
+modB<span class="token operator">:</span><span class="token constant">A</span>
+modA<span class="token operator">:</span><span class="token constant">BB</span>
+</code></pre></div><p>8.commonjs 和 es6 的区别</p> <h4 id="commonjs"><a href="#commonjs" class="header-anchor">#</a> CommonJS</h4> <ul><li>对于基本数据类型，属于复制,同时，在另一个模块可以对该模块输出的变量重新赋值。对于复杂数据类型，属于浅拷贝，由于两个模块引用的对象指向同一个内存空间，因此对该模块的值做修改时会影响另一个模块。</li> <li>当使用 require 命令加载某个模块时，就会运行整个模块的代码，然后在内存中生成该模块的一个说明对象。加载同一个模块时，不会再执行该模块，而是取到缓存之中的值。也就是说，CommonJS 模块无论加载多少次，都只会在第一次加载时运行一次，以后再加载，就返回第一次运行的结果，除非手动清除系统缓存。</li> <li>循环加载时，就只输出已经执行的部分，还未执行的部分不会输出。</li></ul> <h4 id="es6-模块-es6-模块中的值属于【动态只读引用】"><a href="#es6-模块-es6-模块中的值属于【动态只读引用】" class="header-anchor">#</a> ES6 模块，ES6 模块中的值属于【动态只读引用】</h4> <ul><li>对于<code>只读</code>来说，即不允许修改引入变量的值，import 的变量是只读的，不论是基本数据类型还是复杂数据类型。当模块遇到 import 命令时，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。</li> <li>对于<code>动态</code>来说，原始值发生变化，import 加载的值也会发生变化。不论是基本数据类型还是复杂数据类型。</li> <li><code>循环加载</code>时，ES6 模块是动态引用。只要两个模块之间存在某个引用，代码就能够执行。</li></ul> <ol start="9"><li>module.exports和exports的区别 <a href="https://segmentfault.com/a/1190000021438613" target="_blank" rel="noopener noreferrer">链接<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/ES6/sixteen.html" class="prev">
+        16.Class
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6b6308bc.js" defer></script><script src="/assets/js/2.d1734fb7.js" defer></script><script src="/assets/js/30.9fd54c52.js" defer></script>
+  </body>
+</html>

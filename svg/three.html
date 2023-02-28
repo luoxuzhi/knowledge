@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>3. SVG 描边动画 | Person Record</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <link rel="shortcut icon" type="image/x-icon" href="/icons/favicon.ico">
+    <meta name="description" content="Person Record">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.a748b10c.css" as="style"><link rel="preload" href="/assets/js/app.6b6308bc.js" as="script"><link rel="preload" href="/assets/js/2.d1734fb7.js" as="script"><link rel="preload" href="/assets/js/121.e191facc.js" as="script"><link rel="prefetch" href="/assets/js/10.eef6ec1c.js"><link rel="prefetch" href="/assets/js/100.005910a8.js"><link rel="prefetch" href="/assets/js/101.a6c6b988.js"><link rel="prefetch" href="/assets/js/102.56935dd3.js"><link rel="prefetch" href="/assets/js/103.a68d6bbb.js"><link rel="prefetch" href="/assets/js/104.48bfb7bd.js"><link rel="prefetch" href="/assets/js/105.12501195.js"><link rel="prefetch" href="/assets/js/106.43937ce2.js"><link rel="prefetch" href="/assets/js/107.e7ddfdbc.js"><link rel="prefetch" href="/assets/js/108.b181ca49.js"><link rel="prefetch" href="/assets/js/109.77e17fef.js"><link rel="prefetch" href="/assets/js/11.f0c9e05e.js"><link rel="prefetch" href="/assets/js/110.814cad38.js"><link rel="prefetch" href="/assets/js/111.a5904051.js"><link rel="prefetch" href="/assets/js/112.34715589.js"><link rel="prefetch" href="/assets/js/113.ebed35a2.js"><link rel="prefetch" href="/assets/js/114.c69c71e0.js"><link rel="prefetch" href="/assets/js/115.222845a6.js"><link rel="prefetch" href="/assets/js/116.7749d4c9.js"><link rel="prefetch" href="/assets/js/117.b0fc03d7.js"><link rel="prefetch" href="/assets/js/118.a49561fe.js"><link rel="prefetch" href="/assets/js/119.6187c66f.js"><link rel="prefetch" href="/assets/js/12.5d306e3c.js"><link rel="prefetch" href="/assets/js/120.366014bd.js"><link rel="prefetch" href="/assets/js/122.3503ce9f.js"><link rel="prefetch" href="/assets/js/123.fc63e2ca.js"><link rel="prefetch" href="/assets/js/124.cb9144f3.js"><link rel="prefetch" href="/assets/js/125.55583957.js"><link rel="prefetch" href="/assets/js/126.f439de3f.js"><link rel="prefetch" href="/assets/js/127.72f7d632.js"><link rel="prefetch" href="/assets/js/128.40c00b88.js"><link rel="prefetch" href="/assets/js/129.98c68a2f.js"><link rel="prefetch" href="/assets/js/13.8fd722bc.js"><link rel="prefetch" href="/assets/js/130.1e26ec47.js"><link rel="prefetch" href="/assets/js/131.8e72accb.js"><link rel="prefetch" href="/assets/js/132.5763024b.js"><link rel="prefetch" href="/assets/js/133.5ec9faa6.js"><link rel="prefetch" href="/assets/js/134.53ebe017.js"><link rel="prefetch" href="/assets/js/135.c08f4547.js"><link rel="prefetch" href="/assets/js/136.0f396e68.js"><link rel="prefetch" href="/assets/js/137.2b137c6b.js"><link rel="prefetch" href="/assets/js/138.49bca688.js"><link rel="prefetch" href="/assets/js/14.e68a1466.js"><link rel="prefetch" href="/assets/js/15.5ec58a1b.js"><link rel="prefetch" href="/assets/js/16.4f5200b2.js"><link rel="prefetch" href="/assets/js/17.49580f41.js"><link rel="prefetch" href="/assets/js/18.511fc3c9.js"><link rel="prefetch" href="/assets/js/19.f49c4623.js"><link rel="prefetch" href="/assets/js/20.e09a4e17.js"><link rel="prefetch" href="/assets/js/21.739c04b0.js"><link rel="prefetch" href="/assets/js/22.990a434e.js"><link rel="prefetch" href="/assets/js/23.01ac887b.js"><link rel="prefetch" href="/assets/js/24.75a45f10.js"><link rel="prefetch" href="/assets/js/25.65b8b001.js"><link rel="prefetch" href="/assets/js/26.dd521adf.js"><link rel="prefetch" href="/assets/js/27.12f7fc95.js"><link rel="prefetch" href="/assets/js/28.1a59bbee.js"><link rel="prefetch" href="/assets/js/29.21e22349.js"><link rel="prefetch" href="/assets/js/3.4f3cfe49.js"><link rel="prefetch" href="/assets/js/30.9fd54c52.js"><link rel="prefetch" href="/assets/js/31.8ddee72e.js"><link rel="prefetch" href="/assets/js/32.42332107.js"><link rel="prefetch" href="/assets/js/33.57521496.js"><link rel="prefetch" href="/assets/js/34.e434371b.js"><link rel="prefetch" href="/assets/js/35.b5033675.js"><link rel="prefetch" href="/assets/js/36.ee55ce20.js"><link rel="prefetch" href="/assets/js/37.b0ffd569.js"><link rel="prefetch" href="/assets/js/38.c43dcbcf.js"><link rel="prefetch" href="/assets/js/39.89562609.js"><link rel="prefetch" href="/assets/js/4.3d5a0d6b.js"><link rel="prefetch" href="/assets/js/40.d10a422e.js"><link rel="prefetch" href="/assets/js/41.784ac103.js"><link rel="prefetch" href="/assets/js/42.5ec70531.js"><link rel="prefetch" href="/assets/js/43.d80a7a4b.js"><link rel="prefetch" href="/assets/js/44.b26b76be.js"><link rel="prefetch" href="/assets/js/45.aa376663.js"><link rel="prefetch" href="/assets/js/46.c01d5be8.js"><link rel="prefetch" href="/assets/js/47.50d170c8.js"><link rel="prefetch" href="/assets/js/48.81166878.js"><link rel="prefetch" href="/assets/js/49.92879629.js"><link rel="prefetch" href="/assets/js/5.95ed8dcc.js"><link rel="prefetch" href="/assets/js/50.b61b0142.js"><link rel="prefetch" href="/assets/js/51.ecd3c4e2.js"><link rel="prefetch" href="/assets/js/52.a4ea8efd.js"><link rel="prefetch" href="/assets/js/53.8406844e.js"><link rel="prefetch" href="/assets/js/54.e34b649e.js"><link rel="prefetch" href="/assets/js/55.84416b18.js"><link rel="prefetch" href="/assets/js/56.3f09f7fc.js"><link rel="prefetch" href="/assets/js/57.280ceda6.js"><link rel="prefetch" href="/assets/js/58.0eea32bc.js"><link rel="prefetch" href="/assets/js/59.03a450ab.js"><link rel="prefetch" href="/assets/js/6.9d4ebb90.js"><link rel="prefetch" href="/assets/js/60.d59042ca.js"><link rel="prefetch" href="/assets/js/61.c4454333.js"><link rel="prefetch" href="/assets/js/62.c8c95de9.js"><link rel="prefetch" href="/assets/js/63.eadd5645.js"><link rel="prefetch" href="/assets/js/64.dc32312e.js"><link rel="prefetch" href="/assets/js/65.b40023e3.js"><link rel="prefetch" href="/assets/js/66.f9842ec2.js"><link rel="prefetch" href="/assets/js/67.2344930b.js"><link rel="prefetch" href="/assets/js/68.ae59101a.js"><link rel="prefetch" href="/assets/js/69.2a61d7db.js"><link rel="prefetch" href="/assets/js/7.dd10326b.js"><link rel="prefetch" href="/assets/js/70.abe1cfc7.js"><link rel="prefetch" href="/assets/js/71.aafaf7af.js"><link rel="prefetch" href="/assets/js/72.f556f0b7.js"><link rel="prefetch" href="/assets/js/73.5dc88942.js"><link rel="prefetch" href="/assets/js/74.3c91fe94.js"><link rel="prefetch" href="/assets/js/75.29355eb1.js"><link rel="prefetch" href="/assets/js/76.1583e288.js"><link rel="prefetch" href="/assets/js/77.20e8124d.js"><link rel="prefetch" href="/assets/js/78.cea559ab.js"><link rel="prefetch" href="/assets/js/79.294c9110.js"><link rel="prefetch" href="/assets/js/8.90ef5b37.js"><link rel="prefetch" href="/assets/js/80.39ab5b7a.js"><link rel="prefetch" href="/assets/js/81.10b2b01a.js"><link rel="prefetch" href="/assets/js/82.8fbe2f0a.js"><link rel="prefetch" href="/assets/js/83.46331904.js"><link rel="prefetch" href="/assets/js/84.05c9974f.js"><link rel="prefetch" href="/assets/js/85.c18af534.js"><link rel="prefetch" href="/assets/js/86.db93b30d.js"><link rel="prefetch" href="/assets/js/87.0db43e81.js"><link rel="prefetch" href="/assets/js/88.5329f112.js"><link rel="prefetch" href="/assets/js/89.cf14c7f1.js"><link rel="prefetch" href="/assets/js/9.47f762e6.js"><link rel="prefetch" href="/assets/js/90.d5c52929.js"><link rel="prefetch" href="/assets/js/91.107e21a9.js"><link rel="prefetch" href="/assets/js/92.b6832569.js"><link rel="prefetch" href="/assets/js/93.e3ee3e81.js"><link rel="prefetch" href="/assets/js/94.700f1b97.js"><link rel="prefetch" href="/assets/js/95.54d1e30e.js"><link rel="prefetch" href="/assets/js/96.7d55904a.js"><link rel="prefetch" href="/assets/js/97.9b283fe0.js"><link rel="prefetch" href="/assets/js/98.ca01dff4.js"><link rel="prefetch" href="/assets/js/99.314b6fe7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a748b10c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Person Record</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link router-link-active">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link router-link-active">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/svg/" aria-current="page" class="sidebar-link">1. SVG 概述</a></li><li><a href="/svg/two.html" class="sidebar-link">2. SVG 文件导出与优化</a></li><li><a href="/svg/three.html" aria-current="page" class="active sidebar-link">3. SVG 描边动画</a></li><li><a href="/svg/four.html" class="sidebar-link">4. SVG 蒙版动画</a></li><li><a href="/svg/five.html" class="sidebar-link">5. SMIL 动画简介</a></li><li><a href="/svg/six.html" class="sidebar-link">6. Anime.js</a></li><li><a href="/svg/seven.html" class="sidebar-link">7. Anime SVG 描边动画</a></li><li><a href="/svg/eight.html" class="sidebar-link">8. Anime SVG 路径跟随动画</a></li><li><a href="/svg/night.html" class="sidebar-link">9. Anime.js 蒙版动画</a></li><li><a href="/svg/ten.html" class="sidebar-link">10. Anime SVG Morphing 动画</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_3-svg-描边动画"><a href="#_3-svg-描边动画" class="header-anchor">#</a> 3. SVG 描边动画</h2> <p>由于 SVG 是一种 XML 格式的文档，和 HTML 中的 DOM 类似。所以，SVG 也能通过 CSS 执行动画效果。</p> <p>通过 CSS 的关键帧（keyframes）可以很轻松的对 SVG 进行操控，进而执行指定的动画效果。</p> <p>在开始之前，你可能会有一个疑问，使用 CSS 控制 HTML 不是也可以制作动画么，为啥还要用到 SVG 呢？</p> <p>下面就来说说使用 SVG 的一些优势。</p> <h2 id="svg-的一些优点"><a href="#svg-的一些优点" class="header-anchor">#</a> SVG 的一些优点</h2> <p>首先从一个小小的实例来看一下 SVG 的一些优点。比如，我这里要绘制一个六边形，我只需要在 AI 等矢量设计软件中绘制一个六边形，然后导出 SVG 代码就可以了，得到 SVG 代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot;
+	 viewBox=&quot;0 0 300 200&quot; xml:space=&quot;preserve&quot;&gt;
+&lt;path  class=&quot;st0&quot; fill=&quot;red&quot; stroke=&quot;#000&quot; d=&quot;M181.5,111l-32,18l-31.6-18.7l0.4-36.7l32-18l31.6,18.7L181.5,111z M181.7,111.4l0.3-0.1
+	l0.4-37.3l-32.1-19l-32.5,18.3l-0.4,37.3l32.1,19L181.7,111.4z M118.8,73.9l31.5-17.8l31.1,18.4l-0.4,36.1l-31.5,17.8l-31.1-18.4
+	L118.8,73.9z&quot;/&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>得到如下图所示的一个六边形：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676ddc25728a356?w=590&amp;h=420&amp;f=png&amp;s=21140" alt=""></p> <p>只需要三行代码就可以得到一个六边形，而且可以无限放大缩小，改变颜色也是一句代码的事儿。这代码量明显少于使用 HTML 和 CSS 来实现的代码量，你也许会说，我直接切一张图不就得了，不比 SVG 的代码量更小。</p> <p>可是你想过么，如果后面变更了需求，需要改变它的颜色，或者是增加它的尺寸，那你就不得不重新在设计软件中切图调整，反复折腾，相信我，你不会愿意这样做的。</p> <p>而使用 SVG，比如，当我们想改变这个形状颜色的时候，只需要一句代码就可以完成：</p> <div class="language- extra-class"><pre class="language-text"><code>fill=&quot;green&quot;
+
+</code></pre></div><p>就可以得到一个填充颜色为绿色的六边形：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676dde4f6ee2916?w=498&amp;h=387&amp;f=png&amp;s=18799" alt=""></p> <p>就是这么简单。</p> <p>当然，如果只是拿这个说事，现在 CSS 也可以做到，但是再加上 SVG 可以轻松的来做出下面这样的描边动画效果，那 CSS 就是望尘莫及了。</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676dcae65adde18?w=1046&amp;h=512&amp;f=gif&amp;s=107857" alt="图片"></p> <p>话不多说，下面我们来一个 SVG 和 CSS 的动画实例来初步领略下 SVG 动画的魅力。</p> <h2 id="svg-css-描边动画"><a href="#svg-css-描边动画" class="header-anchor">#</a> SVG CSS 描边动画</h2> <p>我们将要完成的效果如下图所示：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676dcae65adde18?w=1046&amp;h=512&amp;f=gif&amp;s=107857" alt="图片"></p> <p>这个动画是由一个颜色填充动画、描边线条动画和放大动画这三个动画组成。描边线条动画可以说是 SVG 的独门武器了，现在在互联网上几乎是遍地开花，无处不在。</p> <h3 id="描边动画原理"><a href="#描边动画原理" class="header-anchor">#</a> 描边动画原理</h3> <p>开始之前，我们先来了解下在 SVG 中描边动画原理，在后面的章节中，我们还会跟它经常打交道。</p> <p>通过第一章节，我们了解到在 SVG 中，很多的形状都是由 <strong>path</strong> 元素构成的，这里就不再多介绍了，这里主要介绍下跟 SVG 描边动画密切相关的 3 个属性，分别为 <strong>stroke，stroke-dasharray</strong> 和 <strong>stroke-dashoffset。</strong></p> <p>stroke：是用来定义边框的颜色。</p> <p>stroke-dasharray：定义 dash 和 gap 的长度。它主要是通过使用 , 来分隔实线和间隔的值。其实就是用来实现 CSS 中边框虚线的效果。和 CSS 中的 dash 的效果一样。例如：stroke-dasharray=&quot;5, 5&quot; 表示，按照实线为 5，间隔为 5 的排布重复下去。如下图：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676dcae65b87d7b?w=622&amp;h=199&amp;f=png&amp;s=5413" alt="图片"></p> <p>stroke-dashoffset：用来设置 dasharray 定义 dash 线条开始的位置。值可以为 number || percentage。百分数是相对于 SVG 的 viewport。通常结合 dasharray 可以实现描边动画效果。</p> <p>介绍完关于 path 的所有 stroke 属性之后，下面就来解释下 SVG 线条描边动画的原理。简单来说，就是通过 stroke-dashoffset 和 stroke-dasharray 来做。主要是以下两个步骤：</p> <ol><li><p>通过 dasharray 将实线部分增加至全长。比如：一条 path 的长度为 300，如果把 SVG 中 path 的 stroke-dasharray 的值设置为 300,300，即表示这条 path 将会按照实线为 300，间隔为 300 的排布重复下去。所以默认的情况下，我们只会看到一条 300 长度的实线，间隔 300 的线段由于已经在画布外，所以是不可见的。</p></li> <li><p>同时，通过 stroke-dashoffset 来移动新增的实线部分，造成线段移动的效果。比如由: stroke-dashoffset:500 变为 stroke-dashoffset:0。</p></li></ol> <p>这样讲解有点抽象，我们来通过一个简单的实例来演示下，更直观些。</p> <p>首先是一条长度为 300 的直线：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg x=&quot;0px&quot; y=&quot;0px&quot; width=&quot;300px&quot; height=&quot;100px&quot; viewBox=&quot;0 0 300 100&quot; class=&quot;svg1&quot;&gt;
+  &lt;line x1=&quot;20&quot; y1=&quot;50&quot; x2=&quot;200&quot; y2=&quot;50&quot; stroke=&quot;#000&quot; stroke-width=&quot;1&quot; &gt;&lt;/line&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>样式为：</p> <div class="language- extra-class"><pre class="language-text"><code>.svg1 line {
+    stroke-dasharray:300,300;
+    stroke-dashoffset:300;
+}
+
+</code></pre></div><p>因为 stroke-dasharray 和 stroke-dashoffset 的值都是 300，所以这条线段在网页初始化的时候，是看不见的。当我们把 stroke-dashoffset 的值设置为 0 的时候，它就可以显示出来，如下动图所示：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676df7f0bf89f9f?w=1296&amp;h=696&amp;f=gif&amp;s=1662138" alt=""></p> <p>从上面这个图中，大家就可以更加直观的理解 SVG 描边效果的一个实现原理，再配合下 CSS 中 transition 或者是 animation 就可以轻松的实现一个描边的动画效果。</p> <p>我们把 CSS 稍微改一下，添加一个 transition 属性：</p> <div class="language- extra-class"><pre class="language-text"><code>.svg1 line {
+    stroke-dasharray:300,300;
+    stroke-dashoffset:300;
+    transition:all 2s linear;
+}
+
+</code></pre></div><p>这样当我们把 stroke-dashoffset 的值设置为 0 的时候，一个描边动画效果就完成来，来看下动图理解下：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676e08a84364e84?w=1314&amp;h=486&amp;f=gif&amp;s=506302" alt=""></p> <p><a href="https://codepen.io/janily/pen/LgVZxb" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="描边动画实战"><a href="#描边动画实战" class="header-anchor">#</a> 描边动画实战</h3> <p>理解描边动画的原理后，下面我们就来实现本文刚开头提到的 SVG 描边动画效果。</p> <p>首先在软件中设计好这个图形，然后导出 SVG 代码：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg class=&quot;checkmark&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 52 52&quot;&gt;
+  &lt;circle class=&quot;checkmark__circle&quot; cx=&quot;26&quot; cy=&quot;26&quot; r=&quot;25&quot; fill=&quot;none&quot;/&gt;
+  &lt;path class=&quot;checkmark__check&quot; fill=&quot;none&quot; d=&quot;M14.1 27.2l7.1 7.2 16.7-16.8&quot;/&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>再来看下这个效果：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676dcae65adde18?w=1046&amp;h=512&amp;f=gif&amp;s=107857" alt="图片"></p> <p>初始状态是各个元素都没有显示，需要描边的动画效果是圆圈和中间的钩，在 SVG 代码也可以看到，圆圈的 fill 属性的值是 none，也就是没有填充颜色。而它们的描边动画则需要使用样式来设置，初始化的时候只需要把 path 元素的 stroke-dasharry 和 stroke-dashoffset 的值设置为 path 的长度的值就可以了，很简单代码如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke: #7ac142;
+  fill: none;
+}
+
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px #7ac142;
+}
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+}
+
+
+</code></pre></div><p>至于 path 的长度怎么获取，我们可以使用这个 JavaScript 的 API 来获取，只需要执行下面这两行代码就可以获取整条 path 的长度：</p> <div class="language- extra-class"><pre class="language-text"><code>var path = document.querySelector('.path');
+var length = path.getTotalLength();
+
+</code></pre></div><p>首先是圆圈和钩的线条描边动画，只需要使用关键帧把 stroke-dashoffset 设置为 0 就可以了。</p> <div class="language- extra-class"><pre class="language-text"><code>@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+</code></pre></div><p>然后是填充和缩放动画：</p> <div class="language- extra-class"><pre class="language-text"><code>@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
+
+</code></pre></div><p>这两个动画主要是使用来 transform 和 box-shadow 这两个属性来实现的。</p> <p>完整代码如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
+
+</code></pre></div><p>一个简单 SVG 描边动画就完成了。</p> <p>这篇教程，只是简单的介绍了下 SVG 配合 CSS，就可以做出非常好玩的描边动画效果。配合 CSS 其它的属性，比如 transform，opacity 等，还可以做出更多有趣的动画效果。凡是使用 CSS 和 HTML 能实现的动画效果，SVG 一样可以实现。反过来，使用 SVG 能做的动画效果，HTML 就只能望洋兴叹了。</p> <p>下一章节来介绍下 SVG 中的蒙版在动画中的运用。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/svg/two.html" class="prev">
+        2. SVG 文件导出与优化
+      </a></span> <span class="next"><a href="/svg/four.html">
+        4. SVG 蒙版动画
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6b6308bc.js" defer></script><script src="/assets/js/2.d1734fb7.js" defer></script><script src="/assets/js/121.e191facc.js" defer></script>
+  </body>
+</html>

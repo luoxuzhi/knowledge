@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>5. SMIL 动画简介 | Person Record</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <link rel="shortcut icon" type="image/x-icon" href="/icons/favicon.ico">
+    <meta name="description" content="Person Record">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.a748b10c.css" as="style"><link rel="preload" href="/assets/js/app.6b6308bc.js" as="script"><link rel="preload" href="/assets/js/2.d1734fb7.js" as="script"><link rel="preload" href="/assets/js/115.222845a6.js" as="script"><link rel="prefetch" href="/assets/js/10.eef6ec1c.js"><link rel="prefetch" href="/assets/js/100.005910a8.js"><link rel="prefetch" href="/assets/js/101.a6c6b988.js"><link rel="prefetch" href="/assets/js/102.56935dd3.js"><link rel="prefetch" href="/assets/js/103.a68d6bbb.js"><link rel="prefetch" href="/assets/js/104.48bfb7bd.js"><link rel="prefetch" href="/assets/js/105.12501195.js"><link rel="prefetch" href="/assets/js/106.43937ce2.js"><link rel="prefetch" href="/assets/js/107.e7ddfdbc.js"><link rel="prefetch" href="/assets/js/108.b181ca49.js"><link rel="prefetch" href="/assets/js/109.77e17fef.js"><link rel="prefetch" href="/assets/js/11.f0c9e05e.js"><link rel="prefetch" href="/assets/js/110.814cad38.js"><link rel="prefetch" href="/assets/js/111.a5904051.js"><link rel="prefetch" href="/assets/js/112.34715589.js"><link rel="prefetch" href="/assets/js/113.ebed35a2.js"><link rel="prefetch" href="/assets/js/114.c69c71e0.js"><link rel="prefetch" href="/assets/js/116.7749d4c9.js"><link rel="prefetch" href="/assets/js/117.b0fc03d7.js"><link rel="prefetch" href="/assets/js/118.a49561fe.js"><link rel="prefetch" href="/assets/js/119.6187c66f.js"><link rel="prefetch" href="/assets/js/12.5d306e3c.js"><link rel="prefetch" href="/assets/js/120.366014bd.js"><link rel="prefetch" href="/assets/js/121.e191facc.js"><link rel="prefetch" href="/assets/js/122.3503ce9f.js"><link rel="prefetch" href="/assets/js/123.fc63e2ca.js"><link rel="prefetch" href="/assets/js/124.cb9144f3.js"><link rel="prefetch" href="/assets/js/125.55583957.js"><link rel="prefetch" href="/assets/js/126.f439de3f.js"><link rel="prefetch" href="/assets/js/127.72f7d632.js"><link rel="prefetch" href="/assets/js/128.40c00b88.js"><link rel="prefetch" href="/assets/js/129.98c68a2f.js"><link rel="prefetch" href="/assets/js/13.8fd722bc.js"><link rel="prefetch" href="/assets/js/130.1e26ec47.js"><link rel="prefetch" href="/assets/js/131.8e72accb.js"><link rel="prefetch" href="/assets/js/132.5763024b.js"><link rel="prefetch" href="/assets/js/133.5ec9faa6.js"><link rel="prefetch" href="/assets/js/134.53ebe017.js"><link rel="prefetch" href="/assets/js/135.c08f4547.js"><link rel="prefetch" href="/assets/js/136.0f396e68.js"><link rel="prefetch" href="/assets/js/137.2b137c6b.js"><link rel="prefetch" href="/assets/js/138.49bca688.js"><link rel="prefetch" href="/assets/js/14.e68a1466.js"><link rel="prefetch" href="/assets/js/15.5ec58a1b.js"><link rel="prefetch" href="/assets/js/16.4f5200b2.js"><link rel="prefetch" href="/assets/js/17.49580f41.js"><link rel="prefetch" href="/assets/js/18.511fc3c9.js"><link rel="prefetch" href="/assets/js/19.f49c4623.js"><link rel="prefetch" href="/assets/js/20.e09a4e17.js"><link rel="prefetch" href="/assets/js/21.739c04b0.js"><link rel="prefetch" href="/assets/js/22.990a434e.js"><link rel="prefetch" href="/assets/js/23.01ac887b.js"><link rel="prefetch" href="/assets/js/24.75a45f10.js"><link rel="prefetch" href="/assets/js/25.65b8b001.js"><link rel="prefetch" href="/assets/js/26.dd521adf.js"><link rel="prefetch" href="/assets/js/27.12f7fc95.js"><link rel="prefetch" href="/assets/js/28.1a59bbee.js"><link rel="prefetch" href="/assets/js/29.21e22349.js"><link rel="prefetch" href="/assets/js/3.4f3cfe49.js"><link rel="prefetch" href="/assets/js/30.9fd54c52.js"><link rel="prefetch" href="/assets/js/31.8ddee72e.js"><link rel="prefetch" href="/assets/js/32.42332107.js"><link rel="prefetch" href="/assets/js/33.57521496.js"><link rel="prefetch" href="/assets/js/34.e434371b.js"><link rel="prefetch" href="/assets/js/35.b5033675.js"><link rel="prefetch" href="/assets/js/36.ee55ce20.js"><link rel="prefetch" href="/assets/js/37.b0ffd569.js"><link rel="prefetch" href="/assets/js/38.c43dcbcf.js"><link rel="prefetch" href="/assets/js/39.89562609.js"><link rel="prefetch" href="/assets/js/4.3d5a0d6b.js"><link rel="prefetch" href="/assets/js/40.d10a422e.js"><link rel="prefetch" href="/assets/js/41.784ac103.js"><link rel="prefetch" href="/assets/js/42.5ec70531.js"><link rel="prefetch" href="/assets/js/43.d80a7a4b.js"><link rel="prefetch" href="/assets/js/44.b26b76be.js"><link rel="prefetch" href="/assets/js/45.aa376663.js"><link rel="prefetch" href="/assets/js/46.c01d5be8.js"><link rel="prefetch" href="/assets/js/47.50d170c8.js"><link rel="prefetch" href="/assets/js/48.81166878.js"><link rel="prefetch" href="/assets/js/49.92879629.js"><link rel="prefetch" href="/assets/js/5.95ed8dcc.js"><link rel="prefetch" href="/assets/js/50.b61b0142.js"><link rel="prefetch" href="/assets/js/51.ecd3c4e2.js"><link rel="prefetch" href="/assets/js/52.a4ea8efd.js"><link rel="prefetch" href="/assets/js/53.8406844e.js"><link rel="prefetch" href="/assets/js/54.e34b649e.js"><link rel="prefetch" href="/assets/js/55.84416b18.js"><link rel="prefetch" href="/assets/js/56.3f09f7fc.js"><link rel="prefetch" href="/assets/js/57.280ceda6.js"><link rel="prefetch" href="/assets/js/58.0eea32bc.js"><link rel="prefetch" href="/assets/js/59.03a450ab.js"><link rel="prefetch" href="/assets/js/6.9d4ebb90.js"><link rel="prefetch" href="/assets/js/60.d59042ca.js"><link rel="prefetch" href="/assets/js/61.c4454333.js"><link rel="prefetch" href="/assets/js/62.c8c95de9.js"><link rel="prefetch" href="/assets/js/63.eadd5645.js"><link rel="prefetch" href="/assets/js/64.dc32312e.js"><link rel="prefetch" href="/assets/js/65.b40023e3.js"><link rel="prefetch" href="/assets/js/66.f9842ec2.js"><link rel="prefetch" href="/assets/js/67.2344930b.js"><link rel="prefetch" href="/assets/js/68.ae59101a.js"><link rel="prefetch" href="/assets/js/69.2a61d7db.js"><link rel="prefetch" href="/assets/js/7.dd10326b.js"><link rel="prefetch" href="/assets/js/70.abe1cfc7.js"><link rel="prefetch" href="/assets/js/71.aafaf7af.js"><link rel="prefetch" href="/assets/js/72.f556f0b7.js"><link rel="prefetch" href="/assets/js/73.5dc88942.js"><link rel="prefetch" href="/assets/js/74.3c91fe94.js"><link rel="prefetch" href="/assets/js/75.29355eb1.js"><link rel="prefetch" href="/assets/js/76.1583e288.js"><link rel="prefetch" href="/assets/js/77.20e8124d.js"><link rel="prefetch" href="/assets/js/78.cea559ab.js"><link rel="prefetch" href="/assets/js/79.294c9110.js"><link rel="prefetch" href="/assets/js/8.90ef5b37.js"><link rel="prefetch" href="/assets/js/80.39ab5b7a.js"><link rel="prefetch" href="/assets/js/81.10b2b01a.js"><link rel="prefetch" href="/assets/js/82.8fbe2f0a.js"><link rel="prefetch" href="/assets/js/83.46331904.js"><link rel="prefetch" href="/assets/js/84.05c9974f.js"><link rel="prefetch" href="/assets/js/85.c18af534.js"><link rel="prefetch" href="/assets/js/86.db93b30d.js"><link rel="prefetch" href="/assets/js/87.0db43e81.js"><link rel="prefetch" href="/assets/js/88.5329f112.js"><link rel="prefetch" href="/assets/js/89.cf14c7f1.js"><link rel="prefetch" href="/assets/js/9.47f762e6.js"><link rel="prefetch" href="/assets/js/90.d5c52929.js"><link rel="prefetch" href="/assets/js/91.107e21a9.js"><link rel="prefetch" href="/assets/js/92.b6832569.js"><link rel="prefetch" href="/assets/js/93.e3ee3e81.js"><link rel="prefetch" href="/assets/js/94.700f1b97.js"><link rel="prefetch" href="/assets/js/95.54d1e30e.js"><link rel="prefetch" href="/assets/js/96.7d55904a.js"><link rel="prefetch" href="/assets/js/97.9b283fe0.js"><link rel="prefetch" href="/assets/js/98.ca01dff4.js"><link rel="prefetch" href="/assets/js/99.314b6fe7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a748b10c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Person Record</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link router-link-active">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link router-link-active">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/svg/" aria-current="page" class="sidebar-link">1. SVG 概述</a></li><li><a href="/svg/two.html" class="sidebar-link">2. SVG 文件导出与优化</a></li><li><a href="/svg/three.html" class="sidebar-link">3. SVG 描边动画</a></li><li><a href="/svg/four.html" class="sidebar-link">4. SVG 蒙版动画</a></li><li><a href="/svg/five.html" aria-current="page" class="active sidebar-link">5. SMIL 动画简介</a></li><li><a href="/svg/six.html" class="sidebar-link">6. Anime.js</a></li><li><a href="/svg/seven.html" class="sidebar-link">7. Anime SVG 描边动画</a></li><li><a href="/svg/eight.html" class="sidebar-link">8. Anime SVG 路径跟随动画</a></li><li><a href="/svg/night.html" class="sidebar-link">9. Anime.js 蒙版动画</a></li><li><a href="/svg/ten.html" class="sidebar-link">10. Anime SVG Morphing 动画</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_5-smil-动画简介"><a href="#_5-smil-动画简介" class="header-anchor">#</a> 5. SMIL 动画简介</h2> <p>所谓 SMIL 动画指在 SVG 集成了 Synchronized Multimedia Integration Language (SMIL) 这种动画标准，该语言被 SVG 原生支持，主要是使用标签来描述动画。</p> <p>SMIL 允许你：</p> <p>1、变动一个元素的数字属性（x、y……）</p> <p>2、改变元素的变形属性（translation 或 rotation）</p> <p>3、改变元素的颜色属性</p> <p>4、跟随路径运动</p> <p>5、控制形状之间的变化</p> <p>通过添加 SVG 动画元素，比如 animate 到 SVG 素内部来实现动画，就能实现让元素动起来。下面来看几个实例来演示四种不同的动画方式。</p> <h3 id="smil-动画使用方法"><a href="#smil-动画使用方法" class="header-anchor">#</a> SMIL 动画使用方法</h3> <p>先定义一个 SVG：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg width=&quot;500px&quot; height=&quot;500px&quot; viewBox=&quot;0 0 500 500&quot;&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>然后在里面定义一个矩形，并且定义好填充颜色等属性：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg width=&quot;500px&quot; height=&quot;500px&quot; viewBox=&quot;0 0 500 500&quot;&gt;
+    &lt;rect x=&quot;0&quot; y=&quot;0&quot; width=&quot;100&quot; height=&quot;100&quot; fill=&quot;#feac5e&quot;&gt;
+    &lt;/rect&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>如果要使这个矩形动起来，我们需要在矩形这个元素里使用 <animate></animate> 这个元素来使它动起来。</p> <p>在 <animate></animate>，我们需要添加一些属性，首先使用 <strong>attributeName</strong> 来定义我们需要元素发生变化的属性，在这个实例中，我们需要它左右移动，即横坐标 X，就可以把用 <strong>attributeName</strong> 设置为 <strong>x</strong>。这样就可以使元素在 X 轴上运动。</p> <p>然后定义 <strong>from</strong> 的值和 <strong>to</strong> 的值，指定元素要运动的距离；使用 <strong>dur</strong> 来定义运动的时长；使用 <strong>repeatCount</strong> 去定义动画运行的次数，<strong>repeatCount</strong> 值为 <strong>indefinite</strong> 表示无限循环这个动画。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg width=&quot;500px&quot; height=&quot;500px&quot; viewBox=&quot;0 0 500 500&quot;&gt;
+
+    &lt;rect x=&quot;0&quot; y=&quot;0&quot; width=&quot;100&quot; height=&quot;100&quot; fill=&quot;#feac5e&quot;&gt;
+        &lt;animate attributeName=&quot;x&quot; from=&quot;0&quot; to=&quot;500&quot; dur=&quot;2s&quot; repeatCount=&quot;indefinite&quot; /&gt;
+    &lt;/rect&gt;
+
+&lt;/svg&gt;
+
+</code></pre></div><p>一个简单 SVG SMIL 动画就完成了。</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676eed7f7648ede?w=1024&amp;h=328&amp;f=gif&amp;s=109612" alt="图片"></p> <p><a href="https://codepen.io/janily/pen/zmrQKE" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>当然，我们可以在改变它位置的时候，同时改变其它的属性。比如，我们多定义 2 个 <animate></animate> 来改变它的宽度和颜色：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;animate attributeName=&quot;x&quot; from=&quot;0&quot; to=&quot;500&quot; dur=&quot;2s&quot; repeatCount=&quot;indefinite&quot; /&gt;
+&lt;animate attributeName=&quot;width&quot; to=&quot;500&quot; dur=&quot;2s&quot; repeatCount=&quot;indefinite&quot; /&gt;
+&lt;animate attributeName=&quot;fill&quot; to=&quot;black&quot; dur=&quot;2s&quot; repeatCount=&quot;indefinite&quot; /&gt;
+
+</code></pre></div><p>效果如下图所示：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676eed7f7e06218?w=1024&amp;h=238&amp;f=gif&amp;s=56881" alt="图片"></p> <p><a href="https://codepen.io/janily/pen/vVLwXv" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>我们还可以使用 <animateTransform></animateTransform> 来代替 &lt;animate /&amp;，可以操作元素 <strong>transform</strong> 相关的属性，使用 type 来指定要操作 <strong>transform</strong> 的属性，还可以使用 begin 来指定动画从哪开始。比如，下面这个实例我们要使元素旋转起来，那我们就要把 <strong>type</strong> 的值指定为 <strong>rotate</strong>，<strong>rotate</strong> 属性的值包含三个坐标的值，分别为角度，横坐标的值即 x 和和纵坐标的值即 y。代码如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg width=&quot;500px&quot; height=&quot;500px&quot; viewBox=&quot;0 0 500 500&quot;&gt;
+    &lt;rect x=&quot;250&quot; y=&quot;250&quot; width=&quot;50&quot; height=&quot;50&quot; fill=&quot;#4bc0c8&quot;&gt;
+        &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;rotate&quot; begin=&quot;0s&quot; dur=&quot;10s&quot; from=&quot;0 200 200&quot; to=&quot;360 400 400&quot; repeatCount=&quot;indefinite&quot; /&gt;
+    &lt;/rect&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>在上面的代码中我们可以看到 <strong>from</strong> 的值为 <strong>0 200 200</strong>，to 的值为 <strong>360 400 400</strong>，即表示元素在横坐标和纵坐标分别为 200 的位置旋转 360 度到横坐标和纵坐标分别为 400 的位置。</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676eed7f94e8115?w=964&amp;h=424&amp;f=gif&amp;s=239842" alt="图片"></p> <p><a href="https://codepen.io/janily/pen/XxNejW" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>通过上面一个简单的动画效果，我们对 SMIL 动画也有了一个初步的认识，下面再通过一个稍微复杂点效果，来进一步加深对 SMIL 动画的认识。</p> <h2 id="smil-动画实战"><a href="#smil-动画实战" class="header-anchor">#</a> SMIL 动画实战</h2> <p>接下来我们一起来使用 SMIL 来实现下面这个简单的加载动画效果：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676eed7f9267bdb?w=1024&amp;h=726&amp;f=gif&amp;s=165661" alt="图片"></p> <p>开始之前先来分析下这个动画效果的构成。</p> <ul><li>首先是旋转动画，这个可以用 transform 中的 rotate 属性来实现。</li> <li>然后是这个圆圈边框的颜色变化，这个可以通过改变 stroke 的颜色的值来实现。</li> <li>最后，是边框的长短变化，这个可以通过改变 stroke 的 stoke-dashoffset 来实现。</li></ul> <p>先来准备基本的 HTML 结构：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg width=&quot;65px&quot; height=&quot;65px&quot; viewBox=&quot;0 0 66 66&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;g&gt;   
+    &lt;circle fill=&quot;none&quot; stroke-width=&quot;6&quot; stroke-linecap=&quot;round&quot; stroke=&quot;#000&quot; cx=&quot;33&quot; cy=&quot;33&quot; r=&quot;30&quot; &gt;    &lt;/circle&gt;
+   &lt;/g&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>从代码中可以看到，我们使用 g 标签把圆圈包裹起来，这样我们就可以嵌套动画来，先把 g 元素旋转起来，代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg width=&quot;65px&quot; height=&quot;65px&quot; viewBox=&quot;0 0 66 66&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;g&gt;
+    &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;rotate&quot; values=&quot;0 33 33;270 33 33&quot; begin=&quot;0s&quot; dur=&quot;1.4s&quot; fill=&quot;freeze&quot; repeatCount=&quot;indefinite&quot;/&gt;
+    &lt;circle fill=&quot;none&quot; stroke-width=&quot;6&quot; stroke-linecap=&quot;round&quot; stroke=&quot;#000&quot; cx=&quot;33&quot; cy=&quot;33&quot; r=&quot;30&quot; &gt;    &lt;/circle&gt;
+   &lt;/g&gt;
+&lt;/svg&gt;
+
+
+</code></pre></div><p>在上面的代码中有个新的参数 <strong>values</strong>，<strong>values</strong> 可以是一个值或多值。多值时候有动画效果。当 values 值设置并能识别时候，from, to 的值都会被忽略。</p> <h3 id="values-属性"><a href="#values-属性" class="header-anchor">#</a> values 属性</h3> <p>那 values 属性是干什么的呢？在实际开发动画的时候，不可能就是单纯的从 a 位置到 b 位置。有时候，需要去 c 位置过渡下。此时，实际上有 3 个动画关键点。而 from, to/by 只能驾驭两个，此时就是 values 大显身手的时候了，它可以设置多个值。</p> <p>比如我们可以把文章最开始的动画修改一下：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg width=&quot;500px&quot; height=&quot;500px&quot; viewBox=&quot;0 0 500 500&quot;&gt;
+
+    &lt;rect x=&quot;0&quot; y=&quot;0&quot; width=&quot;100&quot; height=&quot;100&quot; fill=&quot;#feac5e&quot;&gt;
+        &lt;animate attributeName=&quot;x&quot; values=&quot;160;40;160
+&quot; dur=&quot;2s&quot; repeatCount=&quot;indefinite&quot; /&gt;
+    &lt;/rect&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>在上面代码中，values 设置了 3 个值，这样当矩形运行到 160 的时候，会返回到 40 的位置，然后再运动到 160 的位置，这样就形成来一个来回运动的动画效果。</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676eed7f9327757?w=748&amp;h=370&amp;f=gif&amp;s=87286" alt="图片"></p> <p><a href="https://codepen.io/janily/pen/rqWGWB" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="加载动画实现"><a href="#加载动画实现" class="header-anchor">#</a> 加载动画实现</h3> <p>具体到这个旋转动画中，我们使用 animateTransform 标签来实现旋转动画，values 的值为 values=&quot;0 33 33;270 33 33&quot; 表示元素在横坐标和纵坐标分别为 33 的这个位置保持不动，从 0 到 270 这个角度不停的旋转，因为 <strong>repeatCount</strong> 的值为 <strong>indefinite</strong>。</p> <p>OK，圆圈旋转动画完成后，接下来是边框颜色的变化，这个圆圈在旋转的过程中，有 5 中颜色的变化，这个时候 values 就派上用场了：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg width=&quot;65px&quot; height=&quot;65px&quot; viewBox=&quot;0 0 66 66&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;g&gt;
+    &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;rotate&quot; values=&quot;0 33 33;270 33 33&quot; begin=&quot;0s&quot; dur=&quot;1.4s&quot; fill=&quot;freeze&quot; repeatCount=&quot;indefinite&quot;/&gt;
+    &lt;circle fill=&quot;none&quot; stroke-width=&quot;6&quot; stroke-linecap=&quot;round&quot; cx=&quot;33&quot; cy=&quot;33&quot; r=&quot;30&quot; stroke-dasharray=&quot;187&quot; stroke-dashoffset=&quot;610&quot;&gt;
+      &lt;animate attributeName=&quot;stroke&quot; values=&quot;#4285F4;#DE3E35;#F7C223;#1B9A59;#4285F4&quot; begin=&quot;0s&quot; dur=&quot;5.6s&quot; fill=&quot;freeze&quot; repeatCount=&quot;indefinite&quot;/&gt;
+    &lt;/circle&gt;
+   &lt;/g&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>颜色的变化我们使用 <strong>attributeName</strong> 的值指定为 <strong>stroke</strong>，然后使用 <strong>values</strong> 指定 5 个颜色的值，这样元素的 stroke 也就是边框的颜色会在这 5 中颜色来回不停的变化。</p> <p>在上面的代码中，还设置了圆圈的 <strong>stroke-dasharray</strong> 和 <strong>stroke-dashoffset</strong> 两个属性的值，在后面的用来实现边框长短变化动画用的。</p> <p>代码中的 <strong>fill</strong> 表示动画间隙的填充方式。支持参数有： <strong>freeze</strong> | <strong>remove</strong>。其中 remove 是默认值，表示动画结束直接回到开始的地方。freeze “冻结” 表示动画结束后像是被冻住了，元素保持了动画结束之后的状态。</p> <p>接下来就是实现边框长短变化的动画，这里的值没有固定的，需要我们不停的调试，最后选择一个最舒服的值就可以了，完整代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg width=&quot;65px&quot; height=&quot;65px&quot; viewBox=&quot;0 0 66 66&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;g&gt;
+    &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;rotate&quot; values=&quot;0 33 33;270 33 33&quot; begin=&quot;0s&quot; dur=&quot;1.4s&quot; fill=&quot;freeze&quot; repeatCount=&quot;indefinite&quot;/&gt;
+    &lt;circle fill=&quot;none&quot; stroke-width=&quot;6&quot; stroke-linecap=&quot;round&quot; cx=&quot;33&quot; cy=&quot;33&quot; r=&quot;30&quot; stroke-dasharray=&quot;187&quot; stroke-dashoffset=&quot;610&quot;&gt;
+      &lt;animate attributeName=&quot;stroke&quot; values=&quot;#4285F4;#DE3E35;#F7C223;#1B9A59;#4285F4&quot; begin=&quot;0s&quot; dur=&quot;5.6s&quot; fill=&quot;freeze&quot; repeatCount=&quot;indefinite&quot;/&gt;
+      &lt;animateTransform attributeName=&quot;transform&quot; type=&quot;rotate&quot; values=&quot;0 33 33;135 33 33;450 33 33&quot; begin=&quot;0s&quot; dur=&quot;1.4s&quot; fill=&quot;freeze&quot; repeatCount=&quot;indefinite&quot;/&gt;
+      &lt;animate attributeName=&quot;stroke-dashoffset&quot; values=&quot;187;46.75;187&quot; begin=&quot;0s&quot; dur=&quot;1.4s&quot; fill=&quot;freeze&quot; repeatCount=&quot;indefinite&quot;/&gt;
+    &lt;/circle&gt;
+   &lt;/g&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>一个使用 SMIL 的加载动画就完成了。</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/2/1676eed7f9267bdb?w=1024&amp;h=726&amp;f=gif&amp;s=165661" alt="图片"></p> <p><a href="https://codepen.io/janily/pen/GYNMBG" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>到这里，SVG 基础的动画实现方式就讲完了，那如果要制作更加强大的动画效果，要更加灵活的控制 SVG，就不得不借助于 JavaScript 了。</p> <p>下一章节我们就开始来讲解使用 JavaScript 来高效的开发 SVG 动画。</p> <p>关于 SMIL 详细的介绍可以去这个<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/SVG_animation_with_SMIL" target="_blank" rel="noopener noreferrer">文档<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>看看。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/svg/four.html" class="prev">
+        4. SVG 蒙版动画
+      </a></span> <span class="next"><a href="/svg/six.html">
+        6. Anime.js
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6b6308bc.js" defer></script><script src="/assets/js/2.d1734fb7.js" defer></script><script src="/assets/js/115.222845a6.js" defer></script>
+  </body>
+</html>

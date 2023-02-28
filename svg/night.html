@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>9. Anime.js 蒙版动画 | Person Record</title>
+    <meta name="generator" content="VuePress 1.6.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <link rel="shortcut icon" type="image/x-icon" href="/icons/favicon.ico">
+    <meta name="description" content="Person Record">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.a748b10c.css" as="style"><link rel="preload" href="/assets/js/app.6b6308bc.js" as="script"><link rel="preload" href="/assets/js/2.d1734fb7.js" as="script"><link rel="preload" href="/assets/js/117.b0fc03d7.js" as="script"><link rel="prefetch" href="/assets/js/10.eef6ec1c.js"><link rel="prefetch" href="/assets/js/100.005910a8.js"><link rel="prefetch" href="/assets/js/101.a6c6b988.js"><link rel="prefetch" href="/assets/js/102.56935dd3.js"><link rel="prefetch" href="/assets/js/103.a68d6bbb.js"><link rel="prefetch" href="/assets/js/104.48bfb7bd.js"><link rel="prefetch" href="/assets/js/105.12501195.js"><link rel="prefetch" href="/assets/js/106.43937ce2.js"><link rel="prefetch" href="/assets/js/107.e7ddfdbc.js"><link rel="prefetch" href="/assets/js/108.b181ca49.js"><link rel="prefetch" href="/assets/js/109.77e17fef.js"><link rel="prefetch" href="/assets/js/11.f0c9e05e.js"><link rel="prefetch" href="/assets/js/110.814cad38.js"><link rel="prefetch" href="/assets/js/111.a5904051.js"><link rel="prefetch" href="/assets/js/112.34715589.js"><link rel="prefetch" href="/assets/js/113.ebed35a2.js"><link rel="prefetch" href="/assets/js/114.c69c71e0.js"><link rel="prefetch" href="/assets/js/115.222845a6.js"><link rel="prefetch" href="/assets/js/116.7749d4c9.js"><link rel="prefetch" href="/assets/js/118.a49561fe.js"><link rel="prefetch" href="/assets/js/119.6187c66f.js"><link rel="prefetch" href="/assets/js/12.5d306e3c.js"><link rel="prefetch" href="/assets/js/120.366014bd.js"><link rel="prefetch" href="/assets/js/121.e191facc.js"><link rel="prefetch" href="/assets/js/122.3503ce9f.js"><link rel="prefetch" href="/assets/js/123.fc63e2ca.js"><link rel="prefetch" href="/assets/js/124.cb9144f3.js"><link rel="prefetch" href="/assets/js/125.55583957.js"><link rel="prefetch" href="/assets/js/126.f439de3f.js"><link rel="prefetch" href="/assets/js/127.72f7d632.js"><link rel="prefetch" href="/assets/js/128.40c00b88.js"><link rel="prefetch" href="/assets/js/129.98c68a2f.js"><link rel="prefetch" href="/assets/js/13.8fd722bc.js"><link rel="prefetch" href="/assets/js/130.1e26ec47.js"><link rel="prefetch" href="/assets/js/131.8e72accb.js"><link rel="prefetch" href="/assets/js/132.5763024b.js"><link rel="prefetch" href="/assets/js/133.5ec9faa6.js"><link rel="prefetch" href="/assets/js/134.53ebe017.js"><link rel="prefetch" href="/assets/js/135.c08f4547.js"><link rel="prefetch" href="/assets/js/136.0f396e68.js"><link rel="prefetch" href="/assets/js/137.2b137c6b.js"><link rel="prefetch" href="/assets/js/138.49bca688.js"><link rel="prefetch" href="/assets/js/14.e68a1466.js"><link rel="prefetch" href="/assets/js/15.5ec58a1b.js"><link rel="prefetch" href="/assets/js/16.4f5200b2.js"><link rel="prefetch" href="/assets/js/17.49580f41.js"><link rel="prefetch" href="/assets/js/18.511fc3c9.js"><link rel="prefetch" href="/assets/js/19.f49c4623.js"><link rel="prefetch" href="/assets/js/20.e09a4e17.js"><link rel="prefetch" href="/assets/js/21.739c04b0.js"><link rel="prefetch" href="/assets/js/22.990a434e.js"><link rel="prefetch" href="/assets/js/23.01ac887b.js"><link rel="prefetch" href="/assets/js/24.75a45f10.js"><link rel="prefetch" href="/assets/js/25.65b8b001.js"><link rel="prefetch" href="/assets/js/26.dd521adf.js"><link rel="prefetch" href="/assets/js/27.12f7fc95.js"><link rel="prefetch" href="/assets/js/28.1a59bbee.js"><link rel="prefetch" href="/assets/js/29.21e22349.js"><link rel="prefetch" href="/assets/js/3.4f3cfe49.js"><link rel="prefetch" href="/assets/js/30.9fd54c52.js"><link rel="prefetch" href="/assets/js/31.8ddee72e.js"><link rel="prefetch" href="/assets/js/32.42332107.js"><link rel="prefetch" href="/assets/js/33.57521496.js"><link rel="prefetch" href="/assets/js/34.e434371b.js"><link rel="prefetch" href="/assets/js/35.b5033675.js"><link rel="prefetch" href="/assets/js/36.ee55ce20.js"><link rel="prefetch" href="/assets/js/37.b0ffd569.js"><link rel="prefetch" href="/assets/js/38.c43dcbcf.js"><link rel="prefetch" href="/assets/js/39.89562609.js"><link rel="prefetch" href="/assets/js/4.3d5a0d6b.js"><link rel="prefetch" href="/assets/js/40.d10a422e.js"><link rel="prefetch" href="/assets/js/41.784ac103.js"><link rel="prefetch" href="/assets/js/42.5ec70531.js"><link rel="prefetch" href="/assets/js/43.d80a7a4b.js"><link rel="prefetch" href="/assets/js/44.b26b76be.js"><link rel="prefetch" href="/assets/js/45.aa376663.js"><link rel="prefetch" href="/assets/js/46.c01d5be8.js"><link rel="prefetch" href="/assets/js/47.50d170c8.js"><link rel="prefetch" href="/assets/js/48.81166878.js"><link rel="prefetch" href="/assets/js/49.92879629.js"><link rel="prefetch" href="/assets/js/5.95ed8dcc.js"><link rel="prefetch" href="/assets/js/50.b61b0142.js"><link rel="prefetch" href="/assets/js/51.ecd3c4e2.js"><link rel="prefetch" href="/assets/js/52.a4ea8efd.js"><link rel="prefetch" href="/assets/js/53.8406844e.js"><link rel="prefetch" href="/assets/js/54.e34b649e.js"><link rel="prefetch" href="/assets/js/55.84416b18.js"><link rel="prefetch" href="/assets/js/56.3f09f7fc.js"><link rel="prefetch" href="/assets/js/57.280ceda6.js"><link rel="prefetch" href="/assets/js/58.0eea32bc.js"><link rel="prefetch" href="/assets/js/59.03a450ab.js"><link rel="prefetch" href="/assets/js/6.9d4ebb90.js"><link rel="prefetch" href="/assets/js/60.d59042ca.js"><link rel="prefetch" href="/assets/js/61.c4454333.js"><link rel="prefetch" href="/assets/js/62.c8c95de9.js"><link rel="prefetch" href="/assets/js/63.eadd5645.js"><link rel="prefetch" href="/assets/js/64.dc32312e.js"><link rel="prefetch" href="/assets/js/65.b40023e3.js"><link rel="prefetch" href="/assets/js/66.f9842ec2.js"><link rel="prefetch" href="/assets/js/67.2344930b.js"><link rel="prefetch" href="/assets/js/68.ae59101a.js"><link rel="prefetch" href="/assets/js/69.2a61d7db.js"><link rel="prefetch" href="/assets/js/7.dd10326b.js"><link rel="prefetch" href="/assets/js/70.abe1cfc7.js"><link rel="prefetch" href="/assets/js/71.aafaf7af.js"><link rel="prefetch" href="/assets/js/72.f556f0b7.js"><link rel="prefetch" href="/assets/js/73.5dc88942.js"><link rel="prefetch" href="/assets/js/74.3c91fe94.js"><link rel="prefetch" href="/assets/js/75.29355eb1.js"><link rel="prefetch" href="/assets/js/76.1583e288.js"><link rel="prefetch" href="/assets/js/77.20e8124d.js"><link rel="prefetch" href="/assets/js/78.cea559ab.js"><link rel="prefetch" href="/assets/js/79.294c9110.js"><link rel="prefetch" href="/assets/js/8.90ef5b37.js"><link rel="prefetch" href="/assets/js/80.39ab5b7a.js"><link rel="prefetch" href="/assets/js/81.10b2b01a.js"><link rel="prefetch" href="/assets/js/82.8fbe2f0a.js"><link rel="prefetch" href="/assets/js/83.46331904.js"><link rel="prefetch" href="/assets/js/84.05c9974f.js"><link rel="prefetch" href="/assets/js/85.c18af534.js"><link rel="prefetch" href="/assets/js/86.db93b30d.js"><link rel="prefetch" href="/assets/js/87.0db43e81.js"><link rel="prefetch" href="/assets/js/88.5329f112.js"><link rel="prefetch" href="/assets/js/89.cf14c7f1.js"><link rel="prefetch" href="/assets/js/9.47f762e6.js"><link rel="prefetch" href="/assets/js/90.d5c52929.js"><link rel="prefetch" href="/assets/js/91.107e21a9.js"><link rel="prefetch" href="/assets/js/92.b6832569.js"><link rel="prefetch" href="/assets/js/93.e3ee3e81.js"><link rel="prefetch" href="/assets/js/94.700f1b97.js"><link rel="prefetch" href="/assets/js/95.54d1e30e.js"><link rel="prefetch" href="/assets/js/96.7d55904a.js"><link rel="prefetch" href="/assets/js/97.9b283fe0.js"><link rel="prefetch" href="/assets/js/98.ca01dff4.js"><link rel="prefetch" href="/assets/js/99.314b6fe7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a748b10c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Person Record</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link router-link-active">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="类别" class="dropdown-title"><span class="title">类别</span> <span class="arrow down"></span></button> <button type="button" aria-label="类别" class="mobile-dropdown-title"><span class="title">类别</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ES5/" class="nav-link">
+  1.es5
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/" class="nav-link">
+  2.es6
+</a></li><li class="dropdown-item"><!----> <a href="/typescript/" class="nav-link">
+  3.typescript
+</a></li><li class="dropdown-item"><!----> <a href="/vue2/" class="nav-link">
+  4.Vue2
+</a></li><li class="dropdown-item"><!----> <a href="/vue3/" class="nav-link">
+  5.Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/react/" class="nav-link">
+  6.react
+</a></li><li class="dropdown-item"><!----> <a href="/native/" class="nav-link">
+  7.native
+</a></li><li class="dropdown-item"><!----> <a href="/miniprogram/" class="nav-link">
+  8.miniprogram
+</a></li><li class="dropdown-item"><!----> <a href="/publiccount/" class="nav-link">
+  9.公众号
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/" class="nav-link">
+  10.nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">
+  11.mysql
+</a></li><li class="dropdown-item"><!----> <a href="/mongodb/" class="nav-link">
+  12.mongodb
+</a></li><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  13.redis
+</a></li><li class="dropdown-item"><!----> <a href="/nginx/" class="nav-link">
+  14.nginx
+</a></li><li class="dropdown-item"><!----> <a href="/linux/" class="nav-link">
+  15.linux
+</a></li><li class="dropdown-item"><!----> <a href="/docker/" class="nav-link">
+  16.docker
+</a></li><li class="dropdown-item"><!----> <a href="/data-constructure/" class="nav-link">
+  17.data-constructure
+</a></li><li class="dropdown-item"><!----> <a href="/http/" class="nav-link">
+  18.http
+</a></li><li class="dropdown-item"><!----> <a href="/experience/" class="nav-link">
+  19.experience
+</a></li><li class="dropdown-item"><!----> <a href="/svg/" class="nav-link router-link-active">
+  20.svg
+</a></li><li class="dropdown-item"><!----> <a href="/project/" class="nav-link">
+  21.project
+</a></li><li class="dropdown-item"><!----> <a href="/flutter/" class="nav-link">
+  22.flutter
+</a></li></ul></div></div><div class="nav-item"><a href="https://juejin.im/user/58f6be4bac502e006c4790f7" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/svg/" aria-current="page" class="sidebar-link">1. SVG 概述</a></li><li><a href="/svg/two.html" class="sidebar-link">2. SVG 文件导出与优化</a></li><li><a href="/svg/three.html" class="sidebar-link">3. SVG 描边动画</a></li><li><a href="/svg/four.html" class="sidebar-link">4. SVG 蒙版动画</a></li><li><a href="/svg/five.html" class="sidebar-link">5. SMIL 动画简介</a></li><li><a href="/svg/six.html" class="sidebar-link">6. Anime.js</a></li><li><a href="/svg/seven.html" class="sidebar-link">7. Anime SVG 描边动画</a></li><li><a href="/svg/eight.html" class="sidebar-link">8. Anime SVG 路径跟随动画</a></li><li><a href="/svg/night.html" aria-current="page" class="active sidebar-link">9. Anime.js 蒙版动画</a></li><li><a href="/svg/ten.html" class="sidebar-link">10. Anime SVG Morphing 动画</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_9-anime-js-蒙版动画"><a href="#_9-anime-js-蒙版动画" class="header-anchor">#</a> 9. Anime.js 蒙版动画</h2> <h2 id="蒙版-morphing-动画实战"><a href="#蒙版-morphing-动画实战" class="header-anchor">#</a> 蒙版 Morphing 动画实战</h2> <p>在前面 CSS 动画部分，我们学习了使用 CSS 来实现来 SVG 蒙版动画。这一章节我们来学习使用 Anime 来操作 SVG 中的蒙版，实现更强大的 SVG 蒙版动画。</p> <p>通过前面章节的学习，我们知道蒙版是用来控制元素的可见范围的。利用蒙版这一特性，再结合前面章节学习到的关于 SVG Morphing 动画和描边动画的知识，我们可以使用 Anime 实现更加有趣的动画效果。</p> <p>下面就用两个实际的例子来抛砖引玉下，看看使用 SVG 蒙版结合 Anime 的来开发 SVG 蒙版动画的方法。</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/15/167b13533e0290eb?w=512&amp;h=341&amp;f=gif&amp;s=936678" alt=""></p> <p>从上面这个动画可以看出，我们的 SVG 蒙版是一个不规则的形状，并且这个蒙版在两个形状之间有一个 Morphing 动画。</p> <p>所以在开始之前我们需要设计两个形状，并且导出为 SVG 代码，先来使用 AI 设计好两个形状：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/15/167b133949e5a2bd?w=1314&amp;h=938&amp;f=png&amp;s=9755" alt=""></p> <p>然后导出为 SVG 代码，使用导出的代码来定义一个蒙版，对图片进行遮罩，代码整理如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg width=&quot;500&quot; height=&quot;500&quot; viewBox=&quot;0 0 600 600&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xml:space=&quot;preserve&quot; xmlns:serif=&quot;http://www.serif.com/&quot;&gt;
+	&lt;defs&gt;
+		&lt;clipPath id=&quot;Mask&quot;&gt;
+			&lt;path d=&quot;M64,168c0,0-30-123,80-108s91,54,182,64s137-83,163-57s119,203-37,214s-205,89-299,22
+	S64,168,64,168z&quot;/&gt;
+		&lt;/clipPath&gt;
+	&lt;/defs&gt;
+	&lt;image width=&quot;900px&quot; height=&quot;600px&quot; xlink:href=&quot;https://ws1.sinaimg.cn/large/006tNbRwgy1fy5hoffs0kj30p00gon2m.jpg&quot; clip-path=&quot;url(#Mask)&quot;/&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>通过前面的学习，上面的代码很简单，这里就不再进行解释了，得到下面所示的效果：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/15/167b133903c1820c?w=476&amp;h=303&amp;f=png&amp;s=107647" alt="图片"></p> <p>而要实现一个 Morphing 动画效果，我们还需要准备另外一个形状，这样才可以在两个形状之间实现 Morphing 动画。</p> <p>这个也简单，我们只需要在第一个形状的基础上，使用路径选择工具，选中节点进行拖拽就可以得到我们想要的形状：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/15/167b133ed3fd9a89?w=794&amp;h=600&amp;f=gif&amp;s=714487" alt="图片"></p> <p>得到我们想要的形状之后，直接把文件另存为 SVG 代码得到 path 的数据。</p> <div class="language- extra-class"><pre class="language-text"><code>M64,168c0,0-30-123,80-108s91,54,182,64s95,10,121,36s161,110,5,121s-239,115.9-333,48.9S64,168,64,168z
+
+</code></pre></div><p>在前面的章节中，我们学习了如何使用 Anime 来实现动画效果，代码照搬就可以了：</p> <div class="language- extra-class"><pre class="language-text"><code>var morph = anime({
+	targets: 'path',
+	d: []
+	easing: 'easeInOutQuad',
+  duration: 3000,
+  direction: 'alternate',
+  loop: true
+
+});
+
+
+</code></pre></div><p>使用 Anime 来编写动画效果，基本上都可以套用上面的代码，在这里需要操作 path 属性 d 的值，只需要把我们上面得到的 path 数据中 d 的值填进去就可以了：</p> <div class="language- extra-class"><pre class="language-text"><code>var morph = anime({
+	targets: 'path',
+	d: [
+		{value: 'M64,168c0,0-30-123,80-108s91,54,182,64s95,10,121,36s161,110,5,121s-239,115.9-333,48.9S64,168,64,168z' }
+	],
+	easing: 'easeInOutQuad',
+  duration: 3000,
+  direction: 'alternate',
+  loop: true
+});
+
+
+</code></pre></div><p><a href="https://codepen.io/janily/pen/yGeYOX" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/15/167b13533e0290eb?w=512&amp;h=341&amp;f=gif&amp;s=936678" alt=""></p> <p>就是这么简单，一个蒙版 Morphing 动画就完成了。</p> <h2 id="黑白蒙版动画实战"><a href="#黑白蒙版动画实战" class="header-anchor">#</a> 黑白蒙版动画实战</h2> <p>下面我们再来看一个使用 Anime 和蒙版实现的动画效果，效果如下图所示：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/12/15/167b1338d80c9675?w=512&amp;h=250&amp;f=gif&amp;s=99148" alt="图片"></p> <p>先来看下这个动画效果，主要是两部分组成：</p> <ul><li>第一部分是心从小到大的缩放动画，这里面还伴随着透明度的变化。</li> <li>第二部分动画是心外面一个圆圈的缩放动画，这个缩放动画不是简简单单的缩放，而是还带有一个蒙版遮罩的动画，伴随着在圆圈放大的过程中也慢慢的消失的一个动画效果。</li></ul> <p>下面我们一步步来拆解实现这个动画，首先是中间的心从小到大的缩放动画：</p> <p>先准备 HTML 结构：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div class=&quot;wrap&quot;&gt;
+  &lt;div class=&quot;heart&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre></div><p>CSS 代码：</p> <div class="language- extra-class"><pre class="language-text"><code>.wrap {
+  position: relative;
+  width:200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+.heart {
+   position: absolute;
+   left:50%;
+   top:50%;
+   margin-top: -25px;
+  margin-left: -25px;
+   width:50px;
+   height:50px;
+  background-image: url(https://ws1.sinaimg.cn/large/006tNbRwgy1fy7habfwcmj303k03k0sj.jpg);
+  background-size: 100% 100%;
+  transform:scale(0);
+  opacity:0;
+}
+
+
+</code></pre></div><p>然后是使用 Anime 来实现这个缩放动画，也非常简单，就是改变它的 scale 和 opacity 的值就可以实现：</p> <div class="language- extra-class"><pre class="language-text"><code>var timeline = anime.timeline({ autoplay: true, loop: true });
+
+timeline
+.add({  targets: '.heart',
+  scale: {
+    value: [0, 1],
+    duration: 500,
+    delay: 1500,
+    easing: 'easeOutQuad'
+  },
+  opacity: {
+    value: 1,
+    duration: 600,
+    delay: 1500
+  }
+ })
+
+
+</code></pre></div><p>因为动画由两部分动画组成，所以需要用到 Anime 的时间轴，先定义一个 timeline 的时间轴，然后定义动画自动循环播放。</p> <p>其它的就简单了，通过前几章的学习，我们应该轻车熟路了，就是选择我们需要改变的属性就可以了，其它的就交给 Anime 来处理，这里就不再解释了。</p> <p>第一个动画完成了，接下来来实现第二部分的动画。这里需要使用 SVG 来定义蒙版来实现，先来看下代码：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;&gt;
+&lt;defs&gt;
+  &lt;mask id=&quot;heart-mask&quot;&gt;
+    &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;white&quot;/&gt;
+    &lt;circle class=&quot;heart-inner&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;0&quot; fill=&quot;black&quot;&gt;&lt;/circle&gt;
+&lt;/mask&gt;
+&lt;/defs&gt;
+&lt;circle class=&quot;heart-outer&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot; fill=&quot;red&quot; mask=&quot;url(#heart-mask)&quot;&gt;&lt;/circle&gt;
+&lt;/svg&gt;
+
+</code></pre></div><p>在上面代码的蒙版中，定义了两个元素，一个白色填充的矩形和一个黑色填充的圆圈，在蒙版中，黑色蒙版是表现“隐藏”当前图层的内容，可以隐藏原先的图层，显示出修改过的图层。白色蒙版是表示“显示”当前图层的内容，即显示出原图层原本的样子。</p> <p>具体到这个动画效果中，圆圈在放大的过程中，同时也慢慢的消失，这个动画效果就可以借助黑白蒙版这个特性来实现。</p> <p>我们在蒙版中定义了一个黑色的圆圈，初始化的时候，它的半径为 0，而矩形是白色的，这样整个圆圈即类名为 heart-outer 的圆圈在初始化的时候是可见的。</p> <p>在样式中把两个圆圈的 scale 属性的值全部定义为 0，同时使用 Anime 来把它们的 scale 的值改为 1，这样当 heart-outer 这个圆圈在放大的时候，蒙版中的 heart-inner 的圆圈也在放大，因为 heart-inner 圆圈的填充颜色为黑色。所以，在它放大的时候，就会隐藏 heart-outer 的圆圈，从而实现圆圈在放大的过程中，同时也慢慢的消失的动画效果。</p> <p>整体的代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>var timeline = anime.timeline({ autoplay: true, loop: true });
+
+timeline
+.add({
+  targets: '.heart-outer',
+  scale: {
+    value: [0, 1],
+    duration: 500,
+    delay: 1300,
+    easing: 'easeOutQuad'
+  },
+  offset: 0
+})
+.add({
+  targets: '.heart-inner',
+  r: {
+    value: [0, 50],
+    duration: 500,
+    delay: 1300,
+    easing: 'easeOutQuad'
+  },
+  offset: 0
+})
+.add({
+  targets: '.heart',
+  scale: {
+    value: [0, 1],
+    duration: 500,
+    delay: 1500,
+    easing: 'easeOutQuad'
+  },
+  opacity: {
+    value: 1,
+    duration: 600,
+    delay: 1500
+  },
+  offset: 0
+})
+
+</code></pre></div><p><img src="https://user-gold-cdn.xitu.io/2018/12/15/167b1338d80c9675?w=512&amp;h=250&amp;f=gif&amp;s=99148" alt="图片"></p> <p><a href="https://codepen.io/janily/pen/dwMzWo" target="_blank" rel="noopener noreferrer">代码演示地址<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="outbound-link-title" role="img" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><title id="outbound-link-title">(opens new window)</title> <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>上面的代码中，用到了 offset 这个参数，这个参数是用来定义在时间轴中动画开始的时间的。默认情况下，在 Anime 中，时间轴的动画都是按次序来执行的，也就是上一个动画执行完后，再执行下一个动画效果。</p> <p>具体到我们这个动画效果中，这两个动画效果是同时开始的，所以把 offset 的值设置为 0，即表示这个动画在一开始的同时执行。如果把 offset 的值设置为 500，则表示在时间轴上动画开始 500 毫秒后就开始执行。</p> <p>这个参数在开发动画的时候还是挺有用的，特别当我们不需要定义在时间轴上的动画全部一起执行的时候，非常的好用。</p> <p>蒙版是一个非常强大的特性，使用它我们还可以实现更多的有趣的动画效果，这里只是抛砖引玉下，要开发更多有趣的动画，就要我们开开脑洞了。</p> <p>下一章节我们来学习使用 Anime 来开发 SVG Morphing 动画效果，Morphing 动画也是 SVG 动画中用的非常广泛的一个动画效果。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/svg/eight.html" class="prev">
+        8. Anime SVG 路径跟随动画
+      </a></span> <span class="next"><a href="/svg/ten.html">
+        10. Anime SVG Morphing 动画
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6b6308bc.js" defer></script><script src="/assets/js/2.d1734fb7.js" defer></script><script src="/assets/js/117.b0fc03d7.js" defer></script>
+  </body>
+</html>
