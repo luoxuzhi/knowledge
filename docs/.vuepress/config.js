@@ -100,7 +100,7 @@ module.exports = {
         'five',
         'six',
         'seven',
-        'eight',
+        // 'eight',
         'night',
         'mock',
         'git-flow',
